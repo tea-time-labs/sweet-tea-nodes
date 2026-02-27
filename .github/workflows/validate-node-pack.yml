@@ -27,7 +27,7 @@ jobs:
 
       - name: Compile Python Files
         run: |
-          python -m py_compile __init__.py wan_vace_dual_strength.py wan_vace_caps_inpaint.py usdu_pose_tiled/*.py
+          python -m py_compile __init__.py wan_vace_caps_inpaint.py usdu_pose_tiled/*.py
 
       - name: Validate Comfy Node
         run: |

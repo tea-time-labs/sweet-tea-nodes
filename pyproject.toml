@@ -1,6 +1,6 @@
 [project]
 name = "sweet-tea-nodes"
-description = "Advanced ComfyUI node pack: seam-locked pose tiled upscaling, dual-strength WAN VACE control, and cap-based temporal stitch inpainting."
+description = "Advanced ComfyUI node pack: seam-locked pose tiled upscaling and cap-based temporal stitch inpainting for WAN VACE."
 version = "0.1.1"
 license = { file = "LICENSE" }
 readme = "README.md"
@@ -26,7 +26,6 @@ DisplayName = "Sweet Tea Nodes"
 Icon = ""
 includes = [
     "__init__.py",
-    "wan_vace_dual_strength.py",
     "wan_vace_caps_inpaint.py",
     "usdu_pose_tiled",
     "requirements.txt",

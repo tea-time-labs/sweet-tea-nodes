@@ -6,9 +6,6 @@ ComfyUI node pack focused on high-control video generation and high-fidelity til
 
 - `Ultimate SD Upscale (Pose Tiled ControlNet)` (`UltimateSDUpscalePoseTiled`)
   - Major tiled-upscaling upgrade with lockable padding, ControlNet tile alignment fixes, normalized overlap blending, and seam-fix passes designed to remove bleed and ghost offsets.
-- `Wan VACE -> Video (dual strength)` (`WanVaceToVideoPlus`)
-  - Exposes critical strength controls separately (`strength`, `ref_strength`, `ctrl_strength`) so reference anchoring and control-frame influence can be tuned independently.
-  - Uses hardcoded 24/33/24 temporal segmentation at `length=81` for strict testable behavior.
 - `Wan VACE -> Video (caps inpaint)` (`WanVaceToVideoCapsInpaint`)
   - Temporal cap-stitching node that treats start/end caps as known regions and forces middle-region generation with explicit inpaint mask semantics.
   - Built for precise clip stitching and transition reconstruction workflows.
@@ -18,7 +15,6 @@ ComfyUI node pack focused on high-control video generation and high-fidelity til
 This repository packages node code synced from the `sweettea` R2 bucket paths:
 
 - `custom_nodes/usdu_pose_tiled/*`
-- `custom_nodes/wan_vace_dual_strength.py`
 - `custom_nodes/wan_vace_caps_inpaint.py`
 
 ## Install (ComfyUI)
@@ -39,7 +35,7 @@ git clone https://github.com/tea-time-labs/sweet-tea-nodes.git
 Run from repo root:
 
 ```bash
-python3 -m py_compile __init__.py wan_vace_dual_strength.py wan_vace_caps_inpaint.py usdu_pose_tiled/*.py
+python3 -m py_compile __init__.py wan_vace_caps_inpaint.py usdu_pose_tiled/*.py
 comfy --skip-prompt --here node validate
 comfy --skip-prompt --here node pack
 ```
@@ -63,5 +59,4 @@ Required secret for registry publish:
 
 ## Notes
 
-- `WanVaceToVideoPlus` is intentionally hardcoded for `length=81` and will raise an error for other lengths.
 - `WanVaceToVideoCapsInpaint` supports variable lengths and cap sizes.
