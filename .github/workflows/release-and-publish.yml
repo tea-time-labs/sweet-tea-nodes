@@ -164,13 +164,17 @@ jobs:
           echo "tag=${tag}" >> "$GITHUB_OUTPUT"
 
       - name: Ensure Registry Token Is Configured
-        if: ${{ steps.release_commit.outputs.released == 'true' && secrets.REGISTRY_ACCESS_TOKEN == '' }}
+        if: ${{ steps.release_commit.outputs.released == 'true' }}
+        env:
+          REGISTRY_ACCESS_TOKEN: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
         run: |
-          echo "Missing REGISTRY_ACCESS_TOKEN secret." >&2
-          exit 1
+          if [ -z "${REGISTRY_ACCESS_TOKEN}" ]; then
+            echo "Missing REGISTRY_ACCESS_TOKEN secret." >&2
+            exit 1
+          fi
 
       - name: Publish Node To Comfy Registry
-        if: ${{ steps.release_commit.outputs.released == 'true' && secrets.REGISTRY_ACCESS_TOKEN != '' }}
+        if: ${{ steps.release_commit.outputs.released == 'true' }}
         uses: Comfy-Org/publish-node-action@main
         with:
           personal_access_token: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
