@@ -14,7 +14,7 @@ Documentation = "https://github.com/tea-time-labs/sweet-tea-nodes#readme"
 "Bug Tracker" = "https://github.com/tea-time-labs/sweet-tea-nodes/issues"
 
 [tool.comfy]
-PublisherId = "tea-time-labs"
+PublisherId = "jkotieno"
 DisplayName = "Sweet Tea Nodes"
 Icon = ""
 includes = [
