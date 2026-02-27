@@ -69,6 +69,11 @@ def USDU_locked_inputs():
     return required, optional
 
 class UltimateSDUpscalePoseTiled:
+    DESCRIPTION = (
+        "High-fidelity tiled upscaler with pose-aware ControlNet conditioning, lockable padding during "
+        "sampling, normalized overlap blending, and seam-fix passes to remove ghosting and seam bleed."
+    )
+
     @classmethod
     def INPUT_TYPES(s):
         required, optional = USDU_locked_inputs()

@@ -141,6 +141,12 @@ def _extract_caps_into_timeline(
 # ------------------------------- node ---------------------------------------
 
 class WanVaceToVideoCapsInpaint:
+    DESCRIPTION = (
+        "WAN VACE cap-stitch inpaint node for hard clip joins. "
+        "Treats start/end cap frames as preserved known regions and the middle as unknown generated "
+        "region, with enforced neutral filler to prevent hidden evidence leakage."
+    )
+
     @classmethod
     def INPUT_TYPES(cls):
         return {

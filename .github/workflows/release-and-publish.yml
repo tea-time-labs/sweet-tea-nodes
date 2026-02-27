@@ -1,0 +1,184 @@
+name: Release And Publish
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-and-publish-main
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: ${{ github.event_name == 'workflow_dispatch' || !startsWith(github.event.head_commit.message, 'chore(release):') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Validation Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install comfy-cli
+          pip install -r requirements.txt
+
+      - name: Validate Node Pack
+        run: |
+          python -m py_compile __init__.py wan_vace_dual_strength.py wan_vace_caps_inpaint.py usdu_pose_tiled/*.py
+          comfy --skip-prompt --here node validate
+
+      - name: Compute Next Version
+        id: version
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          import subprocess
+          from pathlib import Path
+
+          out_file = Path(os.environ["GITHUB_OUTPUT"])
+
+          def run(cmd):
+            return subprocess.run(cmd, check=True, text=True, capture_output=True).stdout.strip()
+
+          def parse_version(v):
+            m = re.fullmatch(r"(\d+)\.(\d+)\.(\d+)", v)
+            if not m:
+              raise ValueError(f"Invalid semver: {v}")
+            return tuple(int(x) for x in m.groups())
+
+          def fmt_version(parts):
+            return ".".join(str(x) for x in parts)
+
+          pyproject = Path("pyproject.toml").read_text(encoding="utf-8")
+          vm = re.search(r'(?m)^version\s*=\s*"([0-9]+\.[0-9]+\.[0-9]+)"\s*$', pyproject)
+          if not vm:
+            raise RuntimeError("Could not find project version in pyproject.toml")
+          current = vm.group(1)
+          current_parts = parse_version(current)
+
+          raw_tags = run(["git", "tag", "--list", "v*", "--sort=-v:refname"]).splitlines()
+          semver_tags = [t for t in raw_tags if re.fullmatch(r"v\d+\.\d+\.\d+", t)]
+          latest_tag = semver_tags[0] if semver_tags else ""
+          latest_parts = parse_version(latest_tag[1:]) if latest_tag else current_parts
+
+          base_parts = current_parts if current_parts >= latest_parts else latest_parts
+
+          if latest_tag:
+            commits_text = run(["git", "log", "--format=%s%n%b", f"{latest_tag}..HEAD"])
+          else:
+            commits_text = run(["git", "log", "--format=%s%n%b"])
+
+          commits_text = commits_text.strip()
+          if not commits_text:
+            bump_kind = "none"
+            new_parts = base_parts
+          else:
+            is_major = bool(re.search(r"(^|\n)BREAKING CHANGE[:\s]|(^|\n)[a-zA-Z]+(\([^)]+\))?!:", commits_text))
+            is_minor = bool(re.search(r"(^|\n)feat(\([^)]+\))?:", commits_text))
+            if is_major:
+              bump_kind = "major"
+              new_parts = (base_parts[0] + 1, 0, 0)
+            elif is_minor:
+              bump_kind = "minor"
+              new_parts = (base_parts[0], base_parts[1] + 1, 0)
+            else:
+              bump_kind = "patch"
+              new_parts = (base_parts[0], base_parts[1], base_parts[2] + 1)
+
+          new_version = fmt_version(new_parts)
+          should_release = bump_kind != "none"
+
+          with out_file.open("a", encoding="utf-8") as f:
+            f.write(f"current_version={current}\\n")
+            f.write(f"new_version={new_version}\\n")
+            f.write(f"bump_kind={bump_kind}\\n")
+            f.write(f"latest_tag={latest_tag}\\n")
+            f.write(f"should_release={'true' if should_release else 'false'}\\n")
+          PY
+
+      - name: Update pyproject Version
+        if: ${{ steps.version.outputs.should_release == 'true' }}
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          new_version = os.environ["NEW_VERSION"]
+          path = Path("pyproject.toml")
+          text = path.read_text(encoding="utf-8")
+          updated = re.sub(
+              r'(?m)^version\s*=\s*"[0-9]+\.[0-9]+\.[0-9]+"\s*$',
+              f'version = "{new_version}"',
+              text,
+              count=1,
+          )
+          if updated == text:
+            raise RuntimeError("Failed to update version in pyproject.toml")
+          path.write_text(updated, encoding="utf-8")
+          PY
+        env:
+          NEW_VERSION: ${{ steps.version.outputs.new_version }}
+
+      - name: Commit, Tag, and Push
+        id: release_commit
+        if: ${{ steps.version.outputs.should_release == 'true' }}
+        run: |
+          set -euo pipefail
+          version="${{ steps.version.outputs.new_version }}"
+          tag="v${version}"
+
+          if git ls-remote --exit-code --tags origin "refs/tags/${tag}" >/dev/null 2>&1; then
+            echo "Tag ${tag} already exists on origin; skipping release."
+            echo "released=false" >> "$GITHUB_OUTPUT"
+            echo "tag=${tag}" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add pyproject.toml
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(release): ${tag} [skip ci]"
+            git push origin HEAD:main
+          fi
+
+          git tag "${tag}"
+          git push origin "${tag}"
+
+          echo "released=true" >> "$GITHUB_OUTPUT"
+          echo "tag=${tag}" >> "$GITHUB_OUTPUT"
+
+      - name: Ensure Registry Token Is Configured
+        if: ${{ steps.release_commit.outputs.released == 'true' && secrets.REGISTRY_ACCESS_TOKEN == '' }}
+        run: |
+          echo "Missing REGISTRY_ACCESS_TOKEN secret." >&2
+          exit 1
+
+      - name: Publish Node To Comfy Registry
+        if: ${{ steps.release_commit.outputs.released == 'true' && secrets.REGISTRY_ACCESS_TOKEN != '' }}
+        uses: Comfy-Org/publish-node-action@main
+        with:
+          personal_access_token: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
+
+      - name: Create GitHub Release
+        if: ${{ steps.release_commit.outputs.released == 'true' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.release_commit.outputs.tag }}
+          name: ${{ steps.release_commit.outputs.tag }}
+          generate_release_notes: true

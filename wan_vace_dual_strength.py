@@ -36,6 +36,12 @@ def _upscale_nhwc(x_nhwc: torch.Tensor, width: int, height: int) -> torch.Tensor
 
 
 class WanVaceToVideoPlus:
+    DESCRIPTION = (
+        "Advanced WAN VACE temporal inpainting node for fixed 81-frame (24/33/24) windows. "
+        "Separates global strength from reference/control strengths so users can independently tune "
+        "reference anchoring and control influence while forcing true middle-segment generation."
+    )
+
     @classmethod
     def INPUT_TYPES(cls):
         return {

@@ -1,9 +1,16 @@
 [project]
 name = "sweet-tea-nodes"
-description = "Sweet Tea custom nodes for ComfyUI: USDU Pose Tiled and Wan VACE video helpers."
+description = "Advanced ComfyUI node pack: seam-locked pose tiled upscaling, dual-strength WAN VACE control, and cap-based temporal stitch inpainting."
 version = "0.1.0"
 license = { file = "LICENSE" }
 readme = "README.md"
+keywords = [
+    "comfyui",
+    "upscaling",
+    "controlnet",
+    "wan",
+    "video-inpainting",
+]
 dependencies = [
     "tqdm>=4.66.0",
 ]
