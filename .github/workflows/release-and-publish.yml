@@ -102,11 +102,11 @@ jobs:
           should_release = bump_kind != "none"
 
           with out_file.open("a", encoding="utf-8") as f:
-            f.write(f"current_version={current}\\n")
-            f.write(f"new_version={new_version}\\n")
-            f.write(f"bump_kind={bump_kind}\\n")
-            f.write(f"latest_tag={latest_tag}\\n")
-            f.write(f"should_release={'true' if should_release else 'false'}\\n")
+            f.write(f"current_version={current}\n")
+            f.write(f"new_version={new_version}\n")
+            f.write(f"bump_kind={bump_kind}\n")
+            f.write(f"latest_tag={latest_tag}\n")
+            f.write(f"should_release={'true' if should_release else 'false'}\n")
           PY
 
       - name: Update pyproject Version
