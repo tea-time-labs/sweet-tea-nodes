@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*.so
+.DS_Store
+.pytest_cache/
+dist/
+build/
+*.zip
