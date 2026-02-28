@@ -26,7 +26,7 @@ DisplayName = "Sweet Tea Nodes"
 Icon = ""
 includes = [
     "__init__.py",
-    "wan_vace_caps_inpaint.py",
+    "wan_vace_caps_inpaint",
     "usdu_pose_tiled",
     "requirements.txt",
     "README.md",

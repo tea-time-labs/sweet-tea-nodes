@@ -36,7 +36,7 @@ jobs:
 
       - name: Validate Node Pack
         run: |
-          python -m py_compile __init__.py wan_vace_caps_inpaint.py usdu_pose_tiled/*.py
+          python -m py_compile __init__.py wan_vace_caps_inpaint/*.py usdu_pose_tiled/*.py
           comfy --skip-prompt --here node validate
 
       - name: Compute Next Version

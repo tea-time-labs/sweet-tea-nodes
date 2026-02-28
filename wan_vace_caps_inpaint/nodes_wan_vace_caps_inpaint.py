@@ -1,4 +1,4 @@
-# wan_vace_caps_inpaint.py
+# wan_vace_caps_inpaint/nodes_wan_vace_caps_inpaint.py
 # ComfyUI custom node: Wan VACE → Video (caps inpaint)
 #
 # ------------------------------- WHAT THIS NODE IS -------------------------------
@@ -39,7 +39,7 @@
 # - Set start_control_frames and end_control_frames.
 # - The node will synthesize the middle.
 #
-# Drop file into: ComfyUI/custom_nodes/wan_vace_caps_inpaint.py
+# Drop package into: ComfyUI/custom_nodes/sweet-tea-nodes/wan_vace_caps_inpaint/
 # Node name in UI: "Wan VACE → Video (caps inpaint)"
 
 from __future__ import annotations

@@ -15,7 +15,7 @@ ComfyUI node pack focused on high-control video generation and high-fidelity til
 This repository packages node code synced from the `sweettea` R2 bucket paths:
 
 - `custom_nodes/usdu_pose_tiled/*`
-- `custom_nodes/wan_vace_caps_inpaint.py`
+- `custom_nodes/wan_vace_caps_inpaint/*`
 
 ## Install (ComfyUI)
 
@@ -35,7 +35,7 @@ git clone https://github.com/tea-time-labs/sweet-tea-nodes.git
 Run from repo root:
 
 ```bash
-python3 -m py_compile __init__.py wan_vace_caps_inpaint.py usdu_pose_tiled/*.py
+python3 -m py_compile __init__.py wan_vace_caps_inpaint/*.py usdu_pose_tiled/*.py
 comfy --skip-prompt --here node validate
 comfy --skip-prompt --here node pack
 ```
