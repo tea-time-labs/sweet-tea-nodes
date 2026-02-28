@@ -19,14 +19,14 @@ concurrency:
 
 jobs:
   release:
-    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && !startsWith(github.event.workflow_run.head_commit.message, 'chore(release):')) }}
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.event == 'push' && !startsWith(github.event.workflow_run.head_commit.message, 'chore(release):')) }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.ref }}
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -39,13 +39,72 @@ jobs:
           pip install comfy-cli
           pip install -r requirements.txt
 
-      - name: Validate Node Pack
+      - name: Resolve Target SHA
+        id: target_sha
         run: |
-          python -m py_compile __init__.py wan_vace_caps_inpaint/*.py usdu_pose_tiled/*.py
-          comfy --skip-prompt --here node validate
+          if [ "${{ github.event_name }}" = "workflow_run" ]; then
+            echo "value=${{ github.event.workflow_run.head_sha }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Enforce Same-Commit Validation Gate
+        id: validation_gate
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_SHA: ${{ steps.target_sha.outputs.value }}
+          REPO: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import urllib.parse
+          import urllib.request
+
+          repo = os.environ["REPO"]
+          target_sha = os.environ["TARGET_SHA"]
+          token = os.environ["GITHUB_TOKEN"]
+          output_file = os.environ["GITHUB_OUTPUT"]
+
+          qs = urllib.parse.urlencode(
+              {"head_sha": target_sha, "event": "push", "per_page": 20}
+          )
+          url = f"https://api.github.com/repos/{repo}/actions/workflows/validate-node-pack.yml/runs?{qs}"
+
+          req = urllib.request.Request(
+              url,
+              headers={
+                  "Authorization": f"Bearer {token}",
+                  "Accept": "application/vnd.github+json",
+                  "X-GitHub-Api-Version": "2022-11-28",
+              },
+          )
+          with urllib.request.urlopen(req) as r:
+            payload = json.loads(r.read().decode("utf-8"))
+
+          runs = payload.get("workflow_runs", [])
+          passed = [
+              run
+              for run in runs
+              if run.get("head_sha") == target_sha
+              and run.get("status") == "completed"
+              and run.get("conclusion") == "success"
+          ]
+
+          if not passed:
+            raise SystemExit(
+                f"No successful Validate Node Pack run found for commit {target_sha}. Publish is blocked."
+            )
+
+          newest = sorted(passed, key=lambda x: x.get("updated_at", ""), reverse=True)[0]
+          print(f"Validated commit {target_sha} via run {newest.get('html_url')}")
+          with open(output_file, "a", encoding="utf-8") as fh:
+            fh.write("same_commit_validated=true\n")
+          PY
 
       - name: Compute Next Version
         id: version
+        if: ${{ steps.validation_gate.outputs.same_commit_validated == 'true' }}
         run: |
           python - <<'PY'
           import os
@@ -115,7 +174,7 @@ jobs:
           PY
 
       - name: Update pyproject Version
-        if: ${{ steps.version.outputs.should_release == 'true' }}
+        if: ${{ steps.validation_gate.outputs.same_commit_validated == 'true' && steps.version.outputs.should_release == 'true' }}
         run: |
           python - <<'PY'
           import os
@@ -140,7 +199,7 @@ jobs:
 
       - name: Commit, Tag, and Push
         id: release_commit
-        if: ${{ steps.version.outputs.should_release == 'true' }}
+        if: ${{ steps.validation_gate.outputs.same_commit_validated == 'true' && steps.version.outputs.should_release == 'true' }}
         run: |
           set -euo pipefail
           version="${{ steps.version.outputs.new_version }}"
@@ -170,7 +229,7 @@ jobs:
 
       - name: Detect Registry Token
         id: token_check
-        if: ${{ steps.release_commit.outputs.released == 'true' }}
+        if: ${{ steps.validation_gate.outputs.same_commit_validated == 'true' && steps.release_commit.outputs.released == 'true' }}
         env:
           REGISTRY_ACCESS_TOKEN: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
         run: |
@@ -182,14 +241,14 @@ jobs:
           echo "has_token=true" >> "$GITHUB_OUTPUT"
 
       - name: Publish Node To Comfy Registry
-        if: ${{ steps.release_commit.outputs.released == 'true' && steps.token_check.outputs.has_token == 'true' }}
+        if: ${{ steps.validation_gate.outputs.same_commit_validated == 'true' && steps.release_commit.outputs.released == 'true' && steps.token_check.outputs.has_token == 'true' }}
         uses: Comfy-Org/publish-node-action@main
         with:
           personal_access_token: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
           skip_checkout: true
 
       - name: Create GitHub Release
-        if: ${{ steps.release_commit.outputs.released == 'true' }}
+        if: ${{ steps.validation_gate.outputs.same_commit_validated == 'true' && steps.release_commit.outputs.released == 'true' }}
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.release_commit.outputs.tag }}
