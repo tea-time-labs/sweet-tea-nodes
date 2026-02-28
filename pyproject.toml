@@ -1,7 +1,7 @@
 [project]
 name = "sweet-tea-nodes"
 description = "Advanced ComfyUI node pack: seam-locked pose tiled upscaling and cap-based temporal stitch inpainting for WAN VACE."
-version = "0.1.3"
+version = "0.1.4"
 license = { file = "LICENSE" }
 readme = "README.md"
 keywords = [
