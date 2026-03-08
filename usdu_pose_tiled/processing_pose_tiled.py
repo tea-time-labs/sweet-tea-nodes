@@ -1,4 +1,6 @@
 import math
+import gc
+import time
 import torch
 import numpy as np
 from tqdm import tqdm
@@ -11,6 +13,61 @@ from .utils import tensor_to_pil, get_crop_region, expand_crop, crop_cond
 
 # flip this on if you actually want the verbose per-tile logs
 USDU_DEBUG = False
+
+_TRANSIENT_MODEL_MAX_ATTEMPTS = 3
+_TRANSIENT_MODEL_BACKOFF_SECONDS = 0.12
+
+
+def _is_transient_model_index_error(exc):
+    return isinstance(exc, IndexError) and "list index out of range" in str(exc)
+
+
+def _recover_model_management_state():
+    gc.collect()
+    cleanup_models = getattr(model_management, "cleanup_models", None)
+    if callable(cleanup_models):
+        try:
+            cleanup_models()
+        except Exception:
+            pass
+
+    cleanup_models_gc = getattr(model_management, "cleanup_models_gc", None)
+    if callable(cleanup_models_gc):
+        try:
+            cleanup_models_gc()
+        except Exception:
+            pass
+
+    soft_empty_cache = getattr(model_management, "soft_empty_cache", None)
+    if callable(soft_empty_cache):
+        try:
+            soft_empty_cache()
+        except Exception:
+            pass
+
+    if torch.cuda.is_available():
+        try:
+            torch.cuda.empty_cache()
+        except Exception:
+            pass
+
+
+def _run_with_transient_model_retry(fn, op_name):
+    for attempt in range(1, _TRANSIENT_MODEL_MAX_ATTEMPTS + 1):
+        try:
+            return fn()
+        except Exception as exc:
+            if not _is_transient_model_index_error(exc):
+                raise
+            if attempt >= _TRANSIENT_MODEL_MAX_ATTEMPTS:
+                raise
+            if USDU_DEBUG:
+                print(
+                    f"[USDU] transient model-management index error during "
+                    f"{op_name}; retry {attempt}/{_TRANSIENT_MODEL_MAX_ATTEMPTS - 1}"
+                )
+            _recover_model_management_state()
+            time.sleep(_TRANSIENT_MODEL_BACKOFF_SECONDS * attempt)
 
 
 def _pil_list_to_bhwc(tiles):
@@ -201,7 +258,10 @@ def process_images_pose_tiled(
         bhwc = _pil_list_to_bhwc(tiles_for_model)
 
         with torch.inference_mode():
-            encoded = vae.encode(bhwc)
+            encoded = _run_with_transient_model_retry(
+                lambda: vae.encode(bhwc),
+                "vae.encode(full)",
+            )
             if isinstance(encoded, dict) and "samples" in encoded:
                 latents = encoded["samples"]
             elif hasattr(encoded, "samples"):
@@ -230,7 +290,10 @@ def process_images_pose_tiled(
             )
 
             latent_samples_after = _extract_latent_samples(ksampler_out)
-            decoded = vae.decode(latent_samples_after)
+            decoded = _run_with_transient_model_retry(
+                lambda: vae.decode(latent_samples_after),
+                "vae.decode(full)",
+            )
 
         results = [tensor_to_pil(decoded, i).convert("RGB") for i in range(decoded.shape[0])]
 
@@ -337,7 +400,10 @@ def process_images_pose_tiled(
 
     with torch.inference_mode():
         # Encode tile(s) to latent
-        encoded = vae.encode(bhwc)  # Comfy VAE expects BHWC in [0,1]
+        encoded = _run_with_transient_model_retry(
+            lambda: vae.encode(bhwc),
+            "vae.encode(tile)",
+        )  # Comfy VAE expects BHWC in [0,1]
         if isinstance(encoded, dict) and "samples" in encoded:
             latents = encoded["samples"]
         elif hasattr(encoded, "samples"):
@@ -399,7 +465,10 @@ def process_images_pose_tiled(
         latent_samples_after = _extract_latent_samples(ksampler_out)
 
         # Decode latent back to BHWC float [0,1]
-        decoded = vae.decode(latent_samples_after)
+        decoded = _run_with_transient_model_retry(
+            lambda: vae.decode(latent_samples_after),
+            "vae.decode(tile)",
+        )
 
     # -------------------------------------------------------------------------
     # 6. Resize decoded tile(s) BACK DOWN to paste_size, composite with feather

@@ -295,6 +295,26 @@ def _shallow_clone_obj(o):
     except Exception:
         return o
 
+def _clone_with_native_copy(o):
+    copy_fn = getattr(o, "copy", None)
+    if callable(copy_fn):
+        try:
+            return copy_fn()
+        except Exception:
+            pass
+    return _shallow_clone_obj(o)
+
+def _copy_sequence(seq, template):
+    return tuple(seq) if isinstance(template, tuple) else list(seq)
+
+def _is_controlnet_like(obj):
+    return (
+        obj is not None
+        and hasattr(obj, "previous_controlnet")
+        and hasattr(obj, "cond_hint_original")
+        and hasattr(obj, "get_models")
+    )
+
 def _should_force_crop_key(k: str):
     """
     Keys in ControlNet dicts that usually carry spatial data.
@@ -324,25 +344,86 @@ def _is_non_spatial_conditioning_key(k: str):
     }
     return lk in blocked
 
+def _crop_controlnet_like(ctrl_obj, region_fullspace, full_img_size, tile_size):
+    # Clone through the object's native copy path when possible so parent/model
+    # bookkeeping stays in the shape ComfyUI expects.
+    ctrl_copy = _clone_with_native_copy(ctrl_obj)
+
+    if ctrl_copy is ctrl_obj:
+        return ctrl_obj
+
+    previous = getattr(ctrl_obj, "previous_controlnet", None)
+    if previous is not None:
+        cropped_prev = _crop_control_recursive(
+            previous, region_fullspace, full_img_size, tile_size
+        )
+        if hasattr(ctrl_copy, "set_previous_controlnet"):
+            ctrl_copy.set_previous_controlnet(cropped_prev)
+        else:
+            try:
+                setattr(ctrl_copy, "previous_controlnet", cropped_prev)
+            except Exception:
+                pass
+
+    cond_hint = getattr(ctrl_obj, "cond_hint_original", None)
+    if _looks_spatial(cond_hint):
+        try:
+            ctrl_copy.cond_hint_original = _crop_spatial_value(
+                cond_hint, region_fullspace, full_img_size, tile_size
+            )
+        except Exception:
+            pass
+
+    extra_concat = getattr(ctrl_obj, "extra_concat_orig", None)
+    if isinstance(extra_concat, (list, tuple)):
+        cropped_concat = []
+        for item in extra_concat:
+            if _looks_spatial(item):
+                cropped_concat.append(
+                    _crop_spatial_value(item, region_fullspace, full_img_size, tile_size)
+                )
+            elif _is_controlnet_like(item):
+                cropped_concat.append(
+                    _crop_control_recursive(item, region_fullspace, full_img_size, tile_size)
+                )
+            else:
+                cropped_concat.append(item)
+        try:
+            ctrl_copy.extra_concat_orig = _copy_sequence(cropped_concat, extra_concat)
+        except Exception:
+            pass
+
+    # Cached, runtime-only fields should be rebuilt from the new tile-local inputs.
+    for attr in ("cond_hint", "extra_concat", "timestep_range"):
+        if hasattr(ctrl_copy, attr):
+            try:
+                setattr(ctrl_copy, attr, None)
+            except Exception:
+                pass
+
+    return ctrl_copy
+
 def _crop_control_recursive(ctrl_obj, region_fullspace, full_img_size, tile_size):
     """
-    Recursively walk a ControlNet structure (lists, dicts, objects) and crop/resize
-    any spatial tensors/images to this tile.
+    Recursively walk container-shaped conditioning data and crop tile-local
+    spatial hints without cloning loader/model internals.
     """
+
+    if _is_controlnet_like(ctrl_obj):
+        return _crop_controlnet_like(
+            ctrl_obj, region_fullspace, full_img_size, tile_size
+        )
 
     # list/tuple
     if isinstance(ctrl_obj, (list, tuple)):
         out = _shallow_clone_list(ctrl_obj)
         for i, v in enumerate(out):
-            if (
-                isinstance(v, (list, tuple, dict))
-                or (hasattr(v, "__dict__") and not isinstance(v, (torch.Tensor, np.ndarray, Image.Image)))
-            ):
+            if isinstance(v, (list, tuple, dict)) or _is_controlnet_like(v):
                 out[i] = _crop_control_recursive(v, region_fullspace, full_img_size, tile_size)
             else:
                 if _looks_spatial(v):
                     out[i] = _crop_spatial_value(v, region_fullspace, full_img_size, tile_size)
-        return out
+        return _copy_sequence(out, ctrl_obj)
 
     # dict
     if isinstance(ctrl_obj, dict):
@@ -350,43 +431,14 @@ def _crop_control_recursive(ctrl_obj, region_fullspace, full_img_size, tile_size
         for k, v in list(new_ctrl.items())[:]:
             if _is_non_spatial_conditioning_key(k):
                 continue
-            if (
-                isinstance(v, (list, tuple, dict))
-                or (hasattr(v, "__dict__") and not isinstance(v, (torch.Tensor, np.ndarray, Image.Image)))
-            ):
+            if isinstance(v, (list, tuple, dict)) or _is_controlnet_like(v):
                 new_ctrl[k] = _crop_control_recursive(v, region_fullspace, full_img_size, tile_size)
             else:
                 if _looks_spatial(v) or _should_force_crop_key(k):
                     new_ctrl[k] = _crop_spatial_value(v, region_fullspace, full_img_size, tile_size)
         return new_ctrl
 
-    # object-like
-    obj = _shallow_clone_obj(ctrl_obj)
-    for attr in dir(obj):
-        if attr.startswith("_"):
-            continue
-        if _is_non_spatial_conditioning_key(attr):
-            continue
-        try:
-            v = getattr(obj, attr)
-        except Exception:
-            continue
-
-        if (
-            isinstance(v, (list, tuple, dict))
-            or (hasattr(v, "__dict__") and not isinstance(v, (torch.Tensor, np.ndarray, Image.Image)))
-        ):
-            try:
-                setattr(obj, attr, _crop_control_recursive(v, region_fullspace, full_img_size, tile_size))
-            except Exception:
-                pass
-        else:
-            if _looks_spatial(v) or _should_force_crop_key(attr):
-                try:
-                    setattr(obj, attr, _crop_spatial_value(v, region_fullspace, full_img_size, tile_size))
-                except Exception:
-                    pass
-    return obj
+    return ctrl_obj
 
 def crop_cond(conditioning, crop_region, init_size, img_size, tile_size):
     """
@@ -493,7 +545,7 @@ def crop_cond(conditioning, crop_region, init_size, img_size, tile_size):
 
     # object w/ .control attr
     if hasattr(conditioning, "control"):
-        cond_copy = _shallow_clone_obj(conditioning)
+        cond_copy = _clone_with_native_copy(conditioning)
         try:
             ctrl_val = getattr(cond_copy, "control")
             setattr(
