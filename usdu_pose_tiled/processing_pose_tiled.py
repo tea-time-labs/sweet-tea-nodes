@@ -188,6 +188,7 @@ def process_images_pose_tiled(
     lock_padding=True,
     noise_mask_blur=0,
     return_layer=False,
+    editable_mask=None,
 ):
     """
     Core tiled diffusion pass (1 tile mask at a time).
@@ -218,7 +219,10 @@ def process_images_pose_tiled(
     # image_mask can come in as any mode. We want:
     #   - hard_mask: binary-ish (unblurred). Used to compute crop region.
     #   - feather_mask: blurred alpha, used ONLY for compositing.
+    #   - editable_mask_full: optional row-major frontier lock mask used ONLY
+    #     for sampling. If omitted, sampling falls back to the hard tile mask.
     hard_mask = image_mask.convert("L")
+    editable_mask_full = editable_mask.convert("L") if editable_mask is not None else hard_mask
     if mask_blur > 0:
         feather_mask = hard_mask.filter(ImageFilter.GaussianBlur(mask_blur))
     else:
@@ -435,7 +439,7 @@ def process_images_pose_tiled(
 
             lh, lw = int(latents.shape[-2]), int(latents.shape[-1])
             nm = _make_latent_noise_mask_from_tile_mask(
-                hard_mask,
+                editable_mask_full,
                 crop_region1,          # crop bbox in full canvas coords
                 (lh, lw),              # latent spatial size
                 blur_px,

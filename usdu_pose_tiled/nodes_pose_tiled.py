@@ -70,8 +70,9 @@ def USDU_locked_inputs():
 
 class UltimateSDUpscalePoseTiled:
     DESCRIPTION = (
-        "High-fidelity tiled upscaler with pose-aware ControlNet conditioning, lockable padding during "
-        "sampling, normalized overlap blending, and seam-fix passes to remove ghosting and seam bleed."
+        "High-fidelity tiled upscaler with pose-aware ControlNet conditioning, row-major frontier locking "
+        "for previously sampled tiles in Linear mode, normalized overlap blending, and seam-fix passes "
+        "to remove ghosting and seam bleed."
     )
 
     @classmethod

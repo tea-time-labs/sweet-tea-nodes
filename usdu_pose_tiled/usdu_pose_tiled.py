@@ -82,7 +82,7 @@ class USDURedraw:
         model, positive, negative, vae, seed, steps, cfg,
         sampler_name, scheduler, denoise,
         mask_img,
-        uniform_mode, tiled_decode, return_layer=False
+        uniform_mode, tiled_decode, editable_mask=None, return_layer=False
     ):
         tile_size = (
             math.ceil((self.tile_width  + 2*self.padding) / 64) * 64,
@@ -99,7 +99,41 @@ class USDURedraw:
             lock_padding=self.lock_padding,
             noise_mask_blur=self.noise_mask_blur,
             return_layer=return_layer,
+            editable_mask=editable_mask,
         )
+
+    def _tile_bounds(self, base_w, base_h, xi, yi):
+        x1 = xi * self.tile_width
+        y1 = yi * self.tile_height
+        x2 = min(x1 + self.tile_width, base_w)
+        y2 = min(y1 + self.tile_height, base_h)
+        return x1, y1, x2, y2
+
+    def _build_tile_mask(self, base_w, base_h, xi, yi):
+        x1, y1, x2, y2 = self._tile_bounds(base_w, base_h, xi, yi)
+        mask_img = Image.new("L", (base_w, base_h), "black")
+        if x2 > x1 and y2 > y1:
+            draw = ImageDraw.Draw(mask_img)
+            draw.rectangle((x1, y1, x2 - 1, y2 - 1), fill=255)
+        return mask_img
+
+    def _build_linear_frontier_editable_mask(self, base_w, base_h, xi, yi):
+        """
+        Row-major frontier lock for Linear mode:
+        - previous tiles are frozen
+        - current tile and all future tiles stay editable inside this solve
+        """
+        x1, y1, x2, y2 = self._tile_bounds(base_w, base_h, xi, yi)
+        mask_img = Image.new("L", (base_w, base_h), "black")
+        draw = ImageDraw.Draw(mask_img)
+
+        if x2 > x1 and y2 > y1:
+            draw.rectangle((x1, y1, base_w - 1, y2 - 1), fill=255)
+        if y2 < base_h:
+            draw.rectangle((0, y2, base_w - 1, base_h - 1), fill=255)
+
+        return mask_img
+
     def _normalized_grid_process(
         self,
         model, positive, negative, vae, seed, steps, cfg,
@@ -134,23 +168,25 @@ class USDURedraw:
                     if (yi + xi) % 2 != (0 if chess_even else 1):
                         continue
 
-                x1 = xi * self.tile_width
-                y1 = yi * self.tile_height
-                x2 = min(x1 + self.tile_width, base_w)
-                y2 = min(y1 + self.tile_height, base_h)
+                x1, y1, x2, y2 = self._tile_bounds(base_w, base_h, xi, yi)
                 if x2 <= x1 or y2 <= y1:
                     continue
 
-                mask_img = Image.new("L", (base_w, base_h), "black")
-                draw = ImageDraw.Draw(mask_img)
-                draw.rectangle((x1, y1, x2 - 1, y2 - 1), fill=255)
+                mask_img = self._build_tile_mask(base_w, base_h, xi, yi)
+                editable_mask = None
+                if self.lock_padding and chess_even is None:
+                    editable_mask = self._build_linear_frontier_editable_mask(
+                        base_w, base_h, xi, yi
+                    )
 
                 layers, bbox = self._run_single_masked_tile(
                     processed_images,
                     model, positive, negative, vae, seed, steps, cfg,
                     sampler_name, scheduler, denoise,
                     mask_img,
-                    uniform_mode, tiled_decode,
+                    editable_mask=editable_mask,
+                    uniform_mode=uniform_mode,
+                    tiled_decode=tiled_decode,
                     return_layer=True,
                 )
 
@@ -206,23 +242,25 @@ class USDURedraw:
 
         for yi in range(rows):
             for xi in range(cols):
-                x1 = xi * self.tile_width
-                y1 = yi * self.tile_height
-                x2 = min(x1 + self.tile_width, base_w)
-                y2 = min(y1 + self.tile_height, base_h)
+                x1, y1, x2, y2 = self._tile_bounds(base_w, base_h, xi, yi)
                 if x2 <= x1 or y2 <= y1:
                     continue
 
-                mask_img = Image.new("L", (base_w, base_h), "black")
-                draw = ImageDraw.Draw(mask_img)
-                draw.rectangle((x1, y1, x2 - 1, y2 - 1), fill=255)
+                mask_img = self._build_tile_mask(base_w, base_h, xi, yi)
+                editable_mask = None
+                if self.lock_padding:
+                    editable_mask = self._build_linear_frontier_editable_mask(
+                        base_w, base_h, xi, yi
+                    )
 
                 processed_images = self._run_single_masked_tile(
                     processed_images,
                     model, positive, negative, vae, seed, steps, cfg,
                     sampler_name, scheduler, denoise,
                     mask_img,
-                    uniform_mode, tiled_decode
+                    editable_mask=editable_mask,
+                    uniform_mode=uniform_mode,
+                    tiled_decode=tiled_decode,
                 )
 
         return processed_images
@@ -249,23 +287,20 @@ class USDURedraw:
         for yi in range(rows):
             for xi in range(cols):
                 if (yi + xi) % 2 == (0 if even else 1):
-                    x1 = xi * self.tile_width
-                    y1 = yi * self.tile_height
-                    x2 = min(x1 + self.tile_width, base_w)
-                    y2 = min(y1 + self.tile_height, base_h)
+                    x1, y1, x2, y2 = self._tile_bounds(base_w, base_h, xi, yi)
                     if x2 <= x1 or y2 <= y1:
                         continue
 
-                    mask_img = Image.new("L", (base_w, base_h), "black")
-                    draw = ImageDraw.Draw(mask_img)
-                    draw.rectangle((x1, y1, x2 - 1, y2 - 1), fill=255)
+                    mask_img = self._build_tile_mask(base_w, base_h, xi, yi)
 
                     processed_images = self._run_single_masked_tile(
                         processed_images,
                         model, positive, negative, vae, seed, steps, cfg,
                         sampler_name, scheduler, denoise,
                         mask_img,
-                        uniform_mode, tiled_decode
+                        editable_mask=None,
+                        uniform_mode=uniform_mode,
+                        tiled_decode=tiled_decode,
                     )
 
         return processed_images
