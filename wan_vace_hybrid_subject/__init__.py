@@ -1,0 +1,1 @@
+from .nodes_wan_vace_hybrid_subject import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS

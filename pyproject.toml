@@ -27,6 +27,7 @@ Icon = ""
 includes = [
     "__init__.py",
     "wan_vace_caps_inpaint",
+    "wan_vace_hybrid_subject",
     "usdu_pose_tiled",
     "requirements.txt",
     "README.md",

@@ -9,6 +9,9 @@ ComfyUI node pack focused on high-control video generation and high-fidelity til
 - `Wan VACE -> Video (caps inpaint)` (`WanVaceToVideoCapsInpaint`)
   - Temporal cap-stitching node that treats start/end caps as known regions and forces middle-region generation with explicit inpaint mask semantics.
   - Built for precise clip stitching and transition reconstruction workflows.
+- `Wan VACE -> Video (hybrid subject swap)` (`WanVaceToVideoHybridSubjectSwap`)
+  - Depth-first hybrid subject-swap node for Wan VACE workflows.
+  - Combines structural control with a character reference and optional source-RGB luma/detail/background contexts for controllable illustrated/live-action blending.
 
 ## Source Provenance
 
@@ -16,6 +19,7 @@ This repository packages node code synced from the `sweettea` R2 bucket paths:
 
 - `custom_nodes/usdu_pose_tiled/*`
 - `custom_nodes/wan_vace_caps_inpaint/*`
+- `custom_nodes/wan_vace_hybrid_subject/*`
 
 ## Install (ComfyUI)
 
@@ -35,7 +39,7 @@ git clone https://github.com/tea-time-labs/sweet-tea-nodes.git
 Run from repo root:
 
 ```bash
-python3 -m py_compile __init__.py wan_vace_caps_inpaint/*.py usdu_pose_tiled/*.py
+python3 -m py_compile __init__.py wan_vace_caps_inpaint/*.py wan_vace_hybrid_subject/*.py usdu_pose_tiled/*.py
 comfy --skip-prompt --here node validate
 comfy --skip-prompt --here node pack
 ```
