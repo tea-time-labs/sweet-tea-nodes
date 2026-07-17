@@ -39,6 +39,7 @@ git clone https://github.com/tea-time-labs/sweet-tea-nodes.git
 Run from repo root:
 
 ```bash
+python3 -m unittest tests.test_wan_vace_hybrid_subject
 python3 -m py_compile __init__.py wan_vace_caps_inpaint/*.py wan_vace_hybrid_subject/*.py usdu_pose_tiled/*.py
 comfy --skip-prompt --here node validate
 comfy --skip-prompt --here node pack
@@ -48,7 +49,7 @@ comfy --skip-prompt --here node pack
 
 This repo includes two GitHub workflows:
 
-- `Validate Node Pack`: compile checks + `comfy node validate` on push and PR.
+- `Validate Node Pack`: four public hybrid-subject contracts, compile checks, and `comfy node validate` on push and PR.
 - `Release and Publish`: automatic semantic version bump from commit history, git tag creation, GitHub release creation, and Comfy Registry publish.
 
 Autoversion rules in `main` pushes:

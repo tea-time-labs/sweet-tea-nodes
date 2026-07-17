@@ -24,10 +24,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install comfy-cli
           pip install -r requirements.txt
+          pip install "torch==2.13.0+cpu" --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Verify Foundational Node Contract
+        run: |
+          python -m unittest tests.test_wan_vace_hybrid_subject
 
       - name: Compile Python Files
         run: |
-          python -m py_compile __init__.py wan_vace_caps_inpaint/*.py usdu_pose_tiled/*.py
+          python -m py_compile __init__.py wan_vace_caps_inpaint/*.py wan_vace_hybrid_subject/*.py usdu_pose_tiled/*.py
 
       - name: Validate Comfy Node
         run: |
