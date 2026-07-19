@@ -29,6 +29,7 @@ includes = [
     "wan_vace_caps_inpaint",
     "wan_vace_hybrid_subject",
     "usdu_pose_tiled",
+    "media_output",
     "requirements.txt",
     "README.md",
     "LICENSE",

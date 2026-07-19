@@ -12,6 +12,12 @@ ComfyUI node pack focused on high-control video generation and high-fidelity til
 - `Wan VACE -> Video (hybrid subject swap)` (`WanVaceToVideoHybridSubjectSwap`)
   - Depth-first hybrid subject-swap node for Wan VACE workflows.
   - Combines structural control with a character reference and optional source-RGB luma/detail/background contexts for controllable illustrated/live-action blending.
+- `Sweet Tea Preview Video` (`SweetTeaPreviewVideo`)
+  - No-save output sink for ComfyUI's native `VIDEO` type.
+  - Exposes an existing temp-backed video in place, or byte-copies an otherwise unservable source into Comfy temp, without decoding or re-encoding its video or audio streams.
+- `Sweet Tea Execution Receipt` (`SweetTeaExecutionReceipt`)
+  - No-save metadata sink for allowlisted external API execution facts.
+  - Publishes the provider, request, endpoint, operation, and optional estimated cost for Sweet Tea Studio provenance without exposing API credentials.
 
 ## Source Provenance
 
