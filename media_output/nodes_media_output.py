@@ -70,6 +70,50 @@ def _materialize_temp_source(source: str | os.PathLike[str] | io.BytesIO) -> Pat
     )
 
 
+class SweetTeaPreviewImage:
+    """Stream full-resolution IMAGE values to the API client without writing them to disk."""
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "images": ("IMAGE",),
+            },
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "preview"
+    OUTPUT_NODE = True
+    CATEGORY = "Sweet Tea/Output"
+    DESCRIPTION = (
+        "Streams full-resolution IMAGE values over ComfyUI's websocket output "
+        "transport so Sweet Tea Studio can persist them directly without a "
+        "duplicate Comfy output file."
+    )
+
+    def preview(self, images):
+        # Match ComfyUI's SaveImageWebsocket transport exactly: ProgressBar emits
+        # full-resolution binary image frames to the connected API client and does
+        # not materialize an output/temp image file.
+        from PIL import Image
+        import comfy.utils
+        import numpy as np
+
+        total = int(images.shape[0])
+        progress = comfy.utils.ProgressBar(total)
+        for index, image in enumerate(images):
+            array = 255.0 * image.cpu().numpy()
+            pil_image = Image.fromarray(np.clip(array, 0, 255).astype(np.uint8))
+            progress.update_absolute(index, total, ("PNG", pil_image, None))
+        return {}
+
+    @classmethod
+    def IS_CHANGED(cls, images):
+        import time
+
+        return time.time()
+
+
 class SweetTeaPreviewVideo:
     """Expose a native VIDEO through Comfy's temp preview contract without saving."""
 
