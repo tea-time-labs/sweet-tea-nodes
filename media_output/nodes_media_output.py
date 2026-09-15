@@ -198,8 +198,10 @@ class SweetTeaPreviewVideo:
 
 
 _VIDEO_ENCODERS = {
+    "h264": "h264",
     "h265": "libx265",
     "nvenc_h264": "h264_nvenc",
+    "av1": "libsvtav1",
     "vp9": "libvpx-vp9",
 }
 _VIDEO_CONTAINER_FORMATS = {"mp4": "mp4", "mkv": "matroska", "webm": "webm"}
@@ -225,8 +227,8 @@ def _encode_image_sequence_custom(
     container = _resolve_video_container(format_name, codec_name)
     if codec_name not in _VIDEO_ENCODERS:
         raise ValueError(f"Unsupported custom video codec: {codec_name}")
-    if container == "webm" and codec_name != "vp9":
-        raise ValueError("Custom WebM encoding currently requires VP9")
+    if container == "webm" and codec_name not in {"av1", "vp9"}:
+        raise ValueError("Custom WebM encoding requires AV1 or VP9")
 
     temp_dir = Path(folder_paths.get_temp_directory()).expanduser().resolve()
     temp_dir.mkdir(parents=True, exist_ok=True)

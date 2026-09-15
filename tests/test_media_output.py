@@ -196,3 +196,5 @@ def test_image_sequence_output_contract_covers_common_workflow_encoders(monkeypa
     assert "yuv420p10le" in required["pixel_format"][0]
     assert module._resolve_video_container("auto", "h265") == "mp4"
     assert module._resolve_video_container("auto", "vp9") == "webm"
+    assert module._VIDEO_ENCODERS["h264"] == "h264"
+    assert module._VIDEO_ENCODERS["av1"] == "libsvtav1"
