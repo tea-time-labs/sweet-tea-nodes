@@ -8,6 +8,7 @@ import os
 import re
 import shutil
 import uuid
+from fractions import Fraction
 from pathlib import Path
 
 import folder_paths
@@ -114,14 +115,62 @@ class SweetTeaPreviewImage:
         return time.time()
 
 
+def _resolve_video_container(format_name: str, codec_name: str) -> str:
+    format_name = str(format_name or "auto").strip().lower()
+    codec_name = str(codec_name or "auto").strip().lower()
+    if format_name not in {"auto", "mp4", "mkv", "webm"}:
+        raise ValueError(f"Unsupported video container: {format_name}")
+    if codec_name not in {"auto", "h264", "h265", "nvenc_h264", "av1", "vp9"}:
+        raise ValueError(f"Unsupported video codec: {codec_name}")
+    if format_name == "auto":
+        return "webm" if codec_name in {"av1", "vp9"} else "mp4"
+    if format_name == "webm" and codec_name not in {"auto", "av1", "vp9"}:
+        raise ValueError("WebM output requires AV1, VP9, or Auto codec")
+    return format_name
+
+
+def _preview_descriptor(source_path: Path) -> dict:
+    temp_dir = Path(folder_paths.get_temp_directory()).expanduser().resolve()
+    relative_path = source_path.relative_to(temp_dir)
+    subfolder = "" if relative_path.parent == Path(".") else relative_path.parent.as_posix()
+    return {
+        "ui": {
+            "images": [{"filename": relative_path.name, "subfolder": subfolder, "type": "temp"}],
+            "animated": (True,),
+        }
+    }
+
+
+def _encode_native_video_to_temp(video, format_name: str, codec_name: str, crf: float) -> Path:
+    save_to = getattr(video, "save_to", None)
+    if not callable(save_to):
+        raise TypeError("Sweet Tea video output requires a native ComfyUI VIDEO input")
+    container = _resolve_video_container(format_name, codec_name)
+    temp_dir = Path(folder_paths.get_temp_directory()).expanduser().resolve()
+    temp_dir.mkdir(parents=True, exist_ok=True)
+    target = temp_dir / f"sweet_tea_preview_{uuid.uuid4().hex}.{container}"
+    save_to(
+        str(target),
+        format=str(format_name or "auto").strip().lower(),
+        codec=str(codec_name or "auto").strip().lower(),
+        crf=None if float(crf) < 0 else float(crf),
+    )
+    return target
+
+
 class SweetTeaPreviewVideo:
-    """Expose a native VIDEO through Comfy's temp preview contract without saving."""
+    """Expose a native VIDEO through Comfy's temp preview contract without permanent saving."""
 
     @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
                 "video": ("VIDEO",),
+            },
+            "optional": {
+                "format": (["auto", "mp4", "mkv", "webm"], {"default": "auto"}),
+                "codec": (["auto", "h264", "av1"], {"default": "auto"}),
+                "crf": ("FLOAT", {"default": -1.0, "min": -1.0, "max": 63.0, "step": 1.0}),
             },
         }
 
@@ -130,34 +179,192 @@ class SweetTeaPreviewVideo:
     OUTPUT_NODE = True
     CATEGORY = "Sweet Tea/Output"
     DESCRIPTION = (
-        "Publishes a native VIDEO as a temporary preview. Existing temp-backed "
-        "videos are exposed in place and are never decoded or re-encoded."
+        "Publishes a native VIDEO as a temporary preview without a permanent Comfy output file. "
+        "Auto/Auto preserves an existing encoded stream; explicit container or codec settings "
+        "materialize the requested output in Comfy's temp directory. CRF -1 uses the encoder default."
     )
 
-    def preview(self, video):
-        get_stream_source = getattr(video, "get_stream_source", None)
-        if not callable(get_stream_source):
-            raise TypeError("SweetTeaPreviewVideo requires a native ComfyUI VIDEO input")
+    def preview(self, video, format="auto", codec="auto", crf=-1.0):
+        format_name = str(format or "auto").strip().lower()
+        codec_name = str(codec or "auto").strip().lower()
+        if format_name == "auto" and codec_name == "auto" and float(crf) < 0:
+            get_stream_source = getattr(video, "get_stream_source", None)
+            if not callable(get_stream_source):
+                raise TypeError("SweetTeaPreviewVideo requires a native ComfyUI VIDEO input")
+            source_path = _materialize_temp_source(get_stream_source())
+        else:
+            source_path = _encode_native_video_to_temp(video, format_name, codec_name, crf)
+        return _preview_descriptor(source_path)
 
-        source_path = _materialize_temp_source(get_stream_source())
-        temp_dir = Path(folder_paths.get_temp_directory()).expanduser().resolve()
-        relative_path = source_path.relative_to(temp_dir)
-        subfolder = "" if relative_path.parent == Path(".") else relative_path.parent.as_posix()
 
+_VIDEO_ENCODERS = {
+    "h265": "libx265",
+    "nvenc_h264": "h264_nvenc",
+    "vp9": "libvpx-vp9",
+}
+_VIDEO_CONTAINER_FORMATS = {"mp4": "mp4", "mkv": "matroska", "webm": "webm"}
+
+
+def _encode_image_sequence_custom(
+    images,
+    frame_rate: float,
+    format_name: str,
+    codec_name: str,
+    crf: float,
+    bit_depth: int,
+    audio=None,
+    pixel_format: str = "auto",
+    bitrate_mbps: float = 0.0,
+) -> Path:
+    try:
+        import av
+        import numpy as np
+    except ImportError as exc:
+        raise RuntimeError("Sweet Tea video encoding requires ComfyUI's PyAV and NumPy runtime") from exc
+
+    container = _resolve_video_container(format_name, codec_name)
+    if codec_name not in _VIDEO_ENCODERS:
+        raise ValueError(f"Unsupported custom video codec: {codec_name}")
+    if container == "webm" and codec_name != "vp9":
+        raise ValueError("Custom WebM encoding currently requires VP9")
+
+    temp_dir = Path(folder_paths.get_temp_directory()).expanduser().resolve()
+    temp_dir.mkdir(parents=True, exist_ok=True)
+    target = temp_dir / f"sweet_tea_preview_{uuid.uuid4().hex}.{container}"
+    fps = Fraction(round(float(frame_rate) * 1000), 1000)
+    pix_fmt = str(pixel_format or "auto").strip().lower()
+    if pix_fmt == "auto":
+        pix_fmt = "yuv420p10le" if int(bit_depth) >= 10 else "yuv420p"
+
+    with av.open(str(target), mode="w", format=_VIDEO_CONTAINER_FORMATS[container]) as output:
+        video_stream = output.add_stream(_VIDEO_ENCODERS[codec_name], rate=fps)
+        video_stream.width = int(images.shape[2])
+        video_stream.height = int(images.shape[1])
+        video_stream.pix_fmt = pix_fmt
+        options = {}
+        if float(crf) >= 0:
+            options["crf"] = str(float(crf))
+        if options:
+            video_stream.options = options
+        if float(bitrate_mbps) > 0:
+            video_stream.bit_rate = int(float(bitrate_mbps) * 1_000_000)
+
+        for tensor in images:
+            if int(bit_depth) >= 10:
+                array = (tensor[..., :3].float() * 65535).clamp(0, 65535).cpu().numpy().astype(np.uint16)
+                frame = av.VideoFrame.from_ndarray(array, format="rgb48le")
+            else:
+                array = (tensor[..., :3] * 255).clamp(0, 255).byte().cpu().numpy()
+                frame = av.VideoFrame.from_ndarray(array, format="rgb24")
+            frame = frame.reformat(format=pix_fmt)
+            output.mux(video_stream.encode(frame))
+        output.mux(video_stream.encode(None))
+
+        if audio:
+            sample_rate = int(audio["sample_rate"])
+            waveform = audio["waveform"][0, :, : math.ceil((sample_rate / fps) * int(images.shape[0]))]
+            layout = {1: "mono", 2: "stereo", 6: "5.1"}.get(int(waveform.shape[0]), "stereo")
+            target_rate = 48000 if container == "webm" else sample_rate
+            audio_codec = "libopus" if container == "webm" else "aac"
+            audio_stream = output.add_stream(audio_codec, rate=target_rate, layout=layout)
+            resampler = None
+            if target_rate != sample_rate:
+                resampler = av.audio.resampler.AudioResampler(format="fltp", layout=layout, rate=target_rate)
+            audio_frame = av.AudioFrame.from_ndarray(
+                waveform.float().cpu().contiguous().numpy(), format="fltp", layout=layout
+            )
+            audio_frame.sample_rate = sample_rate
+            audio_frame.pts = 0
+            frames = [audio_frame] if resampler is None else resampler.resample(audio_frame)
+            for frame in frames:
+                output.mux(audio_stream.encode(frame))
+            if resampler is not None:
+                for frame in resampler.resample(None):
+                    output.mux(audio_stream.encode(frame))
+            output.mux(audio_stream.encode(None))
+
+    return target
+
+
+class SweetTeaPreviewVideoFromImages:
+    """Encode IMAGE frames once into a temporary video and publish it to Sweet Tea Studio."""
+
+    @classmethod
+    def INPUT_TYPES(cls):
         return {
-            "ui": {
-                # Comfy's public PreviewVideo UI output currently serializes video
-                # descriptors under `images` and marks the result animated.
-                "images": [
-                    {
-                        "filename": relative_path.name,
-                        "subfolder": subfolder,
-                        "type": "temp",
-                    }
-                ],
-                "animated": (True,),
-            }
+            "required": {
+                "images": ("IMAGE",),
+                "frame_rate": ("FLOAT", {"default": 24.0, "min": 1.0, "max": 120.0, "step": 1.0}),
+                "format": (["auto", "mp4", "mkv", "webm"], {"default": "mp4"}),
+                "codec": (["auto", "h264", "h265", "nvenc_h264", "av1", "vp9"], {"default": "auto"}),
+                "crf": ("FLOAT", {"default": -1.0, "min": -1.0, "max": 100.0, "step": 1.0}),
+                "bitrate_mbps": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 10000.0, "step": 0.1}),
+                "pixel_format": (["auto", "yuv420p", "yuv420p10le", "yuv444p", "yuv444p10le"], {"default": "auto"}),
+                "bit_depth": (["auto", "8", "10"], {"default": "auto"}),
+                "color_space": (["sRGB", "HDR", "HDR PQ"], {"default": "sRGB"}),
+            },
+            "optional": {"audio": ("AUDIO",)},
         }
+
+    RETURN_TYPES = ()
+    FUNCTION = "preview"
+    OUTPUT_NODE = True
+    CATEGORY = "Sweet Tea/Output"
+    DESCRIPTION = (
+        "Encodes IMAGE frames into one temporary video for Sweet Tea Studio without writing a duplicate "
+        "Comfy output file. Frame rate is required because IMAGE batches do not carry timing. Container, "
+        "codec, quality, bit depth, color space, and optional audio are preserved in the temporary output."
+    )
+
+    def preview(
+        self,
+        images,
+        frame_rate=24.0,
+        format="mp4",
+        codec="auto",
+        crf=-1.0,
+        bitrate_mbps=0.0,
+        pixel_format="auto",
+        bit_depth="auto",
+        color_space="sRGB",
+        audio=None,
+    ):
+        try:
+            from comfy_api.latest import InputImpl, Types
+        except ImportError as exc:
+            raise RuntimeError(
+                "SweetTeaPreviewVideoFromImages requires a ComfyUI build with native VIDEO support"
+            ) from exc
+
+        fps = float(frame_rate)
+        if not math.isfinite(fps) or fps <= 0:
+            raise ValueError("frame_rate must be a positive finite number")
+        depth = (
+            10
+            if bit_depth == "auto" and color_space in {"HDR", "HDR PQ"}
+            else 8
+            if bit_depth == "auto"
+            else int(bit_depth)
+        )
+        codec_name = str(codec or "auto").strip().lower()
+        format_name = str(format or "mp4").strip().lower()
+        pixel_format_name = str(pixel_format or "auto").strip().lower()
+        use_native_encoder = codec_name in {"auto", "h264", "av1"} and pixel_format_name == "auto" and float(bitrate_mbps) <= 0
+        if use_native_encoder:
+            components = Types.VideoComponents(
+                images=images,
+                audio=audio,
+                frame_rate=Fraction(round(fps * 1000), 1000),
+            )
+            video = InputImpl.VideoFromComponents(components, bit_depth=depth, color_space=color_space)
+            source_path = _encode_native_video_to_temp(video, format_name, codec_name, crf)
+        else:
+            if color_space != "sRGB":
+                raise ValueError("Custom H.265/NVENC/VP9 output currently supports sRGB only")
+            source_path = _encode_image_sequence_custom(
+                images, fps, format_name, codec_name, crf, depth, audio, pixel_format_name, bitrate_mbps
+            )
+        return _preview_descriptor(source_path)
 
 
 class SweetTeaExecutionReceipt:
