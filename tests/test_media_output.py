@@ -198,3 +198,11 @@ def test_image_sequence_output_contract_covers_common_workflow_encoders(monkeypa
     assert module._resolve_video_container("auto", "vp9") == "webm"
     assert module._VIDEO_ENCODERS["h264"] == "h264"
     assert module._VIDEO_ENCODERS["av1"] == "libsvtav1"
+
+
+def test_image_sequence_output_contract_exposes_infinite_loop_gif(monkeypatch, tmp_path):
+    module = _load_module(monkeypatch, tmp_path / "temp")
+    required = module.SweetTeaPreviewVideoFromImages.INPUT_TYPES()["required"]
+    assert "gif" in required["format"][0]
+    assert "gif" in required["codec"][0]
+    assert module._resolve_video_container("gif", "auto") == "gif"

@@ -118,12 +118,14 @@ class SweetTeaPreviewImage:
 def _resolve_video_container(format_name: str, codec_name: str) -> str:
     format_name = str(format_name or "auto").strip().lower()
     codec_name = str(codec_name or "auto").strip().lower()
-    if format_name not in {"auto", "mp4", "mkv", "webm"}:
+    if format_name not in {"auto", "mp4", "mkv", "webm", "gif"}:
         raise ValueError(f"Unsupported video container: {format_name}")
-    if codec_name not in {"auto", "h264", "h265", "nvenc_h264", "av1", "vp9"}:
+    if codec_name not in {"auto", "h264", "h265", "nvenc_h264", "av1", "vp9", "gif"}:
         raise ValueError(f"Unsupported video codec: {codec_name}")
     if format_name == "auto":
-        return "webm" if codec_name in {"av1", "vp9"} else "mp4"
+        return "gif" if codec_name == "gif" else "webm" if codec_name in {"av1", "vp9"} else "mp4"
+    if format_name == "gif" and codec_name not in {"auto", "gif"}:
+        raise ValueError("GIF output requires GIF or Auto codec")
     if format_name == "webm" and codec_name not in {"auto", "av1", "vp9"}:
         raise ValueError("WebM output requires AV1, VP9, or Auto codec")
     return format_name
@@ -288,6 +290,27 @@ def _encode_image_sequence_custom(
     return target
 
 
+def _encode_image_sequence_gif(images, frame_rate: float, audio=None) -> Path:
+    if audio is not None:
+        raise ValueError("GIF output does not support audio")
+    try:
+        from PIL import Image
+    except ImportError as exc:
+        raise RuntimeError("GIF output requires Pillow, which is included with ComfyUI") from exc
+    temp_dir = Path(folder_paths.get_temp_directory()).expanduser().resolve()
+    temp_dir.mkdir(parents=True, exist_ok=True)
+    target = temp_dir / f"sweet_tea_preview_{uuid.uuid4().hex}.gif"
+    frames = []
+    for tensor in images:
+        array = (tensor[..., :3] * 255).clamp(0, 255).byte().cpu().numpy()
+        frames.append(Image.fromarray(array, mode="RGB"))
+    if not frames:
+        raise ValueError("GIF output requires at least one image frame")
+    duration_ms = max(1, round(1000.0 / float(frame_rate)))
+    frames[0].save(target, save_all=True, append_images=frames[1:], duration=duration_ms, loop=0, disposal=2)
+    return target
+
+
 class SweetTeaPreviewVideoFromImages:
     """Encode IMAGE frames once into a temporary video and publish it to Sweet Tea Studio."""
 
@@ -297,8 +320,8 @@ class SweetTeaPreviewVideoFromImages:
             "required": {
                 "images": ("IMAGE",),
                 "frame_rate": ("FLOAT", {"default": 24.0, "min": 1.0, "max": 120.0, "step": 1.0}),
-                "format": (["auto", "mp4", "mkv", "webm"], {"default": "mp4"}),
-                "codec": (["auto", "h264", "h265", "nvenc_h264", "av1", "vp9"], {"default": "auto"}),
+                "format": (["auto", "mp4", "mkv", "webm", "gif"], {"default": "mp4"}),
+                "codec": (["auto", "h264", "h265", "nvenc_h264", "av1", "vp9", "gif"], {"default": "auto"}),
                 "crf": ("FLOAT", {"default": -1.0, "min": -1.0, "max": 100.0, "step": 1.0}),
                 "bitrate_mbps": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 10000.0, "step": 0.1}),
                 "pixel_format": (["auto", "yuv420p", "yuv420p10le", "yuv444p", "yuv444p10le"], {"default": "auto"}),
@@ -351,6 +374,9 @@ class SweetTeaPreviewVideoFromImages:
         codec_name = str(codec or "auto").strip().lower()
         format_name = str(format or "mp4").strip().lower()
         pixel_format_name = str(pixel_format or "auto").strip().lower()
+        if format_name == "gif" or codec_name == "gif":
+            source_path = _encode_image_sequence_gif(images, fps, audio)
+            return _preview_descriptor(source_path)
         use_native_encoder = codec_name in {"auto", "h264", "av1"} and pixel_format_name == "auto" and float(bitrate_mbps) <= 0
         if use_native_encoder:
             components = Types.VideoComponents(
