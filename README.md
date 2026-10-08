@@ -72,3 +72,5 @@ Required secret for registry publish:
 ## Notes
 
 - `WanVaceToVideoCapsInpaint` supports variable lengths and cap sizes.
+
+SweetTeaPreviewImage supports the negotiated `sweet_tea_output_metadata_v1` client feature. Identified frames include prompt, node, list invocation, item index/count and a stable artifact ID. Older clients continue to receive the standard ComfyUI image preview transport. No permanent Comfy image copy is created.

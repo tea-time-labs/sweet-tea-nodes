@@ -71,6 +71,32 @@ def _materialize_temp_source(source: str | os.PathLike[str] | io.BytesIO) -> Pat
     )
 
 
+def _identified_image_transport(unique_id):
+    """Use the explicit result protocol only when the Studio client opts in."""
+    try:
+        from server import PromptServer
+        from protocol import BinaryEventTypes
+        from comfy_api import feature_flags
+        server = PromptServer.instance
+        if not feature_flags.supports_feature(server.sockets_metadata, server.client_id,
+                                               "sweet_tea_output_metadata_v1"):
+            return None
+        try:
+            from comfy_execution.utils import get_executing_context
+            context = get_executing_context()
+        except ImportError:
+            context = None
+        prompt_id = getattr(context, "prompt_id", None) or getattr(server, "last_prompt_id", None)
+        node_id = getattr(context, "node_id", None) or unique_id or getattr(server, "last_node_id", None)
+        if prompt_id is None or node_id is None:
+            return None
+        return server, BinaryEventTypes.PREVIEW_IMAGE_WITH_METADATA, {
+            "prompt_id": str(prompt_id), "node_id": str(node_id),
+            "list_index": getattr(context, "list_index", None) or 0, "output_key": "images"}
+    except (ImportError, AttributeError):
+        return None
+
+
 class SweetTeaPreviewImage:
     """Stream full-resolution IMAGE values to the API client without writing them to disk."""
 
@@ -80,6 +106,7 @@ class SweetTeaPreviewImage:
             "required": {
                 "images": ("IMAGE",),
             },
+            "hidden": {"unique_id": "UNIQUE_ID"},
         }
 
     RETURN_TYPES = ()
@@ -92,7 +119,7 @@ class SweetTeaPreviewImage:
         "duplicate Comfy output file."
     )
 
-    def preview(self, images):
+    def preview(self, images, unique_id=None):
         # Match ComfyUI's SaveImageWebsocket transport exactly: ProgressBar emits
         # full-resolution binary image frames to the connected API client and does
         # not materialize an output/temp image file.
@@ -102,14 +129,23 @@ class SweetTeaPreviewImage:
 
         total = int(images.shape[0])
         progress = comfy.utils.ProgressBar(total)
+        identified_transport = _identified_image_transport(unique_id)
         for index, image in enumerate(images):
             array = 255.0 * image.cpu().numpy()
             pil_image = Image.fromarray(np.clip(array, 0, 255).astype(np.uint8))
-            progress.update_absolute(index, total, ("PNG", pil_image, None))
+            preview = ("PNG", pil_image, None)
+            if identified_transport:
+                server, event_type, context = identified_transport
+                progress.update_absolute(index + 1, total)
+                metadata = {**context, "item_index": index, "item_count": total,
+                            "artifact_id": f"{context['prompt_id']}:{context['node_id']}:{context['list_index']}:{index}"}
+                server.send_sync(event_type, (preview, metadata), server.client_id)
+            else:
+                progress.update_absolute(index + 1, total, preview)
         return {}
 
     @classmethod
-    def IS_CHANGED(cls, images):
+    def IS_CHANGED(cls, images, unique_id=None):
         import time
 
         return time.time()

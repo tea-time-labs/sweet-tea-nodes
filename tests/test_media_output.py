@@ -206,3 +206,39 @@ def test_image_sequence_output_contract_exposes_infinite_loop_gif(monkeypatch, t
     assert "gif" in required["format"][0]
     assert "gif" in required["codec"][0]
     assert module._resolve_video_container("gif", "auto") == "gif"
+
+
+def test_identified_image_batches_use_stable_artifacts_and_legacy_fallback(monkeypatch, tmp_path):
+    import numpy as np
+    module = _load_module(monkeypatch, tmp_path)
+    calls, progress_calls = [], []
+    instance = types.SimpleNamespace(client_id="client", sockets_metadata={},
+        last_prompt_id="run", last_node_id="node", send_sync=lambda *args: calls.append(args))
+    server = types.ModuleType("server"); server.PromptServer = types.SimpleNamespace(instance=instance)
+    protocol = types.ModuleType("protocol"); protocol.BinaryEventTypes = types.SimpleNamespace(PREVIEW_IMAGE_WITH_METADATA=4)
+    flags = types.SimpleNamespace(supports_feature=lambda *_: True)
+    comfy_api = types.ModuleType("comfy_api"); comfy_api.feature_flags = flags
+    comfy = types.ModuleType("comfy")
+    utils = types.ModuleType("comfy.utils")
+    class Progress:
+        def __init__(self, total): pass
+        def update_absolute(self, *args): progress_calls.append(args)
+    utils.ProgressBar = Progress; comfy.utils = utils
+    for name, value in [("server",server),("protocol",protocol),("comfy_api",comfy_api),("comfy",comfy),("comfy.utils",utils)]:
+        monkeypatch.setitem(sys.modules,name,value)
+    class Tensor:
+        def cpu(self): return self
+        def numpy(self): return np.zeros((8,8,3))
+    class Images:
+        shape = (2,8,8,3)
+        def __iter__(self): return iter([Tensor(),Tensor()])
+    module.SweetTeaPreviewImage().preview(Images(), unique_id="node")
+    assert len(calls) == 2
+    assert [call[1][1]["artifact_id"] for call in calls] == ["run:node:0:0","run:node:0:1"]
+    assert all(call[1][1]["item_count"] == 2 and call[2] == "client" for call in calls)
+    assert progress_calls == [(1,2),(2,2)]
+    flags.supports_feature = lambda *_: False
+    calls.clear(); progress_calls.clear()
+    module.SweetTeaPreviewImage().preview(Images())
+    assert calls == []
+    assert len(progress_calls) == 2 and all(len(call) == 3 for call in progress_calls)
