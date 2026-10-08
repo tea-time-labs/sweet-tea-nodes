@@ -60,4 +60,11 @@ NODE_DISPLAY_NAME_MAPPINGS.update(WAN_CAPS_NODE_DISPLAY_NAME_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(WAN_HYBRID_NODE_DISPLAY_NAME_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(MEDIA_OUTPUT_NODE_DISPLAY_NAME_MAPPINGS)
 
+if __package__:
+    from .environment_metadata import register_environment_route
+else:
+    from environment_metadata import register_environment_route
+
+register_environment_route()
+
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]
