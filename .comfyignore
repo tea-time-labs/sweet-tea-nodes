@@ -1,0 +1,7 @@
+# Registry ZIP contains runtime code only; do not scan development fixtures.
+/.github/
+/tests/
+/docs/
+/AGENTS.md
+/.gitignore
+/.comfyignore

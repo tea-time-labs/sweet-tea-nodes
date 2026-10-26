@@ -1,1 +1,2 @@
 tqdm>=4.66.0
+nvidia-ml-py>=12.0.0

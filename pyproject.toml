@@ -13,6 +13,7 @@ keywords = [
 ]
 dependencies = [
     "tqdm>=4.66.0",
+    "nvidia-ml-py>=12.0.0",
 ]
 
 [project.urls]
@@ -24,14 +25,3 @@ Documentation = "https://github.com/tea-time-labs/sweet-tea-nodes#readme"
 PublisherId = "jkotieno"
 DisplayName = "Sweet Tea Nodes"
 Icon = ""
-includes = [
-    "__init__.py",
-    "environment_metadata.py",
-    "wan_vace_caps_inpaint",
-    "wan_vace_hybrid_subject",
-    "usdu_pose_tiled",
-    "media_output",
-    "requirements.txt",
-    "README.md",
-    "LICENSE",
-]

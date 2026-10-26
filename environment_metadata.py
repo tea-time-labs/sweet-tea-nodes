@@ -6,7 +6,6 @@ import configparser
 import inspect
 import platform
 import re
-import subprocess
 import time
 try:
     import tomllib
@@ -68,6 +67,23 @@ def git_identity(root: Path) -> tuple[str | None, str | None]:
         return None, None
 
 
+
+def _nvidia_driver_version() -> str | None:
+    """Read the installed NVIDIA driver through NVML, without spawning a process."""
+    try:
+        import pynvml
+
+        pynvml.nvmlInit()
+        try:
+            version = pynvml.nvmlSystemGetDriverVersion()
+            return version.decode() if isinstance(version, bytes) else str(version)
+        finally:
+            pynvml.nvmlShutdown()
+    except Exception:
+        # Missing driver/library or unsupported platform: metadata is best effort.
+        return None
+
+
 def collect_environment() -> dict:
     import folder_paths
     import nodes
@@ -109,18 +125,12 @@ def collect_environment() -> dict:
         elif not matches and source.is_relative_to(root.resolve()) and not any(source.is_relative_to(Path(p).resolve()) for p in folder_paths.get_folder_paths("custom_nodes")):
             core_classes.append(class_name)
     devices = []
-    drivers = {}
-    try:
-        output = subprocess.run(["nvidia-smi", "--query-gpu=index,driver_version", "--format=csv,noheader,nounits"],
-                                capture_output=True, text=True, timeout=1, check=True).stdout
-        drivers = {int(index.strip()): driver.strip() for index, driver in (line.split(",", 1) for line in output.splitlines())}
-    except (OSError, subprocess.SubprocessError, ValueError):
-        pass
     if torch.cuda.is_available():
+        driver = _nvidia_driver_version()
         for index in range(torch.cuda.device_count()):
             properties = torch.cuda.get_device_properties(index)
             devices.append({"name": properties.name, "type": "cuda", "index": index,
-                            "vram_total": properties.total_memory, "driver": drivers.get(index)})
+                            "vram_total": properties.total_memory, "driver": driver})
     else:
         devices.append({"name": platform.processor() or "CPU", "type": "cpu", "index": None,
                         "vram_total": None, "driver": None})

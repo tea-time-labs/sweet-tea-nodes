@@ -28,7 +28,7 @@ jobs:
 
       - name: Verify Foundational Node Contracts
         run: |
-          python -m unittest tests.test_wan_vace_hybrid_subject
+          python -m unittest tests.test_wan_vace_hybrid_subject tests.test_nvml_driver
           python -m pytest -q tests/test_media_output.py tests/test_environment_metadata.py
 
       - name: Compile Python Files
