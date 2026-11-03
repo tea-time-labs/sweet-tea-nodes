@@ -15,3 +15,6 @@ Public ComfyUI node implementations supporting Sweet Tea workflows. README.md an
 Use a small set of tests covering real node usage and consequential failures. Avoid private implementation locks, duplicated checks and automatic test expansion. Complete scoped work with concise evidence. Documentation changes do not require a node release.
 
 For internal Tea Time Labs work, the optional sibling `tea-time-labs-management/ORIENTATION.md` and recent `JOURNEY.md` supply business intent and founder preferences; also available at https://github.com/tea-time-labs/tea-time-labs-management to authorized agents. That private context is not required for public contributions. Internal consequential decisions go in the shared journey rather than a repo-local diary. Keep useful memory capture; current instructions supersede historical notes.
+
+## Change workflow
+Use an issue for a substantive outcome and a PR for implementation. Give the observed behavior, acceptance example, exact revision/check evidence and remaining uncertainty in the templates; three short lines per answer. Use a branch/worktree, preserve other work and checkpoint the next action in the issue at handoff. A merge does not establish registry publication or installed ComfyUI behavior. Public contributions need no private management context.
