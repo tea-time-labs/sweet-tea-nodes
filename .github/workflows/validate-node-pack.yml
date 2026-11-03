@@ -1,25 +1,45 @@
 name: Validate Node Pack
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
   workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: node-check-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Select source changes
+        id: scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          if [[ -z "$BASE_SHA" ]] || git diff --name-only "$BASE_SHA" HEAD | grep -Eq '(\.py$|requirements|pyproject|\.github/workflows/)'; then
+            echo "source=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "source=false" >> "$GITHUB_OUTPUT"
+            echo "Documentation change: no Torch install or node build." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Setup Python
+        if: steps.scope.outputs.source == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Install Dependencies
+        if: steps.scope.outputs.source == 'true'
         run: |
           python -m pip install --upgrade pip
           pip install comfy-cli pytest numpy Pillow
@@ -27,14 +47,17 @@ jobs:
           pip install "torch==2.13.0+cpu" --index-url https://download.pytorch.org/whl/cpu
 
       - name: Verify Foundational Node Contracts
+        if: steps.scope.outputs.source == 'true'
         run: |
           python -m unittest tests.test_wan_vace_hybrid_subject tests.test_nvml_driver
           python -m pytest -q tests/test_media_output.py tests/test_environment_metadata.py
 
       - name: Compile Python Files
+        if: steps.scope.outputs.source == 'true'
         run: |
           python -m py_compile __init__.py environment_metadata.py media_output/*.py wan_vace_caps_inpaint/*.py wan_vace_hybrid_subject/*.py usdu_pose_tiled/*.py
 
       - name: Validate Comfy Node
+        if: steps.scope.outputs.source == 'true'
         run: |
           comfy --skip-prompt --here node validate
