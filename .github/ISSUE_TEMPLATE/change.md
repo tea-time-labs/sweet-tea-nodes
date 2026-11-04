@@ -12,7 +12,8 @@ For new work, describe the missing capability and who needs it.
 
 ### 2. What observation will let us close this?
 Give a repeatable acceptance example and expected result.
-State the authorized endpoint: investigation / PR / main / delivered and verified.
+Default: bugs delivered and verified on stable; features beta, then stable after acceptance.
+Record an explicit request limit or hold only when one actually exists.
 Name any material scope boundary or dependency.
 
 ### 3. What do we actually know?
