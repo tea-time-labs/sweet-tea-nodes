@@ -8,7 +8,7 @@ Assess the requested functionality and relevant facts, not inferred motives or h
 
 ## Repository guidance
 
-Do not run CI or deploy unless Jeff explicitly requests it.
+Agents own the technical route, checks, Ready/Done and routine delivery. Bugs default to delivered and verified on stable; features to beta, then stable after affected journeys pass. Honor explicit request limits, release holds and existing spending caps. Do not ask Jeff to choose executors, runners, versions or release methods.
 
 Public ComfyUI node implementations supporting Sweet Tea workflows. README.md and pyproject.toml describe installation and packaging; `.github/workflows/validate-node-pack.yml` and `release-and-publish.yml` describe validation and publication. Preserve public node identifiers, inputs/outputs, media delivery and supported compatibility.
 
@@ -18,3 +18,5 @@ For internal Tea Time Labs work, the optional sibling `tea-time-labs-management/
 
 ## Change workflow
 Use an issue for a substantive outcome and a PR for implementation. Give the observed behavior, acceptance example, exact revision/check evidence and remaining uncertainty in the templates; three short lines per answer. Use a branch/worktree, preserve other work and checkpoint the next action in the issue at handoff. A merge does not establish registry publication or installed ComfyUI behavior. Public contributions need no private management context.
+
+The receiving agent captures substantive requests. The implementing agent sets Ready and Done from testable scope and observed acceptance. Existing hourly incident and daily open-work tasks pick up recorded issues under the shared guide; they do not guarantee discovery of every chat. Claim the actual executing task/session before acting, reuse active runs and leave a durable next action. S0 restoration does not wait for a technical-choice permission step.

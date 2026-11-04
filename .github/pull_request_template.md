@@ -17,5 +17,5 @@ Material untested boundary and reason:
 Name a concrete failure case; explain how you challenged it and what remains unknown.
 
 ### 5. Where does delivery stand?
-Endpoint authorized; stage actually reached; candidate/deployment links; audience/channel.
+Stage actually reached; candidate/deployment links; audience/channel; next delivery action.
 State any compatibility, data, recovery or spending consequence that affects delivery.
