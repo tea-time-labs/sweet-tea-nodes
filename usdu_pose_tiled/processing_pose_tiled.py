@@ -257,6 +257,8 @@ def process_images_pose_tiled(
     )
 
     if can_passthrough:
+        from .krea2_control import prepare_tile_model
+        model = prepare_tile_model(model, vae, crop_region0, init_image.size, init_image.size)
         # No cropping / resizing / compositing. Just run a full-frame img2img pass.
         tiles_for_model = [img.convert("RGB") for img in init_images]
         bhwc = _pil_list_to_bhwc(tiles_for_model)
@@ -401,6 +403,9 @@ def process_images_pose_tiled(
     # 5. Encode -> sample -> decode
     # -------------------------------------------------------------------------
     bhwc = _pil_list_to_bhwc(tiles_for_model)  # [B, latent_h, latent_w, C] float32 [0,1]
+
+    from .krea2_control import prepare_tile_model
+    model = prepare_tile_model(model, vae, crop_region1, init_image.size, latent_size)
 
     with torch.inference_mode():
         # Encode tile(s) to latent
