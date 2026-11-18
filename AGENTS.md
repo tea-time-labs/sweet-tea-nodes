@@ -8,7 +8,7 @@ Assess the requested functionality and relevant facts, not inferred motives or h
 
 ## Repository guidance
 
-Agents own the technical route, checks, Ready/Done and routine delivery. Bugs default to delivered and verified on stable; features to beta, then stable after affected journeys pass. Honor explicit request limits, release holds and existing spending caps. Do not ask Jeff to choose executors, runners, versions or release methods.
+Agents own the technical route, checks, Ready/Done and routine delivery. Check the issue’s acceptance and delivery audience. The release owner groups independently proven changes. Honor explicit request limits, release holds and existing spending caps. Do not ask Jeff to choose executors, runners, versions or release methods.
 
 Public ComfyUI node implementations supporting Sweet Tea workflows. README.md and pyproject.toml describe installation and packaging; `.github/workflows/validate-node-pack.yml` and `release-and-publish.yml` describe validation and publication. Preserve public node identifiers, inputs/outputs, media delivery and supported compatibility.
 
@@ -17,6 +17,7 @@ Use a small set of tests covering real node usage and consequential failures. Av
 For internal Tea Time Labs work, the optional sibling `tea-time-labs-management/ORIENTATION.md` and recent `JOURNEY.md` supply business intent and founder preferences; also available at https://github.com/tea-time-labs/tea-time-labs-management to authorized agents. That private context is not required for public contributions. Internal consequential decisions go in the shared journey rather than a repo-local diary. Keep useful memory capture; current instructions supersede historical notes.
 
 ## Change workflow
-Use an issue for a substantive outcome and a PR for implementation. Give the observed behavior, acceptance example, exact revision/check evidence and remaining uncertainty in the templates; three short lines per answer. Use a branch/worktree, preserve other work and checkpoint the next action in the issue at handoff. A merge does not establish registry publication or installed ComfyUI behavior. Public contributions need no private management context.
 
-The receiving agent captures substantive requests. The implementing agent sets Ready and Done from testable scope and observed acceptance. Existing hourly incident and daily open-work tasks pick up recorded issues under the shared guide; they do not guarantee discovery of every chat. Claim the actual executing task/session before acting, reuse active runs and leave a durable next action. S0 restoration does not wait for a technical-choice permission step.
+One engineer owns one observable outcome through diagnosis, fix, affected behavior proof, independent review and merge. Reuse the owning issue. Record a handoff only when ownership changes or progress stops. Keep user-facing delivery visible until the release owner records the exact build or deployment and its acceptance. Internal changes finish when they work at their actual point of use.
+
+Use the issue and PR templates. Public contributors can use the GitHub PR form. For a release, dispatch Validate Node Pack on main, then dispatch Release And Publish at that same revision after it passes.

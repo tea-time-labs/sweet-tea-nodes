@@ -1,24 +1,12 @@
 ---
 name: Change
-about: Describe an observable outcome and how we will verify it.
+about: One observable outcome, its owner and how to tell it works.
 ---
 
-<!-- Maximum three short lines/bullets per answer; link evidence. -->
-Bug clock (bugs only): S0/S1/S2 | first reported (UTC): | target (UTC):
-
-### 1. What happens now, and what must happen instead?
-Give the exact action/input and observed result; version/environment and evidence.
-For new work, describe the missing capability and who needs it.
-
-### 2. What observation will let us close this?
-Give a repeatable acceptance example and expected result.
-Default: bugs delivered and verified on stable; features beta, then stable after acceptance.
-Record an explicit request limit or hold only when one actually exists.
-Name any material scope boundary or dependency.
-
-### 3. What do we actually know?
-Separate observations from the suspected cause. Link earlier attempts.
-If the cause is unknown, name the next check that could distinguish explanations.
-
-### 4. Who is carrying this, and what happens next?
-Current agent task/session link; branch/PR when available; next action or blocker.
+Observed / wanted:
+Acceptance example:
+Scope and adjacent work to leave alone:
+Owner / existing issue or attempt:
+Delivery audience or hold:
+<!-- Bugs only. Keep the earliest report, even on reopening. -->
+Bug clock (bugs only): severity | first reported (UTC):

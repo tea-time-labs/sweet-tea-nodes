@@ -1,17 +1,11 @@
 name: Release And Publish
 
 on:
-  workflow_run:
-    workflows:
-      - Validate Node Pack
-    types:
-      - completed
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: release-and-publish-main
@@ -19,40 +13,25 @@ concurrency:
 
 jobs:
   release:
-    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.event == 'push' && !startsWith(github.event.workflow_run.head_commit.message, 'chore(release):')) }}
+    if: github.ref == 'refs/heads/main'
     runs-on: codebuild-st-nodes-ci-${{ github.run_id }}-${{ github.run_attempt }} buildspec-override:true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
+          ref: ${{ github.sha }}
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install Validation Dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install comfy-cli
-          pip install -r requirements.txt
-
-      - name: Resolve Target SHA
-        id: target_sha
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_run" ]; then
-            echo "value=${{ github.event.workflow_run.head_sha }}" >> "$GITHUB_OUTPUT"
-          else
-            echo "value=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Enforce Same-Commit Validation Gate
         id: validation_gate
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TARGET_SHA: ${{ steps.target_sha.outputs.value }}
+          TARGET_SHA: ${{ github.sha }}
           REPO: ${{ github.repository }}
         run: |
           python - <<'PY'
@@ -67,7 +46,7 @@ jobs:
           output_file = os.environ["GITHUB_OUTPUT"]
 
           qs = urllib.parse.urlencode(
-              {"head_sha": target_sha, "event": "push", "per_page": 20}
+              {"head_sha": target_sha, "branch": "main", "event": "workflow_dispatch", "per_page": 1}
           )
           url = f"https://api.github.com/repos/{repo}/actions/workflows/validate-node-pack.yml/runs?{qs}"
 
@@ -87,13 +66,15 @@ jobs:
               run
               for run in runs
               if run.get("head_sha") == target_sha
+              and run.get("head_branch") == "main"
+              and run.get("event") == "workflow_dispatch"
               and run.get("status") == "completed"
               and run.get("conclusion") == "success"
           ]
 
           if not passed:
             raise SystemExit(
-                f"No successful Validate Node Pack run found for commit {target_sha}. Publish is blocked."
+                f"Dispatch Validate Node Pack on main for {target_sha} and wait for it to pass before publishing."
             )
 
           newest = sorted(passed, key=lambda x: x.get("updated_at", ""), reverse=True)[0]
