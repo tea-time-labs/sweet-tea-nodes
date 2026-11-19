@@ -59,7 +59,9 @@ This repo includes two GitHub workflows:
 - `Validate Node Pack`: four public hybrid-subject contracts, compile checks, and `comfy node validate` on push and PR.
 - `Release and Publish`: automatic semantic version bump from commit history, git tag creation, GitHub release creation, and Comfy Registry publish.
 
-Autoversion rules in `main` pushes:
+Publish from a validated `main` revision. A source PR can prepare the package version. Otherwise the workflow stamps the computed version in the release tag.
+
+Automatic version selection uses commits since the previous release:
 
 - `BREAKING CHANGE` or `type!:` -> major bump
 - `feat:` -> minor bump

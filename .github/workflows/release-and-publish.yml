@@ -119,7 +119,7 @@ jobs:
           latest_tag = semver_tags[0] if semver_tags else ""
           latest_parts = parse_version(latest_tag[1:]) if latest_tag else current_parts
 
-          base_parts = current_parts if current_parts >= latest_parts else latest_parts
+          base_parts = latest_parts
 
           if latest_tag:
             commits_text = run(["git", "log", "--format=%s%n%b", f"{latest_tag}..HEAD"])
@@ -143,7 +143,8 @@ jobs:
               bump_kind = "patch"
               new_parts = (base_parts[0], base_parts[1], base_parts[2] + 1)
 
-          new_version = fmt_version(new_parts)
+          # A newer version can already be prepared in a reviewed source PR.
+          new_version = fmt_version(max(current_parts, new_parts))
           should_release = bump_kind != "none"
 
           with out_file.open("a", encoding="utf-8") as f:
@@ -171,8 +172,6 @@ jobs:
               text,
               count=1,
           )
-          if updated == text:
-            raise RuntimeError("Failed to update version in pyproject.toml")
           path.write_text(updated, encoding="utf-8")
           PY
         env:
@@ -199,7 +198,7 @@ jobs:
           git add pyproject.toml
           if ! git diff --cached --quiet; then
             git commit -m "chore(release): ${tag} [skip ci]"
-            git push origin HEAD:main
+            # Generated version metadata belongs to the release tag.
           fi
 
           git tag "${tag}"
