@@ -135,6 +135,93 @@ class UpscaleTests(unittest.TestCase):
             self.mod.STKrea2UltimateUpscale().upscale(**{**self.args, "control_mode": "Tile"})
         self.assertEqual(self.seen, [])
 
+    def test_vision_uses_distinct_crops_and_a_shared_latent_per_frame(self):
+        from usdu_pose_tiled import krea2_vision
+
+        class Tokenizer:
+            llama_template = "system {}"
+
+        class Clip:
+            tokenizer = Tokenizer()
+
+            def tokenize(self, text, *, images, llama_template):
+                self.crops.append(images[0])
+                self.templates.append(llama_template)
+                return {"qwen3vl_4b": [[({"type": "image", "data": images[0]}, 1.)]]}
+
+            def encode_from_tokens(self, tokens):
+                image = tokens["qwen3vl_4b"][0][0][0]["data"]
+                return image.mean().reshape(1, 1, 1)
+
+        class Diffusion:
+            patch, txtlayers, txtdim = 2, 1, 1
+
+        class VisionModel(Model):
+            def get_model_object(self, name):
+                return Diffusion()
+
+            def add_wrapper_with_key(self, key, name, wrapper):
+                self.wrapper = wrapper
+
+            def set_model_patch(self, patch, name):
+                self.position = patch
+
+        class VisionVAE(VAE):
+            def encode_tiled(self, image):
+                return F.avg_pool2d(super().encode(image), 8).unsqueeze(2)
+
+            def decode_tiled(self, samples, overlap):
+                return super().decode(samples.squeeze(2).repeat_interleave(8, -2).repeat_interleave(8, -1))
+
+        def sample(*, model, positive, latent, **kwargs):
+            x = latent["samples"]
+            self.assertEqual(x.shape, (1, 3, 1, 16, 32))
+            starts = []
+
+            def predict(tile, time, context, mask, refs, options):
+                ids = model.position({"img_ids": torch.zeros(1, 1, 3), "transformer_options": options})
+                starts.append((tuple(ids["img_ids"][0, 0, 1:].tolist()), context.item()))
+                return torch.ones_like(tile) * context.item()
+
+            context = positive[0][0]
+            blended = model.wrapper(predict, x, torch.zeros(1), context,
+                                    transformer_options={"cond_or_uncond": [0]})
+            self.assertEqual([pos for pos, _ in starts], [(0., 0.), (0., 6.)])
+            self.assertLess(starts[0][1], starts[1][1])
+            self.assertTrue(torch.isfinite(blended).all())
+            self.assertGreater(blended[..., -1].mean(), blended[..., 0].mean())
+            return ({"samples": blended},)
+
+        model = VisionModel()
+        clip = Clip()
+        clip.crops, clip.templates = [], []
+        source = torch.cat((self.image, self.image * .5))
+        isolated = {
+            "comfy.ldm.krea2.model": types.SimpleNamespace(SingleStreamDiT=Diffusion),
+            "comfy.text_encoders.krea2": types.SimpleNamespace(Krea2Tokenizer=Tokenizer),
+            "comfy.patcher_extension": types.SimpleNamespace(WrappersMP=types.SimpleNamespace(DIFFUSION_MODEL="model")),
+        }
+        with patch.dict(sys.modules, isolated), patch.object(krea2_vision, "common_ksampler", sample), \
+             patch.object(sys.modules["comfy.model_management"], "throw_exception_if_processing_interrupted",
+                          lambda: None, create=True):
+            result, = self.mod.STKrea2UltimateUpscale().upscale(**{
+                **self.args, "image": source, "upscale_by": 1., "control_mode": "Vision",
+                "model": model, "clip": clip, "vae": VisionVAE(), "vision_prompt": "fine detail",
+            })
+
+        self.assertEqual(result.shape, source.shape)
+        self.assertFalse(hasattr(model, "wrapper"))
+        self.assertEqual(len(clip.crops), 4)
+        self.assertGreater(clip.crops[0].mean(), clip.crops[2].mean())
+        self.assertTrue(all(krea2_vision.VISION_BLOCK in template for template in clip.templates))
+
+    def test_vision_rejects_text_only_tokenizer_output(self):
+        from usdu_pose_tiled import krea2_vision
+
+        clip = types.SimpleNamespace(tokenize=lambda *a, **kw: {"qwen3vl_4b": [[(123, 1.)]]})
+        with self.assertRaisesRegex(ValueError, "image tokens"):
+            krea2_vision._encode_tile(clip, "{}", "", self.image, 1)
+
 
 if __name__ == "__main__":
     unittest.main()
