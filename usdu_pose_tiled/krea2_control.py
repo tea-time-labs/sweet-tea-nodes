@@ -66,7 +66,7 @@ class STKrea2UltimateUpscale:
             "tile_size": ("INT", {"default": 1024, "min": 128, "max": 4096, "step": 32}),
             "tile_padding": ("INT", {"default": 64, "min": 0, "max": 512, "step": 32}),
             "mask_blur": ("INT", {"default": 16, "min": 0, "max": 64}),
-            "control_mode": (["Off", "Depth", "Canny", "Tile"], {"default": "Off"}),
+            "control_mode": (["Off", "Depth", "Canny", "Tile", "Vision"], {"default": "Off"}),
             "control_strength": ("FLOAT", {"default": .7, "min": 0., "max": 2., "step": .05}),
             "depth_lora": ("STRING", {"default": "depth-control-lora.safetensors"}),
             "canny_lora": ("STRING", {"default": "NK2E-canny-v0.1.safetensors"}),
@@ -74,22 +74,29 @@ class STKrea2UltimateUpscale:
             "depth_resolution": ("INT", {"default": 1024, "min": 256, "max": 2048, "step": 64}),
             "canny_low": ("FLOAT", {"default": .1, "min": 0., "max": 1., "step": .01}),
             "canny_high": ("FLOAT", {"default": .2, "min": 0., "max": 1., "step": .01}),
-        }, "optional": {"upscale_model": ("UPSCALE_MODEL",)}}
+        }, "optional": {
+            "upscale_model": ("UPSCALE_MODEL",),
+            "clip": ("CLIP", {"tooltip": "Krea2 Qwen3-VL-4B encoder for Vision mode."}),
+            "vision_prompt": ("STRING", {"default": "", "multiline": True,
+                                         "tooltip": "Text paired with the source crop for each tile in Vision mode."}),
+        }}
 
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "upscale"
     CATEGORY = "Sweet Tea/Krea2"
     DESCRIPTION = ("Krea2 tiled img2img using Sweet Tea Ultimate SD Upscale. Off requires no control "
                    "weights; Depth uses Depth Anything V2 Large and facok; Canny uses experimental NK2E; "
-                   "Tile requires approved compatible weights. One control at a time. Optional reference "
+                   "Tile requires approved compatible weights. Vision uses Qwen3-VL source crops on a shared latent. "
+                   "One control at a time. Optional reference "
                    "editing belongs in a separate first pass, before this node.")
 
     def upscale(self, image, model, positive, negative, vae, upscale_by, seed, steps, cfg,
                 sampler_name, scheduler, denoise, tile_size, tile_padding, mask_blur,
                 control_mode, control_strength, depth_lora, canny_lora, tile_lora,
-                depth_resolution, canny_low, canny_high, upscale_model=None):
+                depth_resolution, canny_low, canny_high, upscale_model=None, clip=None,
+                vision_prompt=""):
         w, h, tw, th = dimensions(image.shape[2], image.shape[1], upscale_by, tile_size)
-        if control_mode != "Off" and control_strength > 0:
+        if control_mode in ("Depth", "Canny", "Tile") and control_strength > 0:
             if any(c.get("reference_latents") or c.get("nk2e_refs") for _, c in positive):
                 raise ValueError("Apply reference editing before tiled control, and use text-only conditioning here.")
             import folder_paths
@@ -124,10 +131,17 @@ class STKrea2UltimateUpscale:
             model.set_attachments(TILE_HOOK, hook)
 
         # Resize once to the requested canvas, preserving aspect to within the 32px lattice.
+        source = image
         if upscale_model is not None:
             from comfy_extras.nodes_upscale_model import ImageUpscaleWithModel
             image = ImageUpscaleWithModel().upscale(upscale_model, image)[0]
         image = comfy.utils.common_upscale(image.movedim(-1, 1), w, h, "lanczos", "disabled").movedim(1, -1)
+        if control_mode == "Vision":
+            from .krea2_vision import upscale_with_vision
+            return upscale_with_vision(source, image, model, clip, vision_prompt, negative, vae,
+                                       tw, th, tile_padding, seed, steps, cfg, sampler_name,
+                                       scheduler, denoise)
+
         return UltimateSDUpscalePoseTiled().upscale(
             image=image, model=model, positive=positive, negative=negative, vae=vae,
             upscale_by=1., seed=seed, steps=steps, cfg=cfg, sampler_name=sampler_name,

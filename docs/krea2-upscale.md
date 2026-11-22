@@ -38,3 +38,19 @@ ramp, fake VAE and sampler, covering Off, zero strength, local hint alignment,
 single full-frame tiles, Canny reference crops, and missing selected weights.
 These checks do not establish real Kroma image quality, VRAM use, or gated Tile
 weight compatibility.
+
+## Vision mode
+
+Select `Vision` and connect the same Krea 2 Qwen3-VL CLIP used by the Pipe.
+The optional vision prompt guides refinement. Each overlapping tile gets image
+tokens from its matching crop of the original, encoded once before sampling.
+Krea receives canvas-relative positions and the node blends predictions at each
+denoising step, then decodes the shared latent. No control weights or extra
+node pack are needed. CFG 1 is the normal Turbo setting. Higher CFG accepts
+plain text negative conditioning.
+
+The node computes its own tile grid from the output dimensions. A Pipe can keep
+the tile size and padding at their defaults and expose the upscale factor,
+denoise, seed, steps and vision prompt. Smaller tiles reduce peak diffusion
+memory at the cost of more model calls. `mask_blur` is for the legacy pixel
+composite path. Vision uses cosine feathering over `tile_padding`.
