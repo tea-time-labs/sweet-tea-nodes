@@ -9,6 +9,23 @@ Use Tile count to select 4, 9, 16, 25, 36, 49, 64, 81, or 100 tiles. For example
 tall canvas. Each axis is divided into 32-pixel-aligned cores. Padding adds
 context around each core, clipped to the canvas at the edges.
 
+## Choose the grid and refinement controls
+
+| Control | What it changes |
+| --- | --- |
+| Tile count | Total cores in an N×N grid: 4 = 2×2, 9 = 3×3, 16 = 4×4, 25 = 5×5. An explicit count overrides Tile size for grid selection; it does not change the output dimensions. |
+| Tile size | Maximum core size in pixels when Tile count is Auto. The output dimensions determine the row and column counts independently. |
+| Upscale factor (`upscale_by`) | Output width and height relative to the input, rounded to the 32-pixel lattice. It is separate from the number of tiles. |
+| Tile padding | Extra source context around each core, clipped at the canvas edges. It does not add cores to the grid. |
+| Denoise | Img2img denoising amount passed to the sampler, separate from control-model strength and output scale. |
+| Control strength | Weight strength for Depth, Canny or Tile control. Zero bypasses those controls; this input does not adjust Vision mode. |
+| Sampler and scheduler | Sampling algorithm and noise schedule. Choosing a tile count does not select either of them. |
+
+A square grid has equal row and column counts; its cores can be rectangular on a
+wide or tall output. Each core needs at least one 32-pixel block on each axis. If
+the requested grid is too dense for the output, the node asks for fewer tiles or
+a larger upscale factor. Existing workflows that omit Tile count keep Auto.
+
 Control modes are alternatives:
 
 | Mode | Weights and nodes |
@@ -31,8 +48,9 @@ image into the tiled pass. Combining those reference patches with the facok
 expanded projection is unsupported.
 
 An optional upscale-model input performs neural upscaling before the diffusion
-pass. Without it, the initial resize uses Lanczos. Typical turbo starting values:
-8 steps, CFG 1, denoise 0.25, 1024px core tiles, 64px padding, 16px blend blur.
+pass. Without it, the initial resize uses Lanczos. The node defaults are
+8 steps, CFG 1, denoise 0.25, Tile count Auto, Tile size 1024px, padding 64px and
+blend blur 16px. These are input defaults, not a tested quality preset.
 CFG 1 normally ignores negative text. Use the original zero-conditioning path
 when a negative prompt is empty.
 
@@ -49,10 +67,10 @@ The optional vision prompt guides refinement. Each overlapping tile gets image
 tokens from its matching crop of the original, encoded once before sampling.
 Krea receives canvas-relative positions and the node blends predictions at each
 denoising step, then decodes the shared latent. No control weights or extra
-node pack are needed. CFG 1 is the normal Turbo setting. Higher CFG accepts
-plain text negative conditioning.
+node pack are needed. Higher CFG accepts plain text negative conditioning.
 
 A Pipe can expose Tile count and keep Tile size and padding at their defaults.
-The same grid selection applies in Vision and the other control modes. Smaller tiles reduce peak diffusion
-memory at the cost of more model calls. `mask_blur` is for the legacy pixel
+The same grid selection applies in Vision and the other control modes. Smaller
+tile regions reduce per-call diffusion work at the cost of more model calls;
+Vision still keeps a shared full-canvas latent. `mask_blur` is for the legacy pixel
 composite path. Vision uses cosine feathering over `tile_padding`.
