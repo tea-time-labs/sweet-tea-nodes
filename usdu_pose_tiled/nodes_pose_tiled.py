@@ -116,6 +116,7 @@ class UltimateSDUpscalePoseTiled:
         blend_mode="normalized",
         custom_sampler=None,
         custom_sigmas=None,
+        tile_grid=None,
     ):
         # Normalize batch to [B,H,W,C]
         if image.ndim == 3:
@@ -143,6 +144,7 @@ class UltimateSDUpscalePoseTiled:
             lock_padding=lock_padding,
             noise_mask_blur=noise_mask_blur,
             blend_mode=blend_mode,
+            tile_grid=tile_grid,
         )
 
         # One-time cleanup before heavy passes (not per tile)

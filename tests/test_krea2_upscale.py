@@ -88,6 +88,17 @@ class UpscaleTests(unittest.TestCase):
             self.assertLess(float((result - resize(self.image.movedim(-1, 1), 512, 256).movedim(1, -1)).abs().max()), .02)
         self.assertGreater(len(self.seen), 2)
 
+    def test_explicit_square_grid_runs_exact_count_on_a_rectangular_canvas(self):
+        for count in (4, 9, 16, 25):
+            with self.subTest(count=count):
+                self.seen.clear()
+                result, = self.mod.STKrea2UltimateUpscale().upscale(**self.args, tile_count=str(count))
+                self.assertEqual(len(self.seen), count)
+                self.assertEqual(tuple(result.shape), (1, 256, 512, 3))
+
+        with self.assertRaisesRegex(ValueError, "Choose fewer tiles"):
+            self.mod.STKrea2UltimateUpscale().upscale(**{**self.args, "upscale_by": .25}, tile_count="9")
+
     def test_control_tracks_each_tile_including_padding_and_full_frame(self):
         class Loader:
             def load_lora(self, model, *args): return (model,)
@@ -186,7 +197,7 @@ class UpscaleTests(unittest.TestCase):
             context = positive[0][0]
             blended = model.wrapper(predict, x, torch.zeros(1), context,
                                     transformer_options={"cond_or_uncond": [0]})
-            self.assertEqual([pos for pos, _ in starts], [(0., 0.), (0., 6.)])
+            self.assertEqual([pos for pos, _ in starts], [(0., 0.), (0., 6.), (2., 0.), (2., 6.)])
             self.assertLess(starts[0][1], starts[1][1])
             self.assertTrue(torch.isfinite(blended).all())
             self.assertGreater(blended[..., -1].mean(), blended[..., 0].mean())
@@ -205,14 +216,14 @@ class UpscaleTests(unittest.TestCase):
              patch.object(sys.modules["comfy.model_management"], "throw_exception_if_processing_interrupted",
                           lambda: None, create=True):
             result, = self.mod.STKrea2UltimateUpscale().upscale(**{
-                **self.args, "image": source, "upscale_by": 1., "control_mode": "Vision",
+                **self.args, "image": source, "upscale_by": 1., "control_mode": "Vision", "tile_count": "4",
                 "model": model, "clip": clip, "vae": VisionVAE(), "vision_prompt": "fine detail",
             })
 
         self.assertEqual(result.shape, source.shape)
         self.assertFalse(hasattr(model, "wrapper"))
-        self.assertEqual(len(clip.crops), 4)
-        self.assertGreater(clip.crops[0].mean(), clip.crops[2].mean())
+        self.assertEqual(len(clip.crops), 8)
+        self.assertGreater(clip.crops[0].mean(), clip.crops[4].mean())
         self.assertTrue(all(krea2_vision.VISION_BLOCK in template for template in clip.templates))
 
     def test_vision_rejects_text_only_tokenizer_output(self):

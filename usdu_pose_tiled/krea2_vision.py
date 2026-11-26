@@ -28,10 +28,10 @@ class Tile:
         return (..., slice(self.top, self.bottom), slice(self.left, self.right))
 
 
-def _axis_tiles(length, core_size, padding):
+def _axis_tiles(length, boundaries, padding):
     intervals = [
-        (max(0, start - padding), min(length, start + core_size + padding))
-        for start in range(0, length, core_size)
+        (max(0, start - padding), min(length, end + padding))
+        for start, end in zip(boundaries, boundaries[1:])
     ]
     for index, (start, end) in enumerate(intervals):
         weight = torch.ones(end - start)
@@ -46,10 +46,15 @@ def _axis_tiles(length, core_size, padding):
         yield start, end, weight
 
 
-def _tiles(width, height, core_width, core_height, padding, patch):
+def _tiles(width, height, core_width, core_height, padding, patch, tile_grid=None):
     padding = (padding // LATENT_SCALE // patch) * patch
-    cols = tuple(_axis_tiles(width // LATENT_SCALE, core_width // LATENT_SCALE, padding))
-    rows = tuple(_axis_tiles(height // LATENT_SCALE, core_height // LATENT_SCALE, padding))
+    if tile_grid is None:
+        x_edges = (*range(0, width, core_width), width)
+        y_edges = (*range(0, height, core_height), height)
+    else:
+        x_edges, y_edges = tile_grid
+    cols = tuple(_axis_tiles(width // LATENT_SCALE, [edge // LATENT_SCALE for edge in x_edges], padding))
+    rows = tuple(_axis_tiles(height // LATENT_SCALE, [edge // LATENT_SCALE for edge in y_edges], padding))
     return [
         Tile(top, bottom, left, right, vertical[:, None] * horizontal[None, :])
         for top, bottom, vertical in rows
@@ -139,7 +144,7 @@ class TiledVision:
 @torch.inference_mode()
 def upscale_with_vision(source, image, model, clip, prompt, negative, vae, core_width,
                         core_height, padding, seed, steps, cfg, sampler_name, scheduler,
-                        denoise):
+                        denoise, tile_grid=None):
     from comfy.ldm.krea2.model import SingleStreamDiT
     from comfy.model_management import throw_exception_if_processing_interrupted
     from comfy.patcher_extension import WrappersMP
@@ -158,7 +163,7 @@ def upscale_with_vision(source, image, model, clip, prompt, negative, vae, core_
 
     height, width = image.shape[1:3]
     patch = diffusion_model.patch
-    tiles = _tiles(width, height, core_width, core_height, padding, patch)
+    tiles = _tiles(width, height, core_width, core_height, padding, patch, tile_grid)
     tiled = len(tiles) > 1
     template = clip.tokenizer.llama_template.replace("{}", VISION_BLOCK + "\n{}", 1)
     prompt = prompt.strip() or "Preserve the source composition, colors and identity. Refine fine detail."
