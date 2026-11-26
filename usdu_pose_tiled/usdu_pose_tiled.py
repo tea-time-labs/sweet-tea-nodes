@@ -65,9 +65,11 @@ class USDURedraw:
     - We no longer call empty_cache() for every tile; that was a big slowdown.
     """
 
-    def __init__(self, tile_width, tile_height, padding, mask_blur, mode, lock_padding=True, noise_mask_blur=0, blend_mode="normalized"):
+    def __init__(self, tile_width, tile_height, padding, mask_blur, mode, lock_padding=True,
+                 noise_mask_blur=0, blend_mode="normalized", tile_grid=None):
         self.tile_width = tile_width
         self.tile_height = tile_height
+        self.tile_grid = tile_grid
         self.padding = padding            # neighbor context to include
         self.mask_blur = mask_blur        # feather radius for final composite
         self.lock_padding = lock_padding
@@ -102,7 +104,16 @@ class USDURedraw:
             editable_mask=editable_mask,
         )
 
+    def _grid_shape(self, base_w, base_h):
+        if self.tile_grid is not None:
+            x_edges, y_edges = self.tile_grid
+            return len(y_edges) - 1, len(x_edges) - 1
+        return math.ceil(base_h / self.tile_height), math.ceil(base_w / self.tile_width)
+
     def _tile_bounds(self, base_w, base_h, xi, yi):
+        if self.tile_grid is not None:
+            x_edges, y_edges = self.tile_grid
+            return x_edges[xi], y_edges[yi], x_edges[xi + 1], y_edges[yi + 1]
         x1 = xi * self.tile_width
         y1 = yi * self.tile_height
         x2 = min(x1 + self.tile_width, base_w)
@@ -156,8 +167,7 @@ class USDURedraw:
         base_images = [img.copy().convert("RGB") for img in images]
 
         base_w, base_h = base_images[0].size
-        rows = math.ceil(base_h / self.tile_height)
-        cols = math.ceil(base_w / self.tile_width)
+        rows, cols = self._grid_shape(base_w, base_h)
 
         accums = [np.zeros((base_h, base_w, 3), dtype=np.float32) for _ in base_images]
         weight = np.zeros((base_h, base_w), dtype=np.float32)
@@ -237,8 +247,7 @@ class USDURedraw:
         processed_images = [img.copy() for img in images]
 
         base_w, base_h = images[0].size
-        rows = math.ceil(base_h / self.tile_height)
-        cols = math.ceil(base_w / self.tile_width)
+        rows, cols = self._grid_shape(base_w, base_h)
 
         for yi in range(rows):
             for xi in range(cols):
@@ -281,8 +290,7 @@ class USDURedraw:
             )
         processed_images = [img.copy() for img in images]
         base_w, base_h = images[0].size
-        rows = math.ceil(base_h / self.tile_height)
-        cols = math.ceil(base_w / self.tile_width)
+        rows, cols = self._grid_shape(base_w, base_h)
 
         for yi in range(rows):
             for xi in range(cols):
@@ -698,7 +706,8 @@ class USDUpscaler:
         tiled_decode,
         lock_padding=True,
         noise_mask_blur=0,
-        blend_mode="normalized"
+        blend_mode="normalized",
+        tile_grid=None,
     ):
         self.scale_factor = upscale_by
         self.upscaler = load_upscaler(upscale_model)
@@ -712,7 +721,8 @@ class USDUpscaler:
             redraw_mode,
             lock_padding=lock_padding,
             noise_mask_blur=noise_mask_blur,
-            blend_mode=blend_mode
+            blend_mode=blend_mode,
+            tile_grid=tile_grid,
         )
 
         # seam repair pass

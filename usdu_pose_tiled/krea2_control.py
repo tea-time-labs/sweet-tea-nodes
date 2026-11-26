@@ -7,6 +7,7 @@ import nodes
 from .nodes_pose_tiled import UltimateSDUpscalePoseTiled
 
 TILE_HOOK = "sweet_tea_tile_model"
+TILE_COUNTS = ["Auto", *(str(axis * axis) for axis in range(2, 11))]
 
 
 @torch.inference_mode()
@@ -42,6 +43,21 @@ def dimensions(width, height, scale, tile_size):
     return w, h, tw, th
 
 
+def square_tile_grid(width, height, tile_count):
+    tiles_per_axis = math.isqrt(int(tile_count))
+    if min(width, height) < tiles_per_axis * 32:
+        raise ValueError(
+            f"{tile_count} tiles require at least {tiles_per_axis * 32}px on the shorter output "
+            "side. Choose fewer tiles or increase the upscale factor."
+        )
+
+    def edges(length):
+        blocks = length // 32
+        return tuple(index * blocks // tiles_per_axis * 32 for index in range(tiles_per_axis + 1))
+
+    return edges(width), edges(height)
+
+
 def required_node(name, repo):
     cls = nodes.NODE_CLASS_MAPPINGS.get(name)
     if cls is None:
@@ -75,6 +91,9 @@ class STKrea2UltimateUpscale:
             "canny_low": ("FLOAT", {"default": .1, "min": 0., "max": 1., "step": .01}),
             "canny_high": ("FLOAT", {"default": .2, "min": 0., "max": 1., "step": .01}),
         }, "optional": {
+            "tile_count": (TILE_COUNTS, {"default": "Auto", "tooltip":
+                "Choose the total number of tiles in a square grid. Auto uses Tile size. "
+                "Fewer tiles on a large output use more GPU memory."}),
             "upscale_model": ("UPSCALE_MODEL",),
             "clip": ("CLIP", {"tooltip": "Krea2 Qwen3-VL-4B encoder for Vision mode."}),
             "vision_prompt": ("STRING", {"default": "", "multiline": True,
@@ -94,8 +113,15 @@ class STKrea2UltimateUpscale:
                 sampler_name, scheduler, denoise, tile_size, tile_padding, mask_blur,
                 control_mode, control_strength, depth_lora, canny_lora, tile_lora,
                 depth_resolution, canny_low, canny_high, upscale_model=None, clip=None,
-                vision_prompt=""):
+                vision_prompt="", tile_count="Auto"):
         w, h, tw, th = dimensions(image.shape[2], image.shape[1], upscale_by, tile_size)
+        tile_count = str(tile_count)
+        if tile_count not in TILE_COUNTS:
+            raise ValueError(f"Invalid Krea2 tile count: {tile_count}. Choose Auto or a listed square count.")
+        tile_grid = None
+        if tile_count != "Auto":
+            tile_grid = square_tile_grid(w, h, tile_count)
+            tw, th = (max(end - start for start, end in zip(edges, edges[1:])) for edges in tile_grid)
         if control_mode in ("Depth", "Canny", "Tile") and control_strength > 0:
             if any(c.get("reference_latents") or c.get("nk2e_refs") for _, c in positive):
                 raise ValueError("Apply reference editing before tiled control, and use text-only conditioning here.")
@@ -140,7 +166,7 @@ class STKrea2UltimateUpscale:
             from .krea2_vision import upscale_with_vision
             return upscale_with_vision(source, image, model, clip, vision_prompt, negative, vae,
                                        tw, th, tile_padding, seed, steps, cfg, sampler_name,
-                                       scheduler, denoise)
+                                       scheduler, denoise, tile_grid=tile_grid)
 
         return UltimateSDUpscalePoseTiled().upscale(
             image=image, model=model, positive=positive, negative=negative, vae=vae,
@@ -149,7 +175,8 @@ class STKrea2UltimateUpscale:
             tile_width=tw, tile_height=th, mask_blur=mask_blur, tile_padding=tile_padding,
             seam_fix_mode="None", seam_fix_denoise=denoise, seam_fix_width=64,
             seam_fix_mask_blur=mask_blur, seam_fix_padding=32, force_uniform_tiles=False,
-            tiled_decode=False, lock_padding=True, noise_mask_blur=0, blend_mode="normalized")
+            tiled_decode=False, lock_padding=True, noise_mask_blur=0, blend_mode="normalized",
+            tile_grid=tile_grid)
 
 
 NODE_CLASS_MAPPINGS = {"STKrea2UltimateUpscale": STKrea2UltimateUpscale}

@@ -2,9 +2,12 @@
 
 `STKrea2UltimateUpscale` uses the existing Sweet Tea Ultimate SD Upscale pipeline,
 including overlap locking and normalized blending. Output dimensions follow the
-source aspect ratio, rounded to a 32-pixel lattice. The requested tile size is a
-maximum core size; rows and columns divide the output into similar-sized tiles.
-Padding adds context beyond that core size.
+source aspect ratio, rounded to a 32-pixel lattice. In Auto mode, Tile size sets
+the maximum core size, and the node chooses the row and column counts separately.
+Use Tile count to select 4, 9, 16, 25, 36, 49, 64, 81, or 100 tiles. For example,
+9 gives exactly 3 columns and 3 rows across the output, including on a wide or
+tall canvas. Each axis is divided into 32-pixel-aligned cores. Padding adds
+context around each core, clipped to the canvas at the edges.
 
 Control modes are alternatives:
 
@@ -49,8 +52,7 @@ denoising step, then decodes the shared latent. No control weights or extra
 node pack are needed. CFG 1 is the normal Turbo setting. Higher CFG accepts
 plain text negative conditioning.
 
-The node computes its own tile grid from the output dimensions. A Pipe can keep
-the tile size and padding at their defaults and expose the upscale factor,
-denoise, seed, steps and vision prompt. Smaller tiles reduce peak diffusion
+A Pipe can expose Tile count and keep Tile size and padding at their defaults.
+The same grid selection applies in Vision and the other control modes. Smaller tiles reduce peak diffusion
 memory at the cost of more model calls. `mask_blur` is for the legacy pixel
 composite path. Vision uses cosine feathering over `tile_padding`.
