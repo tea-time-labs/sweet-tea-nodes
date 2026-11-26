@@ -91,13 +91,13 @@ class STKrea2UltimateUpscale:
             "canny_low": ("FLOAT", {"default": .1, "min": 0., "max": 1., "step": .01}),
             "canny_high": ("FLOAT", {"default": .2, "min": 0., "max": 1., "step": .01}),
         }, "optional": {
-            "tile_count": (TILE_COUNTS, {"default": "Auto", "tooltip":
-                "Choose the total number of tiles in a square grid. Auto uses Tile size. "
-                "Fewer tiles on a large output use more GPU memory."}),
             "upscale_model": ("UPSCALE_MODEL",),
             "clip": ("CLIP", {"tooltip": "Krea2 Qwen3-VL-4B encoder for Vision mode."}),
             "vision_prompt": ("STRING", {"default": "", "multiline": True,
                                          "tooltip": "Text paired with the source crop for each tile in Vision mode."}),
+            "tile_count": (TILE_COUNTS, {"default": "Auto", "tooltip":
+                "Choose the total number of tiles in a square grid. Auto uses Tile size. "
+                "Fewer tiles on a large output use more GPU memory."}),
         }}
 
     RETURN_TYPES = ("IMAGE",)
