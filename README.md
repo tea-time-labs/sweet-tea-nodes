@@ -4,6 +4,8 @@ ComfyUI node pack focused on high-control video generation and high-fidelity til
 
 ## Node Highlights
 
+- `Krea2 Ultimate Upscale (Sweet Tea)` (`STKrea2UltimateUpscale`)
+  - Tiled Krea2 refinement with selectable total tile counts, including 4, 9, 16 and 25, or automatic sizing. See [the Krea2 guide](docs/krea2-upscale.md) for grid selection, control modes and the separate scale and sampling controls.
 - `Ultimate SD Upscale (Pose Tiled ControlNet)` (`UltimateSDUpscalePoseTiled`)
   - Major tiled-upscaling upgrade with lockable padding, ControlNet tile alignment fixes, normalized overlap blending, and seam-fix passes designed to remove bleed and ghost offsets.
 - `Wan VACE -> Video (caps inpaint)` (`WanVaceToVideoCapsInpaint`)
