@@ -69,6 +69,12 @@ Krea receives canvas-relative positions and the node blends predictions at each
 denoising step, then decodes the shared latent. No control weights or extra
 node pack are needed. Higher CFG accepts plain text negative conditioning.
 
+Vision samples one shared canvas per image. Its sampler progress counts denoising
+steps, not completed tiles: an eight-step display does not mean that only eight
+tiles are being processed. Each model evaluation runs through the selected tile
+regions and blends their predictions. Tile image conditioning is encoded before
+sampling begins; this node does not emit separate per-tile sampling progress.
+
 A Pipe can expose Tile count and keep Tile size and padding at their defaults.
 The same grid selection applies in Vision and the other control modes. Smaller
 tile regions reduce per-call diffusion work at the cost of more model calls;
