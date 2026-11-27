@@ -1,0 +1,25 @@
+{
+  "method": "context_check",
+  "case": "12-urban-basketball",
+  "tile": 6,
+  "core": [
+    469,
+    490,
+    704,
+    982
+  ],
+  "padded": [
+    384,
+    405,
+    704,
+    1067
+  ],
+  "caption": "A man in a dark athletic jersey raises his hand toward a bright, cloudless sky, with the top of an urban apartment building visible in the distant background.",
+  "notes": [
+    "- basketball hoop\n- backboard\n- chain link fence\n- athletic jersey\n- urban apartment building\n- basketball court lane"
+  ],
+  "seconds": 15.69,
+  "gpu": "Tesla T4",
+  "source_sha256": "d104336026e3fb5d2ce881bb380a8daf797c1da032f59f01d377bfd9f59e90a3",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

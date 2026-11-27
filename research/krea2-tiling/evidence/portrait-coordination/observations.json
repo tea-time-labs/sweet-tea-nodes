@@ -1,0 +1,7 @@
+{
+  "owner_first_four": "One near-side eye survives after ordinary blending resumes. Its placement follows the source. A small bright bead appears near the outer eyelid in the final upscale.",
+  "owner_last_four": "Two vertically separated near-side eyes survive. Giving tile 4 sole influence from step 5 onward preserves both at this seed.",
+  "interpretation": "Early ownership changed what both tiles proposed later. These two timing windows establish that the first four steps were sufficient on this portrait. The region and its owner were selected manually. The minimum number of steps and a general rule for choosing the owner remain untested.",
+  "trace_owner_first_four": "The upper tile still proposes a high eye on step 2. By step 3 its prediction has moved down near the middle tile\u2019s eye. The two stay aligned after the override ends. Each tile\u2019s step-1 image matches its counterpart in the late-ownership run pixel for pixel.",
+  "trace_owner_last_four": "Both predicted one near-side eye on steps 1 through 4, at two different heights. Their merged estimate showed both from step 1. On step 5 even the middle tile proposed the two-eye arrangement before its prediction was used as the sole writer there. The two rows of eyes persist."
+}

@@ -1,0 +1,26 @@
+{
+  "method": "duel",
+  "case": "15-tailoring-studio",
+  "tile": 2,
+  "core": [
+    416,
+    0,
+    832,
+    278
+  ],
+  "padded": [
+    330,
+    0,
+    918,
+    363
+  ],
+  "caption": "A man in a tan windowpane-check jacket stands in three-quarter profile, facing left, as a hand from the right holds a yellow tape measure along his shoulder seam.",
+  "notes": [
+    "A man in a tan windowpane-check jacket stands in three-quarter profile, his face turned slightly away, as a tailor's hand holds a yellow tape measure across his shoulder seam.",
+    "A man in a patterned suit jacket with a tied collar and dark tie stands profile, while a hand holds a yellow measuring tape against his shoulder. The fabric surface of the jacket and the man’s face are visible, with the hand positioned to the right, touching the garment."
+  ],
+  "seconds": 9.02,
+  "gpu": "Tesla T4",
+  "source_sha256": "c7d8076c448fcc4c5e42777eb7f580513f62c6e02067d3b3680d36c429e1505a",
+  "method_sha256": "9762db3082b0d03b27fbf466ac92daf3f33b42f0babb66103bc3712d5bacc2e0"
+}

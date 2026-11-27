@@ -1,0 +1,26 @@
+{
+  "method": "duel",
+  "case": "11-coffee-product",
+  "tile": 3,
+  "core": [
+    725,
+    0,
+    1088,
+    320
+  ],
+  "padded": [
+    640,
+    0,
+    1088,
+    406
+  ],
+  "caption": "A hand grips a dark, rounded object with fingers curled around its edge, set against a soft beige background. The object’s surface appears metallic or dark plastic, with a textured, light-colored surface visible to the right.",
+  "notes": [
+    "A close-up of a hand gripping the black handle of a brushed-aluminum moka pot, with the textured, light-colored stone tabletop visible in the background.",
+    "A hand grips a metallic edge from the left, fingers curled around its corner, while a curved skin edge extends rightward against a soft beige background."
+  ],
+  "seconds": 11.21,
+  "gpu": "Tesla T4",
+  "source_sha256": "bcc341e06021a23a790b6a7994c71e34fbca719be23e19568f2d6278f8cc66a1",
+  "method_sha256": "9762db3082b0d03b27fbf466ac92daf3f33b42f0babb66103bc3712d5bacc2e0"
+}

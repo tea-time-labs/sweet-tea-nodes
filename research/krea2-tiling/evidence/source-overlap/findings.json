@@ -1,0 +1,8 @@
+{
+  "summary": [
+    "Making padding read-only still produced two near-side eyes. The upper tile put its pupil above the boundary, inside its own writable core. The middle tile put the other pupil below it. Both obeyed the pixel boundary.",
+    "The source-score pilot also kept the two eyes. A whole-overlap score cannot establish which tile is correct about a particular object. The experiment did not establish a general solution and the scoring patch was withdrawn."
+  ],
+  "portrait": "The source has one near-side eye. All three automatic or ordinary rules shown here produce two. In the read-only-padding run, no other tile can write either pupil's pixels. The earlier manual test succeeded by giving one tile the whole eye region across the boundary for the first four steps.",
+  "10-wildlife-family": "The source has two kits. Ordinary blending hides a second small face near the left kit. The source-score pilot still adds a kit face, now stacked above the right one. This scene also failed its subject-count check."
+}

@@ -1,0 +1,371 @@
+{
+  "scene": {
+    "id": "02-jazz-trio",
+    "width": 1024,
+    "height": 1024,
+    "focus": [
+      0.51,
+      0.47
+    ],
+    "review": "Exactly three musicians, distinct instruments, drummer between the others, sax keys and hands.",
+    "prompt": "Square album-cover photograph of an intimate jazz trio on a compact stage. The upright bassist at left in a rust shirt and the saxophonist at right in a blue suit turn toward each other, with the seated drummer visible between and behind them. Three people, one instrument each. Golden key light and deep blue shadows, black velvet curtain, a few wooden chairs in soft focus, warm documentary film grain. Show the whole wooden bass and the curved brass saxophone, including the musicians' hands playing."
+  },
+  "source_size": [
+    1024,
+    1024
+  ],
+  "source_seed": 87923524,
+  "source_sampler": {
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1.0
+  },
+  "upscale_seed": 40309823,
+  "upscale_settings": {
+    "steps": 8,
+    "cfg": 1.0,
+    "denoise": 0.8,
+    "positions": "local",
+    "control": "Vision"
+  },
+  "runs": {
+    "euler-simple": {
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 328.25,
+      "sampling_seconds": 299.94,
+      "peak_torch_allocated_mib": 13889,
+      "peak_torch_reserved_mib": 15900,
+      "status": "ok",
+      "file": "euler-simple.png"
+    },
+    "euler-sgm_uniform": {
+      "sampler": "euler",
+      "scheduler": "sgm_uniform",
+      "sigmas": [
+        0.9266740679740906,
+        0.8805605173110962,
+        0.8257773518562317,
+        0.7596262693405151,
+        0.6781590580940247,
+        0.575360119342804,
+        0.441588819026947,
+        0.26036524772644043,
+        0.0
+      ],
+      "seconds": 328.92,
+      "sampling_seconds": 300.43,
+      "peak_torch_allocated_mib": 13889,
+      "peak_torch_reserved_mib": 15900,
+      "status": "ok",
+      "file": "euler-sgm_uniform.png"
+    },
+    "dpmpp_2m-simple": {
+      "sampler": "dpmpp_2m",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 329.52,
+      "sampling_seconds": 301.08,
+      "peak_torch_allocated_mib": 13889,
+      "peak_torch_reserved_mib": 15900,
+      "status": "ok",
+      "file": "dpmpp_2m-simple.png"
+    }
+  },
+  "node": "STKrea2TurboMatrixTest",
+  "colab_gpu": "NVIDIA L4",
+  "torch": "2.14.1+cu130",
+  "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+  "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+  "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+  "geometry": {
+    "final_size": [
+      3072,
+      3072
+    ],
+    "working_canvas": [
+      3072,
+      3072
+    ],
+    "tile_count": 9,
+    "padding": 256,
+    "tiles": [
+      {
+        "tile": 1,
+        "core_canvas_xyxy": [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          0,
+          1280,
+          1280
+        ],
+        "core_source_xyxy": [
+          0,
+          0,
+          342,
+          342
+        ],
+        "padded_source_xyxy": [
+          0,
+          0,
+          427,
+          427
+        ],
+        "caption": "The upright bassist's head and shoulder, in a rust shirt, are shown in profile against a dark, textured black velvet curtain, with the wooden body of the bass visible to his right."
+      },
+      {
+        "tile": 2,
+        "core_canvas_xyxy": [
+          1024,
+          0,
+          2048,
+          1024
+        ],
+        "padded_canvas_xyxy": [
+          768,
+          0,
+          2304,
+          1280
+        ],
+        "core_source_xyxy": [
+          341,
+          0,
+          683,
+          342
+        ],
+        "padded_source_xyxy": [
+          256,
+          0,
+          768,
+          427
+        ],
+        "caption": "A dark, textured black velvet curtain hangs in the background, illuminated by a single warm golden spotlight from above, with the faint outline of a curtain rod visible at the top edge."
+      },
+      {
+        "tile": 3,
+        "core_canvas_xyxy": [
+          2048,
+          0,
+          3072,
+          1024
+        ],
+        "padded_canvas_xyxy": [
+          1792,
+          0,
+          3072,
+          1280
+        ],
+        "core_source_xyxy": [
+          682,
+          0,
+          1024,
+          342
+        ],
+        "padded_source_xyxy": [
+          597,
+          0,
+          1024,
+          427
+        ],
+        "caption": "A man in a blue suit plays a saxophone, his head and shoulders visible against a dark, out-of-focus background."
+      },
+      {
+        "tile": 4,
+        "core_canvas_xyxy": [
+          0,
+          1024,
+          1024,
+          2048
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          768,
+          1280,
+          2304
+        ],
+        "core_source_xyxy": [
+          0,
+          341,
+          342,
+          683
+        ],
+        "padded_source_xyxy": [
+          0,
+          256,
+          427,
+          768
+        ],
+        "caption": "The visible content in image 3 is the textured, rust-colored fabric of the upright bassist's shirt sleeve and the dark, matte-finished fabric of his trousers, set against the warm wood grain of the bass."
+      },
+      {
+        "tile": 5,
+        "core_canvas_xyxy": [
+          1024,
+          1024,
+          2048,
+          2048
+        ],
+        "padded_canvas_xyxy": [
+          768,
+          768,
+          2304,
+          2304
+        ],
+        "core_source_xyxy": [
+          341,
+          341,
+          683,
+          683
+        ],
+        "padded_source_xyxy": [
+          256,
+          256,
+          768,
+          768
+        ],
+        "caption": "A seated drummer in a blue shirt is blurred in the background, his hands positioned over a drum kit, against a black velvet curtain."
+      },
+      {
+        "tile": 6,
+        "core_canvas_xyxy": [
+          2048,
+          1024,
+          3072,
+          2048
+        ],
+        "padded_canvas_xyxy": [
+          1792,
+          768,
+          3072,
+          2304
+        ],
+        "core_source_xyxy": [
+          682,
+          341,
+          1024,
+          683
+        ],
+        "padded_source_xyxy": [
+          597,
+          256,
+          1024,
+          768
+        ],
+        "caption": "The saxophonist's right hand grips the brass instrument's keys, with the blue suit's textured fabric and a dark, out-of-focus background visible."
+      },
+      {
+        "tile": 7,
+        "core_canvas_xyxy": [
+          0,
+          2048,
+          1024,
+          3072
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          1792,
+          1280,
+          3072
+        ],
+        "core_source_xyxy": [
+          0,
+          682,
+          342,
+          1024
+        ],
+        "padded_source_xyxy": [
+          0,
+          597,
+          427,
+          1024
+        ],
+        "caption": "The smooth, dark fabric of the bassist's trousers, with a subtle vertical seam, is shown against the warm, polished wood of the upright bass's body, under soft stage lighting."
+      },
+      {
+        "tile": 8,
+        "core_canvas_xyxy": [
+          1024,
+          2048,
+          2048,
+          3072
+        ],
+        "padded_canvas_xyxy": [
+          768,
+          1792,
+          2304,
+          3072
+        ],
+        "core_source_xyxy": [
+          341,
+          682,
+          683,
+          1024
+        ],
+        "padded_source_xyxy": [
+          256,
+          597,
+          768,
+          1024
+        ],
+        "caption": "The close-up shows the polished, warm-toned wooden body of the upright bass, featuring its distinctive f-holes and black bridge, with the musician's hand resting on the strings, set against a softly blurred background of drum kit components."
+      },
+      {
+        "tile": 9,
+        "core_canvas_xyxy": [
+          2048,
+          2048,
+          3072,
+          3072
+        ],
+        "padded_canvas_xyxy": [
+          1792,
+          1792,
+          3072,
+          3072
+        ],
+        "core_source_xyxy": [
+          682,
+          682,
+          1024,
+          1024
+        ],
+        "padded_source_xyxy": [
+          597,
+          597,
+          1024,
+          1024
+        ],
+        "caption": "The deep blue fabric of the saxophonist's suit trousers, showing a subtle weave texture, stands in focus against a softly blurred background of wooden chairs and drum kit hardware."
+      }
+    ],
+    "caption_and_encode_seconds": 68.04
+  }
+}

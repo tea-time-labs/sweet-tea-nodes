@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "02-jazz-trio",
+  "tile": 9,
+  "core": [
+    682,
+    682,
+    1024,
+    1024
+  ],
+  "padded": [
+    597,
+    597,
+    1024,
+    1024
+  ],
+  "caption": "A golden saxophone bell rests against dark blue suit pants, with metallic stand legs visible to the left; to the right, a wooden chair back and leg frame the scene, partially obscured by the suit’s edge.",
+  "notes": [
+    "Golden saxophone bell, dark blue suit pants, metallic stand legs.",
+    "Dark blue fabric of a leg, wooden chair back, wooden chair leg."
+  ],
+  "seconds": 18.73,
+  "gpu": "Tesla T4",
+  "source_sha256": "059880461a04e6cf66b7ab64004416fa4452da270f33a0886d22dbba9410e2c0",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

@@ -1,0 +1,26 @@
+{
+  "method": "duel",
+  "case": "09-ballet-rehearsal",
+  "tile": 1,
+  "core": [
+    0,
+    0,
+    256,
+    448
+  ],
+  "padded": [
+    0,
+    0,
+    342,
+    534
+  ],
+  "caption": "A dark wooden window frame with vertical mullions stands left of a weathered, light-colored wall; the frame’s right edge is cropped by the image, and glass panes are visible within the frame.",
+  "notes": [
+    "The inner vertical edge of a tall, dark wooden window frame, showing its textured grain and the faint shadow of a window pane.",
+    "A dark wooden window frame with glass panes stands left of a weathered wall, their edges meeting at a vertical seam; the frame’s right side is cut off by the image’s edge."
+  ],
+  "seconds": 10.78,
+  "gpu": "Tesla T4",
+  "source_sha256": "a61f05a4399e0bbd82f7c16499e56edaef6c3c07b06ded575071b7307e00c655",
+  "method_sha256": "9762db3082b0d03b27fbf466ac92daf3f33b42f0babb66103bc3712d5bacc2e0"
+}

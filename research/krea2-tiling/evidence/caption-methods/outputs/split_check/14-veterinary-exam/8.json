@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "14-veterinary-exam",
+  "tile": 8,
+  "core": [
+    330,
+    693,
+    672,
+    1040
+  ],
+  "padded": [
+    245,
+    608,
+    758,
+    1040
+  ],
+  "caption": "A black-and-white dog’s paws rest on a reflective surface, while a human hand holds a leash above, partially obscuring the dog’s back.",
+  "notes": [
+    "Black-and-white fur, human hand, leash.",
+    "Paws on reflective surface, edge of light-colored object."
+  ],
+  "seconds": 14.38,
+  "gpu": "Tesla T4",
+  "source_sha256": "4a4aa26e7b77790cbbb66d5a2c3eedba8339d52de539583ec5bdbfedacbfcaa2",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

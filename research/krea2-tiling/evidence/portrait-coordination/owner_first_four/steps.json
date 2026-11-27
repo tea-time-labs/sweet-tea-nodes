@@ -1,0 +1,50 @@
+[
+  {
+    "step": 1,
+    "sigma": 0.9266473650932312,
+    "owner": true,
+    "callback_max_error": 0.0
+  },
+  {
+    "step": 2,
+    "sigma": 0.880513072013855,
+    "owner": true,
+    "callback_max_error": 0.0
+  },
+  {
+    "step": 3,
+    "sigma": 0.8257015943527222,
+    "owner": true,
+    "callback_max_error": 0.0
+  },
+  {
+    "step": 4,
+    "sigma": 0.7595109343528748,
+    "owner": true,
+    "callback_max_error": 0.0
+  },
+  {
+    "step": 5,
+    "sigma": 0.677986741065979,
+    "owner": false,
+    "callback_max_error": 0.0
+  },
+  {
+    "step": 6,
+    "sigma": 0.5751029849052429,
+    "owner": false,
+    "callback_max_error": 0.0
+  },
+  {
+    "step": 7,
+    "sigma": 0.44119977951049805,
+    "owner": false,
+    "callback_max_error": 0.0
+  },
+  {
+    "step": 8,
+    "sigma": 0.2597584128379822,
+    "owner": false,
+    "callback_max_error": 0.0
+  }
+]

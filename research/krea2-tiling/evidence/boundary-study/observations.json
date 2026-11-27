@@ -1,0 +1,63 @@
+{
+  "summary": [
+    "On the 16-prompt sample, the padded border and the two-half method each earned six accurate captions. Only two were accurate under both. The padded border located the hand and metal corner on the coffee tile and the measuring tape on the tailoring tile.",
+    "Each full-scene method missed all 16 prespecified spatial details. Dimming the exterior avoided outright wrong captions on this sample, but 12 of 16 were still partial. The earlier three-image captioner scored 5 accurate and recovered 1 detail on these tiles.",
+    "The next test worth isolating is a padded view to identify ambiguous parts, followed by confirmation of each proposed part and its position on the clean core. The paired scores show room for that approach. They do not establish how to choose between conflicting captions."
+  ],
+  "renders": [
+    {
+      "title": "Changing the two disputed fox tiles",
+      "note": "The source has one adult and two kits. The original render hides an additional kit face under the left kit. Replacing only captions 7 and 8 with the full-scene border descriptions makes three distinct kit faces visible. Tile 7 described a lowered head whose pixels are beyond the boundary.",
+      "region": [
+        35,
+        623,
+        900,
+        953
+      ],
+      "images": [
+        [
+          "Source",
+          "cases/10-wildlife-family/source.png",
+          1
+        ],
+        [
+          "Original captions",
+          "caption-methods/renders/10-wildlife-family/archived/output.png",
+          3
+        ],
+        [
+          "Full-scene border on tiles 7 and 8",
+          "boundary-study/renders/two_target_tiles/output.png",
+          3
+        ]
+      ]
+    },
+    {
+      "title": "Changing all nine captions",
+      "note": "The prior two-half render retains the source's two kits. With all nine full-scene border captions, five kit faces appear beneath two overlapping adult-looking heads. Tiles 5, 7, 8 and 9 each mention a kit. This comparison measures the combined effect of the nine caption replacements at one seed.",
+      "region": [
+        30,
+        535,
+        935,
+        942
+      ],
+      "images": [
+        [
+          "Source",
+          "cases/10-wildlife-family/source.png",
+          1
+        ],
+        [
+          "Earlier two-half captions on tiles 7 and 8",
+          "caption-methods/renders/10-wildlife-family/split_check/output.png",
+          3
+        ],
+        [
+          "Full-scene border on all nine tiles",
+          "boundary-study/renders/all_nine/output.png",
+          3
+        ]
+      ]
+    }
+  ]
+}

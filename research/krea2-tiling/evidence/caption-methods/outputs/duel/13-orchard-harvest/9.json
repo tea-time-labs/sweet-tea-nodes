@@ -1,0 +1,26 @@
+{
+  "method": "duel",
+  "case": "13-orchard-harvest",
+  "tile": 9,
+  "core": [
+    981,
+    469,
+    1472,
+    704
+  ],
+  "padded": [
+    896,
+    384,
+    1472,
+    704
+  ],
+  "caption": "Sunlight filters through apple trees, casting dappled shadows over grass and fallen red apples scattered across the orchard floor, with tree trunks visible on the right and a partial leg on the left.",
+  "notes": [
+    "A grassy orchard floor scattered with fallen red apples under late sun, with tree trunks and dappled shadows in the background.",
+    "Sunlight filters through apple trees, casting shadows over grass and fallen fruit; a partial leg stands on the left, while tree trunks and scattered apples lie on the right."
+  ],
+  "seconds": 10.51,
+  "gpu": "Tesla T4",
+  "source_sha256": "5a160c57c1ccafa124f6387a610657bae09c4703e12770f182d23c2373bf7ff0",
+  "method_sha256": "9762db3082b0d03b27fbf466ac92daf3f33b42f0babb66103bc3712d5bacc2e0"
+}

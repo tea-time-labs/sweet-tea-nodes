@@ -1,0 +1,371 @@
+{
+  "scene": {
+    "id": "16-museum-diorama",
+    "width": 832,
+    "height": 1248,
+    "focus": [
+      0.49,
+      0.51
+    ],
+    "review": "Two visitors at different depths, one pointing hand, glass and display edges continuous, no phantom figures.",
+    "prompt": "Vertical museum campaign image with realistic editorial photography and no typography. At left in the foreground an adult visitor and at center a child look through one tall glass display case at a miniature lunar rover on a rocky model landscape. The child points a single finger at the rover from outside the glass. The adult leans down to the child's eye height, both in side view, without faces overlapping. Dark matte exhibition walls, reflected amber room lights kept faint, glass corners and metal base line clear, richly lit model details, layered gallery depth."
+  },
+  "source_size": [
+    832,
+    1248
+  ],
+  "source_seed": 87926198,
+  "source_sampler": {
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1.0
+  },
+  "upscale_seed": 40311657,
+  "upscale_settings": {
+    "steps": 8,
+    "cfg": 1.0,
+    "denoise": 0.8,
+    "positions": "local",
+    "control": "Vision"
+  },
+  "runs": {
+    "euler-simple": {
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 331.61,
+      "sampling_seconds": 302.92,
+      "peak_torch_allocated_mib": 13880,
+      "peak_torch_reserved_mib": 15894,
+      "status": "ok",
+      "file": "euler-simple.png"
+    },
+    "euler-sgm_uniform": {
+      "sampler": "euler",
+      "scheduler": "sgm_uniform",
+      "sigmas": [
+        0.9266740679740906,
+        0.8805605173110962,
+        0.8257773518562317,
+        0.7596262693405151,
+        0.6781590580940247,
+        0.575360119342804,
+        0.441588819026947,
+        0.26036524772644043,
+        0.0
+      ],
+      "seconds": 331.52,
+      "sampling_seconds": 303.0,
+      "peak_torch_allocated_mib": 13880,
+      "peak_torch_reserved_mib": 15894,
+      "status": "ok",
+      "file": "euler-sgm_uniform.png"
+    },
+    "dpmpp_2m-simple": {
+      "sampler": "dpmpp_2m",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 331.37,
+      "sampling_seconds": 302.82,
+      "peak_torch_allocated_mib": 13880,
+      "peak_torch_reserved_mib": 15894,
+      "status": "ok",
+      "file": "dpmpp_2m-simple.png"
+    }
+  },
+  "node": "STKrea2TurboMatrixTest",
+  "colab_gpu": "NVIDIA L4",
+  "torch": "2.14.1+cu130",
+  "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+  "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+  "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+  "geometry": {
+    "final_size": [
+      2496,
+      3744
+    ],
+    "working_canvas": [
+      2496,
+      3744
+    ],
+    "tile_count": 9,
+    "padding": 256,
+    "tiles": [
+      {
+        "tile": 1,
+        "core_canvas_xyxy": [
+          0,
+          0,
+          832,
+          1248
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          0,
+          1088,
+          1504
+        ],
+        "core_source_xyxy": [
+          0,
+          0,
+          278,
+          416
+        ],
+        "padded_source_xyxy": [
+          0,
+          0,
+          363,
+          502
+        ],
+        "caption": "The interior of a glass display case, showing a miniature lunar rover on a rocky, textured model landscape under focused lighting, with the faint reflection of an adult's head visible in the glass."
+      },
+      {
+        "tile": 2,
+        "core_canvas_xyxy": [
+          832,
+          0,
+          1664,
+          1248
+        ],
+        "padded_canvas_xyxy": [
+          576,
+          0,
+          1920,
+          1504
+        ],
+        "core_source_xyxy": [
+          277,
+          0,
+          555,
+          416
+        ],
+        "padded_source_xyxy": [
+          192,
+          0,
+          640,
+          502
+        ],
+        "caption": "The interior of the glass display case, showing a miniature lunar rover on a rocky, textured model landscape, is illuminated by recessed ceiling lights."
+      },
+      {
+        "tile": 3,
+        "core_canvas_xyxy": [
+          1664,
+          0,
+          2496,
+          1248
+        ],
+        "padded_canvas_xyxy": [
+          1408,
+          0,
+          2496,
+          1504
+        ],
+        "core_source_xyxy": [
+          554,
+          0,
+          832,
+          416
+        ],
+        "padded_source_xyxy": [
+          469,
+          0,
+          832,
+          502
+        ],
+        "caption": "The interior of the display case's upper section, showing a dark, textured ceiling with recessed spotlights and the faint reflection of the glass case's frame."
+      },
+      {
+        "tile": 4,
+        "core_canvas_xyxy": [
+          0,
+          1248,
+          832,
+          2496
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          992,
+          1088,
+          2752
+        ],
+        "core_source_xyxy": [
+          0,
+          416,
+          278,
+          832
+        ],
+        "padded_source_xyxy": [
+          0,
+          330,
+          363,
+          918
+        ],
+        "caption": "The side profile of an adult's head and shoulder, wearing a dark hoodie, is seen in profile against a dark, softly lit background with faint reflections of amber room lights."
+      },
+      {
+        "tile": 5,
+        "core_canvas_xyxy": [
+          832,
+          1248,
+          1664,
+          2496
+        ],
+        "padded_canvas_xyxy": [
+          576,
+          992,
+          1920,
+          2752
+        ],
+        "core_source_xyxy": [
+          277,
+          416,
+          555,
+          832
+        ],
+        "padded_source_xyxy": [
+          192,
+          330,
+          640,
+          918
+        ],
+        "caption": "A child's finger points at a miniature lunar rover on a rocky, textured model landscape, viewed through a glass display case."
+      },
+      {
+        "tile": 6,
+        "core_canvas_xyxy": [
+          1664,
+          1248,
+          2496,
+          2496
+        ],
+        "padded_canvas_xyxy": [
+          1408,
+          992,
+          2496,
+          2752
+        ],
+        "core_source_xyxy": [
+          554,
+          416,
+          832,
+          832
+        ],
+        "padded_source_xyxy": [
+          469,
+          330,
+          832,
+          918
+        ],
+        "caption": "A detailed miniature lunar rover with a white body and yellow articulated legs rests on a textured, grayish-white rocky surface within a glass display case."
+      },
+      {
+        "tile": 7,
+        "core_canvas_xyxy": [
+          0,
+          2496,
+          832,
+          3744
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          2240,
+          1088,
+          3744
+        ],
+        "core_source_xyxy": [
+          0,
+          832,
+          278,
+          1248
+        ],
+        "padded_source_xyxy": [
+          0,
+          746,
+          363,
+          1248
+        ],
+        "caption": "The child's right hand, with a single finger extended, points toward the miniature lunar rover inside the glass display case."
+      },
+      {
+        "tile": 8,
+        "core_canvas_xyxy": [
+          832,
+          2496,
+          1664,
+          3744
+        ],
+        "padded_canvas_xyxy": [
+          576,
+          2240,
+          1920,
+          3744
+        ],
+        "core_source_xyxy": [
+          277,
+          832,
+          555,
+          1248
+        ],
+        "padded_source_xyxy": [
+          192,
+          746,
+          640,
+          1248
+        ],
+        "caption": "A close-up view of a miniature lunar rover on a textured, gray, rocky model landscape, viewed through a glass display case."
+      },
+      {
+        "tile": 9,
+        "core_canvas_xyxy": [
+          1664,
+          2496,
+          2496,
+          3744
+        ],
+        "padded_canvas_xyxy": [
+          1408,
+          2240,
+          2496,
+          3744
+        ],
+        "core_source_xyxy": [
+          554,
+          832,
+          832,
+          1248
+        ],
+        "padded_source_xyxy": [
+          469,
+          746,
+          832,
+          1248
+        ],
+        "caption": "The interior of the display case shows a miniature lunar rover on a textured, gray, rocky surface, with the dark, matte base of the exhibit visible at the bottom."
+      }
+    ],
+    "caption_and_encode_seconds": 59.57
+  }
+}

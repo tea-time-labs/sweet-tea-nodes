@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "01-florist-handoff",
+  "tile": 5,
+  "core": [
+    234,
+    426,
+    480,
+    854
+  ],
+  "padded": [
+    149,
+    341,
+    566,
+    939
+  ],
+  "caption": "Two hands cradle a bouquet of yellow and white flowers wrapped in brown paper, positioned just left of a bicycle handlebar grip. A wooden window frame and the base of a potted plant are visible below, with the handlebar extending diagonally from the lower right.",
+  "notes": [
+    "Hands holding bouquet wrapped in brown paper.",
+    "Handlebar grip and stem, window frame, potted plant base."
+  ],
+  "seconds": 19.47,
+  "gpu": "Tesla T4",
+  "source_sha256": "dcd0243066be054b170f8edb3346de123a0bbd3f1472c5a0898e97cdc18c09be",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

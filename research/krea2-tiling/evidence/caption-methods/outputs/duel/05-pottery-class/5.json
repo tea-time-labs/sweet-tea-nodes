@@ -1,0 +1,26 @@
+{
+  "method": "duel",
+  "case": "05-pottery-class",
+  "tile": 5,
+  "core": [
+    277,
+    405,
+    555,
+    811
+  ],
+  "padded": [
+    192,
+    320,
+    640,
+    896
+  ],
+  "caption": "A close-up of hands covered in white clay, pressing into a wet clay bowl on a pottery wheel, with a stained denim apron draped over a white shirt collar. The apron’s fabric and the bowl’s rim are visible at the bottom edge.",
+  "notes": [
+    "A close-up of a person's hands, covered in white clay, shaping a wet white bowl on a pottery wheel, with a worn denim apron visible behind them.",
+    "A painter’s hands, dusted with clay, press into a potter’s wheel, beneath a stained denim apron that drapes over a worn white shirt collar. The apron’s fabric and the pottery rim are visible at the lower edge, while the upper edge shows the collar and sleeve."
+  ],
+  "seconds": 12.83,
+  "gpu": "Tesla T4",
+  "source_sha256": "c66ae108dee40b2cd35d72a0a052207635956b562c6a40edf9fe46f9fe660e09",
+  "method_sha256": "9762db3082b0d03b27fbf466ac92daf3f33b42f0babb66103bc3712d5bacc2e0"
+}

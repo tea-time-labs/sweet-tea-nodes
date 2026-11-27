@@ -1,0 +1,23 @@
+{
+  "method": "original_t4",
+  "case": "14-veterinary-exam",
+  "tile": 1,
+  "core": [
+    0,
+    0,
+    331,
+    342
+  ],
+  "padded": [
+    0,
+    0,
+    416,
+    427
+  ],
+  "caption": "A woman's right profile against a bright, out-of-focus background, with the edge of a black dog's ear visible to her right.",
+  "notes": [],
+  "seconds": 10.49,
+  "gpu": "Tesla T4",
+  "source_sha256": "4a4aa26e7b77790cbbb66d5a2c3eedba8339d52de539583ec5bdbfedacbfcaa2",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

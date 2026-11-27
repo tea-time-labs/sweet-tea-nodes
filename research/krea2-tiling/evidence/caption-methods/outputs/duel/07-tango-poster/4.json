@@ -1,0 +1,26 @@
+{
+  "method": "duel",
+  "case": "07-tango-poster",
+  "tile": 4,
+  "core": [
+    0,
+    384,
+    299,
+    768
+  ],
+  "padded": [
+    0,
+    298,
+    384,
+    854
+  ],
+  "caption": "A red abstract shape curves from the upper right, partially off-frame, overlapping a beige textured rectangle below. A faint diagonal line extends from the lower left, intersecting the beige surface.",
+  "notes": [
+    "The inner tile, outlined in cyan, is a clean, empty cream area with a subtle flecked risograph texture, positioned against the warm cream background.",
+    "A red abstract form curves from the upper right, partially clipped, overlapping a beige textured rectangle below. A faint diagonal line extends from the lower left, intersecting the beige surface."
+  ],
+  "seconds": 9.69,
+  "gpu": "Tesla T4",
+  "source_sha256": "d2cdae9a168836f63ef81ea8e004aeab0851528721d3e60c966f6782ce3bb656",
+  "method_sha256": "9762db3082b0d03b27fbf466ac92daf3f33b42f0babb66103bc3712d5bacc2e0"
+}

@@ -1,0 +1,27 @@
+{
+  "method": "footwear_verified",
+  "case": "01-florist-handoff",
+  "tile": 7,
+  "core": [
+    0,
+    853,
+    235,
+    1280
+  ],
+  "padded": [
+    0,
+    768,
+    320,
+    1280
+  ],
+  "caption": "A person in a green apron and blue jeans stands on a concrete step, wearing white sneakers; a wooden bench edge is visible to the left, and wet pavement stretches below. The toe of the most prominent shoe points toward the right of the image.",
+  "notes": [
+    "Green apron, blue jeans, wooden bench edge.",
+    "White sneakers, concrete step, wet pavement"
+  ],
+  "seconds": 14.46,
+  "gpu": "Tesla T4",
+  "source_sha256": "dcd0243066be054b170f8edb3346de123a0bbd3f1472c5a0898e97cdc18c09be",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1",
+  "base_caption": "A person in a green apron and blue jeans stands on a concrete step, wearing white sneakers; a wooden bench edge is visible to the left, and wet pavement stretches below."
+}

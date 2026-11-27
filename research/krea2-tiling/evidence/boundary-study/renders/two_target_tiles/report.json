@@ -1,0 +1,45 @@
+{
+  "mode": "two_target_tiles",
+  "case": "10-wildlife-family",
+  "captions": [
+    "The visible content in image 3 is the blurred, out-of-focus background of the autumn clearing, featuring soft, indistinct shapes of bracken and dark firs under a pale, hazy sky.",
+    "The inner cyan rectangle isolates a softly blurred background of out-of-focus autumn bracken and dark fir branches under a pale, hazy sky.",
+    "The inner cyan rectangle isolates a softly blurred, dark green coniferous tree with out-of-focus needles and bokeh highlights against a pale, hazy sky.",
+    "The visible content in image 3 is the right ear and the side of the head of a red fox kit, with a softly blurred background of out-of-focus bracken and dark firs.",
+    "A red fox's head, with distinct rust-colored face and black legs, is shown in profile, sniffing a kit, against a softly blurred background of autumnal bracken and dark firs.",
+    "The rear flank and tail of an adult red fox, with fine, russet-tipped fur, curves over a curled kit, set against a softly blurred background of dark fir branches and dry bracken.",
+    "A small red fox kit stands on the left, facing right, with its head slightly lowered, surrounded by fallen leaves and dry grass.",
+    "A small red fox kit with a rust-colored face and dark legs stands near the adult fox, its head lowered toward the damp ground covered in fallen leaves.",
+    "A fox kit with a rust-colored face and black legs curls near the adult fox's hind paws, resting on damp, orange leaf litter."
+  ],
+  "changed_tiles": [
+    7,
+    8
+  ],
+  "seed": 40310871,
+  "variant": "euler-simple",
+  "gpu": "NVIDIA L4",
+  "torch": "2.14.1+cu130",
+  "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+  "output_sha256": "c8d6af9fdd1cc3d5cfd00612d512348f30a9b8eab66831dfe517b50c8b0d96aa",
+  "metrics": {
+    "sampler": "euler",
+    "scheduler": "simple",
+    "sigmas": [
+      0.9266473650932312,
+      0.880513072013855,
+      0.8257015943527222,
+      0.7595109343528748,
+      0.677986741065979,
+      0.5751029849052429,
+      0.44119977951049805,
+      0.2597584128379822,
+      0.0
+    ],
+    "seconds": 323.59,
+    "sampling_seconds": 294.87,
+    "peak_torch_allocated_mib": 13889,
+    "peak_torch_reserved_mib": 15922,
+    "guide_applications": 0
+  }
+}

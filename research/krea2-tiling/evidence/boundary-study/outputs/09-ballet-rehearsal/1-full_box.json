@@ -1,0 +1,39 @@
+{
+  "case": "09-ballet-rehearsal",
+  "tile": 1,
+  "mode": "full_box",
+  "caption": "The target rectangle frames the left side of a tall, multi-paned wooden window, showing its dark frame and glass panes against a pale wall.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [0, 0, 333, 333] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Tall portrait editorial photograph in a high-ceiling old ballet studio, photographed perpendicular to a single wooden barre that runs from left to right. Two adult dancers rehearse together. The dancer on the right extends one leg along the barre while her partner on the left steadies her lightly at the elbow. Distinct necks, elbows and hands, bare floor and tall windows, dark wood and pale warm pink dancewear, sunlight and straight window shadows. No mirrors. Leave some breathing room above the dancers.",
+  "core": [
+    0,
+    0,
+    256,
+    448
+  ],
+  "padded": [
+    0,
+    0,
+    342,
+    534
+  ],
+  "box_in_view": [
+    0,
+    0,
+    256,
+    448
+  ],
+  "normalized": [
+    0,
+    0,
+    333,
+    333
+  ],
+  "view_size": [
+    768,
+    1344
+  ],
+  "view_rgb_sha256": "0a9e98f6033aa59881844c0cb1ed2c666bcb002552dae794965f415380fd3795",
+  "source_sha256": "a61f05a4399e0bbd82f7c16499e56edaef6c3c07b06ded575071b7307e00c655",
+  "gpu": "Tesla T4",
+  "seconds": 11.54
+}

@@ -1,0 +1,39 @@
+{
+  "case": "02-jazz-trio",
+  "tile": 2,
+  "mode": "full_box",
+  "caption": "The target rectangle frames a section of a black velvet curtain, with the top edge showing a faint horizontal light reflection and the curtain’s vertical folds clearly visible.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [333, 0, 667, 334] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Square album-cover photograph of an intimate jazz trio on a compact stage. The upright bassist at left in a rust shirt and the saxophonist at right in a blue suit turn toward each other, with the seated drummer visible between and behind them. Three people, one instrument each. Golden key light and deep blue shadows, black velvet curtain, a few wooden chairs in soft focus, warm documentary film grain. Show the whole wooden bass and the curved brass saxophone, including the musicians' hands playing.",
+  "core": [
+    341,
+    0,
+    683,
+    342
+  ],
+  "padded": [
+    256,
+    0,
+    768,
+    427
+  ],
+  "box_in_view": [
+    341,
+    0,
+    683,
+    342
+  ],
+  "normalized": [
+    333,
+    0,
+    667,
+    334
+  ],
+  "view_size": [
+    1024,
+    1024
+  ],
+  "view_rgb_sha256": "bd7e541f8e2c04826f7a15b0654dc39f13d2ff599636ed12f30b400e0e32c9ee",
+  "source_sha256": "059880461a04e6cf66b7ab64004416fa4452da270f33a0886d22dbba9410e2c0",
+  "gpu": "Tesla T4",
+  "seconds": 11.64
+}

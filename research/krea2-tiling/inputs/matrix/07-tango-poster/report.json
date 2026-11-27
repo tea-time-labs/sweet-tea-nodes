@@ -1,0 +1,371 @@
+{
+  "scene": {
+    "id": "07-tango-poster",
+    "width": 896,
+    "height": 1152,
+    "focus": [
+      0.52,
+      0.52
+    ],
+    "review": "Two overlapping dancers, joined hands and distinct limbs, graphic title space preserved.",
+    "prompt": "Vertical printed cultural-festival poster illustration, no lettering. Two tango dancers in striking silhouette turn together, with the dancer in vermilion at left and the dancer in dark indigo at right. One pair of joined hands at shoulder height stands clear of the faces. One leg steps forward and one back in a readable dance pose. Clean broad shapes on warm cream paper, stylized parquet stripes on the lower third, flecks of risograph texture, large quiet cream area at the top reserved for typography."
+  },
+  "source_size": [
+    896,
+    1152
+  ],
+  "source_seed": 87924479,
+  "source_sampler": {
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1.0
+  },
+  "upscale_seed": 40310478,
+  "upscale_settings": {
+    "steps": 8,
+    "cfg": 1.0,
+    "denoise": 0.8,
+    "positions": "local",
+    "control": "Vision"
+  },
+  "runs": {
+    "euler-simple": {
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 328.18,
+      "sampling_seconds": 300.72,
+      "peak_torch_allocated_mib": 13874,
+      "peak_torch_reserved_mib": 15864,
+      "status": "ok",
+      "file": "euler-simple.png"
+    },
+    "euler-sgm_uniform": {
+      "sampler": "euler",
+      "scheduler": "sgm_uniform",
+      "sigmas": [
+        0.9266740679740906,
+        0.8805605173110962,
+        0.8257773518562317,
+        0.7596262693405151,
+        0.6781590580940247,
+        0.575360119342804,
+        0.441588819026947,
+        0.26036524772644043,
+        0.0
+      ],
+      "seconds": 328.13,
+      "sampling_seconds": 300.39,
+      "peak_torch_allocated_mib": 13874,
+      "peak_torch_reserved_mib": 15864,
+      "status": "ok",
+      "file": "euler-sgm_uniform.png"
+    },
+    "dpmpp_2m-simple": {
+      "sampler": "dpmpp_2m",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 327.82,
+      "sampling_seconds": 300.54,
+      "peak_torch_allocated_mib": 13874,
+      "peak_torch_reserved_mib": 15864,
+      "status": "ok",
+      "file": "dpmpp_2m-simple.png"
+    }
+  },
+  "node": "STKrea2TurboMatrixTest",
+  "colab_gpu": "NVIDIA L4",
+  "torch": "2.14.1+cu130",
+  "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+  "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+  "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+  "geometry": {
+    "final_size": [
+      2688,
+      3456
+    ],
+    "working_canvas": [
+      2688,
+      3456
+    ],
+    "tile_count": 9,
+    "padding": 256,
+    "tiles": [
+      {
+        "tile": 1,
+        "core_canvas_xyxy": [
+          0,
+          0,
+          896,
+          1152
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          0,
+          1152,
+          1408
+        ],
+        "core_source_xyxy": [
+          0,
+          0,
+          299,
+          384
+        ],
+        "padded_source_xyxy": [
+          0,
+          0,
+          384,
+          470
+        ],
+        "caption": "A clean, warm cream background with a subtle flecked risograph texture."
+      },
+      {
+        "tile": 2,
+        "core_canvas_xyxy": [
+          896,
+          0,
+          1792,
+          1152
+        ],
+        "padded_canvas_xyxy": [
+          640,
+          0,
+          2048,
+          1408
+        ],
+        "core_source_xyxy": [
+          298,
+          0,
+          598,
+          384
+        ],
+        "padded_source_xyxy": [
+          213,
+          0,
+          683,
+          470
+        ],
+        "caption": "A close-up of the red silhouette of a woman's head and shoulder, facing right, with her hair in a bun, set against a plain cream background."
+      },
+      {
+        "tile": 3,
+        "core_canvas_xyxy": [
+          1792,
+          0,
+          2688,
+          1152
+        ],
+        "padded_canvas_xyxy": [
+          1536,
+          0,
+          2688,
+          1408
+        ],
+        "core_source_xyxy": [
+          597,
+          0,
+          896,
+          384
+        ],
+        "padded_source_xyxy": [
+          512,
+          0,
+          896,
+          470
+        ],
+        "caption": "A pair of joined hands, one vermilion and one indigo, held at shoulder height against a warm cream background."
+      },
+      {
+        "tile": 4,
+        "core_canvas_xyxy": [
+          0,
+          1152,
+          896,
+          2304
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          896,
+          1152,
+          2560
+        ],
+        "core_source_xyxy": [
+          0,
+          384,
+          299,
+          768
+        ],
+        "padded_source_xyxy": [
+          0,
+          298,
+          384,
+          854
+        ],
+        "caption": "The inner tile, outlined in cyan, is a clean, empty cream area with a subtle flecked risograph texture, positioned against the warm cream background."
+      },
+      {
+        "tile": 5,
+        "core_canvas_xyxy": [
+          896,
+          1152,
+          1792,
+          2304
+        ],
+        "padded_canvas_xyxy": [
+          640,
+          896,
+          2048,
+          2560
+        ],
+        "core_source_xyxy": [
+          298,
+          384,
+          598,
+          768
+        ],
+        "padded_source_xyxy": [
+          213,
+          298,
+          683,
+          854
+        ],
+        "caption": "A stylized, broad orange silhouette of a woman's torso and arm, with a dark indigo hand resting on her shoulder, set against a warm cream background with subtle flecks."
+      },
+      {
+        "tile": 6,
+        "core_canvas_xyxy": [
+          1792,
+          1152,
+          2688,
+          2304
+        ],
+        "padded_canvas_xyxy": [
+          1536,
+          896,
+          2688,
+          2560
+        ],
+        "core_source_xyxy": [
+          597,
+          384,
+          896,
+          768
+        ],
+        "padded_source_xyxy": [
+          512,
+          298,
+          896,
+          854
+        ],
+        "caption": "The inner tile shows a clean, cream-colored background with a subtle flecked risograph texture, framed by the cyan rectangle."
+      },
+      {
+        "tile": 7,
+        "core_canvas_xyxy": [
+          0,
+          2304,
+          896,
+          3456
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          2048,
+          1152,
+          3456
+        ],
+        "core_source_xyxy": [
+          0,
+          768,
+          299,
+          1152
+        ],
+        "padded_source_xyxy": [
+          0,
+          682,
+          384,
+          1152
+        ],
+        "caption": "A stylized, high-heeled red shoe in silhouette rests on a cream-colored parquet floor with vertical stripes and a subtle risograph texture."
+      },
+      {
+        "tile": 8,
+        "core_canvas_xyxy": [
+          896,
+          2304,
+          1792,
+          3456
+        ],
+        "padded_canvas_xyxy": [
+          640,
+          2048,
+          2048,
+          3456
+        ],
+        "core_source_xyxy": [
+          298,
+          768,
+          598,
+          1152
+        ],
+        "padded_source_xyxy": [
+          213,
+          682,
+          683,
+          1152
+        ],
+        "caption": "The cyan rectangle isolates the lower legs and feet of the dark indigo dancer, showing one foot forward and the other back, set against a background of warm cream and red-orange stylized parquet stripes with a flecked risograph texture."
+      },
+      {
+        "tile": 9,
+        "core_canvas_xyxy": [
+          1792,
+          2304,
+          2688,
+          3456
+        ],
+        "padded_canvas_xyxy": [
+          1536,
+          2048,
+          2688,
+          3456
+        ],
+        "core_source_xyxy": [
+          597,
+          768,
+          896,
+          1152
+        ],
+        "padded_source_xyxy": [
+          512,
+          682,
+          896,
+          1152
+        ],
+        "caption": "A dark indigo silhouette of a dancer's leg and foot, stepping forward on stylized parquet stripes of orange and cream, with a flecked risograph texture."
+      }
+    ],
+    "caption_and_encode_seconds": 60.13
+  }
+}

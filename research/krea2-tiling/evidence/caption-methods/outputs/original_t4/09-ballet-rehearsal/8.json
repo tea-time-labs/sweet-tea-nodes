@@ -1,0 +1,23 @@
+{
+  "method": "original_t4",
+  "case": "09-ballet-rehearsal",
+  "tile": 8,
+  "core": [
+    256,
+    896,
+    512,
+    1344
+  ],
+  "padded": [
+    170,
+    810,
+    598,
+    1344
+  ],
+  "caption": "The dancer's right leg, clad in pale pink tights and a ballet slipper, stands poised on a smooth, light-gray floor with distinct rectangular tiles, beneath the soft, elongated shadows cast by the tall windows.",
+  "notes": [],
+  "seconds": 13.78,
+  "gpu": "Tesla T4",
+  "source_sha256": "a61f05a4399e0bbd82f7c16499e56edaef6c3c07b06ded575071b7307e00c655",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

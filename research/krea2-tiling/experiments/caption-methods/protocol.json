@@ -1,0 +1,143 @@
+{
+  "development": {
+    "01-florist-handoff": [
+      2,
+      5,
+      7
+    ],
+    "05-pottery-class": [
+      3,
+      6,
+      7
+    ],
+    "08-night-market": [
+      1,
+      4,
+      8
+    ],
+    "10-wildlife-family": [
+      5,
+      7,
+      8
+    ],
+    "12-urban-basketball": [
+      2,
+      6,
+      9
+    ],
+    "16-museum-diorama": [
+      1,
+      8,
+      9
+    ]
+  },
+  "confirmation": {
+    "02-jazz-trio": [
+      1,
+      5,
+      9
+    ],
+    "03-library-architecture": [
+      2,
+      6,
+      7
+    ],
+    "04-kayak-rescue-practice": [
+      3,
+      4,
+      8
+    ],
+    "06-restaurant-pass": [
+      1,
+      5,
+      9
+    ],
+    "07-tango-poster": [
+      2,
+      6,
+      7
+    ],
+    "09-ballet-rehearsal": [
+      3,
+      4,
+      8
+    ],
+    "11-coffee-product": [
+      1,
+      5,
+      9
+    ],
+    "13-orchard-harvest": [
+      2,
+      6,
+      7
+    ],
+    "14-veterinary-exam": [
+      3,
+      4,
+      8
+    ],
+    "15-tailoring-studio": [
+      1,
+      5,
+      9
+    ]
+  },
+  "rubric": {
+    "A": "Main visible parts and salient fragments are grounded, with no material unsupported detail. Minor omissions allowed.",
+    "P": "Useful grounding, but a material error, missing major fragment, or misleading spatial relation.",
+    "W": "Dominant content is contradicted or missing, or invented subjects replace what is visible."
+  },
+  "outcome": "Compare matched counts and retain per-tile grades. Score three candidates on development, select by most accurate, then fewest wrong, then fewest generation passes. Score the frozen winner on the 30 confirmation tiles across separate scenes. Regrade archived captions alongside candidates with method identities concealed. Record important spatial misses even for broadly accurate captions. Source images were seen in the prior audit.",
+  "fresh_tiles": {
+    "01-florist-handoff": [
+      6
+    ],
+    "02-jazz-trio": [
+      2
+    ],
+    "03-library-architecture": [
+      8
+    ],
+    "04-kayak-rescue-practice": [
+      7
+    ],
+    "05-pottery-class": [
+      5
+    ],
+    "06-restaurant-pass": [
+      3
+    ],
+    "07-tango-poster": [
+      4
+    ],
+    "08-night-market": [
+      9
+    ],
+    "09-ballet-rehearsal": [
+      1
+    ],
+    "10-wildlife-family": [
+      6
+    ],
+    "11-coffee-product": [
+      3
+    ],
+    "12-urban-basketball": [
+      5
+    ],
+    "13-orchard-harvest": [
+      9
+    ],
+    "14-veterinary-exam": [
+      1
+    ],
+    "15-tailoring-studio": [
+      2
+    ],
+    "16-museum-diorama": [
+      4
+    ]
+  },
+  "fresh_protocol": "One previously unused tile per scene. Balance position first and break ties using a fixed hash of scene ID and tile. Compare the same-device original, two halves, and a fourth method which sees both proposals plus the clean core. Original and two halves supply vocabulary only. Selection predates new outputs. These are new tiles from familiar source images."
+}

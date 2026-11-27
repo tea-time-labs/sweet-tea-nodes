@@ -1,0 +1,23 @@
+{
+  "method": "core",
+  "case": "05-pottery-class",
+  "tile": 7,
+  "core": [
+    0,
+    810,
+    278,
+    1216
+  ],
+  "padded": [
+    0,
+    725,
+    363,
+    1216
+  ],
+  "caption": "A white bowl filled with clay sits on a blue surface, partially obscured by a dark leg and denim fabric to the left. The bowl’s rim and interior are visible, with the fabric’s edge cutting off the top right corner.",
+  "notes": [],
+  "seconds": 11.27,
+  "gpu": "Tesla T4",
+  "source_sha256": "c66ae108dee40b2cd35d72a0a052207635956b562c6a40edf9fe46f9fe660e09",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

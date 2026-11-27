@@ -1,0 +1,80 @@
+[
+  {
+    "case": "01-florist-handoff",
+    "tile": 2,
+    "base": "A bouquet of yellow flowers in a brown paper wrap rests against a wooden-framed window, with blurred reflections of a building visible in the glass. The flowers are partially cut off by the right edge of the frame.",
+    "caption": "A bouquet of yellow flowers in a brown paper wrap rests against a wooden-framed window, with blurred reflections of a building visible in the glass. The flowers are partially cut off by the right edge of the frame.",
+    "status": "no footwear cue",
+    "answers": []
+  },
+  {
+    "case": "01-florist-handoff",
+    "tile": 7,
+    "base": "A person’s lower body stands on a concrete step, wearing blue jeans and white sneakers, with a green apron visible above the waist; the left shoe rests on the step’s edge while the right foot is slightly forward.",
+    "caption": "A person’s lower body stands on a concrete step, wearing blue jeans and white sneakers, with a green apron visible above the waist; the left shoe rests on the step’s edge while the right foot is slightly forward. The toe of the most prominent shoe points toward the right of the image.",
+    "status": "accepted",
+    "direction": "RIGHT",
+    "answers": [
+      "RIGHT",
+      "LEFT"
+    ]
+  },
+  {
+    "case": "07-tango-poster",
+    "tile": 7,
+    "base": "A red high-heeled shoe rests on a textured, peach-toned surface, its heel and arch visible, while a dark blue hand reaches upward from below, partially cut off by the frame.",
+    "caption": "A red high-heeled shoe rests on a textured, peach-toned surface, its heel and arch visible, while a dark blue hand reaches upward from below, partially cut off by the frame.",
+    "status": "abstained",
+    "answers": [
+      "RIGHT",
+      "RIGHT"
+    ]
+  },
+  {
+    "case": "09-ballet-rehearsal",
+    "tile": 4,
+    "base": "A hand grips a wooden ballet barre, its fingers resting on a light-colored shoe, beside a tall, dark wood-framed window with multiple panes. The barre curves gently, partially cut off by the frame’s edge.",
+    "caption": "A hand grips a wooden ballet barre, its fingers resting on a light-colored shoe, beside a tall, dark wood-framed window with multiple panes. The barre curves gently, partially cut off by the frame’s edge.",
+    "status": "abstained",
+    "answers": [
+      "RIGHT",
+      "RIGHT"
+    ]
+  },
+  {
+    "case": "09-ballet-rehearsal",
+    "tile": 8,
+    "base": "A pair of ballet dancers’ legs in pale pink tights and pointe shoes stand on a smooth, sunlit floor, with one shoe partially cut off by the right edge of the frame.",
+    "caption": "A pair of ballet dancers’ legs in pale pink tights and pointe shoes stand on a smooth, sunlit floor, with one shoe partially cut off by the right edge of the frame. The toe of the most prominent shoe points toward the viewer.",
+    "status": "accepted",
+    "direction": "FRONT",
+    "answers": [
+      "FRONT",
+      "FRONT"
+    ]
+  },
+  {
+    "case": "08-night-market",
+    "tile": 8,
+    "base": "A red tablecloth holds a box of sliced fruit, partially cut off by the frame, while a person in an orange coat stands nearby, their hand and lower leg visible. The floor is dark and wet, reflecting faint light.",
+    "caption": "A red tablecloth holds a box of sliced fruit, partially cut off by the frame, while a person in an orange coat stands nearby, their hand and lower leg visible. The floor is dark and wet, reflecting faint light.",
+    "status": "no footwear cue",
+    "answers": []
+  },
+  {
+    "case": "10-wildlife-family",
+    "tile": 7,
+    "base": "A fox’s head and shoulders emerge from the right, its fur blending with dry grass and fallen orange leaves in the foreground, while its paws and tail are partially obscured by the edge of the frame.",
+    "caption": "A fox’s head and shoulders emerge from the right, its fur blending with dry grass and fallen orange leaves in the foreground, while its paws and tail are partially obscured by the edge of the frame.",
+    "status": "no footwear cue",
+    "answers": []
+  },
+  {
+    "case": "16-museum-diorama",
+    "tile": 9,
+    "base": "A glass edge frames a dark, shadowed foreground, with a sandy, rocky surface visible above it. The viewer sees the lower portion of the glass and the dark base beneath, with a cut-off rock formation in the upper right.",
+    "caption": "A glass edge frames a dark, shadowed foreground, with a sandy, rocky surface visible above it. The viewer sees the lower portion of the glass and the dark base beneath, with a cut-off rock formation in the upper right.",
+    "status": "no footwear cue",
+    "answers": []
+  }
+]

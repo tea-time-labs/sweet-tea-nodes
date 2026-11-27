@@ -1,0 +1,23 @@
+{
+  "method": "original_t4",
+  "case": "04-kayak-rescue-practice",
+  "tile": 7,
+  "core": [
+    0,
+    480,
+    427,
+    720
+  ],
+  "padded": [
+    0,
+    394,
+    512,
+    720
+  ],
+  "caption": "The interior of a mustard yellow kayak, showing its smooth, slightly curved hull and a black circular hatch cover, rests in shallow, rippling water with a pebbled shore in the foreground.",
+  "notes": [],
+  "seconds": 11.96,
+  "gpu": "Tesla T4",
+  "source_sha256": "64bb8df83e04f1364c31a6619068da322472041f87a8b18f1c06321c6a722bd4",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

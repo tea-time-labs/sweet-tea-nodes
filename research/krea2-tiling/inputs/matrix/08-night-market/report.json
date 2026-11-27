@@ -1,0 +1,371 @@
+{
+  "scene": {
+    "id": "08-night-market",
+    "width": 1344,
+    "height": 768,
+    "focus": [
+      0.53,
+      0.5
+    ],
+    "review": "Three central people, one paper bag changing hands, perspective under stall lights.",
+    "prompt": "Cinematic wide street campaign photograph of a lively Asian night market after rain. At center a market vendor in navy hands a single small kraft paper bag across the counter to one customer in a burnt-orange raincoat. A second customer in a cream coat waits beside her holding a folded umbrella at her side. Other shoppers remain tiny and out of focus down the lane. Rows of warm awning lights, slick paving reflecting magenta and amber, orderly market stalls receding diagonally, expressive poses and realistic hands."
+  },
+  "source_size": [
+    1344,
+    768
+  ],
+  "source_seed": 87924670,
+  "source_sampler": {
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1.0
+  },
+  "upscale_seed": 40310609,
+  "upscale_settings": {
+    "steps": 8,
+    "cfg": 1.0,
+    "denoise": 0.8,
+    "positions": "local",
+    "control": "Vision"
+  },
+  "runs": {
+    "euler-simple": {
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 331.05,
+      "sampling_seconds": 303.38,
+      "peak_torch_allocated_mib": 13885,
+      "peak_torch_reserved_mib": 16126,
+      "status": "ok",
+      "file": "euler-simple.png"
+    },
+    "euler-sgm_uniform": {
+      "sampler": "euler",
+      "scheduler": "sgm_uniform",
+      "sigmas": [
+        0.9266740679740906,
+        0.8805605173110962,
+        0.8257773518562317,
+        0.7596262693405151,
+        0.6781590580940247,
+        0.575360119342804,
+        0.441588819026947,
+        0.26036524772644043,
+        0.0
+      ],
+      "seconds": 331.04,
+      "sampling_seconds": 303.49,
+      "peak_torch_allocated_mib": 13885,
+      "peak_torch_reserved_mib": 16126,
+      "status": "ok",
+      "file": "euler-sgm_uniform.png"
+    },
+    "dpmpp_2m-simple": {
+      "sampler": "dpmpp_2m",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 330.95,
+      "sampling_seconds": 303.21,
+      "peak_torch_allocated_mib": 13885,
+      "peak_torch_reserved_mib": 16126,
+      "status": "ok",
+      "file": "dpmpp_2m-simple.png"
+    }
+  },
+  "node": "STKrea2TurboMatrixTest",
+  "colab_gpu": "NVIDIA L4",
+  "torch": "2.14.1+cu130",
+  "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+  "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+  "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+  "geometry": {
+    "final_size": [
+      4032,
+      2304
+    ],
+    "working_canvas": [
+      4032,
+      2304
+    ],
+    "tile_count": 9,
+    "padding": 256,
+    "tiles": [
+      {
+        "tile": 1,
+        "core_canvas_xyxy": [
+          0,
+          0,
+          1344,
+          768
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          0,
+          1600,
+          1024
+        ],
+        "core_source_xyxy": [
+          0,
+          0,
+          448,
+          256
+        ],
+        "padded_source_xyxy": [
+          0,
+          0,
+          534,
+          342
+        ],
+        "caption": "A man in a navy hooded jacket, seen in profile, extends his hand toward a vendor at a stall under a row of warm, hanging awning lights."
+      },
+      {
+        "tile": 2,
+        "core_canvas_xyxy": [
+          1344,
+          0,
+          2688,
+          768
+        ],
+        "padded_canvas_xyxy": [
+          1088,
+          0,
+          2944,
+          1024
+        ],
+        "core_source_xyxy": [
+          448,
+          0,
+          896,
+          256
+        ],
+        "padded_source_xyxy": [
+          362,
+          0,
+          982,
+          342
+        ],
+        "caption": "Raindrops fall against a blurred background of warm, out-of-focus awning lights and distant market stalls, with the edge of a wooden stall roof visible at the top."
+      },
+      {
+        "tile": 3,
+        "core_canvas_xyxy": [
+          2688,
+          0,
+          4032,
+          768
+        ],
+        "padded_canvas_xyxy": [
+          2432,
+          0,
+          4032,
+          1024
+        ],
+        "core_source_xyxy": [
+          896,
+          0,
+          1344,
+          256
+        ],
+        "padded_source_xyxy": [
+          810,
+          0,
+          1344,
+          342
+        ],
+        "caption": "A woman in a cream coat stands in profile, her dark bobbed hair and collar visible, against a backdrop of warm, glowing awning lights and a wet, reflective pavement."
+      },
+      {
+        "tile": 4,
+        "core_canvas_xyxy": [
+          0,
+          768,
+          1344,
+          1536
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          512,
+          1600,
+          1792
+        ],
+        "core_source_xyxy": [
+          0,
+          256,
+          448,
+          512
+        ],
+        "padded_source_xyxy": [
+          0,
+          170,
+          534,
+          598
+        ],
+        "caption": "A man in a navy hooded jacket extends his hand to hand over a small kraft paper bag to a customer, with rows of packaged goods and warm, out-of-focus market lights in the background."
+      },
+      {
+        "tile": 5,
+        "core_canvas_xyxy": [
+          1344,
+          768,
+          2688,
+          1536
+        ],
+        "padded_canvas_xyxy": [
+          1088,
+          512,
+          2944,
+          1792
+        ],
+        "core_source_xyxy": [
+          448,
+          256,
+          896,
+          512
+        ],
+        "padded_source_xyxy": [
+          362,
+          170,
+          982,
+          598
+        ],
+        "caption": "A woman in a burnt-orange raincoat extends her hand to receive a kraft paper bag from a vendor, with the warm, out-of-focus glow of market lights and wet pavement visible behind her."
+      },
+      {
+        "tile": 6,
+        "core_canvas_xyxy": [
+          2688,
+          768,
+          4032,
+          1536
+        ],
+        "padded_canvas_xyxy": [
+          2432,
+          512,
+          4032,
+          1792
+        ],
+        "core_source_xyxy": [
+          896,
+          256,
+          1344,
+          512
+        ],
+        "padded_source_xyxy": [
+          810,
+          170,
+          1344,
+          598
+        ],
+        "caption": "A woman in a cream coat stands in profile, her face partially visible, holding a folded umbrella at her side, against a softly blurred background of warm, glowing market lights and wet, reflective pavement."
+      },
+      {
+        "tile": 7,
+        "core_canvas_xyxy": [
+          0,
+          1536,
+          1344,
+          2304
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          1280,
+          1600,
+          2304
+        ],
+        "core_source_xyxy": [
+          0,
+          512,
+          448,
+          768
+        ],
+        "padded_source_xyxy": [
+          0,
+          426,
+          534,
+          768
+        ],
+        "caption": "The inner tile shows a close-up of a cardboard box filled with packaged, golden-brown food items, with a red tablecloth beneath and a blurred dark figure in the foreground."
+      },
+      {
+        "tile": 8,
+        "core_canvas_xyxy": [
+          1344,
+          1536,
+          2688,
+          2304
+        ],
+        "padded_canvas_xyxy": [
+          1088,
+          1280,
+          2944,
+          2304
+        ],
+        "core_source_xyxy": [
+          448,
+          512,
+          896,
+          768
+        ],
+        "padded_source_xyxy": [
+          362,
+          426,
+          982,
+          768
+        ],
+        "caption": "The lower portion of a person in a burnt-orange raincoat stands on a wet, reflective pavement, with the texture of the dark, slick ground visible beneath their dark pants."
+      },
+      {
+        "tile": 9,
+        "core_canvas_xyxy": [
+          2688,
+          1536,
+          4032,
+          2304
+        ],
+        "padded_canvas_xyxy": [
+          2432,
+          1280,
+          4032,
+          2304
+        ],
+        "core_source_xyxy": [
+          896,
+          512,
+          1344,
+          768
+        ],
+        "padded_source_xyxy": [
+          810,
+          426,
+          1344,
+          768
+        ],
+        "caption": "A folded, dark green umbrella with a curved wooden handle is held by a person in a cream coat, standing on a wet, magenta-reflective pavement."
+      }
+    ],
+    "caption_and_encode_seconds": 66.89
+  }
+}

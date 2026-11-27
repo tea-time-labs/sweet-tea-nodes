@@ -1,0 +1,37 @@
+{
+  "sampler": "euler",
+  "scheduler": "beta",
+  "sigmas": [
+    0.9575174450874329,
+    0.9118037223815918,
+    0.8473109602928162,
+    0.7595839500427246,
+    0.642623245716095,
+    0.49117511510849,
+    0.30697011947631836,
+    0.11548543721437454,
+    0.0
+  ],
+  "seconds": 349.81,
+  "sampling_seconds": 321.5,
+  "peak_torch_allocated_mib": 13884,
+  "peak_torch_reserved_mib": 15914,
+  "guide_applications": 0,
+  "status": "ok",
+  "file": "euler-beta.png",
+  "case": "09-ballet-rehearsal",
+  "source_sha256": "a61f05a4399e0bbd82f7c16499e56edaef6c3c07b06ded575071b7307e00c655",
+  "source_size": [
+    768,
+    1344
+  ],
+  "output_size": [
+    2304,
+    4032
+  ],
+  "seed": 40310740,
+  "steps": 8,
+  "cfg": 1.0,
+  "denoise": 0.8,
+  "colab_gpu": "NVIDIA L4"
+}

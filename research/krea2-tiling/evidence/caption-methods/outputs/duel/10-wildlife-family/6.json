@@ -1,0 +1,26 @@
+{
+  "method": "duel",
+  "case": "10-wildlife-family",
+  "tile": 6,
+  "core": [
+    640,
+    362,
+    960,
+    726
+  ],
+  "padded": [
+    554,
+    277,
+    960,
+    811
+  ],
+  "caption": "A fox’s furred hindquarters and tail tip are shown in profile, with blurred green foliage and dry brown branches framing the scene from above and to the right. The edge cuts off the fox’s lower body and tail, leaving only the upper flank and tail’s dark tip visible.",
+  "notes": [
+    "A fox’s furred hindquarters and tail tip are shown in profile, with blurred green foliage and dry brown branches framing the scene from above and to the right. The edge cuts off the fox’s lower body and tail, leaving only the upper flank and tail’s dark tip visible.",
+    "The visible content in image 3 is the fine, textured fur of the adult fox's flank and tail, with a small portion of the second kit's head peeking up from beneath, set against a softly blurred background of dark fir branches and dry bracken."
+  ],
+  "seconds": 14.17,
+  "gpu": "Tesla T4",
+  "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+  "method_sha256": "9762db3082b0d03b27fbf466ac92daf3f33b42f0babb66103bc3712d5bacc2e0"
+}

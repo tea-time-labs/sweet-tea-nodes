@@ -1,0 +1,68 @@
+{
+  "case": "10-wildlife-family",
+  "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+  "source_size": [
+    960,
+    1088
+  ],
+  "output_size": [
+    2880,
+    3264
+  ],
+  "seed": 40310871,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "steps": 8,
+  "cfg": 1.0,
+  "denoise": 0.8,
+  "guide_strength": 0.7,
+  "runs": {
+    "depth": {
+      "status": "ok",
+      "file": "vision-depth.png",
+      "guide": "depth-guide.png",
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 328.31,
+      "sampling_seconds": 307.33,
+      "peak_torch_allocated_mib": 13889,
+      "peak_torch_reserved_mib": 15852,
+      "guide_applications": 72
+    },
+    "canny": {
+      "status": "ok",
+      "file": "vision-canny.png",
+      "guide": "canny-guide.png",
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 705.93,
+      "sampling_seconds": 684.32,
+      "peak_torch_allocated_mib": 15252,
+      "peak_torch_reserved_mib": 18644,
+      "guide_applications": 72
+    }
+  },
+  "colab_gpu": "NVIDIA L4"
+}

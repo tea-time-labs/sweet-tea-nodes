@@ -1,0 +1,25 @@
+{
+  "method": "context_check",
+  "case": "08-night-market",
+  "tile": 8,
+  "core": [
+    448,
+    512,
+    896,
+    768
+  ],
+  "padded": [
+    362,
+    426,
+    982,
+    768
+  ],
+  "caption": "A burnt-orange raincoat drapes over dark pants, standing beside a red tablecloth with a box of yellow fruit and a dark pastry. The wet pavement reflects faint light beneath.",
+  "notes": [
+    "- kraft paper bag\n- burnt-orange raincoat\n- cream coat\n- folded umbrella\n- red tablecloth\n- wet pavement"
+  ],
+  "seconds": 17.3,
+  "gpu": "Tesla T4",
+  "source_sha256": "ed4c09abdbee5a1740202d6f2cd95f173fc3717c2ada117585297ed0ef5dfa42",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

@@ -1,0 +1,194 @@
+{
+  "development": {
+    "methods": {
+      "core": {
+        "A": 7,
+        "P": 10,
+        "W": 1,
+        "landmark": 5,
+        "n": 18,
+        "median_s": 10.3
+      },
+      "split_check": {
+        "A": 10,
+        "P": 8,
+        "W": 0,
+        "landmark": 10,
+        "n": 18,
+        "median_s": 17.4
+      },
+      "context_check": {
+        "A": 8,
+        "P": 9,
+        "W": 1,
+        "landmark": 4,
+        "n": 18,
+        "median_s": 17.4
+      },
+      "archived": {
+        "A": 1,
+        "P": 6,
+        "W": 11,
+        "landmark": 1,
+        "n": 18
+      }
+    },
+    "paired": {
+      "archived to core": {
+        "became_accurate": 7,
+        "lost_accurate": 1,
+        "gained_landmark": 4,
+        "lost_landmark": 0
+      },
+      "archived to split_check": {
+        "became_accurate": 9,
+        "lost_accurate": 0,
+        "gained_landmark": 9,
+        "lost_landmark": 0
+      },
+      "archived to context_check": {
+        "became_accurate": 8,
+        "lost_accurate": 1,
+        "gained_landmark": 3,
+        "lost_landmark": 0
+      },
+      "split_check to core": {
+        "became_accurate": 3,
+        "lost_accurate": 6,
+        "gained_landmark": 0,
+        "lost_landmark": 5
+      },
+      "split_check to context_check": {
+        "became_accurate": 3,
+        "lost_accurate": 5,
+        "gained_landmark": 0,
+        "lost_landmark": 6
+      },
+      "split_check to archived": {
+        "became_accurate": 0,
+        "lost_accurate": 9,
+        "gained_landmark": 0,
+        "lost_landmark": 9
+      }
+    }
+  },
+  "confirmation": {
+    "methods": {
+      "split_check": {
+        "A": 15,
+        "P": 14,
+        "W": 1,
+        "landmark": 14,
+        "n": 30,
+        "median_s": 18.8
+      },
+      "original_t4": {
+        "A": 11,
+        "P": 18,
+        "W": 1,
+        "landmark": 6,
+        "n": 30,
+        "median_s": 11.0
+      },
+      "archived": {
+        "A": 11,
+        "P": 17,
+        "W": 2,
+        "landmark": 6,
+        "n": 30
+      }
+    },
+    "paired": {
+      "archived to split_check": {
+        "became_accurate": 9,
+        "lost_accurate": 5,
+        "gained_landmark": 9,
+        "lost_landmark": 1
+      },
+      "archived to original_t4": {
+        "became_accurate": 0,
+        "lost_accurate": 0,
+        "gained_landmark": 0,
+        "lost_landmark": 0
+      },
+      "original_t4 to split_check": {
+        "became_accurate": 9,
+        "lost_accurate": 5,
+        "gained_landmark": 9,
+        "lost_landmark": 1
+      },
+      "original_t4 to archived": {
+        "became_accurate": 0,
+        "lost_accurate": 0,
+        "gained_landmark": 0,
+        "lost_landmark": 0
+      },
+      "split_check to original_t4": {
+        "became_accurate": 5,
+        "lost_accurate": 9,
+        "gained_landmark": 1,
+        "lost_landmark": 9
+      },
+      "split_check to archived": {
+        "became_accurate": 5,
+        "lost_accurate": 9,
+        "gained_landmark": 1,
+        "lost_landmark": 9
+      }
+    }
+  },
+  "fresh_tiles": {
+    "methods": {
+      "duel": {
+        "A": 8,
+        "P": 8,
+        "W": 0,
+        "landmark": 2,
+        "n": 16,
+        "median_s": 10.8
+      },
+      "original_t4": {
+        "A": 5,
+        "P": 10,
+        "W": 1,
+        "landmark": 1,
+        "n": 16,
+        "median_s": 11.4
+      },
+      "split_check": {
+        "A": 6,
+        "P": 10,
+        "W": 0,
+        "landmark": 3,
+        "n": 16,
+        "median_s": 18.5
+      }
+    },
+    "paired": {
+      "original_t4 to duel": {
+        "became_accurate": 5,
+        "lost_accurate": 2,
+        "gained_landmark": 2,
+        "lost_landmark": 1
+      },
+      "original_t4 to split_check": {
+        "became_accurate": 3,
+        "lost_accurate": 2,
+        "gained_landmark": 3,
+        "lost_landmark": 1
+      },
+      "split_check to duel": {
+        "became_accurate": 2,
+        "lost_accurate": 0,
+        "gained_landmark": 0,
+        "lost_landmark": 1
+      },
+      "split_check to original_t4": {
+        "became_accurate": 2,
+        "lost_accurate": 3,
+        "gained_landmark": 1,
+        "lost_landmark": 3
+      }
+    }
+  }
+}

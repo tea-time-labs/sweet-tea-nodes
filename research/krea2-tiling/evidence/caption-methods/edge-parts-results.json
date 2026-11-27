@@ -1,0 +1,18 @@
+[
+  {
+    "case": "10-wildlife-family",
+    "tile": 8,
+    "raw": [
+      "EYE",
+      "EYE"
+    ],
+    "labels": [
+      "EYE",
+      "EYE"
+    ],
+    "verify": "ONE",
+    "caption": "An eye is visible at the left and an eye is visible at the right. Between them: A fox’s paw and a human’s foot both touch the wet, leaf-strewn ground.",
+    "center": "A fox’s paw and a human’s foot both touch the wet, leaf-strewn ground.",
+    "identity_asserted": false
+  }
+]

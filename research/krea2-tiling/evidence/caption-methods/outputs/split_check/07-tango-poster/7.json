@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "07-tango-poster",
+  "tile": 7,
+  "core": [
+    0,
+    768,
+    299,
+    1152
+  ],
+  "padded": [
+    0,
+    682,
+    384,
+    1152
+  ],
+  "caption": "A red high-heeled shoe descends from the upper right, its heel touching a dark blue hand silhouette below, both resting on a beige textured ground with diagonal stripes.",
+  "notes": [
+    "Red silhouette of a leg and foot, beige textured ground.",
+    "Red high-heeled shoe and dark blue hand silhouette."
+  ],
+  "seconds": 15.27,
+  "gpu": "Tesla T4",
+  "source_sha256": "d2cdae9a168836f63ef81ea8e004aeab0851528721d3e60c966f6782ce3bb656",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

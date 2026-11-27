@@ -1,0 +1,25 @@
+{
+  "method": "context_check",
+  "case": "08-night-market",
+  "tile": 4,
+  "core": [
+    0,
+    256,
+    448,
+    512
+  ],
+  "padded": [
+    0,
+    170,
+    534,
+    598
+  ],
+  "caption": "A dark raincoat’s sleeve and shoulder dominate the foreground, overlapping a blurred cardboard box and plastic-wrapped goods. To the right, a person in a dark jacket leans over stacked items, partially obscured by the foreground figure.",
+  "notes": [
+    "- kraft paper bag\n- plastic wrap\n- cardboard box\n- raincoat\n- umbrella\n- awning light"
+  ],
+  "seconds": 18.93,
+  "gpu": "Tesla T4",
+  "source_sha256": "ed4c09abdbee5a1740202d6f2cd95f173fc3717c2ada117585297ed0ef5dfa42",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

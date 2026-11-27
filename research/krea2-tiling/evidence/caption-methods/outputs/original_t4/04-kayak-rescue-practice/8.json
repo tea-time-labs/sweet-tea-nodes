@@ -1,0 +1,23 @@
+{
+  "method": "original_t4",
+  "case": "04-kayak-rescue-practice",
+  "tile": 8,
+  "core": [
+    426,
+    480,
+    854,
+    720
+  ],
+  "padded": [
+    341,
+    394,
+    939,
+    720
+  ],
+  "caption": "The yellow-bladed paddle rests horizontally across the mustard kayak's deck, with the water's surface rippling gently in the foreground.",
+  "notes": [],
+  "seconds": 8.97,
+  "gpu": "Tesla T4",
+  "source_sha256": "64bb8df83e04f1364c31a6619068da322472041f87a8b18f1c06321c6a722bd4",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

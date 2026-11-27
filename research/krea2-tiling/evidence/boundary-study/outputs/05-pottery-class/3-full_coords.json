@@ -1,0 +1,39 @@
+{
+  "case": "05-pottery-class",
+  "tile": 3,
+  "mode": "full_coords",
+  "caption": "The rectangle contains a blurred background of shelves holding various unfinished ceramic pieces and a white bucket, with no distinct objects clearly visible within its boundaries.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [666, 0, 1000, 334] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Vertical editorial photograph in a working ceramics studio. A seated woman in a chambray apron shapes one wet white bowl on a pottery wheel. A standing teacher on her left leans in and demonstrates with one hovering clay-smudged hand, without touching the student's hands. Intimate mid shot, circular bowl and wheel near center, warm side light, worn aprons, shelves of unfinished ceramics and a white wash bucket in the far background. Natural human expressions and clearly readable hand positions.",
+  "core": [
+    554,
+    0,
+    832,
+    406
+  ],
+  "padded": [
+    469,
+    0,
+    832,
+    491
+  ],
+  "box_in_view": [
+    554,
+    0,
+    832,
+    406
+  ],
+  "normalized": [
+    666,
+    0,
+    1000,
+    334
+  ],
+  "view_size": [
+    832,
+    1216
+  ],
+  "view_rgb_sha256": "edf5660064c06ce57c7fcba0ad023ec9a243d130771b16933aa0cf266e04cd9f",
+  "source_sha256": "c66ae108dee40b2cd35d72a0a052207635956b562c6a40edf9fe46f9fe660e09",
+  "gpu": "Tesla T4",
+  "seconds": 10.78
+}

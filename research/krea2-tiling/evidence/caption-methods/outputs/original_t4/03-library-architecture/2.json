@@ -1,0 +1,23 @@
+{
+  "method": "original_t4",
+  "case": "03-library-architecture",
+  "tile": 2,
+  "core": [
+    405,
+    0,
+    811,
+    278
+  ],
+  "padded": [
+    320,
+    0,
+    896,
+    363
+  ],
+  "caption": "A tall, multi-paned mullioned window with white frames set into a pale brick wall, viewed from the corner of a double-height atrium.",
+  "notes": [],
+  "seconds": 11.17,
+  "gpu": "Tesla T4",
+  "source_sha256": "b4542744a3f528cb49b96d91f82428cc3e18121dc3dea84ec4b46a515632d345",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

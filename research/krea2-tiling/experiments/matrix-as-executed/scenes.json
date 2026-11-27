@@ -1,0 +1,82 @@
+[
+  {
+    "id": "01-florist-handoff", "width": 720, "height": 1280, "focus": [0.47, 0.52],
+    "review": "Two people, one bouquet, distinct hands at the handoff, upright door mullions.",
+    "prompt": "Tall vertical editorial photograph for a neighborhood florist campaign. A florist in a dark green apron steps out of her shop and hands one wrapped bouquet of yellow ranunculus across the center to a cyclist in a cream jacket. Two adults only. Their hands meet around the brown paper wrapping, and the cyclist's other hand holds the blue bicycle's handlebar. Shop window with narrow wooden mullions, dappled rain on the pavement, soft cloudy daylight, candid medium-wide composition, clear layering from doorway to sidewalk."
+  },
+  {
+    "id": "02-jazz-trio", "width": 1024, "height": 1024, "focus": [0.51, 0.47],
+    "review": "Exactly three musicians, distinct instruments, drummer between the others, sax keys and hands.",
+    "prompt": "Square album-cover photograph of an intimate jazz trio on a compact stage. The upright bassist at left in a rust shirt and the saxophonist at right in a blue suit turn toward each other, with the seated drummer visible between and behind them. Three people, one instrument each. Golden key light and deep blue shadows, black velvet curtain, a few wooden chairs in soft focus, warm documentary film grain. Show the whole wooden bass and the curved brass saxophone, including the musicians' hands playing."
+  },
+  {
+    "id": "03-library-architecture", "width": 1216, "height": 832, "focus": [0.54, 0.55],
+    "review": "One staircase and continuous balustrade, architectural perspective, two foreground readers with clear silhouettes.",
+    "prompt": "Landscape architecture feature photograph of a newly opened civic library, photographed from the corner of a double-height atrium. A single straight diagonal staircase crosses from the lower left toward the upper right, with a continuous black metal balustrade and repeating vertical posts. Under the stairs, two readers at a long oak table lean together to look at one open art book. Pale brick, tall mullioned windows, diffuse daylight, alternating rails and crisp shadows, measured architectural verticals, quiet public space."
+  },
+  {
+    "id": "04-kayak-rescue-practice", "width": 1280, "height": 720, "focus": [0.49, 0.58],
+    "review": "Two paddlers, two distinct kayaks, single helping grip, consistent open-water horizon.",
+    "prompt": "Wide 16:9 outdoor brand photograph at the edge of a calm glacial lake. Two adult kayakers wearing life jackets practice a partner rescue. One kneels in a mustard kayak at left, reaching across to a friend steadying a navy kayak at right. A single yellow-bladed paddle lies horizontally across the mustard deck. Both faces and the meeting hands are readable, boats are parallel but separate, distant firs and layered blue mountain ridges along a level horizon, glints and small ripples in the foreground, cool overcast light."
+  },
+  {
+    "id": "05-pottery-class", "width": 832, "height": 1216, "focus": [0.50, 0.57],
+    "review": "Two figures, an intact centered clay bowl, clean hand separation and a circular wheel.",
+    "prompt": "Vertical editorial photograph in a working ceramics studio. A seated woman in a chambray apron shapes one wet white bowl on a pottery wheel. A standing teacher on her left leans in and demonstrates with one hovering clay-smudged hand, without touching the student's hands. Intimate mid shot, circular bowl and wheel near center, warm side light, worn aprons, shelves of unfinished ceramics and a white wash bucket in the far background. Natural human expressions and clearly readable hand positions."
+  },
+  {
+    "id": "06-restaurant-pass", "width": 1152, "height": 896, "focus": [0.50, 0.54],
+    "review": "Three kitchen staff, one plated dish in the central exchange, straight edges at the counter.",
+    "prompt": "Landscape food-editorial photograph in an open restaurant kitchen just before dinner. Two chefs in white jackets and a server in a dark apron form a shallow triangle around the stainless pass. A chef slides one white ceramic plate toward the server, who reaches forward with both hands, while the third person watches. On the plate are three seared scallops, green sauce and one herb garnish. Side window light, darker shelves receding in perspective, subtle steam, documentary realism."
+  },
+  {
+    "id": "07-tango-poster", "width": 896, "height": 1152, "focus": [0.52, 0.52],
+    "review": "Two overlapping dancers, joined hands and distinct limbs, graphic title space preserved.",
+    "prompt": "Vertical printed cultural-festival poster illustration, no lettering. Two tango dancers in striking silhouette turn together, with the dancer in vermilion at left and the dancer in dark indigo at right. One pair of joined hands at shoulder height stands clear of the faces. One leg steps forward and one back in a readable dance pose. Clean broad shapes on warm cream paper, stylized parquet stripes on the lower third, flecks of risograph texture, large quiet cream area at the top reserved for typography."
+  },
+  {
+    "id": "08-night-market", "width": 1344, "height": 768, "focus": [0.53, 0.50],
+    "review": "Three central people, one paper bag changing hands, perspective under stall lights.",
+    "prompt": "Cinematic wide street campaign photograph of a lively Asian night market after rain. At center a market vendor in navy hands a single small kraft paper bag across the counter to one customer in a burnt-orange raincoat. A second customer in a cream coat waits beside her holding a folded umbrella at her side. Other shoppers remain tiny and out of focus down the lane. Rows of warm awning lights, slick paving reflecting magenta and amber, orderly market stalls receding diagonally, expressive poses and realistic hands."
+  },
+  {
+    "id": "09-ballet-rehearsal", "width": 768, "height": 1344, "focus": [0.51, 0.55],
+    "review": "Two dancers in the room, one upright barre, an assisting hand, natural feet and fingers.",
+    "prompt": "Tall portrait editorial photograph in a high-ceiling old ballet studio, photographed perpendicular to a single wooden barre that runs from left to right. Two adult dancers rehearse together. The dancer on the right extends one leg along the barre while her partner on the left steadies her lightly at the elbow. Distinct necks, elbows and hands, bare floor and tall windows, dark wood and pale warm pink dancewear, sunlight and straight window shadows. No mirrors. Leave some breathing room above the dancers."
+  },
+  {
+    "id": "10-wildlife-family", "width": 960, "height": 1088, "focus": [0.54, 0.55],
+    "review": "One adult fox and two kits, no extra eye or face in fur, readable contact and tail overlap.",
+    "prompt": "Near-square vertical wildlife editorial photograph of a red fox and exactly two kits in an autumn clearing. The adult fox bends her head to sniff the first kit at center while the second kit curls near her hind paws on the right. Distinct rust faces and black legs, one adult white-tipped tail looping on the ground, fine natural fur lit by pale sidelight, softly out-of-focus bracken and dark firs, damp orange leaf litter. All three animals visible, close but clearly separate."
+  },
+  {
+    "id": "11-coffee-product", "width": 1088, "height": 960, "focus": [0.52, 0.46],
+    "review": "One moka pot, one continuous pouring stream, one handle on the cup, distinct ring and shadows.",
+    "prompt": "Premium coffee product campaign photograph, a tight tabletop scene on light veined stone. A hand enters from upper right holding one angular brushed-aluminum moka pot, pouring a single narrow stream of dark coffee into one ivory demitasse at the center. The cup has exactly one handle to the left and sits on a matching saucer. A companion hand with a small silver ring steadies the saucer from the lower right, never touching the cup. Hard morning sunshine, softly edged geometric shadows, fine ceramic, brushed metal and crema texture, blank warm wall."
+  },
+  {
+    "id": "12-urban-basketball", "width": 704, "height": 1472, "focus": [0.53, 0.42],
+    "review": "Single basketball and hoop, two readable body silhouettes and plausible outstretched arms.",
+    "prompt": "Very tall vertical sports campaign photograph from a low angle on a neighborhood outdoor basketball court. Two adult players contest one jump shot with a single orange ball just above the shooter's fingertips. Shooter in a light blue jersey toward the left, defender in a dark charcoal jersey reaching upward on the right. The backboard and hoop occupy the upper third, one visible painted lane and chain link fence below. Large sky, city apartment buildings in distance, strong afternoon sun, sharp but realistic hands and athletic secondary motion."
+  },
+  {
+    "id": "13-orchard-harvest", "width": 1472, "height": 704, "focus": [0.52, 0.56],
+    "review": "Three workers, exactly one shared foreground crate, orderly orchard perspective and clear hand positions.",
+    "prompt": "Panoramic farm-to-table brand photograph in an apple orchard during late harvest. Three people work together across the frame. At center, two adults on opposite sides lift one wooden crate brimming with red apples. At left and a little farther back, a third adult reaches into a tree to pick an apple. Orchard rows converge toward a misty opening, grass and dappled shadows underfoot, late warm sunlight, hand and crate edge continuity, subtle knit and canvas textures. Observational photography, no copied or mirrored poses."
+  },
+  {
+    "id": "14-veterinary-exam", "width": 1008, "height": 1040, "focus": [0.50, 0.52],
+    "review": "One dog and two adults, dog has one face and distinct front paws, hands and stethoscope stay coherent.",
+    "prompt": "Natural near-square photograph for a veterinary clinic editorial. A red-haired veterinarian in teal scrubs listens to a single black and white border collie with one stethoscope. The dog is seated on the examine table and turns its face toward its owner on the left. The owner in a cream sweater steadies it with one hand on the shoulder while the veterinarian's hand holds the stethoscope head to its chest. Calm clinic, warm eye contact, diffused window light, understated palette, readable fingers, tubing, canine ears and paws."
+  },
+  {
+    "id": "15-tailoring-studio", "width": 1248, "height": 832, "focus": [0.52, 0.53],
+    "review": "Two people, one continuous measuring tape, coherent hands, checks and tailoring lines.",
+    "prompt": "Landscape fashion campaign photograph in a quiet tailoring atelier. At center a tailor in a charcoal vest measures the shoulder of a standing client wearing an unfinished tan windowpane-check jacket. The tailor comes from behind and to the right, holding a single yellow tape across the shoulder seam. The client's arms hang relaxed, face in three-quarter profile. Sewing pattern paper and folded textiles recede to the left, tall windows with narrow white frames behind, warm soft light, fine wool weave and precise stitching."
+  },
+  {
+    "id": "16-museum-diorama", "width": 832, "height": 1248, "focus": [0.49, 0.51],
+    "review": "Two visitors at different depths, one pointing hand, glass and display edges continuous, no phantom figures.",
+    "prompt": "Vertical museum campaign image with realistic editorial photography and no typography. At left in the foreground an adult visitor and at center a child look through one tall glass display case at a miniature lunar rover on a rocky model landscape. The child points a single finger at the rover from outside the glass. The adult leans down to the child's eye height, both in side view, without faces overlapping. Dark matte exhibition walls, reflected amber room lights kept faint, glass corners and metal base line clear, richly lit model details, layered gallery depth."
+  }
+]

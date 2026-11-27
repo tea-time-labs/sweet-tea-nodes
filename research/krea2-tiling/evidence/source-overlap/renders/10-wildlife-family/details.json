@@ -1,0 +1,240 @@
+{
+  "case": "10-wildlife-family",
+  "mode": "Match source",
+  "seed": 40310871,
+  "seconds": 341.7,
+  "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+  "captions": [
+    "The visible content in image 3 is the blurred, out-of-focus background of the autumn clearing, featuring soft, indistinct shapes of bracken and dark firs under a pale, hazy sky.",
+    "The inner cyan rectangle isolates a softly blurred background of out-of-focus autumn bracken and dark fir branches under a pale, hazy sky.",
+    "The inner cyan rectangle isolates a softly blurred, dark green coniferous tree with out-of-focus needles and bokeh highlights against a pale, hazy sky.",
+    "The visible content in image 3 is the right ear and the side of the head of a red fox kit, with a softly blurred background of out-of-focus bracken and dark firs.",
+    "A red fox's head, with distinct rust-colored face and black legs, is shown in profile, sniffing a kit, against a softly blurred background of autumnal bracken and dark firs.",
+    "The rear flank and tail of an adult red fox, with fine, russet-tipped fur, curves over a curled kit, set against a softly blurred background of dark fir branches and dry bracken.",
+    "A young fox kit with a rust-colored face and black legs stands on damp, orange leaf litter, its head lowered as it sniffs the ground, with the blurred, out-of-focus bracken and dark firs in the background.",
+    "A red fox kit with a rust-colored face and black legs peers forward from beneath the adult fox's paws, surrounded by damp, orange leaf litter.",
+    "A fox kit with a rust-colored face and black legs curls near the adult fox's hind paws, resting on damp, orange leaf litter."
+  ],
+  "choices": [
+    [
+      [
+        0,
+        104,
+        88,
+        152
+      ],
+      {
+        "0": 0.14119355380535126,
+        "1": 0.18195582926273346
+      },
+      0
+    ],
+    [
+      [
+        0,
+        104,
+        208,
+        272
+      ],
+      {
+        "1": 0.3888581395149231,
+        "2": 0.2922205328941345
+      },
+      2
+    ],
+    [
+      [
+        104,
+        168,
+        0,
+        88
+      ],
+      {
+        "0": 0.20685166120529175,
+        "3": 0.1401049792766571
+      },
+      3
+    ],
+    [
+      [
+        104,
+        168,
+        88,
+        152
+      ],
+      {
+        "0": 0.11303849518299103,
+        "1": 0.20358797907829285,
+        "3": 0.04308811202645302,
+        "4": 0.09169000387191772
+      },
+      3
+    ],
+    [
+      [
+        104,
+        168,
+        152,
+        208
+      ],
+      {
+        "1": 0.29517099261283875,
+        "4": 0.1718713790178299
+      },
+      4
+    ],
+    [
+      [
+        104,
+        168,
+        208,
+        272
+      ],
+      {
+        "1": 0.4404083788394928,
+        "2": 0.24692389369010925,
+        "4": 0.1318628489971161,
+        "5": 0.10077472031116486
+      },
+      5
+    ],
+    [
+      [
+        104,
+        168,
+        272,
+        360
+      ],
+      {
+        "2": 0.6156808733940125,
+        "5": 0.0666535273194313
+      },
+      5
+    ],
+    [
+      [
+        168,
+        240,
+        88,
+        152
+      ],
+      {
+        "3": 0.37409818172454834,
+        "4": 0.23670601844787598
+      },
+      4
+    ],
+    [
+      [
+        168,
+        240,
+        208,
+        272
+      ],
+      {
+        "4": 0.26721566915512085,
+        "5": 0.4377896785736084
+      },
+      4
+    ],
+    [
+      [
+        240,
+        304,
+        0,
+        88
+      ],
+      {
+        "3": 0.19130492210388184,
+        "6": 0.35761529207229614
+      },
+      3
+    ],
+    [
+      [
+        240,
+        304,
+        88,
+        152
+      ],
+      {
+        "3": 0.756842851638794,
+        "4": 0.5096023678779602,
+        "6": 0.5413826107978821,
+        "7": 0.4611482322216034
+      },
+      null
+    ],
+    [
+      [
+        240,
+        304,
+        152,
+        208
+      ],
+      {
+        "4": 0.495717316865921,
+        "7": 0.720210611820221
+      },
+      4
+    ],
+    [
+      [
+        240,
+        304,
+        208,
+        272
+      ],
+      {
+        "4": 0.549747884273529,
+        "5": 0.35195717215538025,
+        "7": 0.4727383852005005,
+        "8": 0.5293403267860413
+      },
+      5
+    ],
+    [
+      [
+        240,
+        304,
+        272,
+        360
+      ],
+      {
+        "5": 0.32335126399993896,
+        "8": 0.5945512652397156
+      },
+      5
+    ],
+    [
+      [
+        304,
+        408,
+        88,
+        152
+      ],
+      {
+        "6": 0.45036622881889343,
+        "7": 0.28013989329338074
+      },
+      7
+    ],
+    [
+      [
+        304,
+        408,
+        208,
+        272
+      ],
+      {
+        "7": 0.3491491675376892,
+        "8": 0.39287954568862915
+      },
+      7
+    ]
+  ],
+  "output_sha256": "cc0752d6585e2cece8a5534065fd1dcb208190059b9ef02a7dcb663f7bb34bd4",
+  "torch": "2.14.1+cu130",
+  "gpu": "NVIDIA L4",
+  "rule_sha256": "2cf6d6be41dbea12f23d6b9e4eb9b1a099b3c96d29fbaab1904e99d06b6093a9"
+}

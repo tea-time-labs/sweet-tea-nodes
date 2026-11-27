@@ -1,0 +1,23 @@
+{
+  "method": "core",
+  "case": "01-florist-handoff",
+  "tile": 7,
+  "core": [
+    0,
+    853,
+    235,
+    1280
+  ],
+  "padded": [
+    0,
+    768,
+    320,
+    1280
+  ],
+  "caption": "A person’s lower body stands on a concrete step, wearing blue jeans and white sneakers, with a green apron visible above the waist; the left shoe rests on the step’s edge while the right foot is slightly forward.",
+  "notes": [],
+  "seconds": 10.74,
+  "gpu": "Tesla T4",
+  "source_sha256": "dcd0243066be054b170f8edb3346de123a0bbd3f1472c5a0898e97cdc18c09be",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

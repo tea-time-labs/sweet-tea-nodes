@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "15-tailoring-studio",
+  "tile": 9,
+  "core": [
+    832,
+    554,
+    1248,
+    832
+  ],
+  "padded": [
+    746,
+    469,
+    1248,
+    832
+  ],
+  "caption": "A dark fabric waistcoat with a tied belt sits against a warm-toned wall, its pocket and seam edge visible on the left, while the right shows a soft skin surface meeting the fabric’s outer edge.",
+  "notes": [
+    "Dark fabric pocket and seam edge.",
+    "Skin surface, dark fabric edge."
+  ],
+  "seconds": 15.15,
+  "gpu": "Tesla T4",
+  "source_sha256": "c7d8076c448fcc4c5e42777eb7f580513f62c6e02067d3b3680d36c429e1505a",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

@@ -1,0 +1,10 @@
+tile	grade	observation
+1	Accurate	The smiling profile, apron strap, door framing, flowers and facing direction match.
+2	Accurate	The window dominates, and the caption correctly places the wrapped flowers at the bottom edge.
+3	Accurate	Profile, dark hair, pale collar, vertical woodwork and white downpipe match.
+4	Partial	The pocket, sleeve and cropped bouquet match. The apron continues below the crop, so its claimed lower hem is unsupported.
+5	Partial	It finds both hands, paper wrapping and the bike grip but folds the background white blooms into the held yellow bouquet.
+6	Accurate	The hand grips the handlebar below the light jacket and shirt.
+7	Accurate	Both sneakers and the step are grounded. The added direction correctly describes the florist's front toe.
+8	Partial	The wheel, frame, wall and ledge match. The wheel stands in front of the wall; contact or leaning is unsupported.
+9	Partial	The bicycle and sneaker are present. The added rightward cue is wrong for the cyclist's foreground shoe, which points toward the viewer and left.

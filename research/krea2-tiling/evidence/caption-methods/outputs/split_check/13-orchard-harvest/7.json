@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "13-orchard-harvest",
+  "tile": 7,
+  "core": [
+    0,
+    469,
+    491,
+    704
+  ],
+  "padded": [
+    0,
+    384,
+    576,
+    704
+  ],
+  "caption": "Fallen apples scatter across dirt and grass beneath tree trunks, with one apple still hanging from a branch visible at the top center. A person’s leg appears on the right edge, partially cropped.",
+  "notes": [
+    "Fallen apples on earth, tree trunks, and ground foliage.",
+    "Dirt, grass, scattered apples."
+  ],
+  "seconds": 16.46,
+  "gpu": "Tesla T4",
+  "source_sha256": "5a160c57c1ccafa124f6387a610657bae09c4703e12770f182d23c2373bf7ff0",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

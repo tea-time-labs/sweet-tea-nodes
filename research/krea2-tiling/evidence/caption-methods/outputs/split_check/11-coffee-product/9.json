@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "11-coffee-product",
+  "tile": 9,
+  "core": [
+    725,
+    640,
+    1088,
+    960
+  ],
+  "padded": [
+    640,
+    554,
+    1088,
+    960
+  ],
+  "caption": "A hand with a ring rests on a marble surface, fingers slightly curled, with skin texture visible against the cool, veined stone. The edge cuts off the thumb and part of the palm, leaving only the ring finger and knuckles in full view.",
+  "notes": [
+    "Hand with ring, marble surface, skin texture.",
+    "Curved flesh surface, textured floor, clipped limb edge."
+  ],
+  "seconds": 18.91,
+  "gpu": "Tesla T4",
+  "source_sha256": "bcc341e06021a23a790b6a7994c71e34fbca719be23e19568f2d6278f8cc66a1",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

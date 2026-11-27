@@ -1,0 +1,39 @@
+{
+  "case": "10-wildlife-family",
+  "tile": 3,
+  "mode": "full_box",
+  "caption": "The target rectangle contains the upper right portion of a dark green evergreen tree, with its needles and branches softly blurred against a bright, out-of-focus background.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [667, 0, 1000, 334] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Near-square vertical wildlife editorial photograph of a red fox and exactly two kits in an autumn clearing. The adult fox bends her head to sniff the first kit at center while the second kit curls near her hind paws on the right. Distinct rust faces and black legs, one adult white-tipped tail looping on the ground, fine natural fur lit by pale sidelight, softly out-of-focus bracken and dark firs, damp orange leaf litter. All three animals visible, close but clearly separate.",
+  "core": [
+    640,
+    0,
+    960,
+    363
+  ],
+  "padded": [
+    554,
+    0,
+    960,
+    448
+  ],
+  "box_in_view": [
+    640,
+    0,
+    960,
+    363
+  ],
+  "normalized": [
+    667,
+    0,
+    1000,
+    334
+  ],
+  "view_size": [
+    960,
+    1088
+  ],
+  "view_rgb_sha256": "d2f53bd5c6ed68a2a64c965abd49e3e39cb30c9c16c7ba406c486533186566b0",
+  "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+  "gpu": "Tesla T4",
+  "seconds": 11.5
+}

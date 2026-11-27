@@ -1,0 +1,23 @@
+{
+  "method": "original_t4",
+  "case": "06-restaurant-pass",
+  "tile": 3,
+  "core": [
+    768,
+    0,
+    1152,
+    299
+  ],
+  "padded": [
+    682,
+    0,
+    1152,
+    384
+  ],
+  "caption": "A woman's face in profile, her dark hair in a bun, looking down, framed against a bright window with blurred shelves in the background.",
+  "notes": [],
+  "seconds": 10.19,
+  "gpu": "Tesla T4",
+  "source_sha256": "7205f082ed9f5ef2bec0aff78b04c5ac222939f27a0311c8fe615b06f1b0700f",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

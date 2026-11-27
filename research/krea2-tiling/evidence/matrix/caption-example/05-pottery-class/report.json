@@ -1,0 +1,42 @@
+{
+  "sampler": "euler",
+  "scheduler": "simple",
+  "sigmas": [
+    0.9266473650932312,
+    0.880513072013855,
+    0.8257015943527222,
+    0.7595109343528748,
+    0.677986741065979,
+    0.5751029849052429,
+    0.44119977951049805,
+    0.2597584128379822,
+    0.0
+  ],
+  "seconds": 322.36,
+  "sampling_seconds": 294.33,
+  "peak_torch_allocated_mib": 13860,
+  "peak_torch_reserved_mib": 15846,
+  "guide_applications": 0,
+  "case": "05-pottery-class",
+  "status": "ok",
+  "file": "edited-captions.png",
+  "source_sha256": "c66ae108dee40b2cd35d72a0a052207635956b562c6a40edf9fe46f9fe660e09",
+  "seed": 40310216,
+  "output_size": [
+    2496,
+    3648
+  ],
+  "edited_tiles": [
+    {
+      "tile": 3,
+      "before": "The inner tile, marked by the cyan rectangle, is a plain, unadorned, light-colored surface with a smooth, slightly reflective texture, set against a softly blurred background of shelves holding unfinished ceramic pieces.",
+      "after": "The inner tile is a plain, unadorned, light-colored surface with a smooth, slightly reflective texture, set against a softly blurred background of shelves holding unfinished ceramic pieces."
+    },
+    {
+      "tile": 7,
+      "before": "The inner tile, marked by the cyan rectangle, is a smooth, light-colored ceramic surface with a slightly textured, matte finish, showing faint concentric rings from the pottery wheel's motion.",
+      "after": "The inner tile is a smooth, light-colored ceramic surface with a slightly textured, matte finish, showing faint concentric rings from the pottery wheel's motion."
+    }
+  ],
+  "colab_gpu": "NVIDIA L4"
+}

@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "08-night-market",
+  "tile": 9,
+  "core": [
+    896,
+    512,
+    1344,
+    768
+  ],
+  "padded": [
+    810,
+    426,
+    1344,
+    768
+  ],
+  "caption": "A white coat sleeve holds a curved umbrella handle and folded canopy, standing beside a vibrant pink wet pavement, with a blurred leg and dark boot sole receding to the right.",
+  "notes": [
+    "1. Curved umbrella handle  \n2. Folded umbrella canopy  \n3. White coat sleeve  \n4. Purple pavement surface  \n5. Dark pants leg (clipped)",
+    "Pink wet pavement, blurred leg, dark boot sole."
+  ],
+  "seconds": 20.75,
+  "gpu": "Tesla T4",
+  "source_sha256": "ed4c09abdbee5a1740202d6f2cd95f173fc3717c2ada117585297ed0ef5dfa42",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

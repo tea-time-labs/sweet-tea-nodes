@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "14-veterinary-exam",
+  "tile": 4,
+  "core": [
+    0,
+    341,
+    331,
+    694
+  ],
+  "padded": [
+    0,
+    256,
+    416,
+    779
+  ],
+  "caption": "A person’s shoulder and ear rest near a dog’s black-and-white back, cradled by hands with a beige sleeve and knitted cuff. The dog’s tail is partially visible at the top right, cut off by the frame.",
+  "notes": [
+    "Person’s shoulder and ear, dog’s back and tail.",
+    "Hands cradling dark fur, beige sleeve, knitted cuff."
+  ],
+  "seconds": 19.08,
+  "gpu": "Tesla T4",
+  "source_sha256": "4a4aa26e7b77790cbbb66d5a2c3eedba8339d52de539583ec5bdbfedacbfcaa2",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

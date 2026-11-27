@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "02-jazz-trio",
+  "tile": 5,
+  "core": [
+    341,
+    341,
+    683,
+    683
+  ],
+  "padded": [
+    256,
+    256,
+    768,
+    768
+  ],
+  "caption": "A wooden double bass body and a player’s hand on its strings occupy the left, while a golden saxophone bell and a blurred musician’s face appear on the right, both set against a dark curtain backdrop.",
+  "notes": [
+    "Wooden body of double bass, player’s hand on strings, dark curtain backdrop.",
+    "Saxophone bell, blurred musician’s face, hand gripping instrument."
+  ],
+  "seconds": 19.36,
+  "gpu": "Tesla T4",
+  "source_sha256": "059880461a04e6cf66b7ab64004416fa4452da270f33a0886d22dbba9410e2c0",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

@@ -1,0 +1,480 @@
+{
+  "gpu": "NVIDIA L4",
+  "gpu_total_mib": 22563,
+  "denoise": 0.8,
+  "steps": 8,
+  "cfg": 1,
+  "scheduler": "simple",
+  "sampler": "euler",
+  "source_seed": 87923142,
+  "upscale_seed": 40309561,
+  "source_size": [
+    1024,
+    1024
+  ],
+  "canvas_size": [
+    3072,
+    3072
+  ],
+  "tile_grid": [
+    3,
+    3
+  ],
+  "torch": "2.14.1+cu130",
+  "runs": {
+    "p256_grounded_local": {
+      "padding_px": 256,
+      "captions": "grounded",
+      "positions": "local",
+      "largest_tile_px": 1536,
+      "recovered_latent": false,
+      "status": "ok",
+      "seconds": 343.9,
+      "peak_torch_allocated_mib": 14003,
+      "peak_torch_reserved_mib": 15878,
+      "source_downsample_mae_8bit": 17.757
+    },
+    "p384_grounded_local": {
+      "padding_px": 384,
+      "captions": "grounded",
+      "positions": "local",
+      "largest_tile_px": 1792,
+      "recovered_latent": false,
+      "status": "ok",
+      "seconds": 432.9,
+      "peak_torch_allocated_mib": 14457,
+      "peak_torch_reserved_mib": 17042,
+      "source_downsample_mae_8bit": 14.857
+    },
+    "p512_grounded_local": {
+      "padding_px": 512,
+      "captions": "grounded",
+      "positions": "local",
+      "largest_tile_px": 2048,
+      "recovered_latent": false,
+      "status": "ok",
+      "seconds": 543.9,
+      "peak_torch_allocated_mib": 14979,
+      "peak_torch_reserved_mib": 17544,
+      "source_downsample_mae_8bit": 15.339
+    },
+    "p256_shared_canvas": {
+      "padding_px": 256,
+      "captions": "shared",
+      "positions": "canvas",
+      "largest_tile_px": 1536,
+      "recovered_latent": false,
+      "status": "ok",
+      "seconds": 346.4,
+      "peak_torch_allocated_mib": 14022,
+      "peak_torch_reserved_mib": 16056,
+      "source_downsample_mae_8bit": 26.459
+    },
+    "p256_grounded_canvas": {
+      "padding_px": 256,
+      "captions": "grounded",
+      "positions": "canvas",
+      "largest_tile_px": 1536,
+      "recovered_latent": false,
+      "status": "ok",
+      "seconds": 338.6,
+      "peak_torch_allocated_mib": 14003,
+      "peak_torch_reserved_mib": 15878,
+      "source_downsample_mae_8bit": 16.949
+    },
+    "p256_shared_local": {
+      "padding_px": 256,
+      "captions": "shared",
+      "positions": "local",
+      "largest_tile_px": 1536,
+      "recovered_latent": false,
+      "status": "ok",
+      "seconds": 346.5,
+      "peak_torch_allocated_mib": 14022,
+      "peak_torch_reserved_mib": 16056,
+      "source_downsample_mae_8bit": 26.495
+    },
+    "p096_shared_canvas": {
+      "padding_px": 96,
+      "captions": "shared",
+      "positions": "canvas",
+      "largest_tile_px": 1216,
+      "recovered_latent": false,
+      "status": "ok",
+      "seconds": 246.4,
+      "peak_torch_allocated_mib": 13547,
+      "peak_torch_reserved_mib": 14824,
+      "source_downsample_mae_8bit": 30.661
+    },
+    "p256_grounded_local_depth": {
+      "status": "ok",
+      "padding_px": 256,
+      "captions": "grounded",
+      "positions": "local",
+      "largest_tile_px": 1536,
+      "control": "depth",
+      "control_lora_strength": 0.7,
+      "control_guide": {
+        "estimator": "Depth Anything V2 Large",
+        "near_is_white": true
+      },
+      "recovered_latent": true,
+      "decode_seconds": 20.0,
+      "source_downsample_mae_8bit": 19.203
+    },
+    "p256_grounded_local_canny": {
+      "status": "ok",
+      "padding_px": 256,
+      "captions": "grounded",
+      "positions": "local",
+      "largest_tile_px": 1536,
+      "control": "canny",
+      "control_lora_strength": 0.7,
+      "control_guide": {
+        "thresholds": [
+          0.1,
+          0.4
+        ]
+      },
+      "recovered_latent": true,
+      "decode_seconds": 19.5,
+      "source_downsample_mae_8bit": 17.177
+    },
+    "p256_grounded_local_sequential": {
+      "status": "ok",
+      "padding_px": 256,
+      "captions": "grounded",
+      "positions": "local",
+      "largest_tile_px": 1536,
+      "seconds": 342.3,
+      "peak_torch_allocated_mib": 13787,
+      "peak_torch_reserved_mib": 15350,
+      "tiling": "sequential, commit core, use clean finished context",
+      "sequence": [
+        {
+          "tile": 6,
+          "finished_context_fraction": 0.0
+        },
+        {
+          "tile": 5,
+          "finished_context_fraction": 0.1111
+        },
+        {
+          "tile": 3,
+          "finished_context_fraction": 0.2
+        },
+        {
+          "tile": 9,
+          "finished_context_fraction": 0.2
+        },
+        {
+          "tile": 2,
+          "finished_context_fraction": 0.3
+        },
+        {
+          "tile": 8,
+          "finished_context_fraction": 0.3
+        },
+        {
+          "tile": 4,
+          "finished_context_fraction": 0.2
+        },
+        {
+          "tile": 1,
+          "finished_context_fraction": 0.36
+        },
+        {
+          "tile": 7,
+          "finished_context_fraction": 0.36
+        }
+      ],
+      "source_downsample_mae_8bit": 23.503
+    }
+  },
+  "captions": {
+    "256": [
+      {
+        "tile": 1,
+        "source_box_xyxy": [
+          0,
+          0,
+          427,
+          427
+        ],
+        "caption": "The crop shows a uniform, pale gray fog with subtle, soft texture, filling the entire frame, devoid of distinct shapes or colors."
+      },
+      {
+        "tile": 2,
+        "source_box_xyxy": [
+          256,
+          0,
+          768,
+          427
+        ],
+        "caption": "A soft, uniform pale gray fog fills the frame, with a deep burgundy umbrella\u2019s curved edge entering from the lower right, its handle and tip barely visible."
+      },
+      {
+        "tile": 3,
+        "source_box_xyxy": [
+          597,
+          0,
+          1024,
+          427
+        ],
+        "caption": "A deep burgundy umbrella, held by a woman in a mustard-yellow raincoat, occupies the lower-left corner, framed against a soft, foggy, pale gray sky."
+      },
+      {
+        "tile": 4,
+        "source_box_xyxy": [
+          0,
+          256,
+          427,
+          768
+        ],
+        "caption": "The crop shows a muted slate-green water surface with subtle ripples, framed by a dark, weathered iron railing that enters from the lower left and extends diagonally across the frame."
+      },
+      {
+        "tile": 5,
+        "source_box_xyxy": [
+          256,
+          256,
+          768,
+          768
+        ],
+        "caption": "A deep burgundy umbrella and mustard-yellow raincoat's sleeve frame the right edge, while dark iron railing and slate-green water with subtle ripples occupy the left, all under soft, muted fog."
+      },
+      {
+        "tile": 6,
+        "source_box_xyxy": [
+          597,
+          256,
+          1024,
+          768
+        ],
+        "caption": "A woman in a mustard-yellow raincoat holds a deep burgundy umbrella, standing on wet stone pavement beside a dark iron railing, facing slate-green water under fog."
+      },
+      {
+        "tile": 7,
+        "source_box_xyxy": [
+          0,
+          597,
+          427,
+          1024
+        ],
+        "caption": "A dark, rust-speckled iron railing post with ornate joints stands on wet, textured stone, its top rail curving into the teal water beyond."
+      },
+      {
+        "tile": 8,
+        "source_box_xyxy": [
+          256,
+          597,
+          768,
+          1024
+        ],
+        "caption": "Wet, textured stone pavement in muted grays and browns, with dark iron railing posts and rails entering from left, curving right, leaving right edge open."
+      },
+      {
+        "tile": 9,
+        "source_box_xyxy": [
+          597,
+          597,
+          1024,
+          1024
+        ],
+        "caption": "Wet, textured stone pavement in muted grays and browns, with water pooling in irregular shapes, occupies the frame, showing the lower legs of a person in a yellow coat."
+      }
+    ],
+    "384": [
+      {
+        "tile": 1,
+        "source_box_xyxy": [
+          0,
+          0,
+          470,
+          470
+        ],
+        "caption": "The crop shows a soft, hazy fog gradient, transitioning from pale gray at the top to a faint, muted slate-green at the bottom, where the water's edge is barely discernible."
+      },
+      {
+        "tile": 2,
+        "source_box_xyxy": [
+          213,
+          0,
+          811,
+          470
+        ],
+        "caption": "A deep burgundy umbrella and mustard-yellow raincoat fragment occupy the right edge, contrasting against a vast, soft-focus, pearly fog background."
+      },
+      {
+        "tile": 3,
+        "source_box_xyxy": [
+          554,
+          0,
+          1024,
+          470
+        ],
+        "caption": "A deep burgundy umbrella, held by a woman in a mustard-yellow raincoat, occupies the upper left, with a dark iron railing curving diagonally from the lower right."
+      },
+      {
+        "tile": 4,
+        "source_box_xyxy": [
+          0,
+          213,
+          470,
+          811
+        ],
+        "caption": "A weathered dark iron railing, its rusted bars and posts framing a slate-green, fog-draped water surface with subtle ripples, occupies the foreground and midground."
+      },
+      {
+        "tile": 5,
+        "source_box_xyxy": [
+          213,
+          213,
+          811,
+          811
+        ],
+        "caption": "A woman in a mustard-yellow raincoat holds a deep burgundy umbrella, standing beside a dark iron railing on wet stone pavement, with foggy, slate-green water beyond."
+      },
+      {
+        "tile": 6,
+        "source_box_xyxy": [
+          554,
+          213,
+          1024,
+          811
+        ],
+        "caption": "A woman in a mustard-yellow raincoat holds a deep burgundy umbrella, standing on wet stone pavement beside a dark iron railing, with foggy, slate-green water beyond."
+      },
+      {
+        "tile": 7,
+        "source_box_xyxy": [
+          0,
+          554,
+          470,
+          1024
+        ],
+        "caption": "Dark, rust-streaked iron railing with ornate, square-topped posts runs diagonally, its wet, textured surface meeting mossy stone pavement, with teal water rippling beyond."
+      },
+      {
+        "tile": 8,
+        "source_box_xyxy": [
+          213,
+          554,
+          811,
+          1024
+        ],
+        "caption": "Wet, textured stone pavement in muted grays and browns, bordered by dark iron railing, with a yellow raincoat's lower leg and brown boot visible on the right edge."
+      },
+      {
+        "tile": 9,
+        "source_box_xyxy": [
+          554,
+          554,
+          1024,
+          1024
+        ],
+        "caption": "Wet, textured stone pavement in muted grays and browns, with irregular rectangular shapes, reflects the overcast sky; dark iron railing posts enter from left, receding right."
+      }
+    ],
+    "512": [
+      {
+        "tile": 1,
+        "source_box_xyxy": [
+          0,
+          0,
+          512,
+          512
+        ],
+        "caption": "The crop shows a soft, uniform foggy expanse, transitioning from pale gray at the top to a muted, slate-green waterline at the bottom, with no distinct shapes or textures."
+      },
+      {
+        "tile": 2,
+        "source_box_xyxy": [
+          170,
+          0,
+          854,
+          512
+        ],
+        "caption": "A deep burgundy umbrella and mustard-yellow raincoat occupy the right edge, framed by a dark iron railing, against a vast, foggy, slate-green water expanse."
+      },
+      {
+        "tile": 3,
+        "source_box_xyxy": [
+          512,
+          0,
+          1024,
+          512
+        ],
+        "caption": "A deep burgundy umbrella, held by a woman in a mustard-yellow raincoat, occupies the center, framed by a dark iron railing against a muted, foggy backdrop."
+      },
+      {
+        "tile": 4,
+        "source_box_xyxy": [
+          0,
+          170,
+          512,
+          854
+        ],
+        "caption": "A dark, weathered iron railing with rounded finials runs diagonally, its rusted bars and wet stone base framing slate-green water and pearly fog beyond."
+      },
+      {
+        "tile": 5,
+        "source_box_xyxy": [
+          170,
+          170,
+          854,
+          854
+        ],
+        "caption": "A woman in a mustard-yellow raincoat holds a deep burgundy umbrella, standing beside a dark iron railing on wet stone pavement, with foggy, slate-green water beyond."
+      },
+      {
+        "tile": 6,
+        "source_box_xyxy": [
+          512,
+          170,
+          1024,
+          854
+        ],
+        "caption": "A woman in a mustard-yellow raincoat holds a deep burgundy umbrella, standing on wet stone pavement beside a dark iron railing, with foggy, slate-green water beyond."
+      },
+      {
+        "tile": 7,
+        "source_box_xyxy": [
+          0,
+          512,
+          512,
+          1024
+        ],
+        "caption": "Dark, rust-streaked iron railing with rounded posts and horizontal bars, water droplets clinging to its surface, borders wet, textured stone pavement against slate-green water."
+      },
+      {
+        "tile": 8,
+        "source_box_xyxy": [
+          170,
+          512,
+          854,
+          1024
+        ],
+        "caption": "Wet, textured stone pavement in muted grays and browns, bordered by a dark, weathered iron railing, with a yellow raincoat's lower half and brown boots visible on the right."
+      },
+      {
+        "tile": 9,
+        "source_box_xyxy": [
+          512,
+          512,
+          1024,
+          1024
+        ],
+        "caption": "Wet, textured stone pavement in muted grays and browns, slick with rain, stretches diagonally, bordered by dark iron railing; a mustard-yellow coat's lower edge and brown boots peek from right."
+      }
+    ]
+  },
+  "caption_seconds": {
+    "256": 63.0,
+    "384": 65.0,
+    "512": 65.3
+  },
+  "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+  "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+  "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71"
+}

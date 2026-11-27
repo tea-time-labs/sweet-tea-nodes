@@ -1,0 +1,39 @@
+{
+  "case": "03-library-architecture",
+  "tile": 8,
+  "mode": "full_coords",
+  "caption": "The lower-left corner of the rectangle shows the underside of the staircase’s black metal balustrade, with its vertical posts and handrail, casting a shadow across the light-colored wall and floor.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [333, 666, 667, 1000] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Landscape architecture feature photograph of a newly opened civic library, photographed from the corner of a double-height atrium. A single straight diagonal staircase crosses from the lower left toward the upper right, with a continuous black metal balustrade and repeating vertical posts. Under the stairs, two readers at a long oak table lean together to look at one open art book. Pale brick, tall mullioned windows, diffuse daylight, alternating rails and crisp shadows, measured architectural verticals, quiet public space.",
+  "core": [
+    405,
+    554,
+    811,
+    832
+  ],
+  "padded": [
+    320,
+    469,
+    896,
+    832
+  ],
+  "box_in_view": [
+    405,
+    554,
+    811,
+    832
+  ],
+  "normalized": [
+    333,
+    666,
+    667,
+    1000
+  ],
+  "view_size": [
+    1216,
+    832
+  ],
+  "view_rgb_sha256": "9f8ca41766ca358f7abb819571851d063594f7003245ed2a0b94a078bfafb5b5",
+  "source_sha256": "b4542744a3f528cb49b96d91f82428cc3e18121dc3dea84ec4b46a515632d345",
+  "gpu": "Tesla T4",
+  "seconds": 13.36
+}

@@ -1,0 +1,397 @@
+{
+  "gpu": "NVIDIA L4",
+  "gpu_total_mib": 22563,
+  "denoise": 0.8,
+  "steps": 8,
+  "cfg": 1,
+  "scheduler": "simple",
+  "sampler": "euler",
+  "source_seed": 87923142,
+  "upscale_seed": 40309561,
+  "source_size": [
+    1024,
+    1024
+  ],
+  "canvas_size": [
+    3072,
+    3072
+  ],
+  "tile_grid": [
+    3,
+    3
+  ],
+  "torch": "2.14.1+cu130",
+  "runs": {
+    "p256_grounded_local": {
+      "padding_px": 256,
+      "captions": "grounded",
+      "positions": "local",
+      "largest_tile_px": 1536,
+      "recovered_latent": false,
+      "status": "ok",
+      "seconds": 349.1,
+      "peak_torch_allocated_mib": 17997,
+      "peak_torch_reserved_mib": 18110,
+      "source_downsample_mae_8bit": 18.521
+    },
+    "p256_grounded_local_depth": {
+      "padding_px": 256,
+      "captions": "grounded",
+      "positions": "local",
+      "largest_tile_px": 1536,
+      "recovered_latent": false,
+      "status": "ok",
+      "seconds": 338.4,
+      "peak_torch_allocated_mib": 14003,
+      "peak_torch_reserved_mib": 15838,
+      "source_downsample_mae_8bit": 22.123,
+      "control": "depth",
+      "control_lora_strength": 0.7,
+      "verified_control_calls": 72
+    },
+    "p256_grounded_local_canny": {
+      "padding_px": 256,
+      "captions": "grounded",
+      "positions": "local",
+      "largest_tile_px": 1536,
+      "recovered_latent": false,
+      "status": "ok",
+      "seconds": 718.8,
+      "peak_torch_allocated_mib": 15259,
+      "peak_torch_reserved_mib": 18614,
+      "source_downsample_mae_8bit": 15.162,
+      "control": "canny",
+      "control_lora_strength": 0.7,
+      "verified_control_calls": 72
+    },
+    "p256_grounded_local_eye_owner": {
+      "padding_px": 256,
+      "captions": "grounded",
+      "positions": "local",
+      "largest_tile_px": 1536,
+      "recovered_latent": false,
+      "status": "ok",
+      "seconds": 347.9,
+      "peak_torch_allocated_mib": 18012,
+      "peak_torch_reserved_mib": 18158,
+      "source_downsample_mae_8bit": 18.203,
+      "eye_overlap_owner_tile": 4,
+      "eye_source_box_xyxy": [
+        0,
+        269,
+        265,
+        424
+      ]
+    },
+    "p256_grounded_core_caption": {
+      "padding_px": 256,
+      "captions": "grounded",
+      "positions": "local",
+      "largest_tile_px": 1536,
+      "recovered_latent": false,
+      "status": "ok",
+      "seconds": 339.5,
+      "peak_torch_allocated_mib": 14002,
+      "peak_torch_reserved_mib": 15890,
+      "source_downsample_mae_8bit": 18.566,
+      "caption_scope": "core only, full scene and padded crop as context"
+    },
+    "owner_last_four": {
+      "padding_px": 256,
+      "captions": "grounded",
+      "positions": "local",
+      "largest_tile_px": 1536,
+      "recovered_latent": false,
+      "status": "ok",
+      "seconds": 331.0,
+      "peak_torch_allocated_mib": 14001,
+      "peak_torch_reserved_mib": 15896,
+      "source_downsample_mae_8bit": 18.475
+    },
+    "owner_first_four": {
+      "padding_px": 256,
+      "captions": "grounded",
+      "positions": "local",
+      "largest_tile_px": 1536,
+      "recovered_latent": false,
+      "status": "ok",
+      "seconds": 324.9,
+      "peak_torch_allocated_mib": 14001,
+      "peak_torch_reserved_mib": 15896,
+      "source_downsample_mae_8bit": 18.204
+    }
+  },
+  "captions": {
+    "256": [
+      {
+        "tile": 1,
+        "source_box_xyxy": [
+          0,
+          0,
+          427,
+          427
+        ],
+        "caption": "A close-up profile of a woman with dark, curly hair, featuring a single strand resting on her cheek, a small silver earring, and soft, natural skin texture against a muted olive background."
+      },
+      {
+        "tile": 2,
+        "source_box_xyxy": [
+          256,
+          0,
+          768,
+          427
+        ],
+        "caption": "Dark, thick, curly hair with subtle highlights frames the left edge, while a thin strand rests near the cheek; a small silver earring glints at the earlobe."
+      },
+      {
+        "tile": 3,
+        "source_box_xyxy": [
+          597,
+          0,
+          1024,
+          427
+        ],
+        "caption": "Auburn hair, smooth and straight, frames a partial face with a light blue eye, soft skin texture, and a subtle eyebrow, against a muted olive background."
+      },
+      {
+        "tile": 4,
+        "source_box_xyxy": [
+          0,
+          256,
+          427,
+          768
+        ],
+        "caption": "A woman's profile in soft light, featuring dark curly hair, a small silver earring, and layered grey knit fabric, with a thin strand of hair crossing her cheek."
+      },
+      {
+        "tile": 5,
+        "source_box_xyxy": [
+          256,
+          256,
+          768,
+          768
+        ],
+        "caption": "A close-up of a woman's ear, featuring a small, round, silver stud earring, framed by dark, curly hair strands that softly frame the ear and partially obscure the background."
+      },
+      {
+        "tile": 6,
+        "source_box_xyxy": [
+          597,
+          256,
+          1024,
+          768
+        ],
+        "caption": "Auburn hair strands, smooth and straight, frame a woman's eye with light blue irises, while soft skin texture and subtle freckles are visible against a dark, out-of-focus background."
+      },
+      {
+        "tile": 7,
+        "source_box_xyxy": [
+          0,
+          597,
+          427,
+          1024
+        ],
+        "caption": "A close-up profile view of a woman's neck and shoulder, framed by layered grey knit fabric, with a single dark curl resting near her cheek against a muted olive background."
+      },
+      {
+        "tile": 8,
+        "source_box_xyxy": [
+          256,
+          597,
+          768,
+          1024
+        ],
+        "caption": "Dark, curly hair strands frame a textured, layered grey knit fabric, with the material's ribbed pattern and soft shoulder contour visible as the crop edges."
+      },
+      {
+        "tile": 9,
+        "source_box_xyxy": [
+          597,
+          597,
+          1024,
+          1024
+        ],
+        "caption": "Auburn hair strands, smooth and straight, frame a shoulder with fine, light freckles, softly lit against a dark, indistinct background."
+      }
+    ]
+  },
+  "caption_seconds": {
+    "256": 62.8
+  },
+  "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+  "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+  "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+  "isolated_tile_probes": {
+    "1": {
+      "output_size": [
+        1280,
+        1280
+      ],
+      "tile_box_xyxy": [
+        0,
+        0,
+        1280,
+        1280
+      ]
+    },
+    "4": {
+      "output_size": [
+        1280,
+        1536
+      ],
+      "tile_box_xyxy": [
+        0,
+        768,
+        1280,
+        2304
+      ]
+    }
+  },
+  "core_caption_probe": [
+    {
+      "tile": 1,
+      "core": [
+        0,
+        0,
+        342,
+        342
+      ],
+      "padded": [
+        0,
+        0,
+        427,
+        427
+      ],
+      "caption": "A close-up of a dark, curly eyebrow and the upper part of a brown eye, with a single strand of hair resting against the cheek, set against a muted olive background."
+    },
+    {
+      "tile": 2,
+      "core": [
+        341,
+        0,
+        683,
+        342
+      ],
+      "padded": [
+        256,
+        0,
+        768,
+        427
+      ],
+      "caption": "A close-up of a smooth, olive-toned background wall, with a subtle, uniform texture and a faint, soft-focus gradient."
+    },
+    {
+      "tile": 3,
+      "core": [
+        682,
+        0,
+        1024,
+        342
+      ],
+      "padded": [
+        597,
+        0,
+        1024,
+        427
+      ],
+      "caption": "A close-up of smooth, straight auburn hair with a subtle sheen, featuring a faintly visible eyebrow and a single, light blue eye peeking from the lower right."
+    },
+    {
+      "tile": 4,
+      "core": [
+        0,
+        341,
+        342,
+        683
+      ],
+      "padded": [
+        0,
+        256,
+        427,
+        768
+      ],
+      "caption": "A close-up profile of a woman's face, showing her nose, lips, and eye with a single strand of dark, wavy hair falling across her cheek, set against a softly lit olive background."
+    },
+    {
+      "tile": 5,
+      "core": [
+        341,
+        341,
+        683,
+        683
+      ],
+      "padded": [
+        256,
+        256,
+        768,
+        768
+      ],
+      "caption": "A close-up of a small, round, silver stud earring set in the earlobe of a person with dark, curly hair, captured in soft, natural light."
+    },
+    {
+      "tile": 6,
+      "core": [
+        682,
+        341,
+        1024,
+        683
+      ],
+      "padded": [
+        597,
+        256,
+        1024,
+        768
+      ],
+      "caption": "A close-up of a woman's eye and cheek, framed by smooth, straight auburn hair, with fine skin texture and soft, natural lighting."
+    },
+    {
+      "tile": 7,
+      "core": [
+        0,
+        682,
+        342,
+        1024
+      ],
+      "padded": [
+        0,
+        597,
+        427,
+        1024
+      ],
+      "caption": "A close-up of a textured, layered grey knit fabric, showing the detailed stitch pattern and a soft, natural skin tone at the neckline."
+    },
+    {
+      "tile": 8,
+      "core": [
+        341,
+        682,
+        683,
+        1024
+      ],
+      "padded": [
+        256,
+        597,
+        768,
+        1024
+      ],
+      "caption": "A close-up of a textured, layered grey knit fabric, with dark, curly hair partially obscuring the view."
+    },
+    {
+      "tile": 9,
+      "core": [
+        682,
+        682,
+        1024,
+        1024
+      ],
+      "padded": [
+        597,
+        597,
+        1024,
+        1024
+      ],
+      "caption": "A close-up of smooth, fair skin with a few faint freckles, framed by the soft, straight strands of auburn hair."
+    }
+  ],
+  "core_caption_seconds": 60.6
+}

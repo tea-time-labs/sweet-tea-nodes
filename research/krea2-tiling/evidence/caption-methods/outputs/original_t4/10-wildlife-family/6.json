@@ -1,0 +1,23 @@
+{
+  "method": "original_t4",
+  "case": "10-wildlife-family",
+  "tile": 6,
+  "core": [
+    640,
+    362,
+    960,
+    726
+  ],
+  "padded": [
+    554,
+    277,
+    960,
+    811
+  ],
+  "caption": "The visible content in image 3 is the fine, textured fur of the adult fox's flank and tail, with a small portion of the second kit's head peeking up from beneath, set against a softly blurred background of dark fir branches and dry bracken.",
+  "notes": [],
+  "seconds": 16.56,
+  "gpu": "Tesla T4",
+  "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

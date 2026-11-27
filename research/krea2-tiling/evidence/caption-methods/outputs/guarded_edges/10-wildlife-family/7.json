@@ -1,0 +1,27 @@
+{
+  "method": "guarded_edges",
+  "case": "10-wildlife-family",
+  "tile": 7,
+  "core": [
+    0,
+    725,
+    320,
+    1088
+  ],
+  "padded": [
+    0,
+    640,
+    406,
+    1088
+  ],
+  "caption": "A fox’s flank and tail tip emerge from the right, partially obscured, above a bed of blurred orange leaves and dry grass blades in the foreground. The fox’s dark fur contrasts with the warm, sunlit ground, where a leaf fragment is cut off by the lower edge.",
+  "notes": [
+    "Fox’s flank, tail tip, and leafy ground.",
+    "Blurred orange leaf fragments and dry grass blades."
+  ],
+  "seconds": 20.1,
+  "gpu": "Tesla T4",
+  "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1",
+  "base_caption": "A fox’s flank and tail tip emerge from the right, partially obscured, above a bed of blurred orange leaves and dry grass blades in the foreground. The fox’s dark fur contrasts with the warm, sunlit ground, where a leaf fragment is cut off by the lower edge."
+}

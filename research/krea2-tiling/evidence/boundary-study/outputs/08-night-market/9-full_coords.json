@@ -1,0 +1,39 @@
+{
+  "case": "08-night-market",
+  "tile": 9,
+  "mode": "full_coords",
+  "caption": "The wet pavement reflects magenta and amber lights from the market stalls, with a folded umbrella resting against the cream coat of the woman standing beside the orange-coated customer.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [667, 667, 1000, 1000] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Cinematic wide street campaign photograph of a lively Asian night market after rain. At center a market vendor in navy hands a single small kraft paper bag across the counter to one customer in a burnt-orange raincoat. A second customer in a cream coat waits beside her holding a folded umbrella at her side. Other shoppers remain tiny and out of focus down the lane. Rows of warm awning lights, slick paving reflecting magenta and amber, orderly market stalls receding diagonally, expressive poses and realistic hands.",
+  "core": [
+    896,
+    512,
+    1344,
+    768
+  ],
+  "padded": [
+    810,
+    426,
+    1344,
+    768
+  ],
+  "box_in_view": [
+    896,
+    512,
+    1344,
+    768
+  ],
+  "normalized": [
+    667,
+    667,
+    1000,
+    1000
+  ],
+  "view_size": [
+    1344,
+    768
+  ],
+  "view_rgb_sha256": "7e6b737eaa0695a50a3fad4cd8753719abd5a05abea7df06703ebb73459b9653",
+  "source_sha256": "ed4c09abdbee5a1740202d6f2cd95f173fc3717c2ada117585297ed0ef5dfa42",
+  "gpu": "Tesla T4",
+  "seconds": 12.28
+}

@@ -1,0 +1,371 @@
+{
+  "scene": {
+    "id": "09-ballet-rehearsal",
+    "width": 768,
+    "height": 1344,
+    "focus": [
+      0.51,
+      0.55
+    ],
+    "review": "Two dancers in the room, one upright barre, an assisting hand, natural feet and fingers.",
+    "prompt": "Tall portrait editorial photograph in a high-ceiling old ballet studio, photographed perpendicular to a single wooden barre that runs from left to right. Two adult dancers rehearse together. The dancer on the right extends one leg along the barre while her partner on the left steadies her lightly at the elbow. Distinct necks, elbows and hands, bare floor and tall windows, dark wood and pale warm pink dancewear, sunlight and straight window shadows. No mirrors. Leave some breathing room above the dancers."
+  },
+  "source_size": [
+    768,
+    1344
+  ],
+  "source_seed": 87924861,
+  "source_sampler": {
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1.0
+  },
+  "upscale_seed": 40310740,
+  "upscale_settings": {
+    "steps": 8,
+    "cfg": 1.0,
+    "denoise": 0.8,
+    "positions": "local",
+    "control": "Vision"
+  },
+  "runs": {
+    "euler-simple": {
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 331.75,
+      "sampling_seconds": 303.36,
+      "peak_torch_allocated_mib": 13883,
+      "peak_torch_reserved_mib": 15902,
+      "status": "ok",
+      "file": "euler-simple.png"
+    },
+    "euler-sgm_uniform": {
+      "sampler": "euler",
+      "scheduler": "sgm_uniform",
+      "sigmas": [
+        0.9266740679740906,
+        0.8805605173110962,
+        0.8257773518562317,
+        0.7596262693405151,
+        0.6781590580940247,
+        0.575360119342804,
+        0.441588819026947,
+        0.26036524772644043,
+        0.0
+      ],
+      "seconds": 331.17,
+      "sampling_seconds": 303.33,
+      "peak_torch_allocated_mib": 13883,
+      "peak_torch_reserved_mib": 15902,
+      "status": "ok",
+      "file": "euler-sgm_uniform.png"
+    },
+    "dpmpp_2m-simple": {
+      "sampler": "dpmpp_2m",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 330.83,
+      "sampling_seconds": 303.17,
+      "peak_torch_allocated_mib": 13883,
+      "peak_torch_reserved_mib": 15902,
+      "status": "ok",
+      "file": "dpmpp_2m-simple.png"
+    }
+  },
+  "node": "STKrea2TurboMatrixTest",
+  "colab_gpu": "NVIDIA L4",
+  "torch": "2.14.1+cu130",
+  "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+  "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+  "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+  "geometry": {
+    "final_size": [
+      2304,
+      4032
+    ],
+    "working_canvas": [
+      2304,
+      4032
+    ],
+    "tile_count": 9,
+    "padding": 256,
+    "tiles": [
+      {
+        "tile": 1,
+        "core_canvas_xyxy": [
+          0,
+          0,
+          768,
+          1344
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          0,
+          1024,
+          1600
+        ],
+        "core_source_xyxy": [
+          0,
+          0,
+          256,
+          448
+        ],
+        "padded_source_xyxy": [
+          0,
+          0,
+          342,
+          534
+        ],
+        "caption": "The inner vertical edge of a tall, dark wooden window frame, showing its textured grain and the faint shadow of a window pane, with a pale, slightly cracked wall visible behind it."
+      },
+      {
+        "tile": 2,
+        "core_canvas_xyxy": [
+          768,
+          0,
+          1536,
+          1344
+        ],
+        "padded_canvas_xyxy": [
+          512,
+          0,
+          1792,
+          1600
+        ],
+        "core_source_xyxy": [
+          256,
+          0,
+          512,
+          448
+        ],
+        "padded_source_xyxy": [
+          170,
+          0,
+          598,
+          534
+        ],
+        "caption": "The interior of a tall, dark wooden window frame with a textured, off-white plaster ceiling and ornate cornice above, viewed from a low angle."
+      },
+      {
+        "tile": 3,
+        "core_canvas_xyxy": [
+          1536,
+          0,
+          2304,
+          1344
+        ],
+        "padded_canvas_xyxy": [
+          1280,
+          0,
+          2304,
+          1600
+        ],
+        "core_source_xyxy": [
+          512,
+          0,
+          768,
+          448
+        ],
+        "padded_source_xyxy": [
+          426,
+          0,
+          768,
+          534
+        ],
+        "caption": "A plain, off-white, textured wall panel with subtle imperfections, framed by an ornate, light-colored ceiling cornice."
+      },
+      {
+        "tile": 4,
+        "core_canvas_xyxy": [
+          0,
+          1344,
+          768,
+          2688
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          1088,
+          1024,
+          2944
+        ],
+        "core_source_xyxy": [
+          0,
+          448,
+          256,
+          896
+        ],
+        "padded_source_xyxy": [
+          0,
+          362,
+          342,
+          982
+        ],
+        "caption": "A close-up of a wooden ballet barre with a dark, polished finish, positioned against a tall, multi-paned window with visible wood framing and glass panes, under bright sunlight."
+      },
+      {
+        "tile": 5,
+        "core_canvas_xyxy": [
+          768,
+          1344,
+          1536,
+          2688
+        ],
+        "padded_canvas_xyxy": [
+          512,
+          1088,
+          1792,
+          2944
+        ],
+        "core_source_xyxy": [
+          256,
+          448,
+          512,
+          896
+        ],
+        "padded_source_xyxy": [
+          170,
+          362,
+          598,
+          982
+        ],
+        "caption": "A dancer's bare neck and shoulder, with a pale pink leotard, are visible against a backdrop of tall, dark wooden windows and a sunlit floor."
+      },
+      {
+        "tile": 6,
+        "core_canvas_xyxy": [
+          1536,
+          1344,
+          2304,
+          2688
+        ],
+        "padded_canvas_xyxy": [
+          1280,
+          1088,
+          2304,
+          2944
+        ],
+        "core_source_xyxy": [
+          512,
+          448,
+          768,
+          896
+        ],
+        "padded_source_xyxy": [
+          426,
+          362,
+          768,
+          982
+        ],
+        "caption": "A dancer's raised arm and shoulder, clad in pale pink leotard, against a backdrop of dark wood paneling and a horizontal barre, with sunlight casting distinct shadows on the floor."
+      },
+      {
+        "tile": 7,
+        "core_canvas_xyxy": [
+          0,
+          2688,
+          768,
+          4032
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          2432,
+          1024,
+          4032
+        ],
+        "core_source_xyxy": [
+          0,
+          896,
+          256,
+          1344
+        ],
+        "padded_source_xyxy": [
+          0,
+          810,
+          342,
+          1344
+        ],
+        "caption": "The dark, vertically ribbed surface of a radiator stands against a shadowed wooden wall, with a single, small, light-colored object resting on the floor nearby."
+      },
+      {
+        "tile": 8,
+        "core_canvas_xyxy": [
+          768,
+          2688,
+          1536,
+          4032
+        ],
+        "padded_canvas_xyxy": [
+          512,
+          2432,
+          1792,
+          4032
+        ],
+        "core_source_xyxy": [
+          256,
+          896,
+          512,
+          1344
+        ],
+        "padded_source_xyxy": [
+          170,
+          810,
+          598,
+          1344
+        ],
+        "caption": "The dancer's right leg, clad in pale pink tights and a pointe shoe, extends along the wooden barre, with the dancer's left leg and foot visible in a supporting stance on the smooth, sunlit floor."
+      },
+      {
+        "tile": 9,
+        "core_canvas_xyxy": [
+          1536,
+          2688,
+          2304,
+          4032
+        ],
+        "padded_canvas_xyxy": [
+          1280,
+          2432,
+          2304,
+          4032
+        ],
+        "core_source_xyxy": [
+          512,
+          896,
+          768,
+          1344
+        ],
+        "padded_source_xyxy": [
+          426,
+          810,
+          768,
+          1344
+        ],
+        "caption": "A pale pink ballet slipper rests on a smooth, light-gray floor, with distinct rectangular shadows cast by tall windows in the background."
+      }
+    ],
+    "caption_and_encode_seconds": 67.0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "case": "01-florist-handoff",
+  "tile": 7,
+  "mode": "full_box",
+  "caption": "The pink rectangle frames the lower portion of the florist’s left leg and foot, showing blue jeans and white sneakers on a wet sidewalk step.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [0, 666, 326, 1000] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Tall vertical editorial photograph for a neighborhood florist campaign. A florist in a dark green apron steps out of her shop and hands one wrapped bouquet of yellow ranunculus across the center to a cyclist in a cream jacket. Two adults only. Their hands meet around the brown paper wrapping, and the cyclist's other hand holds the blue bicycle's handlebar. Shop window with narrow wooden mullions, dappled rain on the pavement, soft cloudy daylight, candid medium-wide composition, clear layering from doorway to sidewalk.",
+  "core": [
+    0,
+    853,
+    235,
+    1280
+  ],
+  "padded": [
+    0,
+    768,
+    320,
+    1280
+  ],
+  "box_in_view": [
+    0,
+    853,
+    235,
+    1280
+  ],
+  "normalized": [
+    0,
+    666,
+    326,
+    1000
+  ],
+  "view_size": [
+    720,
+    1280
+  ],
+  "view_rgb_sha256": "7f74ad0e93aa3d2a985e43b96c9d936c61b8d87fec29a4b6e51e9249a7a116aa",
+  "source_sha256": "dcd0243066be054b170f8edb3346de123a0bbd3f1472c5a0898e97cdc18c09be",
+  "gpu": "Tesla T4",
+  "seconds": 10.65
+}

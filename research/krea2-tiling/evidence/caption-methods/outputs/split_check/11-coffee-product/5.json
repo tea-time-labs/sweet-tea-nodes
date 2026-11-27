@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "11-coffee-product",
+  "tile": 5,
+  "core": [
+    362,
+    320,
+    726,
+    640
+  ],
+  "padded": [
+    277,
+    234,
+    811,
+    726
+  ],
+  "caption": "A rich coffee stream pours from a geometric metal spout into a white ceramic cup, its rim visible at the bottom edge; the spout’s angular facets catch light as it tilts slightly above the cup.",
+  "notes": [
+    "Pouring coffee into a white cup, with a blurred background.",
+    "1. Pouring coffee stream  \n2. Geometric metal spout  \n3. White ceramic cup rim"
+  ],
+  "seconds": 19.58,
+  "gpu": "Tesla T4",
+  "source_sha256": "bcc341e06021a23a790b6a7994c71e34fbca719be23e19568f2d6278f8cc66a1",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "15-tailoring-studio",
+  "tile": 1,
+  "core": [
+    0,
+    0,
+    416,
+    278
+  ],
+  "padded": [
+    0,
+    0,
+    502,
+    363
+  ],
+  "caption": "A softly lit, blurred window frame dominates the right, its vertical mullions cutting through the warm-toned wall; a faint chair back appears on the left, partially obscured by shadow and haze.",
+  "notes": [
+    "Blurred window frame, soft light, indistinct chair back.",
+    "Blurred window frame and adjacent wall surface."
+  ],
+  "seconds": 16.69,
+  "gpu": "Tesla T4",
+  "source_sha256": "c7d8076c448fcc4c5e42777eb7f580513f62c6e02067d3b3680d36c429e1505a",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

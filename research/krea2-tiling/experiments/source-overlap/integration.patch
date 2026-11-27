@@ -1,0 +1,58 @@
+diff --git a/usdu_pose_tiled/krea2_control.py b/usdu_pose_tiled/krea2_control.py
+index 4acbee6..718744e 100644
+--- a/usdu_pose_tiled/krea2_control.py
++++ b/usdu_pose_tiled/krea2_control.py
+@@ -98,6 +98,8 @@ class STKrea2UltimateUpscale:
+             "tile_count": (TILE_COUNTS, {"default": "Auto", "tooltip":
+                 "Choose the total number of tiles in a square grid. Auto uses Tile size. "
+                 "Fewer tiles on a large output use more GPU memory."}),
++            "vision_overlap": (["Blend", "Match source"], {"default": "Blend",
++                "tooltip": "In Match source, early overlapping Vision predictions compete on how closely they match the source layout."}),
+         }}
+ 
+     RETURN_TYPES = ("IMAGE",)
+@@ -113,7 +115,7 @@ class STKrea2UltimateUpscale:
+                 sampler_name, scheduler, denoise, tile_size, tile_padding, mask_blur,
+                 control_mode, control_strength, depth_lora, canny_lora, tile_lora,
+                 depth_resolution, canny_low, canny_high, upscale_model=None, clip=None,
+-                vision_prompt="", tile_count="Auto"):
++                vision_prompt="", tile_count="Auto", vision_overlap="Blend"):
+         w, h, tw, th = dimensions(image.shape[2], image.shape[1], upscale_by, tile_size)
+         tile_count = str(tile_count)
+         if tile_count not in TILE_COUNTS:
+@@ -166,7 +168,7 @@ class STKrea2UltimateUpscale:
+             from .krea2_vision import upscale_with_vision
+             return upscale_with_vision(source, image, model, clip, vision_prompt, negative, vae,
+                                        tw, th, tile_padding, seed, steps, cfg, sampler_name,
+-                                       scheduler, denoise, tile_grid=tile_grid)
++                                       scheduler, denoise, tile_grid=tile_grid, vision_overlap=vision_overlap)
+ 
+         return UltimateSDUpscalePoseTiled().upscale(
+             image=image, model=model, positive=positive, negative=negative, vae=vae,
+diff --git a/usdu_pose_tiled/krea2_vision.py b/usdu_pose_tiled/krea2_vision.py
+index e55bdff..8208d3d 100644
+--- a/usdu_pose_tiled/krea2_vision.py
++++ b/usdu_pose_tiled/krea2_vision.py
+@@ -144,7 +144,7 @@ class TiledVision:
+ @torch.inference_mode()
+ def upscale_with_vision(source, image, model, clip, prompt, negative, vae, core_width,
+                         core_height, padding, seed, steps, cfg, sampler_name, scheduler,
+-                        denoise, tile_grid=None):
++                        denoise, tile_grid=None, vision_overlap="Blend"):
+     from comfy.ldm.krea2.model import SingleStreamDiT
+     from comfy.model_management import throw_exception_if_processing_interrupted
+     from comfy.patcher_extension import WrappersMP
+@@ -185,7 +185,12 @@ def upscale_with_vision(source, image, model, clip, prompt, negative, vae, core_
+         frame_model = model
+         if tiled:
+             frame_model = model.clone()
+-            wrapper = TiledVision(tiles, contexts, patch, *latent.shape[-2:])
++            if vision_overlap == "Match source":
++                from .krea2_overlap import SourceMatchedVision
++                source_latent = frame_model.model.process_latent_in(latent)
++                wrapper = SourceMatchedVision(tiles, contexts, patch, *latent.shape[-2:], source_latent)
++            else:
++                wrapper = TiledVision(tiles, contexts, patch, *latent.shape[-2:])
+             frame_model.add_wrapper_with_key(WrappersMP.DIFFUSION_MODEL, CANVAS_ORIGIN, wrapper)
+             frame_model.set_model_patch(_position_on_canvas, "post_input")
+         # The first context gives Comfy the correct conditioning shape and is used

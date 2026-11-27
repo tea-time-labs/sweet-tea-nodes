@@ -1,0 +1,23 @@
+{
+  "method": "original_t4",
+  "case": "04-kayak-rescue-practice",
+  "tile": 4,
+  "core": [
+    0,
+    234,
+    427,
+    480
+  ],
+  "padded": [
+    0,
+    149,
+    512,
+    566
+  ],
+  "caption": "The cyan rectangle in Image 1, which is the inner tile, is a close-up of the calm, rippling lake surface with distant fir trees and layered blue mountains along the horizon.",
+  "notes": [],
+  "seconds": 12.03,
+  "gpu": "Tesla T4",
+  "source_sha256": "64bb8df83e04f1364c31a6619068da322472041f87a8b18f1c06321c6a722bd4",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

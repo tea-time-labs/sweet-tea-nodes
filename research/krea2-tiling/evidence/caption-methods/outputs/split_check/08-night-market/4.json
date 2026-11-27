@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "08-night-market",
+  "tile": 4,
+  "core": [
+    0,
+    256,
+    448,
+    512
+  ],
+  "padded": [
+    0,
+    170,
+    534,
+    598
+  ],
+  "caption": "A blurred foreground silhouette stands before wooden crates holding plastic-wrapped bread loaves, while a black hooded jacket’s shoulder and sleeve overlap the right edge, resting near a wooden counter.",
+  "notes": [
+    "Plastic-wrapped bread loaves in wooden crates, foreground silhouette of a person.",
+    "Black hooded jacket, blurred foreground, wooden counter surface."
+  ],
+  "seconds": 17.35,
+  "gpu": "Tesla T4",
+  "source_sha256": "ed4c09abdbee5a1740202d6f2cd95f173fc3717c2ada117585297ed0ef5dfa42",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

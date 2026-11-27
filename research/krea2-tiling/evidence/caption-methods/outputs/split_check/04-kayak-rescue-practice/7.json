@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "04-kayak-rescue-practice",
+  "tile": 7,
+  "core": [
+    0,
+    480,
+    427,
+    720
+  ],
+  "padded": [
+    0,
+    394,
+    512,
+    720
+  ],
+  "caption": "A yellow kayak hull rests at the water’s edge, its black handle and paddle blade visible above the surface, with pebbled shore in the foreground. The paddle’s blade overlaps the kayak’s top, while the hull’s front edge curves toward the viewer.",
+  "notes": [
+    "Yellow kayak hull, black handle, pebbled shore.",
+    "Yellow kayak hull, black paddle blade, water surface."
+  ],
+  "seconds": 19.39,
+  "gpu": "Tesla T4",
+  "source_sha256": "64bb8df83e04f1364c31a6619068da322472041f87a8b18f1c06321c6a722bd4",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

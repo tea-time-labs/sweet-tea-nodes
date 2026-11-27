@@ -1,0 +1,230 @@
+{
+  "breadth": {
+    "padded_box": {
+      "n": 16,
+      "A": 6,
+      "P": 9,
+      "W": 1,
+      "landmark": 2,
+      "outside": 8,
+      "locator": 7,
+      "median_s": 8.7
+    },
+    "full_box": {
+      "n": 16,
+      "A": 4,
+      "P": 10,
+      "W": 2,
+      "landmark": 0,
+      "outside": 5,
+      "locator": 9,
+      "median_s": 10.9
+    },
+    "full_coords": {
+      "n": 16,
+      "A": 1,
+      "P": 12,
+      "W": 3,
+      "landmark": 0,
+      "outside": 11,
+      "locator": 9,
+      "median_s": 12.9
+    },
+    "full_spotlight": {
+      "n": 16,
+      "A": 4,
+      "P": 12,
+      "W": 0,
+      "landmark": 0,
+      "outside": 8,
+      "locator": 12,
+      "median_s": 12.2
+    },
+    "split_check": {
+      "n": 16,
+      "A": 6,
+      "P": 10,
+      "W": 0,
+      "landmark": 3
+    }
+  },
+  "stress": {
+    "padded_box": {
+      "n": 4,
+      "A": 1,
+      "P": 2,
+      "W": 1,
+      "landmark": 0,
+      "outside": 3,
+      "locator": 1,
+      "median_s": 8.2
+    },
+    "full_box": {
+      "n": 4,
+      "A": 0,
+      "P": 3,
+      "W": 1,
+      "landmark": 0,
+      "outside": 2,
+      "locator": 2,
+      "median_s": 11.1
+    },
+    "full_coords": {
+      "n": 4,
+      "A": 0,
+      "P": 4,
+      "W": 0,
+      "landmark": 0,
+      "outside": 2,
+      "locator": 2,
+      "median_s": 12.8
+    },
+    "full_spotlight": {
+      "n": 4,
+      "A": 0,
+      "P": 2,
+      "W": 2,
+      "landmark": 0,
+      "outside": 3,
+      "locator": 2,
+      "median_s": 11.8
+    },
+    "split_check": {
+      "n": 4,
+      "A": 2,
+      "P": 2,
+      "W": 0,
+      "landmark": 1
+    }
+  },
+  "paired_breadth_vs_halves": {
+    "padded_box": {
+      "both_accurate": 2,
+      "view_only": [
+        [
+          "03-library-architecture",
+          8
+        ],
+        [
+          "11-coffee-product",
+          3
+        ],
+        [
+          "12-urban-basketball",
+          5
+        ],
+        [
+          "15-tailoring-studio",
+          2
+        ]
+      ],
+      "halves_only": [
+        [
+          "01-florist-handoff",
+          6
+        ],
+        [
+          "06-restaurant-pass",
+          3
+        ],
+        [
+          "08-night-market",
+          9
+        ],
+        [
+          "16-museum-diorama",
+          4
+        ]
+      ]
+    },
+    "full_box": {
+      "both_accurate": 3,
+      "view_only": [
+        [
+          "15-tailoring-studio",
+          2
+        ]
+      ],
+      "halves_only": [
+        [
+          "01-florist-handoff",
+          6
+        ],
+        [
+          "06-restaurant-pass",
+          3
+        ],
+        [
+          "16-museum-diorama",
+          4
+        ]
+      ]
+    },
+    "full_coords": {
+      "both_accurate": 0,
+      "view_only": [
+        [
+          "12-urban-basketball",
+          5
+        ]
+      ],
+      "halves_only": [
+        [
+          "01-florist-handoff",
+          6
+        ],
+        [
+          "06-restaurant-pass",
+          3
+        ],
+        [
+          "08-night-market",
+          9
+        ],
+        [
+          "09-ballet-rehearsal",
+          1
+        ],
+        [
+          "13-orchard-harvest",
+          9
+        ],
+        [
+          "16-museum-diorama",
+          4
+        ]
+      ]
+    },
+    "full_spotlight": {
+      "both_accurate": 2,
+      "view_only": [
+        [
+          "04-kayak-rescue-practice",
+          7
+        ],
+        [
+          "12-urban-basketball",
+          5
+        ]
+      ],
+      "halves_only": [
+        [
+          "06-restaurant-pass",
+          3
+        ],
+        [
+          "08-night-market",
+          9
+        ],
+        [
+          "09-ballet-rehearsal",
+          1
+        ],
+        [
+          "16-museum-diorama",
+          4
+        ]
+      ]
+    }
+  }
+}

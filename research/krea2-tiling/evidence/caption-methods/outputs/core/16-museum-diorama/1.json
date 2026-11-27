@@ -1,0 +1,23 @@
+{
+  "method": "core",
+  "case": "16-museum-diorama",
+  "tile": 1,
+  "core": [
+    0,
+    0,
+    278,
+    416
+  ],
+  "padded": [
+    0,
+    0,
+    363,
+    502
+  ],
+  "caption": "A dark, shadowed ceiling meets a glass display case with visible lights from within, its top edge cutting off the upper frame. Below, a blurred, dark silhouette of hair is partially visible at the bottom right.",
+  "notes": [],
+  "seconds": 10.59,
+  "gpu": "Tesla T4",
+  "source_sha256": "75657255388feeb52a103bb6acc1d90c11a6c9d6e113d3dc5bc75c6209aba445",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

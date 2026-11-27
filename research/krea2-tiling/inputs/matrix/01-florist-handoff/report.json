@@ -1,0 +1,371 @@
+{
+  "scene": {
+    "id": "01-florist-handoff",
+    "width": 720,
+    "height": 1280,
+    "focus": [
+      0.47,
+      0.52
+    ],
+    "review": "Two people, one bouquet, distinct hands at the handoff, upright door mullions.",
+    "prompt": "Tall vertical editorial photograph for a neighborhood florist campaign. A florist in a dark green apron steps out of her shop and hands one wrapped bouquet of yellow ranunculus across the center to a cyclist in a cream jacket. Two adults only. Their hands meet around the brown paper wrapping, and the cyclist's other hand holds the blue bicycle's handlebar. Shop window with narrow wooden mullions, dappled rain on the pavement, soft cloudy daylight, candid medium-wide composition, clear layering from doorway to sidewalk."
+  },
+  "source_size": [
+    720,
+    1280
+  ],
+  "source_seed": 87923333,
+  "source_sampler": {
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1.0
+  },
+  "upscale_seed": 40309692,
+  "upscale_settings": {
+    "steps": 8,
+    "cfg": 1.0,
+    "denoise": 0.8,
+    "positions": "local",
+    "control": "Vision"
+  },
+  "runs": {
+    "euler-simple": {
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 299.91,
+      "sampling_seconds": 273.69,
+      "peak_torch_allocated_mib": 13805,
+      "peak_torch_reserved_mib": 15822,
+      "status": "ok",
+      "file": "euler-simple.png"
+    },
+    "euler-sgm_uniform": {
+      "sampler": "euler",
+      "scheduler": "sgm_uniform",
+      "sigmas": [
+        0.9266740679740906,
+        0.8805605173110962,
+        0.8257773518562317,
+        0.7596262693405151,
+        0.6781590580940247,
+        0.575360119342804,
+        0.441588819026947,
+        0.26036524772644043,
+        0.0
+      ],
+      "seconds": 304.03,
+      "sampling_seconds": 278.04,
+      "peak_torch_allocated_mib": 13805,
+      "peak_torch_reserved_mib": 15822,
+      "status": "ok",
+      "file": "euler-sgm_uniform.png"
+    },
+    "dpmpp_2m-simple": {
+      "sampler": "dpmpp_2m",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 304.32,
+      "sampling_seconds": 277.96,
+      "peak_torch_allocated_mib": 13805,
+      "peak_torch_reserved_mib": 15822,
+      "status": "ok",
+      "file": "dpmpp_2m-simple.png"
+    }
+  },
+  "node": "STKrea2TurboMatrixTest",
+  "colab_gpu": "NVIDIA L4",
+  "torch": "2.14.1+cu130",
+  "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+  "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+  "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+  "geometry": {
+    "final_size": [
+      2160,
+      3840
+    ],
+    "working_canvas": [
+      2176,
+      3840
+    ],
+    "tile_count": 9,
+    "padding": 256,
+    "tiles": [
+      {
+        "tile": 1,
+        "core_canvas_xyxy": [
+          0,
+          0,
+          704,
+          1280
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          0,
+          960,
+          1536
+        ],
+        "core_source_xyxy": [
+          0,
+          0,
+          235,
+          427
+        ],
+        "padded_source_xyxy": [
+          0,
+          0,
+          320,
+          512
+        ],
+        "caption": "A smiling woman in a white t-shirt and dark green apron stands at a shop doorway, her face partially visible as she hands a bouquet of yellow ranunculus to a cyclist, with a shop window featuring narrow wooden mullions and dappled rain on the pavement in the background."
+      },
+      {
+        "tile": 2,
+        "core_canvas_xyxy": [
+          704,
+          0,
+          1440,
+          1280
+        ],
+        "padded_canvas_xyxy": [
+          448,
+          0,
+          1696,
+          1536
+        ],
+        "core_source_xyxy": [
+          234,
+          0,
+          480,
+          427
+        ],
+        "padded_source_xyxy": [
+          149,
+          0,
+          566,
+          512
+        ],
+        "caption": "A bouquet of yellow ranunculus wrapped in brown paper is held against a backdrop of a shop window with narrow wooden mullions, viewed through a glass pane that reflects a blurred building facade."
+      },
+      {
+        "tile": 3,
+        "core_canvas_xyxy": [
+          1440,
+          0,
+          2176,
+          1280
+        ],
+        "padded_canvas_xyxy": [
+          1184,
+          0,
+          2176,
+          1536
+        ],
+        "core_source_xyxy": [
+          480,
+          0,
+          720,
+          427
+        ],
+        "padded_source_xyxy": [
+          394,
+          0,
+          720,
+          512
+        ],
+        "caption": "A smiling woman's profile, her dark hair pulled back, is seen against a background of a tall, narrow window with vertical wooden mullions and a light-colored stone wall."
+      },
+      {
+        "tile": 4,
+        "core_canvas_xyxy": [
+          0,
+          1280,
+          704,
+          2560
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          1024,
+          960,
+          2816
+        ],
+        "core_source_xyxy": [
+          0,
+          426,
+          235,
+          854
+        ],
+        "padded_source_xyxy": [
+          0,
+          341,
+          320,
+          939
+        ],
+        "caption": "A person in a dark green apron holds a bouquet of flowers, with a background of a shop window displaying more blooms and a wet pavement."
+      },
+      {
+        "tile": 5,
+        "core_canvas_xyxy": [
+          704,
+          1280,
+          1440,
+          2560
+        ],
+        "padded_canvas_xyxy": [
+          448,
+          1024,
+          1696,
+          2816
+        ],
+        "core_source_xyxy": [
+          234,
+          426,
+          480,
+          854
+        ],
+        "padded_source_xyxy": [
+          149,
+          341,
+          566,
+          939
+        ],
+        "caption": "Two hands, one in a green apron and one in a cream jacket, meet to pass a bouquet of yellow ranunculus wrapped in brown paper, with a shop window and potted flowers visible in the background."
+      },
+      {
+        "tile": 6,
+        "core_canvas_xyxy": [
+          1440,
+          1280,
+          2176,
+          2560
+        ],
+        "padded_canvas_xyxy": [
+          1184,
+          1024,
+          2176,
+          2816
+        ],
+        "core_source_xyxy": [
+          480,
+          426,
+          720,
+          854
+        ],
+        "padded_source_xyxy": [
+          394,
+          341,
+          720,
+          939
+        ],
+        "caption": "A cream-colored button-up jacket worn over a white t-shirt, with a hand gripping a bicycle handlebar, against a softly lit background of wooden window mullions and a wet pavement."
+      },
+      {
+        "tile": 7,
+        "core_canvas_xyxy": [
+          0,
+          2560,
+          704,
+          3840
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          2304,
+          960,
+          3840
+        ],
+        "core_source_xyxy": [
+          0,
+          853,
+          235,
+          1280
+        ],
+        "padded_source_xyxy": [
+          0,
+          768,
+          320,
+          1280
+        ],
+        "caption": "A person's lower legs in blue jeans and white sneakers stand on a wet concrete step, with the green apron of the florist visible above."
+      },
+      {
+        "tile": 8,
+        "core_canvas_xyxy": [
+          704,
+          2560,
+          1440,
+          3840
+        ],
+        "padded_canvas_xyxy": [
+          448,
+          2304,
+          1696,
+          3840
+        ],
+        "core_source_xyxy": [
+          234,
+          853,
+          480,
+          1280
+        ],
+        "padded_source_xyxy": [
+          149,
+          768,
+          566,
+          1280
+        ],
+        "caption": "A close-up of a blue bicycle's front wheel and fork, with a dark, wet pavement and a concrete step in the background."
+      },
+      {
+        "tile": 9,
+        "core_canvas_xyxy": [
+          1440,
+          2560,
+          2176,
+          3840
+        ],
+        "padded_canvas_xyxy": [
+          1184,
+          2304,
+          2176,
+          3840
+        ],
+        "core_source_xyxy": [
+          480,
+          853,
+          720,
+          1280
+        ],
+        "padded_source_xyxy": [
+          394,
+          768,
+          720,
+          1280
+        ],
+        "caption": "A close-up of a blue bicycle's pedal and crankset, with a person's black pants and white sneakers visible, set against a wet, dark pavement."
+      }
+    ],
+    "caption_and_encode_seconds": 68.55
+  }
+}

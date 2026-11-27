@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "09-ballet-rehearsal",
+  "tile": 3,
+  "core": [
+    512,
+    0,
+    768,
+    448
+  ],
+  "padded": [
+    426,
+    0,
+    768,
+    534
+  ],
+  "caption": "Above, a ceiling cornice with dentil molding meets the upper edge of a beige wall panel; a vertical seam runs down the junction, partially obscured by a faint crack.",
+  "notes": [
+    "1. Ceiling cornice with dentil molding  \n2. Upper edge of wall panel  \n3. Vertical seam or joint in ceiling/panel junction",
+    "Beige wall with vertical seam and faint crack."
+  ],
+  "seconds": 19.08,
+  "gpu": "Tesla T4",
+  "source_sha256": "a61f05a4399e0bbd82f7c16499e56edaef6c3c07b06ded575071b7307e00c655",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

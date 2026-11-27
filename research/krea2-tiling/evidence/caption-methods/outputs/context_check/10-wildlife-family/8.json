@@ -1,0 +1,25 @@
+{
+  "method": "context_check",
+  "case": "10-wildlife-family",
+  "tile": 8,
+  "core": [
+    320,
+    725,
+    640,
+    1088
+  ],
+  "padded": [
+    234,
+    640,
+    726,
+    1088
+  ],
+  "caption": "A fox kit peers forward beside a larger fox’s legs, surrounded by fallen orange leaves and damp earth; a patch of green grass peeks through the foreground.",
+  "notes": [
+    "- fox\n- kit\n- leaf\n- fur\n- tail\n- grass"
+  ],
+  "seconds": 13.61,
+  "gpu": "Tesla T4",
+  "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

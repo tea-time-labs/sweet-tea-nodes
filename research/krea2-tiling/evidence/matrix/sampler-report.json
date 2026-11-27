@@ -1,0 +1,5938 @@
+[
+  {
+    "scene": {
+      "id": "01-florist-handoff",
+      "width": 720,
+      "height": 1280,
+      "focus": [
+        0.47,
+        0.52
+      ],
+      "review": "Two people, one bouquet, distinct hands at the handoff, upright door mullions.",
+      "prompt": "Tall vertical editorial photograph for a neighborhood florist campaign. A florist in a dark green apron steps out of her shop and hands one wrapped bouquet of yellow ranunculus across the center to a cyclist in a cream jacket. Two adults only. Their hands meet around the brown paper wrapping, and the cyclist's other hand holds the blue bicycle's handlebar. Shop window with narrow wooden mullions, dappled rain on the pavement, soft cloudy daylight, candid medium-wide composition, clear layering from doorway to sidewalk."
+    },
+    "source_size": [
+      720,
+      1280
+    ],
+    "source_seed": 87923333,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40309692,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 299.91,
+        "sampling_seconds": 273.69,
+        "peak_torch_allocated_mib": 13805,
+        "peak_torch_reserved_mib": 15822,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 304.03,
+        "sampling_seconds": 278.04,
+        "peak_torch_allocated_mib": 13805,
+        "peak_torch_reserved_mib": 15822,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 304.32,
+        "sampling_seconds": 277.96,
+        "peak_torch_allocated_mib": 13805,
+        "peak_torch_reserved_mib": 15822,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        2160,
+        3840
+      ],
+      "working_canvas": [
+        2176,
+        3840
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            704,
+            1280
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            960,
+            1536
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            235,
+            427
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            320,
+            512
+          ],
+          "caption": "A smiling woman in a white t-shirt and dark green apron stands at a shop doorway, her face partially visible as she hands a bouquet of yellow ranunculus to a cyclist, with a shop window featuring narrow wooden mullions and dappled rain on the pavement in the background."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            704,
+            0,
+            1440,
+            1280
+          ],
+          "padded_canvas_xyxy": [
+            448,
+            0,
+            1696,
+            1536
+          ],
+          "core_source_xyxy": [
+            234,
+            0,
+            480,
+            427
+          ],
+          "padded_source_xyxy": [
+            149,
+            0,
+            566,
+            512
+          ],
+          "caption": "A bouquet of yellow ranunculus wrapped in brown paper is held against a backdrop of a shop window with narrow wooden mullions, viewed through a glass pane that reflects a blurred building facade."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            1440,
+            0,
+            2176,
+            1280
+          ],
+          "padded_canvas_xyxy": [
+            1184,
+            0,
+            2176,
+            1536
+          ],
+          "core_source_xyxy": [
+            480,
+            0,
+            720,
+            427
+          ],
+          "padded_source_xyxy": [
+            394,
+            0,
+            720,
+            512
+          ],
+          "caption": "A smiling woman's profile, her dark hair pulled back, is seen against a background of a tall, narrow window with vertical wooden mullions and a light-colored stone wall."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            1280,
+            704,
+            2560
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            1024,
+            960,
+            2816
+          ],
+          "core_source_xyxy": [
+            0,
+            426,
+            235,
+            854
+          ],
+          "padded_source_xyxy": [
+            0,
+            341,
+            320,
+            939
+          ],
+          "caption": "A person in a dark green apron holds a bouquet of flowers, with a background of a shop window displaying more blooms and a wet pavement."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            704,
+            1280,
+            1440,
+            2560
+          ],
+          "padded_canvas_xyxy": [
+            448,
+            1024,
+            1696,
+            2816
+          ],
+          "core_source_xyxy": [
+            234,
+            426,
+            480,
+            854
+          ],
+          "padded_source_xyxy": [
+            149,
+            341,
+            566,
+            939
+          ],
+          "caption": "Two hands, one in a green apron and one in a cream jacket, meet to pass a bouquet of yellow ranunculus wrapped in brown paper, with a shop window and potted flowers visible in the background."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            1440,
+            1280,
+            2176,
+            2560
+          ],
+          "padded_canvas_xyxy": [
+            1184,
+            1024,
+            2176,
+            2816
+          ],
+          "core_source_xyxy": [
+            480,
+            426,
+            720,
+            854
+          ],
+          "padded_source_xyxy": [
+            394,
+            341,
+            720,
+            939
+          ],
+          "caption": "A cream-colored button-up jacket worn over a white t-shirt, with a hand gripping a bicycle handlebar, against a softly lit background of wooden window mullions and a wet pavement."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            2560,
+            704,
+            3840
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            2304,
+            960,
+            3840
+          ],
+          "core_source_xyxy": [
+            0,
+            853,
+            235,
+            1280
+          ],
+          "padded_source_xyxy": [
+            0,
+            768,
+            320,
+            1280
+          ],
+          "caption": "A person's lower legs in blue jeans and white sneakers stand on a wet concrete step, with the green apron of the florist visible above."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            704,
+            2560,
+            1440,
+            3840
+          ],
+          "padded_canvas_xyxy": [
+            448,
+            2304,
+            1696,
+            3840
+          ],
+          "core_source_xyxy": [
+            234,
+            853,
+            480,
+            1280
+          ],
+          "padded_source_xyxy": [
+            149,
+            768,
+            566,
+            1280
+          ],
+          "caption": "A close-up of a blue bicycle's front wheel and fork, with a dark, wet pavement and a concrete step in the background."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            1440,
+            2560,
+            2176,
+            3840
+          ],
+          "padded_canvas_xyxy": [
+            1184,
+            2304,
+            2176,
+            3840
+          ],
+          "core_source_xyxy": [
+            480,
+            853,
+            720,
+            1280
+          ],
+          "padded_source_xyxy": [
+            394,
+            768,
+            720,
+            1280
+          ],
+          "caption": "A close-up of a blue bicycle's pedal and crankset, with a person's black pants and white sneakers visible, set against a wet, dark pavement."
+        }
+      ],
+      "caption_and_encode_seconds": 68.55
+    }
+  },
+  {
+    "scene": {
+      "id": "02-jazz-trio",
+      "width": 1024,
+      "height": 1024,
+      "focus": [
+        0.51,
+        0.47
+      ],
+      "review": "Exactly three musicians, distinct instruments, drummer between the others, sax keys and hands.",
+      "prompt": "Square album-cover photograph of an intimate jazz trio on a compact stage. The upright bassist at left in a rust shirt and the saxophonist at right in a blue suit turn toward each other, with the seated drummer visible between and behind them. Three people, one instrument each. Golden key light and deep blue shadows, black velvet curtain, a few wooden chairs in soft focus, warm documentary film grain. Show the whole wooden bass and the curved brass saxophone, including the musicians' hands playing."
+    },
+    "source_size": [
+      1024,
+      1024
+    ],
+    "source_seed": 87923524,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40309823,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 328.25,
+        "sampling_seconds": 299.94,
+        "peak_torch_allocated_mib": 13889,
+        "peak_torch_reserved_mib": 15900,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 328.92,
+        "sampling_seconds": 300.43,
+        "peak_torch_allocated_mib": 13889,
+        "peak_torch_reserved_mib": 15900,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 329.52,
+        "sampling_seconds": 301.08,
+        "peak_torch_allocated_mib": 13889,
+        "peak_torch_reserved_mib": 15900,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        3072,
+        3072
+      ],
+      "working_canvas": [
+        3072,
+        3072
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            1024,
+            1024
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            1280,
+            1280
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            342,
+            342
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            427,
+            427
+          ],
+          "caption": "The upright bassist's head and shoulder, in a rust shirt, are shown in profile against a dark, textured black velvet curtain, with the wooden body of the bass visible to his right."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            1024,
+            0,
+            2048,
+            1024
+          ],
+          "padded_canvas_xyxy": [
+            768,
+            0,
+            2304,
+            1280
+          ],
+          "core_source_xyxy": [
+            341,
+            0,
+            683,
+            342
+          ],
+          "padded_source_xyxy": [
+            256,
+            0,
+            768,
+            427
+          ],
+          "caption": "A dark, textured black velvet curtain hangs in the background, illuminated by a single warm golden spotlight from above, with the faint outline of a curtain rod visible at the top edge."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            2048,
+            0,
+            3072,
+            1024
+          ],
+          "padded_canvas_xyxy": [
+            1792,
+            0,
+            3072,
+            1280
+          ],
+          "core_source_xyxy": [
+            682,
+            0,
+            1024,
+            342
+          ],
+          "padded_source_xyxy": [
+            597,
+            0,
+            1024,
+            427
+          ],
+          "caption": "A man in a blue suit plays a saxophone, his head and shoulders visible against a dark, out-of-focus background."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            1024,
+            1024,
+            2048
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            768,
+            1280,
+            2304
+          ],
+          "core_source_xyxy": [
+            0,
+            341,
+            342,
+            683
+          ],
+          "padded_source_xyxy": [
+            0,
+            256,
+            427,
+            768
+          ],
+          "caption": "The visible content in image 3 is the textured, rust-colored fabric of the upright bassist's shirt sleeve and the dark, matte-finished fabric of his trousers, set against the warm wood grain of the bass."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            1024,
+            1024,
+            2048,
+            2048
+          ],
+          "padded_canvas_xyxy": [
+            768,
+            768,
+            2304,
+            2304
+          ],
+          "core_source_xyxy": [
+            341,
+            341,
+            683,
+            683
+          ],
+          "padded_source_xyxy": [
+            256,
+            256,
+            768,
+            768
+          ],
+          "caption": "A seated drummer in a blue shirt is blurred in the background, his hands positioned over a drum kit, against a black velvet curtain."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            2048,
+            1024,
+            3072,
+            2048
+          ],
+          "padded_canvas_xyxy": [
+            1792,
+            768,
+            3072,
+            2304
+          ],
+          "core_source_xyxy": [
+            682,
+            341,
+            1024,
+            683
+          ],
+          "padded_source_xyxy": [
+            597,
+            256,
+            1024,
+            768
+          ],
+          "caption": "The saxophonist's right hand grips the brass instrument's keys, with the blue suit's textured fabric and a dark, out-of-focus background visible."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            2048,
+            1024,
+            3072
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            1792,
+            1280,
+            3072
+          ],
+          "core_source_xyxy": [
+            0,
+            682,
+            342,
+            1024
+          ],
+          "padded_source_xyxy": [
+            0,
+            597,
+            427,
+            1024
+          ],
+          "caption": "The smooth, dark fabric of the bassist's trousers, with a subtle vertical seam, is shown against the warm, polished wood of the upright bass's body, under soft stage lighting."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            1024,
+            2048,
+            2048,
+            3072
+          ],
+          "padded_canvas_xyxy": [
+            768,
+            1792,
+            2304,
+            3072
+          ],
+          "core_source_xyxy": [
+            341,
+            682,
+            683,
+            1024
+          ],
+          "padded_source_xyxy": [
+            256,
+            597,
+            768,
+            1024
+          ],
+          "caption": "The close-up shows the polished, warm-toned wooden body of the upright bass, featuring its distinctive f-holes and black bridge, with the musician's hand resting on the strings, set against a softly blurred background of drum kit components."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            2048,
+            2048,
+            3072,
+            3072
+          ],
+          "padded_canvas_xyxy": [
+            1792,
+            1792,
+            3072,
+            3072
+          ],
+          "core_source_xyxy": [
+            682,
+            682,
+            1024,
+            1024
+          ],
+          "padded_source_xyxy": [
+            597,
+            597,
+            1024,
+            1024
+          ],
+          "caption": "The deep blue fabric of the saxophonist's suit trousers, showing a subtle weave texture, stands in focus against a softly blurred background of wooden chairs and drum kit hardware."
+        }
+      ],
+      "caption_and_encode_seconds": 68.04
+    }
+  },
+  {
+    "scene": {
+      "id": "03-library-architecture",
+      "width": 1216,
+      "height": 832,
+      "focus": [
+        0.54,
+        0.55
+      ],
+      "review": "One staircase and continuous balustrade, architectural perspective, two foreground readers with clear silhouettes.",
+      "prompt": "Landscape architecture feature photograph of a newly opened civic library, photographed from the corner of a double-height atrium. A single straight diagonal staircase crosses from the lower left toward the upper right, with a continuous black metal balustrade and repeating vertical posts. Under the stairs, two readers at a long oak table lean together to look at one open art book. Pale brick, tall mullioned windows, diffuse daylight, alternating rails and crisp shadows, measured architectural verticals, quiet public space."
+    },
+    "source_size": [
+      1216,
+      832
+    ],
+    "source_seed": 87923715,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40309954,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 324.96,
+        "sampling_seconds": 296.54,
+        "peak_torch_allocated_mib": 13859,
+        "peak_torch_reserved_mib": 16076,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 323.96,
+        "sampling_seconds": 296.36,
+        "peak_torch_allocated_mib": 13859,
+        "peak_torch_reserved_mib": 16076,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 324.91,
+        "sampling_seconds": 297.16,
+        "peak_torch_allocated_mib": 13859,
+        "peak_torch_reserved_mib": 16076,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        3648,
+        2496
+      ],
+      "working_canvas": [
+        3648,
+        2496
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            1216,
+            832
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            1472,
+            1088
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            406,
+            278
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            491,
+            363
+          ],
+          "caption": "The interior of a tall, multi-paned mullioned window with white frames set into a pale brick wall, viewed from below."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            1216,
+            0,
+            2432,
+            832
+          ],
+          "padded_canvas_xyxy": [
+            960,
+            0,
+            2688,
+            1088
+          ],
+          "core_source_xyxy": [
+            405,
+            0,
+            811,
+            278
+          ],
+          "padded_source_xyxy": [
+            320,
+            0,
+            896,
+            363
+          ],
+          "caption": "A tall, multi-paned mullioned window with white frames set into a pale brick wall, viewed from the corner of a double-height atrium."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            2432,
+            0,
+            3648,
+            832
+          ],
+          "padded_canvas_xyxy": [
+            2176,
+            0,
+            3648,
+            1088
+          ],
+          "core_source_xyxy": [
+            810,
+            0,
+            1216,
+            278
+          ],
+          "padded_source_xyxy": [
+            725,
+            0,
+            1216,
+            363
+          ],
+          "caption": "The interior of the cyan-marked section shows a continuous black metal balustrade with repeating vertical posts, set against a backdrop of pale brick and tall, bright windows, casting crisp shadows."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            832,
+            1216,
+            1664
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            576,
+            1472,
+            1920
+          ],
+          "core_source_xyxy": [
+            0,
+            277,
+            406,
+            555
+          ],
+          "padded_source_xyxy": [
+            0,
+            192,
+            491,
+            640
+          ],
+          "caption": "A tall, multi-paned mullioned window with a pale brick frame, set against a white brick wall, with diffuse daylight illuminating the scene."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            1216,
+            832,
+            2432,
+            1664
+          ],
+          "padded_canvas_xyxy": [
+            960,
+            576,
+            2688,
+            1920
+          ],
+          "core_source_xyxy": [
+            405,
+            277,
+            811,
+            555
+          ],
+          "padded_source_xyxy": [
+            320,
+            192,
+            896,
+            640
+          ],
+          "caption": "A close-up view of the black metal balustrade with repeating vertical posts, set against a backdrop of pale brick and tall, bright windows, under diffuse daylight."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            2432,
+            832,
+            3648,
+            1664
+          ],
+          "padded_canvas_xyxy": [
+            2176,
+            576,
+            3648,
+            1920
+          ],
+          "core_source_xyxy": [
+            810,
+            277,
+            1216,
+            555
+          ],
+          "padded_source_xyxy": [
+            725,
+            192,
+            1216,
+            640
+          ],
+          "caption": "A tall, multi-paned mullioned window with pale brick walls in the background, framed by the diagonal shadow of the staircase's balustrade."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            1664,
+            1216,
+            2496
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            1408,
+            1472,
+            2496
+          ],
+          "core_source_xyxy": [
+            0,
+            554,
+            406,
+            832
+          ],
+          "padded_source_xyxy": [
+            0,
+            469,
+            491,
+            832
+          ],
+          "caption": "The interior of the staircase's black metal balustrade, featuring repeating vertical posts and a continuous handrail, is set against a backdrop of pale brick wall and tall, mullioned windows."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            1216,
+            1664,
+            2432,
+            2496
+          ],
+          "padded_canvas_xyxy": [
+            960,
+            1408,
+            2688,
+            2496
+          ],
+          "core_source_xyxy": [
+            405,
+            554,
+            811,
+            832
+          ],
+          "padded_source_xyxy": [
+            320,
+            469,
+            896,
+            832
+          ],
+          "caption": "A smooth, light-colored wooden table surface with a simple, unadorned edge, set against a plain, off-white wall under the shadow of a dark staircase."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            2432,
+            1664,
+            3648,
+            2496
+          ],
+          "padded_canvas_xyxy": [
+            2176,
+            1408,
+            3648,
+            2496
+          ],
+          "core_source_xyxy": [
+            810,
+            554,
+            1216,
+            832
+          ],
+          "padded_source_xyxy": [
+            725,
+            469,
+            1216,
+            832
+          ],
+          "caption": "Two individuals lean over a long oak table, intently studying an open art book, with pale brick walls and tall, mullioned windows forming the background."
+        }
+      ],
+      "caption_and_encode_seconds": 63.97
+    }
+  },
+  {
+    "scene": {
+      "id": "04-kayak-rescue-practice",
+      "width": 1280,
+      "height": 720,
+      "focus": [
+        0.49,
+        0.58
+      ],
+      "review": "Two paddlers, two distinct kayaks, single helping grip, consistent open-water horizon.",
+      "prompt": "Wide 16:9 outdoor brand photograph at the edge of a calm glacial lake. Two adult kayakers wearing life jackets practice a partner rescue. One kneels in a mustard kayak at left, reaching across to a friend steadying a navy kayak at right. A single yellow-bladed paddle lies horizontally across the mustard deck. Both faces and the meeting hands are readable, boats are parallel but separate, distant firs and layered blue mountain ridges along a level horizon, glints and small ripples in the foreground, cool overcast light."
+    },
+    "source_size": [
+      1280,
+      720
+    ],
+    "source_seed": 87923906,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40310085,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 302.93,
+        "sampling_seconds": 277.69,
+        "peak_torch_allocated_mib": 13803,
+        "peak_torch_reserved_mib": 15998,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 302.96,
+        "sampling_seconds": 277.81,
+        "peak_torch_allocated_mib": 13803,
+        "peak_torch_reserved_mib": 15998,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 303.5,
+        "sampling_seconds": 277.7,
+        "peak_torch_allocated_mib": 13803,
+        "peak_torch_reserved_mib": 15998,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        3840,
+        2160
+      ],
+      "working_canvas": [
+        3840,
+        2176
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            1280,
+            704
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            1536,
+            960
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            427,
+            235
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            512,
+            320
+          ],
+          "caption": "A row of tall, slender evergreen trees stands along a shoreline, with softly blurred, layered mountain ridges receding into the distance under an overcast sky."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            1280,
+            0,
+            2560,
+            704
+          ],
+          "padded_canvas_xyxy": [
+            1024,
+            0,
+            2816,
+            960
+          ],
+          "core_source_xyxy": [
+            426,
+            0,
+            854,
+            235
+          ],
+          "padded_source_xyxy": [
+            341,
+            0,
+            939,
+            320
+          ],
+          "caption": "Layered blue mountain ridges recede into a hazy distance under a soft, overcast sky."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            2560,
+            0,
+            3840,
+            704
+          ],
+          "padded_canvas_xyxy": [
+            2304,
+            0,
+            3840,
+            960
+          ],
+          "core_source_xyxy": [
+            853,
+            0,
+            1280,
+            235
+          ],
+          "padded_source_xyxy": [
+            768,
+            0,
+            1280,
+            320
+          ],
+          "caption": "Layered blue mountain ridges with dense evergreen forests under a soft, overcast sky."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            704,
+            1280,
+            1440
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            448,
+            1536,
+            1696
+          ],
+          "core_source_xyxy": [
+            0,
+            234,
+            427,
+            480
+          ],
+          "padded_source_xyxy": [
+            0,
+            149,
+            512,
+            566
+          ],
+          "caption": "The cyan rectangle in Image 1, which is the inner tile, is a close-up of the calm, rippling lake surface with distant fir trees and layered blue mountains in the background."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            1280,
+            704,
+            2560,
+            1440
+          ],
+          "padded_canvas_xyxy": [
+            1024,
+            448,
+            2816,
+            1696
+          ],
+          "core_source_xyxy": [
+            426,
+            234,
+            854,
+            480
+          ],
+          "padded_source_xyxy": [
+            341,
+            149,
+            939,
+            566
+          ],
+          "caption": "Two men in life jackets, one in a blue shirt and the other in a yellow shirt, are shaking hands across the water while kneeling in their kayaks, with the calm lake and distant mountains in the background."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            2560,
+            704,
+            3840,
+            1440
+          ],
+          "padded_canvas_xyxy": [
+            2304,
+            448,
+            3840,
+            1696
+          ],
+          "core_source_xyxy": [
+            853,
+            234,
+            1280,
+            480
+          ],
+          "padded_source_xyxy": [
+            768,
+            149,
+            1280,
+            566
+          ],
+          "caption": "The calm, rippling surface of the glacial lake under cool overcast light, with distant forested mountains along the horizon."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            1440,
+            1280,
+            2176
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            1184,
+            1536,
+            2176
+          ],
+          "core_source_xyxy": [
+            0,
+            480,
+            427,
+            720
+          ],
+          "padded_source_xyxy": [
+            0,
+            394,
+            512,
+            720
+          ],
+          "caption": "The interior of a mustard yellow kayak, showing its smooth, slightly curved hull, a black circular hatch cover, and a yellow paddle blade resting horizontally across the deck, with the water's surface and pebbled shore visible in the foreground."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            1280,
+            1440,
+            2560,
+            2176
+          ],
+          "padded_canvas_xyxy": [
+            1024,
+            1184,
+            2816,
+            2176
+          ],
+          "core_source_xyxy": [
+            426,
+            480,
+            854,
+            720
+          ],
+          "padded_source_xyxy": [
+            341,
+            394,
+            939,
+            720
+          ],
+          "caption": "A yellow-bladed paddle rests horizontally across the deck of a mustard kayak, with the water's surface showing small ripples and glints in the foreground."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            2560,
+            1440,
+            3840,
+            2176
+          ],
+          "padded_canvas_xyxy": [
+            2304,
+            1184,
+            3840,
+            2176
+          ],
+          "core_source_xyxy": [
+            853,
+            480,
+            1280,
+            720
+          ],
+          "padded_source_xyxy": [
+            768,
+            394,
+            1280,
+            720
+          ],
+          "caption": "The bow of a navy kayak floats on calm, rippling water, its dark hull and black bungee cords visible against the reflective surface."
+        }
+      ],
+      "caption_and_encode_seconds": 61.06
+    }
+  },
+  {
+    "scene": {
+      "id": "05-pottery-class",
+      "width": 832,
+      "height": 1216,
+      "focus": [
+        0.5,
+        0.57
+      ],
+      "review": "Two figures, an intact centered clay bowl, clean hand separation and a circular wheel.",
+      "prompt": "Vertical editorial photograph in a working ceramics studio. A seated woman in a chambray apron shapes one wet white bowl on a pottery wheel. A standing teacher on her left leans in and demonstrates with one hovering clay-smudged hand, without touching the student's hands. Intimate mid shot, circular bowl and wheel near center, warm side light, worn aprons, shelves of unfinished ceramics and a white wash bucket in the far background. Natural human expressions and clearly readable hand positions."
+    },
+    "source_size": [
+      832,
+      1216
+    ],
+    "source_seed": 87924097,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40310216,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 324.27,
+        "sampling_seconds": 296.57,
+        "peak_torch_allocated_mib": 13859,
+        "peak_torch_reserved_mib": 15846,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 324.48,
+        "sampling_seconds": 296.77,
+        "peak_torch_allocated_mib": 13859,
+        "peak_torch_reserved_mib": 15846,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 324.28,
+        "sampling_seconds": 296.41,
+        "peak_torch_allocated_mib": 13859,
+        "peak_torch_reserved_mib": 15846,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        2496,
+        3648
+      ],
+      "working_canvas": [
+        2496,
+        3648
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            832,
+            1216
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            1088,
+            1472
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            278,
+            406
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            363,
+            491
+          ],
+          "caption": "A close-up of a woman's ear and the side of her neck, framed by the strap of a denim apron, with soft, warm light highlighting the texture of her skin and the fabric."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            832,
+            0,
+            1664,
+            1216
+          ],
+          "padded_canvas_xyxy": [
+            576,
+            0,
+            1920,
+            1472
+          ],
+          "core_source_xyxy": [
+            277,
+            0,
+            555,
+            406
+          ],
+          "padded_source_xyxy": [
+            192,
+            0,
+            640,
+            491
+          ],
+          "caption": "A close-up of a woman's face, eyes closed in concentration, with dark hair and a white t-shirt under a denim apron, set against a softly blurred background of shelves holding ceramic pieces."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            1664,
+            0,
+            2496,
+            1216
+          ],
+          "padded_canvas_xyxy": [
+            1408,
+            0,
+            2496,
+            1472
+          ],
+          "core_source_xyxy": [
+            554,
+            0,
+            832,
+            406
+          ],
+          "padded_source_xyxy": [
+            469,
+            0,
+            832,
+            491
+          ],
+          "caption": "The inner tile, marked by the cyan rectangle, is a plain, unadorned, light-colored surface with a smooth, slightly reflective texture, set against a softly blurred background of shelves holding unfinished ceramic pieces."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            1216,
+            832,
+            2432
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            960,
+            1088,
+            2688
+          ],
+          "core_source_xyxy": [
+            0,
+            405,
+            278,
+            811
+          ],
+          "padded_source_xyxy": [
+            0,
+            320,
+            363,
+            896
+          ],
+          "caption": "A clay-smudged hand hovers above a spinning pottery wheel, fingers poised to guide the shaping of a wet white bowl, with the textured, worn fabric of a chambray apron visible nearby."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            832,
+            1216,
+            1664,
+            2432
+          ],
+          "padded_canvas_xyxy": [
+            576,
+            960,
+            1920,
+            2688
+          ],
+          "core_source_xyxy": [
+            277,
+            405,
+            555,
+            811
+          ],
+          "padded_source_xyxy": [
+            192,
+            320,
+            640,
+            896
+          ],
+          "caption": "A close-up of a person's hands, covered in white clay, shaping a wet white bowl on a pottery wheel, with a worn denim apron visible in the background."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            1664,
+            1216,
+            2496,
+            2432
+          ],
+          "padded_canvas_xyxy": [
+            1408,
+            960,
+            2496,
+            2688
+          ],
+          "core_source_xyxy": [
+            554,
+            405,
+            832,
+            811
+          ],
+          "padded_source_xyxy": [
+            469,
+            320,
+            832,
+            896
+          ],
+          "caption": "The inner surface of a wet, white clay bowl being shaped on a pottery wheel, with visible concentric ridges and a smooth, damp texture."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            2432,
+            832,
+            3648
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            2176,
+            1088,
+            3648
+          ],
+          "core_source_xyxy": [
+            0,
+            810,
+            278,
+            1216
+          ],
+          "padded_source_xyxy": [
+            0,
+            725,
+            363,
+            1216
+          ],
+          "caption": "The inner tile, marked by the cyan rectangle, is a smooth, light-colored ceramic surface with a slightly textured, matte finish, showing faint concentric rings from the pottery wheel's motion."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            832,
+            2432,
+            1664,
+            3648
+          ],
+          "padded_canvas_xyxy": [
+            576,
+            2176,
+            1920,
+            3648
+          ],
+          "core_source_xyxy": [
+            277,
+            810,
+            555,
+            1216
+          ],
+          "padded_source_xyxy": [
+            192,
+            725,
+            640,
+            1216
+          ],
+          "caption": "A close-up of a wet white clay bowl being shaped on a spinning pottery wheel, with hands guiding its form against a blurred background of concentric wheel rings."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            1664,
+            2432,
+            2496,
+            3648
+          ],
+          "padded_canvas_xyxy": [
+            1408,
+            2176,
+            2496,
+            3648
+          ],
+          "core_source_xyxy": [
+            554,
+            810,
+            832,
+            1216
+          ],
+          "padded_source_xyxy": [
+            469,
+            725,
+            832,
+            1216
+          ],
+          "caption": "The inner surface of a spinning pottery wheel, showing concentric circular ridges and a smooth, wet clay texture, with a partially visible hand holding a bowl above it."
+        }
+      ],
+      "caption_and_encode_seconds": 69.74
+    }
+  },
+  {
+    "scene": {
+      "id": "06-restaurant-pass",
+      "width": 1152,
+      "height": 896,
+      "focus": [
+        0.5,
+        0.54
+      ],
+      "review": "Three kitchen staff, one plated dish in the central exchange, straight edges at the counter.",
+      "prompt": "Landscape food-editorial photograph in an open restaurant kitchen just before dinner. Two chefs in white jackets and a server in a dark apron form a shallow triangle around the stainless pass. A chef slides one white ceramic plate toward the server, who reaches forward with both hands, while the third person watches. On the plate are three seared scallops, green sauce and one herb garnish. Side window light, darker shelves receding in perspective, subtle steam, documentary realism."
+    },
+    "source_size": [
+      1152,
+      896
+    ],
+    "source_seed": 87924288,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40310347,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 327.84,
+        "sampling_seconds": 300.33,
+        "peak_torch_allocated_mib": 13874,
+        "peak_torch_reserved_mib": 16116,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 328.03,
+        "sampling_seconds": 300.38,
+        "peak_torch_allocated_mib": 13874,
+        "peak_torch_reserved_mib": 16116,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 328.29,
+        "sampling_seconds": 300.41,
+        "peak_torch_allocated_mib": 13874,
+        "peak_torch_reserved_mib": 16116,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        3456,
+        2688
+      ],
+      "working_canvas": [
+        3456,
+        2688
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            1152,
+            896
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            1408,
+            1152
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            384,
+            299
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            470,
+            384
+          ],
+          "caption": "A chef's focused profile, seen in close-up, with a blurred background of dark, receding kitchen shelves."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            1152,
+            0,
+            2304,
+            896
+          ],
+          "padded_canvas_xyxy": [
+            896,
+            0,
+            2560,
+            1152
+          ],
+          "core_source_xyxy": [
+            384,
+            0,
+            768,
+            299
+          ],
+          "padded_source_xyxy": [
+            298,
+            0,
+            854,
+            384
+          ],
+          "caption": "The inner tile, marked by the cyan rectangle, is a dark, matte-finished surface with a subtle, uniform texture, set against a softly blurred background of darker, receding kitchen shelves."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            2304,
+            0,
+            3456,
+            896
+          ],
+          "padded_canvas_xyxy": [
+            2048,
+            0,
+            3456,
+            1152
+          ],
+          "core_source_xyxy": [
+            768,
+            0,
+            1152,
+            299
+          ],
+          "padded_source_xyxy": [
+            682,
+            0,
+            1152,
+            384
+          ],
+          "caption": "A woman's face in profile, her dark hair in a bun, looking down, framed by a bright window with blurred shelves in the background."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            896,
+            1152,
+            1792
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            640,
+            1408,
+            2048
+          ],
+          "core_source_xyxy": [
+            0,
+            298,
+            384,
+            598
+          ],
+          "padded_source_xyxy": [
+            0,
+            213,
+            470,
+            683
+          ],
+          "caption": "A close-up of a white chef's jacket with visible buttons and a pocket containing a yellow napkin, set against a blurred background of another chef's arm and a stainless steel pass."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            1152,
+            896,
+            2304,
+            1792
+          ],
+          "padded_canvas_xyxy": [
+            896,
+            640,
+            2560,
+            2048
+          ],
+          "core_source_xyxy": [
+            384,
+            298,
+            768,
+            598
+          ],
+          "padded_source_xyxy": [
+            298,
+            213,
+            854,
+            683
+          ],
+          "caption": "Steam rises from a steaming pot in the background, blurred by shallow depth of field, behind a white ceramic plate holding three seared scallops, green sauce, and one herb garnish."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            2304,
+            896,
+            3456,
+            1792
+          ],
+          "padded_canvas_xyxy": [
+            2048,
+            640,
+            3456,
+            2048
+          ],
+          "core_source_xyxy": [
+            768,
+            298,
+            1152,
+            598
+          ],
+          "padded_source_xyxy": [
+            682,
+            213,
+            1152,
+            683
+          ],
+          "caption": "A close-up of a chef's white chef's jacket and black apron, with the texture of the fabric and the buttoned collar visible, set against a softly blurred background of a kitchen."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            1792,
+            1152,
+            2688
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            1536,
+            1408,
+            2688
+          ],
+          "core_source_xyxy": [
+            0,
+            597,
+            384,
+            896
+          ],
+          "padded_source_xyxy": [
+            0,
+            512,
+            470,
+            896
+          ],
+          "caption": "The rolled cuff of a white chef's jacket, showing the fabric's texture and a subtle fold, is held by a hand against a dark, reflective stainless steel countertop."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            1152,
+            1792,
+            2304,
+            2688
+          ],
+          "padded_canvas_xyxy": [
+            896,
+            1536,
+            2560,
+            2688
+          ],
+          "core_source_xyxy": [
+            384,
+            597,
+            768,
+            896
+          ],
+          "padded_source_xyxy": [
+            298,
+            512,
+            854,
+            896
+          ],
+          "caption": "Three seared scallops rest on a green sauce with a single herb garnish, presented on a white ceramic plate held by two hands."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            2304,
+            1792,
+            3456,
+            2688
+          ],
+          "padded_canvas_xyxy": [
+            2048,
+            1536,
+            3456,
+            2688
+          ],
+          "core_source_xyxy": [
+            768,
+            597,
+            1152,
+            896
+          ],
+          "padded_source_xyxy": [
+            682,
+            512,
+            1152,
+            896
+          ],
+          "caption": "A chef's forearm and hand, wearing a white chef's jacket with rolled sleeves, rests on a reflective stainless steel countertop."
+        }
+      ],
+      "caption_and_encode_seconds": 62.53
+    }
+  },
+  {
+    "scene": {
+      "id": "07-tango-poster",
+      "width": 896,
+      "height": 1152,
+      "focus": [
+        0.52,
+        0.52
+      ],
+      "review": "Two overlapping dancers, joined hands and distinct limbs, graphic title space preserved.",
+      "prompt": "Vertical printed cultural-festival poster illustration, no lettering. Two tango dancers in striking silhouette turn together, with the dancer in vermilion at left and the dancer in dark indigo at right. One pair of joined hands at shoulder height stands clear of the faces. One leg steps forward and one back in a readable dance pose. Clean broad shapes on warm cream paper, stylized parquet stripes on the lower third, flecks of risograph texture, large quiet cream area at the top reserved for typography."
+    },
+    "source_size": [
+      896,
+      1152
+    ],
+    "source_seed": 87924479,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40310478,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 328.18,
+        "sampling_seconds": 300.72,
+        "peak_torch_allocated_mib": 13874,
+        "peak_torch_reserved_mib": 15864,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 328.13,
+        "sampling_seconds": 300.39,
+        "peak_torch_allocated_mib": 13874,
+        "peak_torch_reserved_mib": 15864,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 327.82,
+        "sampling_seconds": 300.54,
+        "peak_torch_allocated_mib": 13874,
+        "peak_torch_reserved_mib": 15864,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        2688,
+        3456
+      ],
+      "working_canvas": [
+        2688,
+        3456
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            896,
+            1152
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            1152,
+            1408
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            299,
+            384
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            384,
+            470
+          ],
+          "caption": "A clean, warm cream background with a subtle flecked risograph texture."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            896,
+            0,
+            1792,
+            1152
+          ],
+          "padded_canvas_xyxy": [
+            640,
+            0,
+            2048,
+            1408
+          ],
+          "core_source_xyxy": [
+            298,
+            0,
+            598,
+            384
+          ],
+          "padded_source_xyxy": [
+            213,
+            0,
+            683,
+            470
+          ],
+          "caption": "A close-up of the red silhouette of a woman's head and shoulder, facing right, with her hair in a bun, set against a plain cream background."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            1792,
+            0,
+            2688,
+            1152
+          ],
+          "padded_canvas_xyxy": [
+            1536,
+            0,
+            2688,
+            1408
+          ],
+          "core_source_xyxy": [
+            597,
+            0,
+            896,
+            384
+          ],
+          "padded_source_xyxy": [
+            512,
+            0,
+            896,
+            470
+          ],
+          "caption": "A pair of joined hands, one vermilion and one indigo, held at shoulder height against a warm cream background."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            1152,
+            896,
+            2304
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            896,
+            1152,
+            2560
+          ],
+          "core_source_xyxy": [
+            0,
+            384,
+            299,
+            768
+          ],
+          "padded_source_xyxy": [
+            0,
+            298,
+            384,
+            854
+          ],
+          "caption": "The inner tile, outlined in cyan, is a clean, empty cream area with a subtle flecked risograph texture, positioned against the warm cream background."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            896,
+            1152,
+            1792,
+            2304
+          ],
+          "padded_canvas_xyxy": [
+            640,
+            896,
+            2048,
+            2560
+          ],
+          "core_source_xyxy": [
+            298,
+            384,
+            598,
+            768
+          ],
+          "padded_source_xyxy": [
+            213,
+            298,
+            683,
+            854
+          ],
+          "caption": "A stylized, broad orange silhouette of a woman's torso and arm, with a dark indigo hand resting on her shoulder, set against a warm cream background with subtle flecks."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            1792,
+            1152,
+            2688,
+            2304
+          ],
+          "padded_canvas_xyxy": [
+            1536,
+            896,
+            2688,
+            2560
+          ],
+          "core_source_xyxy": [
+            597,
+            384,
+            896,
+            768
+          ],
+          "padded_source_xyxy": [
+            512,
+            298,
+            896,
+            854
+          ],
+          "caption": "The inner tile shows a clean, cream-colored background with a subtle flecked risograph texture, framed by the cyan rectangle."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            2304,
+            896,
+            3456
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            2048,
+            1152,
+            3456
+          ],
+          "core_source_xyxy": [
+            0,
+            768,
+            299,
+            1152
+          ],
+          "padded_source_xyxy": [
+            0,
+            682,
+            384,
+            1152
+          ],
+          "caption": "A stylized, high-heeled red shoe in silhouette rests on a cream-colored parquet floor with vertical stripes and a subtle risograph texture."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            896,
+            2304,
+            1792,
+            3456
+          ],
+          "padded_canvas_xyxy": [
+            640,
+            2048,
+            2048,
+            3456
+          ],
+          "core_source_xyxy": [
+            298,
+            768,
+            598,
+            1152
+          ],
+          "padded_source_xyxy": [
+            213,
+            682,
+            683,
+            1152
+          ],
+          "caption": "The cyan rectangle isolates the lower legs and feet of the dark indigo dancer, showing one foot forward and the other back, set against a background of warm cream and red-orange stylized parquet stripes with a flecked risograph texture."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            1792,
+            2304,
+            2688,
+            3456
+          ],
+          "padded_canvas_xyxy": [
+            1536,
+            2048,
+            2688,
+            3456
+          ],
+          "core_source_xyxy": [
+            597,
+            768,
+            896,
+            1152
+          ],
+          "padded_source_xyxy": [
+            512,
+            682,
+            896,
+            1152
+          ],
+          "caption": "A dark indigo silhouette of a dancer's leg and foot, stepping forward on stylized parquet stripes of orange and cream, with a flecked risograph texture."
+        }
+      ],
+      "caption_and_encode_seconds": 60.13
+    }
+  },
+  {
+    "scene": {
+      "id": "08-night-market",
+      "width": 1344,
+      "height": 768,
+      "focus": [
+        0.53,
+        0.5
+      ],
+      "review": "Three central people, one paper bag changing hands, perspective under stall lights.",
+      "prompt": "Cinematic wide street campaign photograph of a lively Asian night market after rain. At center a market vendor in navy hands a single small kraft paper bag across the counter to one customer in a burnt-orange raincoat. A second customer in a cream coat waits beside her holding a folded umbrella at her side. Other shoppers remain tiny and out of focus down the lane. Rows of warm awning lights, slick paving reflecting magenta and amber, orderly market stalls receding diagonally, expressive poses and realistic hands."
+    },
+    "source_size": [
+      1344,
+      768
+    ],
+    "source_seed": 87924670,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40310609,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 331.05,
+        "sampling_seconds": 303.38,
+        "peak_torch_allocated_mib": 13885,
+        "peak_torch_reserved_mib": 16126,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 331.04,
+        "sampling_seconds": 303.49,
+        "peak_torch_allocated_mib": 13885,
+        "peak_torch_reserved_mib": 16126,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 330.95,
+        "sampling_seconds": 303.21,
+        "peak_torch_allocated_mib": 13885,
+        "peak_torch_reserved_mib": 16126,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        4032,
+        2304
+      ],
+      "working_canvas": [
+        4032,
+        2304
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            1344,
+            768
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            1600,
+            1024
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            448,
+            256
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            534,
+            342
+          ],
+          "caption": "A man in a navy hooded jacket, seen in profile, extends his hand toward a vendor at a stall under a row of warm, hanging awning lights."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            1344,
+            0,
+            2688,
+            768
+          ],
+          "padded_canvas_xyxy": [
+            1088,
+            0,
+            2944,
+            1024
+          ],
+          "core_source_xyxy": [
+            448,
+            0,
+            896,
+            256
+          ],
+          "padded_source_xyxy": [
+            362,
+            0,
+            982,
+            342
+          ],
+          "caption": "Raindrops fall against a blurred background of warm, out-of-focus awning lights and distant market stalls, with the edge of a wooden stall roof visible at the top."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            2688,
+            0,
+            4032,
+            768
+          ],
+          "padded_canvas_xyxy": [
+            2432,
+            0,
+            4032,
+            1024
+          ],
+          "core_source_xyxy": [
+            896,
+            0,
+            1344,
+            256
+          ],
+          "padded_source_xyxy": [
+            810,
+            0,
+            1344,
+            342
+          ],
+          "caption": "A woman in a cream coat stands in profile, her dark bobbed hair and collar visible, against a backdrop of warm, glowing awning lights and a wet, reflective pavement."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            768,
+            1344,
+            1536
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            512,
+            1600,
+            1792
+          ],
+          "core_source_xyxy": [
+            0,
+            256,
+            448,
+            512
+          ],
+          "padded_source_xyxy": [
+            0,
+            170,
+            534,
+            598
+          ],
+          "caption": "A man in a navy hooded jacket extends his hand to hand over a small kraft paper bag to a customer, with rows of packaged goods and warm, out-of-focus market lights in the background."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            1344,
+            768,
+            2688,
+            1536
+          ],
+          "padded_canvas_xyxy": [
+            1088,
+            512,
+            2944,
+            1792
+          ],
+          "core_source_xyxy": [
+            448,
+            256,
+            896,
+            512
+          ],
+          "padded_source_xyxy": [
+            362,
+            170,
+            982,
+            598
+          ],
+          "caption": "A woman in a burnt-orange raincoat extends her hand to receive a kraft paper bag from a vendor, with the warm, out-of-focus glow of market lights and wet pavement visible behind her."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            2688,
+            768,
+            4032,
+            1536
+          ],
+          "padded_canvas_xyxy": [
+            2432,
+            512,
+            4032,
+            1792
+          ],
+          "core_source_xyxy": [
+            896,
+            256,
+            1344,
+            512
+          ],
+          "padded_source_xyxy": [
+            810,
+            170,
+            1344,
+            598
+          ],
+          "caption": "A woman in a cream coat stands in profile, her face partially visible, holding a folded umbrella at her side, against a softly blurred background of warm, glowing market lights and wet, reflective pavement."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            1536,
+            1344,
+            2304
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            1280,
+            1600,
+            2304
+          ],
+          "core_source_xyxy": [
+            0,
+            512,
+            448,
+            768
+          ],
+          "padded_source_xyxy": [
+            0,
+            426,
+            534,
+            768
+          ],
+          "caption": "The inner tile shows a close-up of a cardboard box filled with packaged, golden-brown food items, with a red tablecloth beneath and a blurred dark figure in the foreground."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            1344,
+            1536,
+            2688,
+            2304
+          ],
+          "padded_canvas_xyxy": [
+            1088,
+            1280,
+            2944,
+            2304
+          ],
+          "core_source_xyxy": [
+            448,
+            512,
+            896,
+            768
+          ],
+          "padded_source_xyxy": [
+            362,
+            426,
+            982,
+            768
+          ],
+          "caption": "The lower portion of a person in a burnt-orange raincoat stands on a wet, reflective pavement, with the texture of the dark, slick ground visible beneath their dark pants."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            2688,
+            1536,
+            4032,
+            2304
+          ],
+          "padded_canvas_xyxy": [
+            2432,
+            1280,
+            4032,
+            2304
+          ],
+          "core_source_xyxy": [
+            896,
+            512,
+            1344,
+            768
+          ],
+          "padded_source_xyxy": [
+            810,
+            426,
+            1344,
+            768
+          ],
+          "caption": "A folded, dark green umbrella with a curved wooden handle is held by a person in a cream coat, standing on a wet, magenta-reflective pavement."
+        }
+      ],
+      "caption_and_encode_seconds": 66.89
+    }
+  },
+  {
+    "scene": {
+      "id": "09-ballet-rehearsal",
+      "width": 768,
+      "height": 1344,
+      "focus": [
+        0.51,
+        0.55
+      ],
+      "review": "Two dancers in the room, one upright barre, an assisting hand, natural feet and fingers.",
+      "prompt": "Tall portrait editorial photograph in a high-ceiling old ballet studio, photographed perpendicular to a single wooden barre that runs from left to right. Two adult dancers rehearse together. The dancer on the right extends one leg along the barre while her partner on the left steadies her lightly at the elbow. Distinct necks, elbows and hands, bare floor and tall windows, dark wood and pale warm pink dancewear, sunlight and straight window shadows. No mirrors. Leave some breathing room above the dancers."
+    },
+    "source_size": [
+      768,
+      1344
+    ],
+    "source_seed": 87924861,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40310740,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 331.75,
+        "sampling_seconds": 303.36,
+        "peak_torch_allocated_mib": 13883,
+        "peak_torch_reserved_mib": 15902,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 331.17,
+        "sampling_seconds": 303.33,
+        "peak_torch_allocated_mib": 13883,
+        "peak_torch_reserved_mib": 15902,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 330.83,
+        "sampling_seconds": 303.17,
+        "peak_torch_allocated_mib": 13883,
+        "peak_torch_reserved_mib": 15902,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        2304,
+        4032
+      ],
+      "working_canvas": [
+        2304,
+        4032
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            768,
+            1344
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            1024,
+            1600
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            256,
+            448
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            342,
+            534
+          ],
+          "caption": "The inner vertical edge of a tall, dark wooden window frame, showing its textured grain and the faint shadow of a window pane, with a pale, slightly cracked wall visible behind it."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            768,
+            0,
+            1536,
+            1344
+          ],
+          "padded_canvas_xyxy": [
+            512,
+            0,
+            1792,
+            1600
+          ],
+          "core_source_xyxy": [
+            256,
+            0,
+            512,
+            448
+          ],
+          "padded_source_xyxy": [
+            170,
+            0,
+            598,
+            534
+          ],
+          "caption": "The interior of a tall, dark wooden window frame with a textured, off-white plaster ceiling and ornate cornice above, viewed from a low angle."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            1536,
+            0,
+            2304,
+            1344
+          ],
+          "padded_canvas_xyxy": [
+            1280,
+            0,
+            2304,
+            1600
+          ],
+          "core_source_xyxy": [
+            512,
+            0,
+            768,
+            448
+          ],
+          "padded_source_xyxy": [
+            426,
+            0,
+            768,
+            534
+          ],
+          "caption": "A plain, off-white, textured wall panel with subtle imperfections, framed by an ornate, light-colored ceiling cornice."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            1344,
+            768,
+            2688
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            1088,
+            1024,
+            2944
+          ],
+          "core_source_xyxy": [
+            0,
+            448,
+            256,
+            896
+          ],
+          "padded_source_xyxy": [
+            0,
+            362,
+            342,
+            982
+          ],
+          "caption": "A close-up of a wooden ballet barre with a dark, polished finish, positioned against a tall, multi-paned window with visible wood framing and glass panes, under bright sunlight."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            768,
+            1344,
+            1536,
+            2688
+          ],
+          "padded_canvas_xyxy": [
+            512,
+            1088,
+            1792,
+            2944
+          ],
+          "core_source_xyxy": [
+            256,
+            448,
+            512,
+            896
+          ],
+          "padded_source_xyxy": [
+            170,
+            362,
+            598,
+            982
+          ],
+          "caption": "A dancer's bare neck and shoulder, with a pale pink leotard, are visible against a backdrop of tall, dark wooden windows and a sunlit floor."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            1536,
+            1344,
+            2304,
+            2688
+          ],
+          "padded_canvas_xyxy": [
+            1280,
+            1088,
+            2304,
+            2944
+          ],
+          "core_source_xyxy": [
+            512,
+            448,
+            768,
+            896
+          ],
+          "padded_source_xyxy": [
+            426,
+            362,
+            768,
+            982
+          ],
+          "caption": "A dancer's raised arm and shoulder, clad in pale pink leotard, against a backdrop of dark wood paneling and a horizontal barre, with sunlight casting distinct shadows on the floor."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            2688,
+            768,
+            4032
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            2432,
+            1024,
+            4032
+          ],
+          "core_source_xyxy": [
+            0,
+            896,
+            256,
+            1344
+          ],
+          "padded_source_xyxy": [
+            0,
+            810,
+            342,
+            1344
+          ],
+          "caption": "The dark, vertically ribbed surface of a radiator stands against a shadowed wooden wall, with a single, small, light-colored object resting on the floor nearby."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            768,
+            2688,
+            1536,
+            4032
+          ],
+          "padded_canvas_xyxy": [
+            512,
+            2432,
+            1792,
+            4032
+          ],
+          "core_source_xyxy": [
+            256,
+            896,
+            512,
+            1344
+          ],
+          "padded_source_xyxy": [
+            170,
+            810,
+            598,
+            1344
+          ],
+          "caption": "The dancer's right leg, clad in pale pink tights and a pointe shoe, extends along the wooden barre, with the dancer's left leg and foot visible in a supporting stance on the smooth, sunlit floor."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            1536,
+            2688,
+            2304,
+            4032
+          ],
+          "padded_canvas_xyxy": [
+            1280,
+            2432,
+            2304,
+            4032
+          ],
+          "core_source_xyxy": [
+            512,
+            896,
+            768,
+            1344
+          ],
+          "padded_source_xyxy": [
+            426,
+            810,
+            768,
+            1344
+          ],
+          "caption": "A pale pink ballet slipper rests on a smooth, light-gray floor, with distinct rectangular shadows cast by tall windows in the background."
+        }
+      ],
+      "caption_and_encode_seconds": 67.0
+    }
+  },
+  {
+    "scene": {
+      "id": "10-wildlife-family",
+      "width": 960,
+      "height": 1088,
+      "focus": [
+        0.54,
+        0.55
+      ],
+      "review": "One adult fox and two kits, no extra eye or face in fur, readable contact and tail overlap.",
+      "prompt": "Near-square vertical wildlife editorial photograph of a red fox and exactly two kits in an autumn clearing. The adult fox bends her head to sniff the first kit at center while the second kit curls near her hind paws on the right. Distinct rust faces and black legs, one adult white-tipped tail looping on the ground, fine natural fur lit by pale sidelight, softly out-of-focus bracken and dark firs, damp orange leaf litter. All three animals visible, close but clearly separate."
+    },
+    "source_size": [
+      960,
+      1088
+    ],
+    "source_seed": 87925052,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40310871,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 333.12,
+        "sampling_seconds": 304.42,
+        "peak_torch_allocated_mib": 13889,
+        "peak_torch_reserved_mib": 15922,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 333.25,
+        "sampling_seconds": 304.29,
+        "peak_torch_allocated_mib": 13889,
+        "peak_torch_reserved_mib": 15922,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 333.28,
+        "sampling_seconds": 304.32,
+        "peak_torch_allocated_mib": 13889,
+        "peak_torch_reserved_mib": 15922,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        2880,
+        3264
+      ],
+      "working_canvas": [
+        2880,
+        3264
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            960,
+            1088
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            1216,
+            1344
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            320,
+            363
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            406,
+            448
+          ],
+          "caption": "The visible content in image 3 is the blurred, out-of-focus background of the autumn clearing, featuring soft, indistinct shapes of bracken and dark firs under a pale, hazy sky."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            960,
+            0,
+            1920,
+            1088
+          ],
+          "padded_canvas_xyxy": [
+            704,
+            0,
+            2176,
+            1344
+          ],
+          "core_source_xyxy": [
+            320,
+            0,
+            640,
+            363
+          ],
+          "padded_source_xyxy": [
+            234,
+            0,
+            726,
+            448
+          ],
+          "caption": "The inner cyan rectangle isolates a softly blurred background of out-of-focus autumn bracken and dark fir branches under a pale, hazy sky."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            1920,
+            0,
+            2880,
+            1088
+          ],
+          "padded_canvas_xyxy": [
+            1664,
+            0,
+            2880,
+            1344
+          ],
+          "core_source_xyxy": [
+            640,
+            0,
+            960,
+            363
+          ],
+          "padded_source_xyxy": [
+            554,
+            0,
+            960,
+            448
+          ],
+          "caption": "The inner cyan rectangle isolates a softly blurred, dark green coniferous tree with out-of-focus needles and bokeh highlights against a pale, hazy sky."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            1088,
+            960,
+            2176
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            832,
+            1216,
+            2432
+          ],
+          "core_source_xyxy": [
+            0,
+            362,
+            320,
+            726
+          ],
+          "padded_source_xyxy": [
+            0,
+            277,
+            406,
+            811
+          ],
+          "caption": "The visible content in image 3 is the right ear and the side of the head of a red fox kit, with a softly blurred background of out-of-focus bracken and dark firs."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            960,
+            1088,
+            1920,
+            2176
+          ],
+          "padded_canvas_xyxy": [
+            704,
+            832,
+            2176,
+            2432
+          ],
+          "core_source_xyxy": [
+            320,
+            362,
+            640,
+            726
+          ],
+          "padded_source_xyxy": [
+            234,
+            277,
+            726,
+            811
+          ],
+          "caption": "A red fox's head, with distinct rust-colored face and black legs, is shown in profile, sniffing a kit, against a softly blurred background of autumnal bracken and dark firs."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            1920,
+            1088,
+            2880,
+            2176
+          ],
+          "padded_canvas_xyxy": [
+            1664,
+            832,
+            2880,
+            2432
+          ],
+          "core_source_xyxy": [
+            640,
+            362,
+            960,
+            726
+          ],
+          "padded_source_xyxy": [
+            554,
+            277,
+            960,
+            811
+          ],
+          "caption": "The rear flank and tail of an adult red fox, with fine, russet-tipped fur, curves over a curled kit, set against a softly blurred background of dark fir branches and dry bracken."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            2176,
+            960,
+            3264
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            1920,
+            1216,
+            3264
+          ],
+          "core_source_xyxy": [
+            0,
+            725,
+            320,
+            1088
+          ],
+          "padded_source_xyxy": [
+            0,
+            640,
+            406,
+            1088
+          ],
+          "caption": "A young fox kit with a rust-colored face and black legs stands on damp, orange leaf litter, its head lowered as it sniffs the ground, with the blurred, out-of-focus bracken and dark firs in the background."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            960,
+            2176,
+            1920,
+            3264
+          ],
+          "padded_canvas_xyxy": [
+            704,
+            1920,
+            2176,
+            3264
+          ],
+          "core_source_xyxy": [
+            320,
+            725,
+            640,
+            1088
+          ],
+          "padded_source_xyxy": [
+            234,
+            640,
+            726,
+            1088
+          ],
+          "caption": "A red fox kit with a rust-colored face and black legs peers forward from beneath the adult fox's paws, surrounded by damp, orange leaf litter."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            1920,
+            2176,
+            2880,
+            3264
+          ],
+          "padded_canvas_xyxy": [
+            1664,
+            1920,
+            2880,
+            3264
+          ],
+          "core_source_xyxy": [
+            640,
+            725,
+            960,
+            1088
+          ],
+          "padded_source_xyxy": [
+            554,
+            640,
+            960,
+            1088
+          ],
+          "caption": "A fox kit with a rust-colored face and black legs curls near the adult fox's hind paws, resting on damp, orange leaf litter."
+        }
+      ],
+      "caption_and_encode_seconds": 73.21
+    }
+  },
+  {
+    "scene": {
+      "id": "11-coffee-product",
+      "width": 1088,
+      "height": 960,
+      "focus": [
+        0.52,
+        0.46
+      ],
+      "review": "One moka pot, one continuous pouring stream, one handle on the cup, distinct ring and shadows.",
+      "prompt": "Premium coffee product campaign photograph, a tight tabletop scene on light veined stone. A hand enters from upper right holding one angular brushed-aluminum moka pot, pouring a single narrow stream of dark coffee into one ivory demitasse at the center. The cup has exactly one handle to the left and sits on a matching saucer. A companion hand with a small silver ring steadies the saucer from the lower right, never touching the cup. Hard morning sunshine, softly edged geometric shadows, fine ceramic, brushed metal and crema texture, blank warm wall."
+    },
+    "source_size": [
+      1088,
+      960
+    ],
+    "source_seed": 87925243,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40311002,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 331.24,
+        "sampling_seconds": 302.41,
+        "peak_torch_allocated_mib": 13886,
+        "peak_torch_reserved_mib": 16164,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 330.49,
+        "sampling_seconds": 301.81,
+        "peak_torch_allocated_mib": 13886,
+        "peak_torch_reserved_mib": 16164,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 330.33,
+        "sampling_seconds": 301.57,
+        "peak_torch_allocated_mib": 13886,
+        "peak_torch_reserved_mib": 16164,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        3264,
+        2880
+      ],
+      "working_canvas": [
+        3264,
+        2880
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            1088,
+            960
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            1344,
+            1216
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            363,
+            320
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            448,
+            406
+          ],
+          "caption": "A smooth, warm-toned wall with soft, softly edged geometric shadows cast by the morning sun."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            1088,
+            0,
+            2176,
+            960
+          ],
+          "padded_canvas_xyxy": [
+            832,
+            0,
+            2432,
+            1216
+          ],
+          "core_source_xyxy": [
+            362,
+            0,
+            726,
+            320
+          ],
+          "padded_source_xyxy": [
+            277,
+            0,
+            811,
+            406
+          ],
+          "caption": "A close-up of the angular, brushed-aluminum top of a moka pot, featuring a black knob and a silver lever, against a plain, warm-toned background."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            2176,
+            0,
+            3264,
+            960
+          ],
+          "padded_canvas_xyxy": [
+            1920,
+            0,
+            3264,
+            1216
+          ],
+          "core_source_xyxy": [
+            725,
+            0,
+            1088,
+            320
+          ],
+          "padded_source_xyxy": [
+            640,
+            0,
+            1088,
+            406
+          ],
+          "caption": "A close-up of a hand gripping the black handle of a brushed-aluminum moka pot, with the textured, light-colored stone surface visible in the background."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            960,
+            1088,
+            1920
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            704,
+            1344,
+            2176
+          ],
+          "core_source_xyxy": [
+            0,
+            320,
+            363,
+            640
+          ],
+          "padded_source_xyxy": [
+            0,
+            234,
+            448,
+            726
+          ],
+          "caption": "A close-up of the light veined stone tabletop, showing its smooth, subtly textured surface with soft, geometric shadows cast by the morning sun."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            1088,
+            960,
+            2176,
+            1920
+          ],
+          "padded_canvas_xyxy": [
+            832,
+            704,
+            2432,
+            2176
+          ],
+          "core_source_xyxy": [
+            362,
+            320,
+            726,
+            640
+          ],
+          "padded_source_xyxy": [
+            277,
+            234,
+            811,
+            726
+          ],
+          "caption": "A narrow, dark stream of coffee pours from a brushed-aluminum moka pot into an ivory demitasse cup, with the cup resting on a matching saucer, all set against a light veined stone tabletop."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            2176,
+            960,
+            3264,
+            1920
+          ],
+          "padded_canvas_xyxy": [
+            1920,
+            704,
+            3264,
+            2176
+          ],
+          "core_source_xyxy": [
+            725,
+            320,
+            1088,
+            640
+          ],
+          "padded_source_xyxy": [
+            640,
+            234,
+            1088,
+            726
+          ],
+          "caption": "A close-up of the brushed-aluminum, geometrically faceted lower section of a moka pot, showing its metallic texture and a small brass valve, against a softly lit, plain warm wall."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            1920,
+            1088,
+            2880
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            1664,
+            1344,
+            2880
+          ],
+          "core_source_xyxy": [
+            0,
+            640,
+            363,
+            960
+          ],
+          "padded_source_xyxy": [
+            0,
+            554,
+            448,
+            960
+          ],
+          "caption": "A close-up of a light beige stone surface with delicate, golden-brown veining, illuminated by soft sunlight that casts a gentle shadow."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            1088,
+            1920,
+            2176,
+            2880
+          ],
+          "padded_canvas_xyxy": [
+            832,
+            1664,
+            2432,
+            2880
+          ],
+          "core_source_xyxy": [
+            362,
+            640,
+            726,
+            960
+          ],
+          "padded_source_xyxy": [
+            277,
+            554,
+            811,
+            960
+          ],
+          "caption": "A close-up of a white ceramic saucer resting on a light veined stone surface, with a hand steadying it from the right."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            2176,
+            1920,
+            3264,
+            2880
+          ],
+          "padded_canvas_xyxy": [
+            1920,
+            1664,
+            3264,
+            2880
+          ],
+          "core_source_xyxy": [
+            725,
+            640,
+            1088,
+            960
+          ],
+          "padded_source_xyxy": [
+            640,
+            554,
+            1088,
+            960
+          ],
+          "caption": "A close-up of a hand with a simple silver band on the ring finger, resting on a light veined stone surface, steadying a saucer beneath the pouring coffee."
+        }
+      ],
+      "caption_and_encode_seconds": 63.06
+    }
+  },
+  {
+    "scene": {
+      "id": "12-urban-basketball",
+      "width": 704,
+      "height": 1472,
+      "focus": [
+        0.53,
+        0.42
+      ],
+      "review": "Single basketball and hoop, two readable body silhouettes and plausible outstretched arms.",
+      "prompt": "Very tall vertical sports campaign photograph from a low angle on a neighborhood outdoor basketball court. Two adult players contest one jump shot with a single orange ball just above the shooter's fingertips. Shooter in a light blue jersey toward the left, defender in a dark charcoal jersey reaching upward on the right. The backboard and hoop occupy the upper third, one visible painted lane and chain link fence below. Large sky, city apartment buildings in distance, strong afternoon sun, sharp but realistic hands and athletic secondary motion."
+    },
+    "source_size": [
+      704,
+      1472
+    ],
+    "source_seed": 87925434,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40311133,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 335.13,
+        "sampling_seconds": 306.7,
+        "peak_torch_allocated_mib": 13899,
+        "peak_torch_reserved_mib": 15930,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 335.11,
+        "sampling_seconds": 306.68,
+        "peak_torch_allocated_mib": 13899,
+        "peak_torch_reserved_mib": 15930,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 334.47,
+        "sampling_seconds": 306.05,
+        "peak_torch_allocated_mib": 13899,
+        "peak_torch_reserved_mib": 15930,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        2112,
+        4416
+      ],
+      "working_canvas": [
+        2112,
+        4416
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            704,
+            1472
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            960,
+            1728
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            235,
+            491
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            320,
+            576
+          ],
+          "caption": "The visible content in image 3 is the inner, unpainted, weathered surface of the backboard's padding, showing a textured, off-white material with visible scuffs and small dark spots, framed by the dark green metal support structure."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            704,
+            0,
+            1408,
+            1472
+          ],
+          "padded_canvas_xyxy": [
+            448,
+            0,
+            1664,
+            1728
+          ],
+          "core_source_xyxy": [
+            234,
+            0,
+            470,
+            491
+          ],
+          "padded_source_xyxy": [
+            149,
+            0,
+            555,
+            576
+          ],
+          "caption": "The visible content in image 3 is the interior of the basketball hoop's net, with its white, woven texture, set against a plain, light blue sky."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            1408,
+            0,
+            2112,
+            1472
+          ],
+          "padded_canvas_xyxy": [
+            1152,
+            0,
+            2112,
+            1728
+          ],
+          "core_source_xyxy": [
+            469,
+            0,
+            704,
+            491
+          ],
+          "padded_source_xyxy": [
+            384,
+            0,
+            704,
+            576
+          ],
+          "caption": "The inner tile of the basketball backboard, showing its textured, slightly worn surface against a clear sky."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            1472,
+            704,
+            2944
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            1216,
+            960,
+            3200
+          ],
+          "core_source_xyxy": [
+            0,
+            490,
+            235,
+            982
+          ],
+          "padded_source_xyxy": [
+            0,
+            405,
+            320,
+            1067
+          ],
+          "caption": "A clear, pale blue sky with faint, wispy clouds forms the background behind the basketball court."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            704,
+            1472,
+            1408,
+            2944
+          ],
+          "padded_canvas_xyxy": [
+            448,
+            1216,
+            1664,
+            3200
+          ],
+          "core_source_xyxy": [
+            234,
+            490,
+            470,
+            982
+          ],
+          "padded_source_xyxy": [
+            149,
+            405,
+            555,
+            1067
+          ],
+          "caption": "An orange basketball hovers just above the fingertips of a player in a light blue jersey, with the net and rim visible above, against a backdrop of a clear sky and distant apartment buildings."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            1408,
+            1472,
+            2112,
+            2944
+          ],
+          "padded_canvas_xyxy": [
+            1152,
+            1216,
+            2112,
+            3200
+          ],
+          "core_source_xyxy": [
+            469,
+            490,
+            704,
+            982
+          ],
+          "padded_source_xyxy": [
+            384,
+            405,
+            704,
+            1067
+          ],
+          "caption": "The visible content in image 3 is the clear, bright sky with faint, wispy clouds, captured in a clean, unobstructed view."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            2944,
+            704,
+            4416
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            2688,
+            960,
+            4416
+          ],
+          "core_source_xyxy": [
+            0,
+            981,
+            235,
+            1472
+          ],
+          "padded_source_xyxy": [
+            0,
+            896,
+            320,
+            1472
+          ],
+          "caption": "The green and red court surface with white boundary lines, viewed through a chain-link fence, under a bright sky."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            704,
+            2944,
+            1408,
+            4416
+          ],
+          "padded_canvas_xyxy": [
+            448,
+            2688,
+            1664,
+            4416
+          ],
+          "core_source_xyxy": [
+            234,
+            981,
+            470,
+            1472
+          ],
+          "padded_source_xyxy": [
+            149,
+            896,
+            555,
+            1472
+          ],
+          "caption": "The lower portion of a light blue athletic shorts leg, showing a smooth, slightly reflective fabric texture, stands against a reddish-brown painted basketball court surface."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            1408,
+            2944,
+            2112,
+            4416
+          ],
+          "padded_canvas_xyxy": [
+            1152,
+            2688,
+            2112,
+            4416
+          ],
+          "core_source_xyxy": [
+            469,
+            981,
+            704,
+            1472
+          ],
+          "padded_source_xyxy": [
+            384,
+            896,
+            704,
+            1472
+          ],
+          "caption": "The back of a dark charcoal jersey sleeve and shoulder, with a textured, slightly wrinkled fabric, against a blurred background of a green basketball court and chain-link fence."
+        }
+      ],
+      "caption_and_encode_seconds": 59.02
+    }
+  },
+  {
+    "scene": {
+      "id": "13-orchard-harvest",
+      "width": 1472,
+      "height": 704,
+      "focus": [
+        0.52,
+        0.56
+      ],
+      "review": "Three workers, exactly one shared foreground crate, orderly orchard perspective and clear hand positions.",
+      "prompt": "Panoramic farm-to-table brand photograph in an apple orchard during late harvest. Three people work together across the frame. At center, two adults on opposite sides lift one wooden crate brimming with red apples. At left and a little farther back, a third adult reaches into a tree to pick an apple. Orchard rows converge toward a misty opening, grass and dappled shadows underfoot, late warm sunlight, hand and crate edge continuity, subtle knit and canvas textures. Observational photography, no copied or mirrored poses."
+    },
+    "source_size": [
+      1472,
+      704
+    ],
+    "source_seed": 87925625,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40311264,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 334.7,
+        "sampling_seconds": 306.2,
+        "peak_torch_allocated_mib": 13899,
+        "peak_torch_reserved_mib": 16156,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 335.02,
+        "sampling_seconds": 306.49,
+        "peak_torch_allocated_mib": 13899,
+        "peak_torch_reserved_mib": 16156,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 336.52,
+        "sampling_seconds": 308.13,
+        "peak_torch_allocated_mib": 13899,
+        "peak_torch_reserved_mib": 16156,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        4416,
+        2112
+      ],
+      "working_canvas": [
+        4416,
+        2112
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            1472,
+            704
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            1728,
+            960
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            491,
+            235
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            576,
+            320
+          ],
+          "caption": "A woman in a grey sweater reaches up to pick a red apple from a tree, her hands and the fruit in focus against a backdrop of green leaves and other apples."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            1472,
+            0,
+            2944,
+            704
+          ],
+          "padded_canvas_xyxy": [
+            1216,
+            0,
+            3200,
+            960
+          ],
+          "core_source_xyxy": [
+            490,
+            0,
+            982,
+            235
+          ],
+          "padded_source_xyxy": [
+            405,
+            0,
+            1067,
+            320
+          ],
+          "caption": "A man and a woman, both in profile, look down at a wooden crate filled with red apples they are jointly lifting, set against a backdrop of converging orchard rows fading into misty light."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            2944,
+            0,
+            4416,
+            704
+          ],
+          "padded_canvas_xyxy": [
+            2688,
+            0,
+            4416,
+            960
+          ],
+          "core_source_xyxy": [
+            981,
+            0,
+            1472,
+            235
+          ],
+          "padded_source_xyxy": [
+            896,
+            0,
+            1472,
+            320
+          ],
+          "caption": "A close-up view of a dense apple tree with green leaves and red apples, set against a softly blurred background of more trees and warm, diffused light."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            704,
+            1472,
+            1408
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            448,
+            1728,
+            1664
+          ],
+          "core_source_xyxy": [
+            0,
+            234,
+            491,
+            470
+          ],
+          "padded_source_xyxy": [
+            0,
+            149,
+            576,
+            555
+          ],
+          "caption": "A close-up of a tree branch laden with red apples, its green leaves and textured bark visible, with a person's arm reaching to pick an apple."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            1472,
+            704,
+            2944,
+            1408
+          ],
+          "padded_canvas_xyxy": [
+            1216,
+            448,
+            3200,
+            1664
+          ],
+          "core_source_xyxy": [
+            490,
+            234,
+            982,
+            470
+          ],
+          "padded_source_xyxy": [
+            405,
+            149,
+            1067,
+            555
+          ],
+          "caption": "Two adults lift a wooden crate filled with red apples, their hands gripping the sides, with a grassy orchard path and rows of trees receding into a misty light behind them."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            2944,
+            704,
+            4416,
+            1408
+          ],
+          "padded_canvas_xyxy": [
+            2688,
+            448,
+            4416,
+            1664
+          ],
+          "core_source_xyxy": [
+            981,
+            234,
+            1472,
+            470
+          ],
+          "padded_source_xyxy": [
+            896,
+            149,
+            1472,
+            555
+          ],
+          "caption": "Rows of apple trees with dense green foliage and clusters of red apples, set against a softly blurred background of more trees and dappled sunlight on the grass."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            1408,
+            1472,
+            2112
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            1152,
+            1728,
+            2112
+          ],
+          "core_source_xyxy": [
+            0,
+            469,
+            491,
+            704
+          ],
+          "padded_source_xyxy": [
+            0,
+            384,
+            576,
+            704
+          ],
+          "caption": "A grassy orchard floor scattered with fallen red apples under late sun, with tree trunks and soil visible."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            1472,
+            1408,
+            2944,
+            2112
+          ],
+          "padded_canvas_xyxy": [
+            1216,
+            1152,
+            3200,
+            2112
+          ],
+          "core_source_xyxy": [
+            490,
+            469,
+            982,
+            704
+          ],
+          "padded_source_xyxy": [
+            405,
+            384,
+            1067,
+            704
+          ],
+          "caption": "A person's lower legs in khaki trousers and brown boots stand on sun-dappled green grass, holding a wooden crate filled with red apples, with the grass texture and shadows visible beneath them."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            2944,
+            1408,
+            4416,
+            2112
+          ],
+          "padded_canvas_xyxy": [
+            2688,
+            1152,
+            4416,
+            2112
+          ],
+          "core_source_xyxy": [
+            981,
+            469,
+            1472,
+            704
+          ],
+          "padded_source_xyxy": [
+            896,
+            384,
+            1472,
+            704
+          ],
+          "caption": "A grassy orchard floor scattered with fallen red apples under late sun, with tree trunks and dappled shadows in the background."
+        }
+      ],
+      "caption_and_encode_seconds": 62.11
+    }
+  },
+  {
+    "scene": {
+      "id": "14-veterinary-exam",
+      "width": 1008,
+      "height": 1040,
+      "focus": [
+        0.5,
+        0.52
+      ],
+      "review": "One dog and two adults, dog has one face and distinct front paws, hands and stethoscope stay coherent.",
+      "prompt": "Natural near-square photograph for a veterinary clinic editorial. A red-haired veterinarian in teal scrubs listens to a single black and white border collie with one stethoscope. The dog is seated on the examine table and turns its face toward its owner on the left. The owner in a cream sweater steadies it with one hand on the shoulder while the veterinarian's hand holds the stethoscope head to its chest. Calm clinic, warm eye contact, diffused window light, understated palette, readable fingers, tubing, canine ears and paws."
+    },
+    "source_size": [
+      1008,
+      1040
+    ],
+    "source_seed": 87925816,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40311395,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 332.89,
+        "sampling_seconds": 304.0,
+        "peak_torch_allocated_mib": 13914,
+        "peak_torch_reserved_mib": 15880,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 333.43,
+        "sampling_seconds": 304.47,
+        "peak_torch_allocated_mib": 13914,
+        "peak_torch_reserved_mib": 15880,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 333.43,
+        "sampling_seconds": 304.33,
+        "peak_torch_allocated_mib": 13914,
+        "peak_torch_reserved_mib": 15880,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        3024,
+        3120
+      ],
+      "working_canvas": [
+        3040,
+        3136
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            992,
+            1024
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            1248,
+            1280
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            331,
+            342
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            416,
+            427
+          ],
+          "caption": "A woman's right profile against a bright, out-of-focus background, with the edge of a black dog's ear visible to her right."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            992,
+            0,
+            2016,
+            1024
+          ],
+          "padded_canvas_xyxy": [
+            736,
+            0,
+            2272,
+            1280
+          ],
+          "core_source_xyxy": [
+            330,
+            0,
+            672,
+            342
+          ],
+          "padded_source_xyxy": [
+            245,
+            0,
+            758,
+            427
+          ],
+          "caption": "A black and white border collie's head, with its ear and eye visible, is set against a softly blurred, bright window background."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            2016,
+            0,
+            3040,
+            1024
+          ],
+          "padded_canvas_xyxy": [
+            1760,
+            0,
+            3040,
+            1280
+          ],
+          "core_source_xyxy": [
+            672,
+            0,
+            1008,
+            342
+          ],
+          "padded_source_xyxy": [
+            586,
+            0,
+            1008,
+            427
+          ],
+          "caption": "A red-haired veterinarian in teal scrubs, viewed in profile, has a stethoscope earpiece in her right ear against a plain, light-colored background."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            1024,
+            992,
+            2080
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            768,
+            1248,
+            2336
+          ],
+          "core_source_xyxy": [
+            0,
+            341,
+            331,
+            694
+          ],
+          "padded_source_xyxy": [
+            0,
+            256,
+            416,
+            779
+          ],
+          "caption": "The close-up shows the textured black and white fur of the border collie's shoulder, with the owner's hands gently holding it, against a softly blurred, bright background."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            992,
+            1024,
+            2016,
+            2080
+          ],
+          "padded_canvas_xyxy": [
+            736,
+            768,
+            2272,
+            2336
+          ],
+          "core_source_xyxy": [
+            330,
+            341,
+            672,
+            694
+          ],
+          "padded_source_xyxy": [
+            245,
+            256,
+            758,
+            779
+          ],
+          "caption": "A close-up of a black and white border collie's chest, with a stethoscope head pressed against its fur, as a veterinarian's hands gently hold the dog steady."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            2016,
+            1024,
+            3040,
+            2080
+          ],
+          "padded_canvas_xyxy": [
+            1760,
+            768,
+            3040,
+            2336
+          ],
+          "core_source_xyxy": [
+            672,
+            341,
+            1008,
+            694
+          ],
+          "padded_source_xyxy": [
+            586,
+            256,
+            1008,
+            779
+          ],
+          "caption": "A close-up of a teal scrub top with a V-neck and a chest pocket, worn by a person with a stethoscope resting against their neck, against a softly blurred, light-toned background."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            2080,
+            992,
+            3136
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            1824,
+            1248,
+            3136
+          ],
+          "core_source_xyxy": [
+            0,
+            693,
+            331,
+            1040
+          ],
+          "padded_source_xyxy": [
+            0,
+            608,
+            416,
+            1040
+          ],
+          "caption": "The ribbed cuff of a cream sweater, with a black and white dog's fur visible beside it, against a dark, reflective examine table surface."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            992,
+            2080,
+            2016,
+            3136
+          ],
+          "padded_canvas_xyxy": [
+            736,
+            1824,
+            2272,
+            3136
+          ],
+          "core_source_xyxy": [
+            330,
+            693,
+            672,
+            1040
+          ],
+          "padded_source_xyxy": [
+            245,
+            608,
+            758,
+            1040
+          ],
+          "caption": "The dog's front paws rest on a smooth, reflective metallic exam table surface."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            2016,
+            2080,
+            3040,
+            3136
+          ],
+          "padded_canvas_xyxy": [
+            1760,
+            1824,
+            3040,
+            3136
+          ],
+          "core_source_xyxy": [
+            672,
+            693,
+            1008,
+            1040
+          ],
+          "padded_source_xyxy": [
+            586,
+            608,
+            1008,
+            1040
+          ],
+          "caption": "The inner cyan rectangle shows the right arm and torso of the veterinarian in teal scrubs, with the fabric's texture and a pocket visible against a blurred, neutral-toned background."
+        }
+      ],
+      "caption_and_encode_seconds": 62.85
+    }
+  },
+  {
+    "scene": {
+      "id": "15-tailoring-studio",
+      "width": 1248,
+      "height": 832,
+      "focus": [
+        0.52,
+        0.53
+      ],
+      "review": "Two people, one continuous measuring tape, coherent hands, checks and tailoring lines.",
+      "prompt": "Landscape fashion campaign photograph in a quiet tailoring atelier. At center a tailor in a charcoal vest measures the shoulder of a standing client wearing an unfinished tan windowpane-check jacket. The tailor comes from behind and to the right, holding a single yellow tape across the shoulder seam. The client's arms hang relaxed, face in three-quarter profile. Sewing pattern paper and folded textiles recede to the left, tall windows with narrow white frames behind, warm soft light, fine wool weave and precise stitching."
+    },
+    "source_size": [
+      1248,
+      832
+    ],
+    "source_seed": 87926007,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40311526,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 331.55,
+        "sampling_seconds": 302.89,
+        "peak_torch_allocated_mib": 13881,
+        "peak_torch_reserved_mib": 16132,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 332.07,
+        "sampling_seconds": 303.42,
+        "peak_torch_allocated_mib": 13881,
+        "peak_torch_reserved_mib": 16132,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 331.88,
+        "sampling_seconds": 303.26,
+        "peak_torch_allocated_mib": 13881,
+        "peak_torch_reserved_mib": 16132,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        3744,
+        2496
+      ],
+      "working_canvas": [
+        3744,
+        2496
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            1248,
+            832
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            1504,
+            1088
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            416,
+            278
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            502,
+            363
+          ],
+          "caption": "A tall, narrow window with a white frame, softly lit by warm, diffused light, set against a textured, warm-toned wall."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            1248,
+            0,
+            2496,
+            832
+          ],
+          "padded_canvas_xyxy": [
+            992,
+            0,
+            2752,
+            1088
+          ],
+          "core_source_xyxy": [
+            416,
+            0,
+            832,
+            278
+          ],
+          "padded_source_xyxy": [
+            330,
+            0,
+            918,
+            363
+          ],
+          "caption": "A man in a tan windowpane-check jacket stands in three-quarter profile, his face turned slightly to the left, as a tailor's hand holds a yellow tape measure across his shoulder seam."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            2496,
+            0,
+            3744,
+            832
+          ],
+          "padded_canvas_xyxy": [
+            2240,
+            0,
+            3744,
+            1088
+          ],
+          "core_source_xyxy": [
+            832,
+            0,
+            1248,
+            278
+          ],
+          "padded_source_xyxy": [
+            746,
+            0,
+            1248,
+            363
+          ],
+          "caption": "A close-up of the smooth, warm-toned wall surface adjacent to a tall window frame, with the back of a man's head and neck visible in profile."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            832,
+            1248,
+            1664
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            576,
+            1504,
+            1920
+          ],
+          "core_source_xyxy": [
+            0,
+            277,
+            416,
+            555
+          ],
+          "padded_source_xyxy": [
+            0,
+            192,
+            502,
+            640
+          ],
+          "caption": "A tall, narrow window with a white frame, softly lit by warm, diffused daylight, reveals a blurred view of an outdoor balcony railing."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            1248,
+            832,
+            2496,
+            1664
+          ],
+          "padded_canvas_xyxy": [
+            992,
+            576,
+            2752,
+            1920
+          ],
+          "core_source_xyxy": [
+            416,
+            277,
+            832,
+            555
+          ],
+          "padded_source_xyxy": [
+            330,
+            192,
+            918,
+            640
+          ],
+          "caption": "A tailor's hand holds a yellow tape measure against the shoulder seam of a tan windowpane-check jacket, with the fine wool weave and precise stitching visible."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            2496,
+            832,
+            3744,
+            1664
+          ],
+          "padded_canvas_xyxy": [
+            2240,
+            576,
+            3744,
+            1920
+          ],
+          "core_source_xyxy": [
+            832,
+            277,
+            1248,
+            555
+          ],
+          "padded_source_xyxy": [
+            746,
+            192,
+            1248,
+            640
+          ],
+          "caption": "The back of a charcoal wool vest, showing its structured shoulder seam and fine weave, worn over a striped dress shirt, against a softly lit, warm-toned wall."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            1664,
+            1248,
+            2496
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            1408,
+            1504,
+            2496
+          ],
+          "core_source_xyxy": [
+            0,
+            554,
+            416,
+            832
+          ],
+          "padded_source_xyxy": [
+            0,
+            469,
+            502,
+            832
+          ],
+          "caption": "A close-up of a large, beige sewing pattern laid flat on a wooden table, with smaller pattern pieces and a stack of folded, textured fabrics visible in the background."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            1248,
+            1664,
+            2496,
+            2496
+          ],
+          "padded_canvas_xyxy": [
+            992,
+            1408,
+            2752,
+            2496
+          ],
+          "core_source_xyxy": [
+            416,
+            554,
+            832,
+            832
+          ],
+          "padded_source_xyxy": [
+            330,
+            469,
+            918,
+            832
+          ],
+          "caption": "The cuff of the unfinished tan windowpane-check jacket, showing raw fabric edge and a white shirt cuff, is being measured by a tailor's hand against a softly lit background of tall windows and wooden table."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            2496,
+            1664,
+            3744,
+            2496
+          ],
+          "padded_canvas_xyxy": [
+            2240,
+            1408,
+            3744,
+            2496
+          ],
+          "core_source_xyxy": [
+            832,
+            554,
+            1248,
+            832
+          ],
+          "padded_source_xyxy": [
+            746,
+            469,
+            1248,
+            832
+          ],
+          "caption": "A close-up of a dark charcoal wool vest's back, showing a neatly tied waistband against a warm, textured beige wall."
+        }
+      ],
+      "caption_and_encode_seconds": 63.85
+    }
+  },
+  {
+    "scene": {
+      "id": "16-museum-diorama",
+      "width": 832,
+      "height": 1248,
+      "focus": [
+        0.49,
+        0.51
+      ],
+      "review": "Two visitors at different depths, one pointing hand, glass and display edges continuous, no phantom figures.",
+      "prompt": "Vertical museum campaign image with realistic editorial photography and no typography. At left in the foreground an adult visitor and at center a child look through one tall glass display case at a miniature lunar rover on a rocky model landscape. The child points a single finger at the rover from outside the glass. The adult leans down to the child's eye height, both in side view, without faces overlapping. Dark matte exhibition walls, reflected amber room lights kept faint, glass corners and metal base line clear, richly lit model details, layered gallery depth."
+    },
+    "source_size": [
+      832,
+      1248
+    ],
+    "source_seed": 87926198,
+    "source_sampler": {
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "upscale_seed": 40311657,
+    "upscale_settings": {
+      "steps": 8,
+      "cfg": 1.0,
+      "denoise": 0.8,
+      "positions": "local",
+      "control": "Vision"
+    },
+    "runs": {
+      "euler-simple": {
+        "sampler": "euler",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 331.61,
+        "sampling_seconds": 302.92,
+        "peak_torch_allocated_mib": 13880,
+        "peak_torch_reserved_mib": 15894,
+        "status": "ok",
+        "file": "euler-simple.png"
+      },
+      "euler-sgm_uniform": {
+        "sampler": "euler",
+        "scheduler": "sgm_uniform",
+        "sigmas": [
+          0.9266740679740906,
+          0.8805605173110962,
+          0.8257773518562317,
+          0.7596262693405151,
+          0.6781590580940247,
+          0.575360119342804,
+          0.441588819026947,
+          0.26036524772644043,
+          0.0
+        ],
+        "seconds": 331.52,
+        "sampling_seconds": 303.0,
+        "peak_torch_allocated_mib": 13880,
+        "peak_torch_reserved_mib": 15894,
+        "status": "ok",
+        "file": "euler-sgm_uniform.png"
+      },
+      "dpmpp_2m-simple": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "simple",
+        "sigmas": [
+          0.9266473650932312,
+          0.880513072013855,
+          0.8257015943527222,
+          0.7595109343528748,
+          0.677986741065979,
+          0.5751029849052429,
+          0.44119977951049805,
+          0.2597584128379822,
+          0.0
+        ],
+        "seconds": 331.37,
+        "sampling_seconds": 302.82,
+        "peak_torch_allocated_mib": 13880,
+        "peak_torch_reserved_mib": 15894,
+        "status": "ok",
+        "file": "dpmpp_2m-simple.png"
+      }
+    },
+    "node": "STKrea2TurboMatrixTest",
+    "colab_gpu": "NVIDIA L4",
+    "torch": "2.14.1+cu130",
+    "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+    "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+    "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+    "geometry": {
+      "final_size": [
+        2496,
+        3744
+      ],
+      "working_canvas": [
+        2496,
+        3744
+      ],
+      "tile_count": 9,
+      "padding": 256,
+      "tiles": [
+        {
+          "tile": 1,
+          "core_canvas_xyxy": [
+            0,
+            0,
+            832,
+            1248
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            0,
+            1088,
+            1504
+          ],
+          "core_source_xyxy": [
+            0,
+            0,
+            278,
+            416
+          ],
+          "padded_source_xyxy": [
+            0,
+            0,
+            363,
+            502
+          ],
+          "caption": "The interior of a glass display case, showing a miniature lunar rover on a rocky, textured model landscape under focused lighting, with the faint reflection of an adult's head visible in the glass."
+        },
+        {
+          "tile": 2,
+          "core_canvas_xyxy": [
+            832,
+            0,
+            1664,
+            1248
+          ],
+          "padded_canvas_xyxy": [
+            576,
+            0,
+            1920,
+            1504
+          ],
+          "core_source_xyxy": [
+            277,
+            0,
+            555,
+            416
+          ],
+          "padded_source_xyxy": [
+            192,
+            0,
+            640,
+            502
+          ],
+          "caption": "The interior of the glass display case, showing a miniature lunar rover on a rocky, textured model landscape, is illuminated by recessed ceiling lights."
+        },
+        {
+          "tile": 3,
+          "core_canvas_xyxy": [
+            1664,
+            0,
+            2496,
+            1248
+          ],
+          "padded_canvas_xyxy": [
+            1408,
+            0,
+            2496,
+            1504
+          ],
+          "core_source_xyxy": [
+            554,
+            0,
+            832,
+            416
+          ],
+          "padded_source_xyxy": [
+            469,
+            0,
+            832,
+            502
+          ],
+          "caption": "The interior of the display case's upper section, showing a dark, textured ceiling with recessed spotlights and the faint reflection of the glass case's frame."
+        },
+        {
+          "tile": 4,
+          "core_canvas_xyxy": [
+            0,
+            1248,
+            832,
+            2496
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            992,
+            1088,
+            2752
+          ],
+          "core_source_xyxy": [
+            0,
+            416,
+            278,
+            832
+          ],
+          "padded_source_xyxy": [
+            0,
+            330,
+            363,
+            918
+          ],
+          "caption": "The side profile of an adult's head and shoulder, wearing a dark hoodie, is seen in profile against a dark, softly lit background with faint reflections of amber room lights."
+        },
+        {
+          "tile": 5,
+          "core_canvas_xyxy": [
+            832,
+            1248,
+            1664,
+            2496
+          ],
+          "padded_canvas_xyxy": [
+            576,
+            992,
+            1920,
+            2752
+          ],
+          "core_source_xyxy": [
+            277,
+            416,
+            555,
+            832
+          ],
+          "padded_source_xyxy": [
+            192,
+            330,
+            640,
+            918
+          ],
+          "caption": "A child's finger points at a miniature lunar rover on a rocky, textured model landscape, viewed through a glass display case."
+        },
+        {
+          "tile": 6,
+          "core_canvas_xyxy": [
+            1664,
+            1248,
+            2496,
+            2496
+          ],
+          "padded_canvas_xyxy": [
+            1408,
+            992,
+            2496,
+            2752
+          ],
+          "core_source_xyxy": [
+            554,
+            416,
+            832,
+            832
+          ],
+          "padded_source_xyxy": [
+            469,
+            330,
+            832,
+            918
+          ],
+          "caption": "A detailed miniature lunar rover with a white body and yellow articulated legs rests on a textured, grayish-white rocky surface within a glass display case."
+        },
+        {
+          "tile": 7,
+          "core_canvas_xyxy": [
+            0,
+            2496,
+            832,
+            3744
+          ],
+          "padded_canvas_xyxy": [
+            0,
+            2240,
+            1088,
+            3744
+          ],
+          "core_source_xyxy": [
+            0,
+            832,
+            278,
+            1248
+          ],
+          "padded_source_xyxy": [
+            0,
+            746,
+            363,
+            1248
+          ],
+          "caption": "The child's right hand, with a single finger extended, points toward the miniature lunar rover inside the glass display case."
+        },
+        {
+          "tile": 8,
+          "core_canvas_xyxy": [
+            832,
+            2496,
+            1664,
+            3744
+          ],
+          "padded_canvas_xyxy": [
+            576,
+            2240,
+            1920,
+            3744
+          ],
+          "core_source_xyxy": [
+            277,
+            832,
+            555,
+            1248
+          ],
+          "padded_source_xyxy": [
+            192,
+            746,
+            640,
+            1248
+          ],
+          "caption": "A close-up view of a miniature lunar rover on a textured, gray, rocky model landscape, viewed through a glass display case."
+        },
+        {
+          "tile": 9,
+          "core_canvas_xyxy": [
+            1664,
+            2496,
+            2496,
+            3744
+          ],
+          "padded_canvas_xyxy": [
+            1408,
+            2240,
+            2496,
+            3744
+          ],
+          "core_source_xyxy": [
+            554,
+            832,
+            832,
+            1248
+          ],
+          "padded_source_xyxy": [
+            469,
+            746,
+            832,
+            1248
+          ],
+          "caption": "The interior of the display case shows a miniature lunar rover on a textured, gray, rocky surface, with the dark, matte base of the exhibit visible at the bottom."
+        }
+      ],
+      "caption_and_encode_seconds": 59.57
+    }
+  }
+]

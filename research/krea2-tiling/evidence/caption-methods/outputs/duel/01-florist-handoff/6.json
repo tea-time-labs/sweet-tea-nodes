@@ -1,0 +1,26 @@
+{
+  "method": "duel",
+  "case": "01-florist-handoff",
+  "tile": 6,
+  "core": [
+    480,
+    426,
+    720,
+    854
+  ],
+  "padded": [
+    394,
+    341,
+    720,
+    939
+  ],
+  "caption": "A hand grips a silver bicycle handlebar, with a beige jacket sleeve and collar visible above, partially covering a white t-shirt. The background is softly blurred, showing hints of a wooden-framed window.",
+  "notes": [
+    "A cream-colored jacket with buttoned front and collar, worn over a white t-shirt, is shown with a hand gripping a bicycle handlebar; the background is a blurred shop window with wooden mullions.",
+    "A hand grips the silver handlebar of a blue bicycle, with a beige jacket sleeve and collar visible above, overlapping the frame. The jacket’s buttoned front and white t-shirt are partially seen against a blurred background."
+  ],
+  "seconds": 10.62,
+  "gpu": "Tesla T4",
+  "source_sha256": "dcd0243066be054b170f8edb3346de123a0bbd3f1472c5a0898e97cdc18c09be",
+  "method_sha256": "9762db3082b0d03b27fbf466ac92daf3f33b42f0babb66103bc3712d5bacc2e0"
+}

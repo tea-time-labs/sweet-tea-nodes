@@ -1,0 +1,122 @@
+{
+  "01-florist-handoff": {
+    "pages": [
+      {
+        "title": "Changing tile 7",
+        "finding": "The original front toe points right over the step. The original render reverses it and exposes the rear heel. Replacing only tile 7's caption restores both toe orientations at this seed. The replacement caption names the sneakers, step, ledge and pavement but gives no toe direction.",
+        "renders": [
+          {
+            "method": "archived",
+            "label": "Original caption"
+          },
+          {
+            "method": "split_check",
+            "label": "Two-half caption on tile 7"
+          }
+        ]
+      },
+      {
+        "title": "Direction cue and nine-tile run",
+        "finding": "The extra sentence specifies a right-pointing toe. The targeted render keeps the toe direction and enlarges the wooden ledge. Regenerating all nine captions also keeps the foot orientation but moves the front bicycle wheel left until it overlaps the toe. The two cues shared exactly the same tile 7 text.",
+        "renders": [
+          {
+            "method": "footwear_verified",
+            "label": "Tile 7 plus verified rightward cue"
+          },
+          {
+            "method": "full_verified",
+            "label": "All nine regenerated, optional footwear check active"
+          }
+        ]
+      },
+      {
+        "title": "Full composition",
+        "region": [
+          0,
+          0,
+          720,
+          1280
+        ],
+        "finding": "The two people and bouquet handoff remain. The full run changes the bicycle geometry and adds a conspicuous white bloom to the wrapped yellow bouquet. Tile 5 groups white and yellow blooms together even though the white blooms in the source belong to the neighboring bunch.",
+        "renders": [
+          {
+            "method": "archived",
+            "label": "Original captions, all nine tiles"
+          },
+          {
+            "method": "full_verified",
+            "label": "New captions, all nine tiles"
+          }
+        ]
+      },
+      {
+        "title": "The cyclist's shoe",
+        "region": [
+          535,
+          1080,
+          720,
+          1280
+        ],
+        "finding": "The source foreground sneaker points toward the viewer and left. The optional direction check accepted right for this shoe. The render still points mostly forward and left. Both the caption and the image need their own assessment.",
+        "renders": [
+          {
+            "method": "full_verified",
+            "label": "All nine regenerated, including the incorrect tile 9 cue"
+          }
+        ]
+      }
+    ]
+  },
+  "10-wildlife-family": {
+    "pages": [
+      {
+        "title": "Changing tiles 7 and 8",
+        "finding": "The original render hides an extra eye, ear and muzzle behind the left kit. Replacing only the two captions restores the source count of one adult and two kits. The right kit stands more upright than in the source. The new tile 8 caption still omits the right-edge face.",
+        "renders": [
+          {
+            "method": "archived",
+            "label": "Original captions"
+          },
+          {
+            "method": "split_check",
+            "label": "Two-half captions on tiles 7 and 8"
+          }
+        ]
+      },
+      {
+        "title": "A noun creates a boot",
+        "region": [
+          400,
+          725,
+          849,
+          946
+        ],
+        "finding": "The free-form center description introduced a human foot absent from this animal scene. Compared with the two-half render, the new edge caption produced a conspicuous black boot beneath the right kit. Both scales of the source check rejected the human-foot sentence and accepted two true control sentences.",
+        "renders": [
+          {
+            "method": "split_check",
+            "label": "Two-half caption on tile 8"
+          },
+          {
+            "method": "edge_verified",
+            "label": "Confirmed eyes plus incorrect center description"
+          }
+        ]
+      },
+      {
+        "title": "Removing the rejected sentence",
+        "finding": "Only the unsupported center sentence was removed from tile 8. The black boot disappeared. An extra kit face reappeared behind the left kit, bringing the render back to three kit faces. The two-half version preserved two kit faces at this seed. Correcting one unsupported claim did not settle the animal count.",
+        "renders": [
+          {
+            "method": "edge_verified",
+            "label": "Both eye cues plus the human-foot sentence"
+          },
+          {
+            "method": "guarded_edges",
+            "label": "Same eye cues, rejected sentence removed"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "method": "duel",
+  "case": "12-urban-basketball",
+  "tile": 5,
+  "core": [
+    234,
+    490,
+    470,
+    982
+  ],
+  "padded": [
+    149,
+    405,
+    555,
+    1067
+  ],
+  "caption": "A basketball hangs mid-air above two outstretched arms—one in a light blue tank top, the other in a dark shirt—reaching upward toward a hoop’s net, visible at the top edge. The hands are open, palms facing up, against a bright sky.",
+  "notes": [
+    "A basketball hangs mid-air above two outstretched arms—one in a light blue tank top, the other in a dark shirt—reaching upward toward a hoop’s net, visible at the top edge. The hands are open, palms facing up, against a bright sky.",
+    "An orange basketball hovers just above the fingertips of a player in a light blue jersey, with the net and backboard visible above, against a backdrop of a clear sky and distant apartment buildings."
+  ],
+  "seconds": 13.66,
+  "gpu": "Tesla T4",
+  "source_sha256": "d104336026e3fb5d2ce881bb380a8daf797c1da032f59f01d377bfd9f59e90a3",
+  "method_sha256": "9762db3082b0d03b27fbf466ac92daf3f33b42f0babb66103bc3712d5bacc2e0"
+}

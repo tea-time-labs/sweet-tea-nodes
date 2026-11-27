@@ -1,0 +1,23 @@
+{
+  "method": "original_t4",
+  "case": "07-tango-poster",
+  "tile": 2,
+  "core": [
+    298,
+    0,
+    598,
+    384
+  ],
+  "padded": [
+    213,
+    0,
+    683,
+    470
+  ],
+  "caption": "A close-up of the red silhouette of a woman's head and shoulder, facing right, with her hair in a bun, set against a plain cream background.",
+  "notes": [],
+  "seconds": 11.12,
+  "gpu": "Tesla T4",
+  "source_sha256": "d2cdae9a168836f63ef81ea8e004aeab0851528721d3e60c966f6782ce3bb656",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

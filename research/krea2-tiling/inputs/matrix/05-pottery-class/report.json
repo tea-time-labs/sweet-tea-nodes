@@ -1,0 +1,371 @@
+{
+  "scene": {
+    "id": "05-pottery-class",
+    "width": 832,
+    "height": 1216,
+    "focus": [
+      0.5,
+      0.57
+    ],
+    "review": "Two figures, an intact centered clay bowl, clean hand separation and a circular wheel.",
+    "prompt": "Vertical editorial photograph in a working ceramics studio. A seated woman in a chambray apron shapes one wet white bowl on a pottery wheel. A standing teacher on her left leans in and demonstrates with one hovering clay-smudged hand, without touching the student's hands. Intimate mid shot, circular bowl and wheel near center, warm side light, worn aprons, shelves of unfinished ceramics and a white wash bucket in the far background. Natural human expressions and clearly readable hand positions."
+  },
+  "source_size": [
+    832,
+    1216
+  ],
+  "source_seed": 87924097,
+  "source_sampler": {
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1.0
+  },
+  "upscale_seed": 40310216,
+  "upscale_settings": {
+    "steps": 8,
+    "cfg": 1.0,
+    "denoise": 0.8,
+    "positions": "local",
+    "control": "Vision"
+  },
+  "runs": {
+    "euler-simple": {
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 324.27,
+      "sampling_seconds": 296.57,
+      "peak_torch_allocated_mib": 13859,
+      "peak_torch_reserved_mib": 15846,
+      "status": "ok",
+      "file": "euler-simple.png"
+    },
+    "euler-sgm_uniform": {
+      "sampler": "euler",
+      "scheduler": "sgm_uniform",
+      "sigmas": [
+        0.9266740679740906,
+        0.8805605173110962,
+        0.8257773518562317,
+        0.7596262693405151,
+        0.6781590580940247,
+        0.575360119342804,
+        0.441588819026947,
+        0.26036524772644043,
+        0.0
+      ],
+      "seconds": 324.48,
+      "sampling_seconds": 296.77,
+      "peak_torch_allocated_mib": 13859,
+      "peak_torch_reserved_mib": 15846,
+      "status": "ok",
+      "file": "euler-sgm_uniform.png"
+    },
+    "dpmpp_2m-simple": {
+      "sampler": "dpmpp_2m",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 324.28,
+      "sampling_seconds": 296.41,
+      "peak_torch_allocated_mib": 13859,
+      "peak_torch_reserved_mib": 15846,
+      "status": "ok",
+      "file": "dpmpp_2m-simple.png"
+    }
+  },
+  "node": "STKrea2TurboMatrixTest",
+  "colab_gpu": "NVIDIA L4",
+  "torch": "2.14.1+cu130",
+  "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+  "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+  "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+  "geometry": {
+    "final_size": [
+      2496,
+      3648
+    ],
+    "working_canvas": [
+      2496,
+      3648
+    ],
+    "tile_count": 9,
+    "padding": 256,
+    "tiles": [
+      {
+        "tile": 1,
+        "core_canvas_xyxy": [
+          0,
+          0,
+          832,
+          1216
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          0,
+          1088,
+          1472
+        ],
+        "core_source_xyxy": [
+          0,
+          0,
+          278,
+          406
+        ],
+        "padded_source_xyxy": [
+          0,
+          0,
+          363,
+          491
+        ],
+        "caption": "A close-up of a woman's ear and the side of her neck, framed by the strap of a denim apron, with soft, warm light highlighting the texture of her skin and the fabric."
+      },
+      {
+        "tile": 2,
+        "core_canvas_xyxy": [
+          832,
+          0,
+          1664,
+          1216
+        ],
+        "padded_canvas_xyxy": [
+          576,
+          0,
+          1920,
+          1472
+        ],
+        "core_source_xyxy": [
+          277,
+          0,
+          555,
+          406
+        ],
+        "padded_source_xyxy": [
+          192,
+          0,
+          640,
+          491
+        ],
+        "caption": "A close-up of a woman's face, eyes closed in concentration, with dark hair and a white t-shirt under a denim apron, set against a softly blurred background of shelves holding ceramic pieces."
+      },
+      {
+        "tile": 3,
+        "core_canvas_xyxy": [
+          1664,
+          0,
+          2496,
+          1216
+        ],
+        "padded_canvas_xyxy": [
+          1408,
+          0,
+          2496,
+          1472
+        ],
+        "core_source_xyxy": [
+          554,
+          0,
+          832,
+          406
+        ],
+        "padded_source_xyxy": [
+          469,
+          0,
+          832,
+          491
+        ],
+        "caption": "The inner tile, marked by the cyan rectangle, is a plain, unadorned, light-colored surface with a smooth, slightly reflective texture, set against a softly blurred background of shelves holding unfinished ceramic pieces."
+      },
+      {
+        "tile": 4,
+        "core_canvas_xyxy": [
+          0,
+          1216,
+          832,
+          2432
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          960,
+          1088,
+          2688
+        ],
+        "core_source_xyxy": [
+          0,
+          405,
+          278,
+          811
+        ],
+        "padded_source_xyxy": [
+          0,
+          320,
+          363,
+          896
+        ],
+        "caption": "A clay-smudged hand hovers above a spinning pottery wheel, fingers poised to guide the shaping of a wet white bowl, with the textured, worn fabric of a chambray apron visible nearby."
+      },
+      {
+        "tile": 5,
+        "core_canvas_xyxy": [
+          832,
+          1216,
+          1664,
+          2432
+        ],
+        "padded_canvas_xyxy": [
+          576,
+          960,
+          1920,
+          2688
+        ],
+        "core_source_xyxy": [
+          277,
+          405,
+          555,
+          811
+        ],
+        "padded_source_xyxy": [
+          192,
+          320,
+          640,
+          896
+        ],
+        "caption": "A close-up of a person's hands, covered in white clay, shaping a wet white bowl on a pottery wheel, with a worn denim apron visible in the background."
+      },
+      {
+        "tile": 6,
+        "core_canvas_xyxy": [
+          1664,
+          1216,
+          2496,
+          2432
+        ],
+        "padded_canvas_xyxy": [
+          1408,
+          960,
+          2496,
+          2688
+        ],
+        "core_source_xyxy": [
+          554,
+          405,
+          832,
+          811
+        ],
+        "padded_source_xyxy": [
+          469,
+          320,
+          832,
+          896
+        ],
+        "caption": "The inner surface of a wet, white clay bowl being shaped on a pottery wheel, with visible concentric ridges and a smooth, damp texture."
+      },
+      {
+        "tile": 7,
+        "core_canvas_xyxy": [
+          0,
+          2432,
+          832,
+          3648
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          2176,
+          1088,
+          3648
+        ],
+        "core_source_xyxy": [
+          0,
+          810,
+          278,
+          1216
+        ],
+        "padded_source_xyxy": [
+          0,
+          725,
+          363,
+          1216
+        ],
+        "caption": "The inner tile, marked by the cyan rectangle, is a smooth, light-colored ceramic surface with a slightly textured, matte finish, showing faint concentric rings from the pottery wheel's motion."
+      },
+      {
+        "tile": 8,
+        "core_canvas_xyxy": [
+          832,
+          2432,
+          1664,
+          3648
+        ],
+        "padded_canvas_xyxy": [
+          576,
+          2176,
+          1920,
+          3648
+        ],
+        "core_source_xyxy": [
+          277,
+          810,
+          555,
+          1216
+        ],
+        "padded_source_xyxy": [
+          192,
+          725,
+          640,
+          1216
+        ],
+        "caption": "A close-up of a wet white clay bowl being shaped on a spinning pottery wheel, with hands guiding its form against a blurred background of concentric wheel rings."
+      },
+      {
+        "tile": 9,
+        "core_canvas_xyxy": [
+          1664,
+          2432,
+          2496,
+          3648
+        ],
+        "padded_canvas_xyxy": [
+          1408,
+          2176,
+          2496,
+          3648
+        ],
+        "core_source_xyxy": [
+          554,
+          810,
+          832,
+          1216
+        ],
+        "padded_source_xyxy": [
+          469,
+          725,
+          832,
+          1216
+        ],
+        "caption": "The inner surface of a spinning pottery wheel, showing concentric circular ridges and a smooth, wet clay texture, with a partially visible hand holding a bowl above it."
+      }
+    ],
+    "caption_and_encode_seconds": 69.74
+  }
+}

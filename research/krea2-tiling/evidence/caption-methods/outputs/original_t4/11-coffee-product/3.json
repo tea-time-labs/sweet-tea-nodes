@@ -1,0 +1,23 @@
+{
+  "method": "original_t4",
+  "case": "11-coffee-product",
+  "tile": 3,
+  "core": [
+    725,
+    0,
+    1088,
+    320
+  ],
+  "padded": [
+    640,
+    0,
+    1088,
+    406
+  ],
+  "caption": "A close-up of a hand gripping the black handle of a brushed-aluminum moka pot, with the textured, light-colored stone tabletop visible in the background.",
+  "notes": [],
+  "seconds": 11.37,
+  "gpu": "Tesla T4",
+  "source_sha256": "bcc341e06021a23a790b6a7994c71e34fbca719be23e19568f2d6278f8cc66a1",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

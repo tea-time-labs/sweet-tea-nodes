@@ -1,0 +1,39 @@
+{
+  "case": "10-wildlife-family",
+  "tile": 9,
+  "mode": "full_box",
+  "caption": "A small fox kit curls beneath the adult fox’s hindquarters, its head and ears visible as it rests on the ground.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [667, 666, 1000, 1000] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Near-square vertical wildlife editorial photograph of a red fox and exactly two kits in an autumn clearing. The adult fox bends her head to sniff the first kit at center while the second kit curls near her hind paws on the right. Distinct rust faces and black legs, one adult white-tipped tail looping on the ground, fine natural fur lit by pale sidelight, softly out-of-focus bracken and dark firs, damp orange leaf litter. All three animals visible, close but clearly separate.",
+  "core": [
+    640,
+    725,
+    960,
+    1088
+  ],
+  "padded": [
+    554,
+    640,
+    960,
+    1088
+  ],
+  "box_in_view": [
+    640,
+    725,
+    960,
+    1088
+  ],
+  "normalized": [
+    667,
+    666,
+    1000,
+    1000
+  ],
+  "view_size": [
+    960,
+    1088
+  ],
+  "view_rgb_sha256": "8302d0312eba4fb849e10984bb185b34676802b7a53b4df9174e8144010a9117",
+  "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+  "gpu": "Tesla T4",
+  "seconds": 10.15
+}

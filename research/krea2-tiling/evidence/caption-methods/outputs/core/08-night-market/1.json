@@ -1,0 +1,23 @@
+{
+  "method": "core",
+  "case": "08-night-market",
+  "tile": 1,
+  "core": [
+    0,
+    0,
+    448,
+    256
+  ],
+  "padded": [
+    0,
+    0,
+    534,
+    342
+  ],
+  "caption": "Warm overhead lights hang from a yellowed metal awning, casting glow on blurred figures below; a dark silhouette occupies the foreground left, while a partial head appears on the right.",
+  "notes": [],
+  "seconds": 9.01,
+  "gpu": "Tesla T4",
+  "source_sha256": "ed4c09abdbee5a1740202d6f2cd95f173fc3717c2ada117585297ed0ef5dfa42",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

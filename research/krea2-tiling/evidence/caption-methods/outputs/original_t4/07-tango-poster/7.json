@@ -1,0 +1,23 @@
+{
+  "method": "original_t4",
+  "case": "07-tango-poster",
+  "tile": 7,
+  "core": [
+    0,
+    768,
+    299,
+    1152
+  ],
+  "padded": [
+    0,
+    682,
+    384,
+    1152
+  ],
+  "caption": "A stylized red high-heeled shoe rests on a cream-colored parquet tile, with a dark indigo hand reaching toward it, set against a background of warm cream paper with flecks of risograph texture.",
+  "notes": [],
+  "seconds": 13.38,
+  "gpu": "Tesla T4",
+  "source_sha256": "d2cdae9a168836f63ef81ea8e004aeab0851528721d3e60c966f6782ce3bb656",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

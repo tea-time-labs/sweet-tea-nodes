@@ -1,0 +1,23 @@
+{
+  "case": "portrait-core",
+  "mode": "portrait-core",
+  "seed": 40309561,
+  "seconds": 340.6,
+  "source_sha256": "77eb4e7d798c693ec73860914750c2f28ca40f4020465d2cf2e70b4f851faf93",
+  "captions": [
+    "A close-up profile of a woman with dark, curly hair, featuring a single strand resting on her cheek, a small silver earring, and soft, natural skin texture against a muted olive background.",
+    "Dark, thick, curly hair with subtle highlights frames the left edge, while a thin strand rests near the cheek; a small silver earring glints at the earlobe.",
+    "Auburn hair, smooth and straight, frames a partial face with a light blue eye, soft skin texture, and a subtle eyebrow, against a muted olive background.",
+    "A woman's profile in soft light, featuring dark curly hair, a small silver earring, and layered grey knit fabric, with a thin strand of hair crossing her cheek.",
+    "A close-up of a woman's ear, featuring a small, round, silver stud earring, framed by dark, curly hair strands that softly frame the ear and partially obscure the background.",
+    "Auburn hair strands, smooth and straight, frame a woman's eye with light blue irises, while soft skin texture and subtle freckles are visible against a dark, out-of-focus background.",
+    "A close-up profile view of a woman's neck and shoulder, framed by layered grey knit fabric, with a single dark curl resting near her cheek against a muted olive background.",
+    "Dark, curly hair strands frame a textured, layered grey knit fabric, with the material's ribbed pattern and soft shoulder contour visible as the crop edges.",
+    "Auburn hair strands, smooth and straight, frame a shoulder with fine, light freckles, softly lit against a dark, indistinct background."
+  ],
+  "choices": [],
+  "output_sha256": "967d9d5cb60654e71d91a6b99579d9462259540fa99fba472f560d3641d79ce7",
+  "torch": "2.14.1+cu130",
+  "gpu": "NVIDIA L4",
+  "rule_sha256": "2cf6d6be41dbea12f23d6b9e4eb9b1a099b3c96d29fbaab1904e99d06b6093a9"
+}

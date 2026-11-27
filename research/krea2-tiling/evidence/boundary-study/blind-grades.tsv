@@ -1,0 +1,81 @@
+index	letter	grade	landmark	outside	locator	reason
+0	A	P	0	0	0	Finds the jeans, sneakers and left ledge but puts the shoes on the sidewalk instead of the raised step.
+0	B	P	0	0	0	Finds the shoes and pavement but omits the front shoe's relation to the raised step.
+0	C	P	0	0	1	Finds the shoes and step but calls out the pink rectangle and loses the two-foot arrangement.
+0	D	P	0	1	0	Finds shoes and step but the visible apron edge is down near the thighs; the waist is outside the target.
+1	A	W	0	1	0	The flank and legs are in frame; the rust-colored face is on the other side of the boundary.
+1	B	P	0	1	0	Leaf litter is grounded. The adult tail and plural kits' paws are misplaced, and the visible flank is missing.
+1	C	W	0	1	0	Completes a lowered head outside the core instead of describing the body segment.
+1	D	W	0	1	0	Names the dark legs but imports a face and gaze from the neighboring area.
+2	A	P	0	1	0	Finds one kit and leaf litter, misses the right face, and gives the kit dark legs beyond this crop.
+2	B	P	0	0	1	The adult legs and ground match. The two distinct facial fragments are missing, and the rectangle is mentioned.
+2	C	P	0	1	0	Recognizes both kits on the correct sides but describes their wider standing and curled poses and omits the central legs.
+2	D	W	0	1	1	The adult's face and muzzle are above the target. The caption also mentions the target rectangle.
+3	A	P	0	1	1	The shelves and pottery are visible. The bucket is lower in the scene and the cropped head is missing.
+3	B	P	0	0	1	Finds the hair and shirt but incorrectly says there are no other surfaces, overlooking the ceramic shelving.
+3	C	P	0	1	1	The shelves are present but the bucket is outside. It omits the distinct foreground head.
+3	D	A	0	0	1	Recognizes the head, shirt and ceramic shelving. It does not place the head at the left of the shelves.
+4	A	P	0	1	0	The handlebar grip is grounded. The smile and bouquet are outside this tile.
+4	B	A	0	0	1	Correct torso, sleeve, bicycle and hand-to-grip contact; the top-edge truncation is unspecified.
+4	C	P	0	1	1	Accurate clothing and grip, followed by a face, smile and bouquet transfer outside the boundary.
+4	D	P	0	1	0	Finds clothing and the hand on the bar but imports the bouquet exchange to its left.
+5	A	P	0	0	1	Describes the curtain and light but misses the small hand and brass curve.
+5	B	P	0	0	1	Finds both boundary fragments, but the visible curve is near the saxophone neck, not the bell, and their sides are unspecified.
+5	C	P	0	1	1	Recognizes the setting but expands the tiny hand and brass fragments into instruments and multiple musicians' hands.
+5	D	P	0	0	1	Finds the curtain and top light but omits both lower fragments.
+6	A	P	0	0	1	Finds the stair structure but misses the tabletop and adds an unsupported cast-shadow relationship.
+6	B	A	0	0	0	Finds wall, stair, window, table and chair tops, without the diagonal-to-lower-right arrangement.
+6	C	W	0	0	1	Calls the target empty despite the diagonal staircase, tabletop and window.
+6	D	P	0	1	0	The table and window are present, but the two readers and book are to the right outside the target.
+7	A	P	0	0	0	Finds the yellow boat and shore but calls the paddle black despite its yellow blade and omits the dangling line.
+7	B	P	0	1	0	Correct hull and paddle; the kayaker's knees and torso are beyond the target.
+7	C	A	0	0	0	Finds the bow, black rope, rippled water and shore. It does not specify the left-pointing bow and dangling line.
+7	D	P	0	0	0	The shore and boat match but the blade is yellow and the black dangling cord is omitted.
+8	A	P	0	1	1	The apron and clay-covered hands are real; the full wheel and asserted molding contact lie beyond the sliver in frame.
+8	B	P	0	1	1	The face and expression are above the target, and the specific two-hand shaping action is unsupported inside it.
+8	C	P	0	1	1	Recognizes the stained apron and clay but completes the cropped work area into a bowl-shaping action.
+8	D	P	0	1	1	Finds the apron and hands but expands the narrow lower edge into a whole bowl and wheel.
+9	A	W	0	0	0	Describes a window and a supposed potted plant and misses the woman who occupies most of the target.
+9	B	P	0	0	1	Finds the chef's head against the bright window but misses her visible face, gaze and bun.
+9	C	W	0	1	1	The stacked white bowls are on a shelf outside the target. The woman's face is missing.
+9	D	W	0	0	0	Concentrates on the distant exterior and misses the woman in the foreground.
+10	A	W	0	1	1	The red dancer's lower body and forward foot are outside. Only red fragments touch the right edge of this mostly cream area.
+10	B	P	0	0	1	The broad cream field is correct but two visible red shapes are omitted.
+10	C	P	0	0	1	Gets the dominant cream background but incorrectly calls it free of shapes.
+10	D	P	0	1	1	Finds the cream field and right-edge silhouette, but assigns it to an arm and shoulder; the lower fragment belongs to the skirt.
+11	A	P	0	1	0	Finds the folded umbrella and cream coat. The orange-coated customer is outside the target.
+11	B	P	0	0	0	Finds the reflection, umbrella and cream coat, but places the umbrella holder on the wrong side of the target.
+11	C	A	0	0	0	Accurately describes the closed umbrella, its curved wooden handle and the adjacent cream coat. Omits the reflection and leftward placement.
+11	D	P	0	1	0	Finds the magenta reflection and the umbrella, but imports the adjacent orange-coated customer.
+12	A	P	0	1	1	The wooden frame and light are present. The dancer's arm and the floor shadow are below the target.
+12	B	A	0	0	1	Identifies the tall window, dark wooden mullions and pale wall. Does not describe bright glazing on either side.
+12	C	P	0	0	1	Finds the wooden window and glass but spends the spatial detail on its relation to the barre below the crop.
+12	D	A	0	0	1	Correctly describes the dark window frame, glass and pale wall. Omits the narrow strips of light.
+13	A	P	0	1	1	The hindquarters and tail are present. The curled kit and white tail tip are outside.
+13	B	P	0	1	1	Fur and evergreen foliage match the crop. The white tip and the adult's shoulder are outside.
+13	C	P	0	1	1	Finds the adult back and tail, but the visible fur ends at the bottom edge. The full curve toward the ground is below.
+13	D	P	0	1	1	Includes the back and tail, then describes a curled kit's head that is below the bottom edge.
+14	A	P	0	1	1	The hand and small piece of metal fit, but the spout, lid and knob are outside.
+14	B	P	0	1	1	Identifies the hand and angular pot; the knob, stream and cup are beyond this crop.
+14	C	A	1	0	1	Locates the gripping hand and the angular metal portion in the lower-left corner.
+14	D	P	0	1	0	Finds the hand gripping the handle, but the pouring stream and cup lie outside the target.
+15	A	A	0	0	0	Ball, fingertips and the defender's reaching motion agree with the crop. Omits the visible net.
+15	B	P	0	1	0	Correctly finds the two reaching players, but the ball is below the net and the rim is above the crop.
+15	C	A	0	0	0	Correct ball placement, jersey colors and right-side defender. Leaves out the net.
+15	D	A	0	0	0	Correct positions of hands and ball and distinct jerseys; the net at upper right is missing.
+16	A	A	0	0	1	Accurately describes the fallen apples, ground and bordering trees. Omits the small pale trouser fragment at far left.
+16	B	P	0	1	1	Ground, apples and trunks are present. The crate is carried elsewhere in the scene.
+16	C	A	0	0	1	The ground, fruit, roots and bordering trunks agree. Omits the small trouser fragment.
+16	D	A	0	0	0	Correctly identifies fallen fruit, leaves and grass under the trees. The light trouser fragment is absent from the caption.
+17	A	P	0	1	1	The dark-haired profile and window are correct. The sweater and shoulder are below the target, and the black ear fragment is missing.
+17	B	P	0	1	0	Places the right-facing woman and black animal correctly, but expands the tiny ear into a dog's head.
+17	C	P	0	0	1	Identifies the woman's profile and gaze but omits the black ear and adds a smile the crop does not establish.
+17	D	W	0	0	1	Calls the target empty although a woman's profile occupies most of it.
+18	A	P	0	1	1	Finds the face, tape and shoulder seam. The client's hands at his sides are far below the crop.
+18	B	A	0	0	0	Grounds the left-facing client, shoulder measurement and yellow tape. Omits the tailor's hand entering from the right.
+18	C	P	0	1	0	The client's upper clothing and tape match. The relaxed arms and charcoal vest extend outside the target.
+18	D	A	1	0	0	Identifies the suited client and shoulder, plus the hand to the right holding the yellow tape.
+19	A	P	0	1	0	Finds the hooded figure leaning toward the display and the child. The adult's jeans are below the crop.
+19	B	P	0	0	0	Describes the dark hoodie, partial head and forward lean but misses the second head entering at lower right.
+19	C	P	0	1	1	The hooded adult and glass are visible. The miniature rover is farther right, and the child's head is missing.
+19	D	P	0	1	0	Finds two figures, but only the top of the child's head is visible. The rover and the child's asserted gaze are outside.

@@ -1,0 +1,35 @@
+[
+  {
+    "case": "10-wildlife-family",
+    "tile": 8,
+    "sentence": "A fox’s paw and a human’s foot both touch the wet, leaf-strewn ground.",
+    "kind": "generated center",
+    "answers": [
+      "UNSUPPORTED",
+      "UNSUPPORTED"
+    ],
+    "accepted": false
+  },
+  {
+    "case": "10-wildlife-family",
+    "tile": 8,
+    "sentence": "Dark fox legs touch the leaf-covered ground.",
+    "kind": "visible control",
+    "answers": [
+      "SUPPORTED",
+      "SUPPORTED"
+    ],
+    "accepted": true
+  },
+  {
+    "case": "01-florist-handoff",
+    "tile": 5,
+    "sentence": "Two hands hold the same paper-wrapped bouquet.",
+    "kind": "visible control",
+    "answers": [
+      "SUPPORTED",
+      "SUPPORTED"
+    ],
+    "accepted": true
+  }
+]

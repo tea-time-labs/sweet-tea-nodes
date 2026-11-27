@@ -1,0 +1,8 @@
+case	tile	left	right	distinct_opposite_faces
+10-wildlife-family	5	1	0	0
+10-wildlife-family	7	0	0	0
+10-wildlife-family	8	1	1	1
+05-pottery-class	3	1	0	0
+14-veterinary-exam	3	1	0	0
+01-florist-handoff	2	0	0	0
+06-restaurant-pass	1	0	1	0

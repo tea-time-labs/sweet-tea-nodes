@@ -1,0 +1,39 @@
+{
+  "case": "15-tailoring-studio",
+  "tile": 2,
+  "mode": "full_spotlight",
+  "caption": "The rectangle frames the upper torso of the client, showing the tan windowpane-check jacket’s shoulder seam being measured by a yellow tape, with the client’s face in three-quarter profile and hands relaxed at his sides.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [333, 0, 667, 334] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Landscape fashion campaign photograph in a quiet tailoring atelier. At center a tailor in a charcoal vest measures the shoulder of a standing client wearing an unfinished tan windowpane-check jacket. The tailor comes from behind and to the right, holding a single yellow tape across the shoulder seam. The client's arms hang relaxed, face in three-quarter profile. Sewing pattern paper and folded textiles recede to the left, tall windows with narrow white frames behind, warm soft light, fine wool weave and precise stitching.",
+  "core": [
+    416,
+    0,
+    832,
+    278
+  ],
+  "padded": [
+    330,
+    0,
+    918,
+    363
+  ],
+  "box_in_view": [
+    416,
+    0,
+    832,
+    278
+  ],
+  "normalized": [
+    333,
+    0,
+    667,
+    334
+  ],
+  "view_size": [
+    1248,
+    832
+  ],
+  "view_rgb_sha256": "b49c4f55ee92a13342a89dd5bcbf35067d6349c44ddafbf4632b2f190cb66386",
+  "source_sha256": "c7d8076c448fcc4c5e42777eb7f580513f62c6e02067d3b3680d36c429e1505a",
+  "gpu": "Tesla T4",
+  "seconds": 14.34
+}

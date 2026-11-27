@@ -1,0 +1,39 @@
+{
+  "case": "12-urban-basketball",
+  "tile": 5,
+  "mode": "padded_box",
+  "caption": "A basketball is suspended in mid-air just above the shooter’s outstretched fingertips, while two players contest the shot—one in a light blue jersey reaching upward and another in a dark jersey defending from the right.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [209, 128, 791, 872] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Very tall vertical sports campaign photograph from a low angle on a neighborhood outdoor basketball court. Two adult players contest one jump shot with a single orange ball just above the shooter's fingertips. Shooter in a light blue jersey toward the left, defender in a dark charcoal jersey reaching upward on the right. The backboard and hoop occupy the upper third, one visible painted lane and chain link fence below. Large sky, city apartment buildings in distance, strong afternoon sun, sharp but realistic hands and athletic secondary motion.",
+  "core": [
+    234,
+    490,
+    470,
+    982
+  ],
+  "padded": [
+    149,
+    405,
+    555,
+    1067
+  ],
+  "box_in_view": [
+    85,
+    85,
+    321,
+    577
+  ],
+  "normalized": [
+    209,
+    128,
+    791,
+    872
+  ],
+  "view_size": [
+    406,
+    662
+  ],
+  "view_rgb_sha256": "430609c0600fb10b31b19cf2b699f964bc17e143ef0ed846373bb9b6d9dc9b72",
+  "source_sha256": "d104336026e3fb5d2ce881bb380a8daf797c1da032f59f01d377bfd9f59e90a3",
+  "gpu": "Tesla T4",
+  "seconds": 10.93
+}

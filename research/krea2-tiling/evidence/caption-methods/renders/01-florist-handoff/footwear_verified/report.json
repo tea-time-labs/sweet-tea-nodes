@@ -1,0 +1,43 @@
+{
+  "case": "01-florist-handoff",
+  "method": "footwear_verified",
+  "variant": "euler-simple",
+  "metrics": {
+    "sampler": "euler",
+    "scheduler": "simple",
+    "sigmas": [
+      0.9266473650932312,
+      0.880513072013855,
+      0.8257015943527222,
+      0.7595109343528748,
+      0.677986741065979,
+      0.5751029849052429,
+      0.44119977951049805,
+      0.2597584128379822,
+      0.0
+    ],
+    "seconds": 306.38,
+    "sampling_seconds": 280.75,
+    "peak_torch_allocated_mib": 13806,
+    "peak_torch_reserved_mib": 15834,
+    "guide_applications": 0
+  },
+  "seed": 40309692,
+  "changed_tiles": [
+    7
+  ],
+  "captions": [
+    "A smiling woman in a white t-shirt and dark green apron stands at a shop doorway, her face partially visible as she hands a bouquet of yellow ranunculus to a cyclist, with a shop window featuring narrow wooden mullions and dappled rain on the pavement in the background.",
+    "A bouquet of yellow ranunculus wrapped in brown paper is held against a backdrop of a shop window with narrow wooden mullions, viewed through a glass pane that reflects a blurred building facade.",
+    "A smiling woman's profile, her dark hair pulled back, is seen against a background of a tall, narrow window with vertical wooden mullions and a light-colored stone wall.",
+    "A person in a dark green apron holds a bouquet of flowers, with a background of a shop window displaying more blooms and a wet pavement.",
+    "Two hands, one in a green apron and one in a cream jacket, meet to pass a bouquet of yellow ranunculus wrapped in brown paper, with a shop window and potted flowers visible in the background.",
+    "A cream-colored button-up jacket worn over a white t-shirt, with a hand gripping a bicycle handlebar, against a softly lit background of wooden window mullions and a wet pavement.",
+    "A person in a green apron and blue jeans stands on a concrete step, wearing white sneakers; a wooden bench edge is visible to the left, and wet pavement stretches below. The toe of the most prominent shoe points toward the right of the image.",
+    "A close-up of a blue bicycle's front wheel and fork, with a dark, wet pavement and a concrete step in the background.",
+    "A close-up of a blue bicycle's pedal and crankset, with a person's black pants and white sneakers visible, set against a wet, dark pavement."
+  ],
+  "gpu": "NVIDIA L4",
+  "source_sha256": "dcd0243066be054b170f8edb3346de123a0bbd3f1472c5a0898e97cdc18c09be",
+  "output_sha256": "d43ee542e80600725ba2dd8b50caf0942b8ee43bee4f9847652d7d5b4cfc6951"
+}

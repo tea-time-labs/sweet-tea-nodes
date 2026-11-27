@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "08-night-market",
+  "tile": 8,
+  "core": [
+    448,
+    512,
+    896,
+    768
+  ],
+  "padded": [
+    362,
+    426,
+    982,
+    768
+  ],
+  "caption": "A red tablecloth holds an open box of food to the left, while to the right, a person in an orange coat and dark pants stands on wet pavement, their feet blurred in the background.",
+  "notes": [
+    "Red tablecloth, open box with food, blurred feet.",
+    "Orange coat, dark pants, wet pavement"
+  ],
+  "seconds": 16.02,
+  "gpu": "Tesla T4",
+  "source_sha256": "ed4c09abdbee5a1740202d6f2cd95f173fc3717c2ada117585297ed0ef5dfa42",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

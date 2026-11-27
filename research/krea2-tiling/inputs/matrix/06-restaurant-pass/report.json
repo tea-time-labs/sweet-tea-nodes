@@ -1,0 +1,371 @@
+{
+  "scene": {
+    "id": "06-restaurant-pass",
+    "width": 1152,
+    "height": 896,
+    "focus": [
+      0.5,
+      0.54
+    ],
+    "review": "Three kitchen staff, one plated dish in the central exchange, straight edges at the counter.",
+    "prompt": "Landscape food-editorial photograph in an open restaurant kitchen just before dinner. Two chefs in white jackets and a server in a dark apron form a shallow triangle around the stainless pass. A chef slides one white ceramic plate toward the server, who reaches forward with both hands, while the third person watches. On the plate are three seared scallops, green sauce and one herb garnish. Side window light, darker shelves receding in perspective, subtle steam, documentary realism."
+  },
+  "source_size": [
+    1152,
+    896
+  ],
+  "source_seed": 87924288,
+  "source_sampler": {
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1.0
+  },
+  "upscale_seed": 40310347,
+  "upscale_settings": {
+    "steps": 8,
+    "cfg": 1.0,
+    "denoise": 0.8,
+    "positions": "local",
+    "control": "Vision"
+  },
+  "runs": {
+    "euler-simple": {
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 327.84,
+      "sampling_seconds": 300.33,
+      "peak_torch_allocated_mib": 13874,
+      "peak_torch_reserved_mib": 16116,
+      "status": "ok",
+      "file": "euler-simple.png"
+    },
+    "euler-sgm_uniform": {
+      "sampler": "euler",
+      "scheduler": "sgm_uniform",
+      "sigmas": [
+        0.9266740679740906,
+        0.8805605173110962,
+        0.8257773518562317,
+        0.7596262693405151,
+        0.6781590580940247,
+        0.575360119342804,
+        0.441588819026947,
+        0.26036524772644043,
+        0.0
+      ],
+      "seconds": 328.03,
+      "sampling_seconds": 300.38,
+      "peak_torch_allocated_mib": 13874,
+      "peak_torch_reserved_mib": 16116,
+      "status": "ok",
+      "file": "euler-sgm_uniform.png"
+    },
+    "dpmpp_2m-simple": {
+      "sampler": "dpmpp_2m",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 328.29,
+      "sampling_seconds": 300.41,
+      "peak_torch_allocated_mib": 13874,
+      "peak_torch_reserved_mib": 16116,
+      "status": "ok",
+      "file": "dpmpp_2m-simple.png"
+    }
+  },
+  "node": "STKrea2TurboMatrixTest",
+  "colab_gpu": "NVIDIA L4",
+  "torch": "2.14.1+cu130",
+  "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+  "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+  "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+  "geometry": {
+    "final_size": [
+      3456,
+      2688
+    ],
+    "working_canvas": [
+      3456,
+      2688
+    ],
+    "tile_count": 9,
+    "padding": 256,
+    "tiles": [
+      {
+        "tile": 1,
+        "core_canvas_xyxy": [
+          0,
+          0,
+          1152,
+          896
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          0,
+          1408,
+          1152
+        ],
+        "core_source_xyxy": [
+          0,
+          0,
+          384,
+          299
+        ],
+        "padded_source_xyxy": [
+          0,
+          0,
+          470,
+          384
+        ],
+        "caption": "A chef's focused profile, seen in close-up, with a blurred background of dark, receding kitchen shelves."
+      },
+      {
+        "tile": 2,
+        "core_canvas_xyxy": [
+          1152,
+          0,
+          2304,
+          896
+        ],
+        "padded_canvas_xyxy": [
+          896,
+          0,
+          2560,
+          1152
+        ],
+        "core_source_xyxy": [
+          384,
+          0,
+          768,
+          299
+        ],
+        "padded_source_xyxy": [
+          298,
+          0,
+          854,
+          384
+        ],
+        "caption": "The inner tile, marked by the cyan rectangle, is a dark, matte-finished surface with a subtle, uniform texture, set against a softly blurred background of darker, receding kitchen shelves."
+      },
+      {
+        "tile": 3,
+        "core_canvas_xyxy": [
+          2304,
+          0,
+          3456,
+          896
+        ],
+        "padded_canvas_xyxy": [
+          2048,
+          0,
+          3456,
+          1152
+        ],
+        "core_source_xyxy": [
+          768,
+          0,
+          1152,
+          299
+        ],
+        "padded_source_xyxy": [
+          682,
+          0,
+          1152,
+          384
+        ],
+        "caption": "A woman's face in profile, her dark hair in a bun, looking down, framed by a bright window with blurred shelves in the background."
+      },
+      {
+        "tile": 4,
+        "core_canvas_xyxy": [
+          0,
+          896,
+          1152,
+          1792
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          640,
+          1408,
+          2048
+        ],
+        "core_source_xyxy": [
+          0,
+          298,
+          384,
+          598
+        ],
+        "padded_source_xyxy": [
+          0,
+          213,
+          470,
+          683
+        ],
+        "caption": "A close-up of a white chef's jacket with visible buttons and a pocket containing a yellow napkin, set against a blurred background of another chef's arm and a stainless steel pass."
+      },
+      {
+        "tile": 5,
+        "core_canvas_xyxy": [
+          1152,
+          896,
+          2304,
+          1792
+        ],
+        "padded_canvas_xyxy": [
+          896,
+          640,
+          2560,
+          2048
+        ],
+        "core_source_xyxy": [
+          384,
+          298,
+          768,
+          598
+        ],
+        "padded_source_xyxy": [
+          298,
+          213,
+          854,
+          683
+        ],
+        "caption": "Steam rises from a steaming pot in the background, blurred by shallow depth of field, behind a white ceramic plate holding three seared scallops, green sauce, and one herb garnish."
+      },
+      {
+        "tile": 6,
+        "core_canvas_xyxy": [
+          2304,
+          896,
+          3456,
+          1792
+        ],
+        "padded_canvas_xyxy": [
+          2048,
+          640,
+          3456,
+          2048
+        ],
+        "core_source_xyxy": [
+          768,
+          298,
+          1152,
+          598
+        ],
+        "padded_source_xyxy": [
+          682,
+          213,
+          1152,
+          683
+        ],
+        "caption": "A close-up of a chef's white chef's jacket and black apron, with the texture of the fabric and the buttoned collar visible, set against a softly blurred background of a kitchen."
+      },
+      {
+        "tile": 7,
+        "core_canvas_xyxy": [
+          0,
+          1792,
+          1152,
+          2688
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          1536,
+          1408,
+          2688
+        ],
+        "core_source_xyxy": [
+          0,
+          597,
+          384,
+          896
+        ],
+        "padded_source_xyxy": [
+          0,
+          512,
+          470,
+          896
+        ],
+        "caption": "The rolled cuff of a white chef's jacket, showing the fabric's texture and a subtle fold, is held by a hand against a dark, reflective stainless steel countertop."
+      },
+      {
+        "tile": 8,
+        "core_canvas_xyxy": [
+          1152,
+          1792,
+          2304,
+          2688
+        ],
+        "padded_canvas_xyxy": [
+          896,
+          1536,
+          2560,
+          2688
+        ],
+        "core_source_xyxy": [
+          384,
+          597,
+          768,
+          896
+        ],
+        "padded_source_xyxy": [
+          298,
+          512,
+          854,
+          896
+        ],
+        "caption": "Three seared scallops rest on a green sauce with a single herb garnish, presented on a white ceramic plate held by two hands."
+      },
+      {
+        "tile": 9,
+        "core_canvas_xyxy": [
+          2304,
+          1792,
+          3456,
+          2688
+        ],
+        "padded_canvas_xyxy": [
+          2048,
+          1536,
+          3456,
+          2688
+        ],
+        "core_source_xyxy": [
+          768,
+          597,
+          1152,
+          896
+        ],
+        "padded_source_xyxy": [
+          682,
+          512,
+          1152,
+          896
+        ],
+        "caption": "A chef's forearm and hand, wearing a white chef's jacket with rolled sleeves, rests on a reflective stainless steel countertop."
+      }
+    ],
+    "caption_and_encode_seconds": 62.53
+  }
+}

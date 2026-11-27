@@ -1,0 +1,39 @@
+{
+  "case": "06-restaurant-pass",
+  "tile": 3,
+  "mode": "padded_box",
+  "caption": "The target rectangle frames the right side of a window, showing a blurred exterior view with a building facade, while the left edge reveals a dark, out-of-focus shelf with stacked white bowls.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [183, 0, 1000, 779] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Landscape food-editorial photograph in an open restaurant kitchen just before dinner. Two chefs in white jackets and a server in a dark apron form a shallow triangle around the stainless pass. A chef slides one white ceramic plate toward the server, who reaches forward with both hands, while the third person watches. On the plate are three seared scallops, green sauce and one herb garnish. Side window light, darker shelves receding in perspective, subtle steam, documentary realism.",
+  "core": [
+    768,
+    0,
+    1152,
+    299
+  ],
+  "padded": [
+    682,
+    0,
+    1152,
+    384
+  ],
+  "box_in_view": [
+    86,
+    0,
+    470,
+    299
+  ],
+  "normalized": [
+    183,
+    0,
+    1000,
+    779
+  ],
+  "view_size": [
+    470,
+    384
+  ],
+  "view_rgb_sha256": "9957558cfee1995b808417c1ead6555ac236dd139ca9257f329e2bf9d510c74c",
+  "source_sha256": "7205f082ed9f5ef2bec0aff78b04c5ac222939f27a0311c8fe615b06f1b0700f",
+  "gpu": "Tesla T4",
+  "seconds": 9.92
+}

@@ -1,0 +1,51 @@
+{
+  "captions": [
+    "A smiling woman in a green apron strap stands beside a wooden door frame with a glass panel, her face turned right, while blurred flowers fill the background behind her.",
+    "A wooden frame borders a glass pane, through which a blurred building facade is seen, while below, yellow ranunculus blooms in a brown paper wrap peek through the lower edge of the frame.",
+    "A smiling woman in profile, her dark hair and white collar visible, stands before a wooden-framed window with vertical slats; to her right, a white wall and pipe rise beside the window’s edge.",
+    "A person in a dark green apron with a single front pocket wears a white shirt sleeve, holding a bouquet of orange and yellow flowers with green stems, partially cut off at the right edge. The apron’s lower hem and the sleeve’s cuff are visible, with blurred background foliage behind.",
+    "Two hands cradle a bouquet of yellow and white flowers wrapped in brown paper, positioned just left of a bicycle handlebar grip. A wooden window frame and the base of a potted plant are visible below, with the handlebar’s stem extending diagonally across the lower right.",
+    "A hand grips the silver handlebar of a blue bicycle, with a beige jacket sleeve and collar visible above, overlapping the frame. The jacket’s buttoned front and white t-shirt are partially seen against a blurred background.",
+    "A person in a green apron and blue jeans stands on a concrete step, wearing white sneakers; a wooden bench edge is visible to the left, and wet pavement stretches below. The toe of the most prominent shoe points toward the right of the image.",
+    "A blue bicycle wheel with metallic spokes and a black tire dominates the foreground, its hub and frame partially visible, leaning against a concrete wall with a circular mark and a wooden ledge above.",
+    "A blue bicycle frame curves upward, its pedal and chain visible, with a white sneaker’s toe resting near the wet asphalt. Black pants extend from the rider’s thigh, partially obscuring the lower frame. The toe of the most prominent shoe points toward the right of the image."
+  ],
+  "changed_tiles": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "case": "01-florist-handoff",
+  "method": "full_verified",
+  "variant": "euler-simple",
+  "metrics": {
+    "sampler": "euler",
+    "scheduler": "simple",
+    "sigmas": [
+      0.9266473650932312,
+      0.880513072013855,
+      0.8257015943527222,
+      0.7595109343528748,
+      0.677986741065979,
+      0.5751029849052429,
+      0.44119977951049805,
+      0.2597584128379822,
+      0.0
+    ],
+    "seconds": 305.0,
+    "sampling_seconds": 279.0,
+    "peak_torch_allocated_mib": 13806,
+    "peak_torch_reserved_mib": 15794,
+    "guide_applications": 0
+  },
+  "seed": 40309692,
+  "gpu": "NVIDIA L4",
+  "source_sha256": "dcd0243066be054b170f8edb3346de123a0bbd3f1472c5a0898e97cdc18c09be",
+  "output_sha256": "37975f703e78073552cee99ce913be7df9c4273d6c25cf2d5cb9f1072ad0c896"
+}

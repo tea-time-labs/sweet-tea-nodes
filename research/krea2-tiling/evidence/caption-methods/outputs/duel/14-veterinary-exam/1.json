@@ -1,0 +1,26 @@
+{
+  "method": "duel",
+  "case": "14-veterinary-exam",
+  "tile": 1,
+  "core": [
+    0,
+    0,
+    331,
+    342
+  ],
+  "padded": [
+    0,
+    0,
+    416,
+    427
+  ],
+  "caption": "A woman’s right profile with dark hair against a bright, out-of-focus background, partially overlapping the edge of a black fur tip to her right.",
+  "notes": [
+    "A woman’s profile with dark hair and a blurred background, her face turned right, partially overlapping a black fur tip at the lower right edge.",
+    "A woman's right profile against a bright, out-of-focus background, with the edge of a black dog's ear visible to her right."
+  ],
+  "seconds": 8.06,
+  "gpu": "Tesla T4",
+  "source_sha256": "4a4aa26e7b77790cbbb66d5a2c3eedba8339d52de539583ec5bdbfedacbfcaa2",
+  "method_sha256": "9762db3082b0d03b27fbf466ac92daf3f33b42f0babb66103bc3712d5bacc2e0"
+}

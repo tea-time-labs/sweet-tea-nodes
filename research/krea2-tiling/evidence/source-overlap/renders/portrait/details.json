@@ -1,0 +1,240 @@
+{
+  "case": "portrait",
+  "mode": "Match source",
+  "seed": 40309561,
+  "seconds": 345.0,
+  "source_sha256": "77eb4e7d798c693ec73860914750c2f28ca40f4020465d2cf2e70b4f851faf93",
+  "captions": [
+    "A close-up profile of a woman with dark, curly hair, featuring a single strand resting on her cheek, a small silver earring, and soft, natural skin texture against a muted olive background.",
+    "Dark, thick, curly hair with subtle highlights frames the left edge, while a thin strand rests near the cheek; a small silver earring glints at the earlobe.",
+    "Auburn hair, smooth and straight, frames a partial face with a light blue eye, soft skin texture, and a subtle eyebrow, against a muted olive background.",
+    "A woman's profile in soft light, featuring dark curly hair, a small silver earring, and layered grey knit fabric, with a thin strand of hair crossing her cheek.",
+    "A close-up of a woman's ear, featuring a small, round, silver stud earring, framed by dark, curly hair strands that softly frame the ear and partially obscure the background.",
+    "Auburn hair strands, smooth and straight, frame a woman's eye with light blue irises, while soft skin texture and subtle freckles are visible against a dark, out-of-focus background.",
+    "A close-up profile view of a woman's neck and shoulder, framed by layered grey knit fabric, with a single dark curl resting near her cheek against a muted olive background.",
+    "Dark, curly hair strands frame a textured, layered grey knit fabric, with the material's ribbed pattern and soft shoulder contour visible as the crop edges.",
+    "Auburn hair strands, smooth and straight, frame a shoulder with fine, light freckles, softly lit against a dark, indistinct background."
+  ],
+  "choices": [
+    [
+      [
+        0,
+        96,
+        96,
+        160
+      ],
+      {
+        "0": 0.22132204473018646,
+        "1": 0.13468226790428162
+      },
+      1
+    ],
+    [
+      [
+        0,
+        96,
+        224,
+        288
+      ],
+      {
+        "1": 0.10845885425806046,
+        "2": 0.12081810086965561
+      },
+      1
+    ],
+    [
+      [
+        96,
+        160,
+        0,
+        96
+      ],
+      {
+        "0": 0.3298148810863495,
+        "3": 0.3115338981151581
+      },
+      null
+    ],
+    [
+      [
+        96,
+        160,
+        96,
+        160
+      ],
+      {
+        "0": 0.30565422773361206,
+        "1": 0.17048944532871246,
+        "3": 0.2333311289548874,
+        "4": 0.16212832927703857
+      },
+      null
+    ],
+    [
+      [
+        96,
+        160,
+        160,
+        224
+      ],
+      {
+        "1": 0.14928491413593292,
+        "4": 0.10778487473726273
+      },
+      4
+    ],
+    [
+      [
+        96,
+        160,
+        224,
+        288
+      ],
+      {
+        "1": 0.14552046358585358,
+        "2": 0.4470440149307251,
+        "4": 0.22564585506916046,
+        "5": 0.22153809666633606
+      },
+      1
+    ],
+    [
+      [
+        96,
+        160,
+        288,
+        384
+      ],
+      {
+        "2": 0.2728884518146515,
+        "5": 0.2715618908405304
+      },
+      null
+    ],
+    [
+      [
+        160,
+        224,
+        96,
+        160
+      ],
+      {
+        "3": 0.21698635816574097,
+        "4": 0.21879751980304718
+      },
+      null
+    ],
+    [
+      [
+        160,
+        224,
+        224,
+        288
+      ],
+      {
+        "4": 0.09859127551317215,
+        "5": 0.2621837556362152
+      },
+      4
+    ],
+    [
+      [
+        224,
+        288,
+        0,
+        96
+      ],
+      {
+        "3": 0.2619398534297943,
+        "6": 0.21332025527954102
+      },
+      6
+    ],
+    [
+      [
+        224,
+        288,
+        96,
+        160
+      ],
+      {
+        "3": 0.4225180745124817,
+        "4": 0.18126289546489716,
+        "6": 0.2235708087682724,
+        "7": 0.307563453912735
+      },
+      4
+    ],
+    [
+      [
+        224,
+        288,
+        160,
+        224
+      ],
+      {
+        "4": 0.16250959038734436,
+        "7": 0.2917453348636627
+      },
+      4
+    ],
+    [
+      [
+        224,
+        288,
+        224,
+        288
+      ],
+      {
+        "4": 0.07004750519990921,
+        "5": 0.34034463763237,
+        "7": 0.1471148133277893,
+        "8": 0.3282549977302551
+      },
+      4
+    ],
+    [
+      [
+        224,
+        288,
+        288,
+        384
+      ],
+      {
+        "5": 0.3682863712310791,
+        "8": 0.2556857764720917
+      },
+      8
+    ],
+    [
+      [
+        288,
+        384,
+        96,
+        160
+      ],
+      {
+        "6": 0.21621154248714447,
+        "7": 0.33547934889793396
+      },
+      6
+    ],
+    [
+      [
+        288,
+        384,
+        224,
+        288
+      ],
+      {
+        "7": 0.24864846467971802,
+        "8": 0.2633979916572571
+      },
+      null
+    ]
+  ],
+  "output_sha256": "97a75331ee83d8d73bff418dd19ae2bf986e3a6576595d87666aa52d6e59563b",
+  "torch": "2.14.1+cu130",
+  "gpu": "NVIDIA L4",
+  "rule_sha256": "2cf6d6be41dbea12f23d6b9e4eb9b1a099b3c96d29fbaab1904e99d06b6093a9"
+}

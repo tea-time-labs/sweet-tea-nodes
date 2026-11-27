@@ -1,0 +1,39 @@
+{
+  "case": "13-orchard-harvest",
+  "tile": 9,
+  "mode": "full_box",
+  "caption": "The target rectangle shows the ground covered in green grass and scattered fallen apples, with tree trunks and roots visible at the edges.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [666, 666, 1000, 1000] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Panoramic farm-to-table brand photograph in an apple orchard during late harvest. Three people work together across the frame. At center, two adults on opposite sides lift one wooden crate brimming with red apples. At left and a little farther back, a third adult reaches into a tree to pick an apple. Orchard rows converge toward a misty opening, grass and dappled shadows underfoot, late warm sunlight, hand and crate edge continuity, subtle knit and canvas textures. Observational photography, no copied or mirrored poses.",
+  "core": [
+    981,
+    469,
+    1472,
+    704
+  ],
+  "padded": [
+    896,
+    384,
+    1472,
+    704
+  ],
+  "box_in_view": [
+    981,
+    469,
+    1472,
+    704
+  ],
+  "normalized": [
+    666,
+    666,
+    1000,
+    1000
+  ],
+  "view_size": [
+    1472,
+    704
+  ],
+  "view_rgb_sha256": "f7757e27304cac0830bc9ba6ebb0ea508f5628b45f43d45d0d445d0a834d9048",
+  "source_sha256": "5a160c57c1ccafa124f6387a610657bae09c4703e12770f182d23c2373bf7ff0",
+  "gpu": "Tesla T4",
+  "seconds": 10.45
+}

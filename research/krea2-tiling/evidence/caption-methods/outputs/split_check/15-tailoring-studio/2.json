@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "15-tailoring-studio",
+  "tile": 2,
+  "core": [
+    416,
+    0,
+    832,
+    278
+  ],
+  "padded": [
+    330,
+    0,
+    918,
+    363
+  ],
+  "caption": "A man in a patterned suit jacket with a tied collar and dark tie stands profile, while a hand holds a yellow measuring tape against his shoulder. The fabric surface of the jacket and the man’s face are visible, with the hand positioned to the right, touching the garment.",
+  "notes": [
+    "Tied collar, dark tie, patterned suit jacket.",
+    "Hand holding measuring tape, man’s face profile, fabric surface."
+  ],
+  "seconds": 20.68,
+  "gpu": "Tesla T4",
+  "source_sha256": "c7d8076c448fcc4c5e42777eb7f580513f62c6e02067d3b3680d36c429e1505a",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

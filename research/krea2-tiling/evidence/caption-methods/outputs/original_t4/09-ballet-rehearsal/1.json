@@ -1,0 +1,23 @@
+{
+  "method": "original_t4",
+  "case": "09-ballet-rehearsal",
+  "tile": 1,
+  "core": [
+    0,
+    0,
+    256,
+    448
+  ],
+  "padded": [
+    0,
+    0,
+    342,
+    534
+  ],
+  "caption": "The inner vertical edge of a tall, dark wooden window frame, showing its textured grain and the faint shadow of a window pane.",
+  "notes": [],
+  "seconds": 8.99,
+  "gpu": "Tesla T4",
+  "source_sha256": "a61f05a4399e0bbd82f7c16499e56edaef6c3c07b06ded575071b7307e00c655",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

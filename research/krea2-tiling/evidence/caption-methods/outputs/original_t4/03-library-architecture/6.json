@@ -1,0 +1,23 @@
+{
+  "method": "original_t4",
+  "case": "03-library-architecture",
+  "tile": 6,
+  "core": [
+    810,
+    277,
+    1216,
+    555
+  ],
+  "padded": [
+    725,
+    192,
+    1216,
+    640
+  ],
+  "caption": "A tall, multi-paned mullioned window with pale brick walls in the background, framed by the diagonal shadow of the staircase's balustrade.",
+  "notes": [],
+  "seconds": 10.91,
+  "gpu": "Tesla T4",
+  "source_sha256": "b4542744a3f528cb49b96d91f82428cc3e18121dc3dea84ec4b46a515632d345",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

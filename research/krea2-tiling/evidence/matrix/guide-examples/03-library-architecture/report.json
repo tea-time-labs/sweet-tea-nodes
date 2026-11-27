@@ -1,0 +1,68 @@
+{
+  "case": "03-library-architecture",
+  "source_sha256": "b4542744a3f528cb49b96d91f82428cc3e18121dc3dea84ec4b46a515632d345",
+  "source_size": [
+    1216,
+    832
+  ],
+  "output_size": [
+    3648,
+    2496
+  ],
+  "seed": 40309954,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "steps": 8,
+  "cfg": 1.0,
+  "denoise": 0.8,
+  "guide_strength": 0.7,
+  "runs": {
+    "depth": {
+      "status": "ok",
+      "file": "vision-depth.png",
+      "guide": "depth-guide.png",
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 333.03,
+      "sampling_seconds": 312.82,
+      "peak_torch_allocated_mib": 13859,
+      "peak_torch_reserved_mib": 15964,
+      "guide_applications": 72
+    },
+    "canny": {
+      "status": "ok",
+      "file": "vision-canny.png",
+      "guide": "canny-guide.png",
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 685.6,
+      "sampling_seconds": 664.62,
+      "peak_torch_allocated_mib": 15204,
+      "peak_torch_reserved_mib": 18994,
+      "guide_applications": 72
+    }
+  },
+  "colab_gpu": "NVIDIA L4"
+}

@@ -1,0 +1,39 @@
+{
+  "case": "16-museum-diorama",
+  "tile": 4,
+  "mode": "padded_box",
+  "caption": "An adult in a dark hoodie leans down beside a child, both gazing at a miniature lunar rover displayed in a glass case.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [0, 146, 766, 854] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Vertical museum campaign image with realistic editorial photography and no typography. At left in the foreground an adult visitor and at center a child look through one tall glass display case at a miniature lunar rover on a rocky model landscape. The child points a single finger at the rover from outside the glass. The adult leans down to the child's eye height, both in side view, without faces overlapping. Dark matte exhibition walls, reflected amber room lights kept faint, glass corners and metal base line clear, richly lit model details, layered gallery depth.",
+  "core": [
+    0,
+    416,
+    278,
+    832
+  ],
+  "padded": [
+    0,
+    330,
+    363,
+    918
+  ],
+  "box_in_view": [
+    0,
+    86,
+    278,
+    502
+  ],
+  "normalized": [
+    0,
+    146,
+    766,
+    854
+  ],
+  "view_size": [
+    363,
+    588
+  ],
+  "view_rgb_sha256": "818f1bdfce05f15cebe4760efac767cf4503a3b3b27d479ab5da07b1e30fb786",
+  "source_sha256": "75657255388feeb52a103bb6acc1d90c11a6c9d6e113d3dc5bc75c6209aba445",
+  "gpu": "Tesla T4",
+  "seconds": 7.29
+}

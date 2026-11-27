@@ -1,0 +1,39 @@
+{
+  "case": "04-kayak-rescue-practice",
+  "tile": 7,
+  "mode": "full_box",
+  "caption": "A yellow kayak with a black paddle resting horizontally across its deck, partially submerged in shallow water near a rocky shore.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [0, 667, 334, 1000] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Wide 16:9 outdoor brand photograph at the edge of a calm glacial lake. Two adult kayakers wearing life jackets practice a partner rescue. One kneels in a mustard kayak at left, reaching across to a friend steadying a navy kayak at right. A single yellow-bladed paddle lies horizontally across the mustard deck. Both faces and the meeting hands are readable, boats are parallel but separate, distant firs and layered blue mountain ridges along a level horizon, glints and small ripples in the foreground, cool overcast light.",
+  "core": [
+    0,
+    480,
+    427,
+    720
+  ],
+  "padded": [
+    0,
+    394,
+    512,
+    720
+  ],
+  "box_in_view": [
+    0,
+    480,
+    427,
+    720
+  ],
+  "normalized": [
+    0,
+    667,
+    334,
+    1000
+  ],
+  "view_size": [
+    1280,
+    720
+  ],
+  "view_rgb_sha256": "aa81a8ee24a7cf3c9383daeec04f1d3a5b0f8e08b7c999b5de6663a824455de4",
+  "source_sha256": "64bb8df83e04f1364c31a6619068da322472041f87a8b18f1c06321c6a722bd4",
+  "gpu": "Tesla T4",
+  "seconds": 9.43
+}

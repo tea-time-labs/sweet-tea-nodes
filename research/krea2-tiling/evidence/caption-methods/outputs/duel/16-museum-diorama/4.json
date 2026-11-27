@@ -1,0 +1,26 @@
+{
+  "method": "duel",
+  "case": "16-museum-diorama",
+  "tile": 4,
+  "core": [
+    0,
+    416,
+    278,
+    832
+  ],
+  "padded": [
+    0,
+    330,
+    363,
+    918
+  ],
+  "caption": "A dark hoodie’s shoulder and sleeve frame the back of a head, with a child’s silhouette below, both set against a blurred background; the drawstring hangs loosely, partially cut by the image’s edge.",
+  "notes": [
+    "A dark hoodie’s shoulder and sleeve frame the back of a head, with a child’s silhouette below, both set against a blurred background; the drawstring hangs loosely, partially cut by the image’s edge.",
+    "The side profile of an adult's head and shoulder, wearing a dark hoodie, is seen in profile against a dark, softly lit background with faint reflections of amber room lights."
+  ],
+  "seconds": 10.79,
+  "gpu": "Tesla T4",
+  "source_sha256": "75657255388feeb52a103bb6acc1d90c11a6c9d6e113d3dc5bc75c6209aba445",
+  "method_sha256": "9762db3082b0d03b27fbf466ac92daf3f33b42f0babb66103bc3712d5bacc2e0"
+}

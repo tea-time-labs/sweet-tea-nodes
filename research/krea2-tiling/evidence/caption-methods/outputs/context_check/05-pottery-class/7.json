@@ -1,0 +1,25 @@
+{
+  "method": "context_check",
+  "case": "05-pottery-class",
+  "tile": 7,
+  "core": [
+    0,
+    810,
+    278,
+    1216
+  ],
+  "padded": [
+    0,
+    725,
+    363,
+    1216
+  ],
+  "caption": "A white ceramic bowl holds wet clay, resting beside a chambray apron’s folded edge, with a dark-clad leg partially visible to the left.",
+  "notes": [
+    "- pottery wheel\n- wet clay\n- chambray apron\n- white ceramic bowl\n- clay-smudged hand\n- worn apron"
+  ],
+  "seconds": 16.86,
+  "gpu": "Tesla T4",
+  "source_sha256": "c66ae108dee40b2cd35d72a0a052207635956b562c6a40edf9fe46f9fe660e09",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

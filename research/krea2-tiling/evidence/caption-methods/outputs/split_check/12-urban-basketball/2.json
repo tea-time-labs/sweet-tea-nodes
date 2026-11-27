@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "12-urban-basketball",
+  "tile": 2,
+  "core": [
+    234,
+    0,
+    470,
+    491
+  ],
+  "padded": [
+    149,
+    0,
+    555,
+    576
+  ],
+  "caption": "A weathered basketball backboard with a dark green frame and beveled edge, its lower corner cut by a hoop and net, set against a pale sky. The viewer sees the upper half of the structure and the lower half of the hoop, with the net’s visible strands hanging below the beam.",
+  "notes": [
+    "1. Beveled edge of a light-colored wall\n2. Dark green structural frame\n3. Skyline above the structure’s corner",
+    "Basket hoop, net, and metal support beam."
+  ],
+  "seconds": 24.25,
+  "gpu": "Tesla T4",
+  "source_sha256": "d104336026e3fb5d2ce881bb380a8daf797c1da032f59f01d377bfd9f59e90a3",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

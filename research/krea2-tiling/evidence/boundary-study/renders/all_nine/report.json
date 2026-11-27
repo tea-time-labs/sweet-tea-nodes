@@ -1,0 +1,52 @@
+{
+  "mode": "all_nine",
+  "case": "10-wildlife-family",
+  "captions": [
+    "The target rectangle contains a blurred, out-of-focus background of pale sky and distant, golden-brown vegetation, with no distinct objects or animals visible within its boundaries.",
+    "The target rectangle contains a blurred, out-of-focus background of pale sky and distant, indistinct autumnal foliage.",
+    "The target rectangle contains the upper right portion of a dark green evergreen tree, with its needles and branches softly blurred against a bright, out-of-focus background.",
+    "The rectangle frames a softly blurred background of dry, golden-brown bracken and distant trees, with no animals inside.",
+    "The adult red fox, with a rust-colored face and black legs, is bent over, sniffing the first kit at center, while her white-tipped tail loops on the ground.",
+    "The rectangle frames the upper right portion of the adult fox’s body, including its back, shoulder, and the top of its tail, with the tail’s white tip visible at the bottom edge. The fox’s fur is dense and russet-brown, blending into the out-of-focus evergreen foliage behind it.",
+    "A small red fox kit stands on the left, facing right, with its head slightly lowered, surrounded by fallen leaves and dry grass.",
+    "A small red fox kit with a rust-colored face and dark legs stands near the adult fox, its head lowered toward the damp ground covered in fallen leaves.",
+    "A small fox kit curls beneath the adult fox’s hindquarters, its head and ears visible as it rests on the ground."
+  ],
+  "changed_tiles": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "seed": 40310871,
+  "variant": "euler-simple",
+  "gpu": "NVIDIA L4",
+  "torch": "2.14.1+cu130",
+  "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+  "output_sha256": "0b10a335748fdfd5363ca9cccaa79679ba547d88c4dc4ecc194de932300f26a1",
+  "metrics": {
+    "sampler": "euler",
+    "scheduler": "simple",
+    "sigmas": [
+      0.9266473650932312,
+      0.880513072013855,
+      0.8257015943527222,
+      0.7595109343528748,
+      0.677986741065979,
+      0.5751029849052429,
+      0.44119977951049805,
+      0.2597584128379822,
+      0.0
+    ],
+    "seconds": 325.23,
+    "sampling_seconds": 296.91,
+    "peak_torch_allocated_mib": 13887,
+    "peak_torch_reserved_mib": 15916,
+    "guide_applications": 0
+  }
+}

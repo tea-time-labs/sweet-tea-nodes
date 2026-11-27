@@ -1,0 +1,39 @@
+{
+  "case": "01-florist-handoff",
+  "tile": 6,
+  "mode": "full_spotlight",
+  "caption": "The target rectangle shows the upper torso and arm of a person in a cream-colored jacket, with their hand gripping the handlebar of a blue bicycle.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [667, 333, 1000, 667] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Tall vertical editorial photograph for a neighborhood florist campaign. A florist in a dark green apron steps out of her shop and hands one wrapped bouquet of yellow ranunculus across the center to a cyclist in a cream jacket. Two adults only. Their hands meet around the brown paper wrapping, and the cyclist's other hand holds the blue bicycle's handlebar. Shop window with narrow wooden mullions, dappled rain on the pavement, soft cloudy daylight, candid medium-wide composition, clear layering from doorway to sidewalk.",
+  "core": [
+    480,
+    426,
+    720,
+    854
+  ],
+  "padded": [
+    394,
+    341,
+    720,
+    939
+  ],
+  "box_in_view": [
+    480,
+    426,
+    720,
+    854
+  ],
+  "normalized": [
+    667,
+    333,
+    1000,
+    667
+  ],
+  "view_size": [
+    720,
+    1280
+  ],
+  "view_rgb_sha256": "01cf9b678a2fa2a7abe6433e37d229e71f3c25999a425ab058939d6f975bd528",
+  "source_sha256": "dcd0243066be054b170f8edb3346de123a0bbd3f1472c5a0898e97cdc18c09be",
+  "gpu": "Tesla T4",
+  "seconds": 11.02
+}

@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "05-pottery-class",
+  "tile": 5,
+  "core": [
+    277,
+    405,
+    555,
+    811
+  ],
+  "padded": [
+    192,
+    320,
+    640,
+    896
+  ],
+  "caption": "A painter’s hands, dusted with clay, press into a potter’s wheel, beneath a stained denim apron that drapes over a worn white shirt collar. The apron’s fabric and the pottery rim are visible at the lower edge, while the upper edge shows the collar and sleeve.",
+  "notes": [
+    "Denim apron with flour stains, worn shirt collar, and arm sleeve.",
+    "Clipped hands with clay dust, apron fabric, and pottery rim."
+  ],
+  "seconds": 22.94,
+  "gpu": "Tesla T4",
+  "source_sha256": "c66ae108dee40b2cd35d72a0a052207635956b562c6a40edf9fe46f9fe660e09",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

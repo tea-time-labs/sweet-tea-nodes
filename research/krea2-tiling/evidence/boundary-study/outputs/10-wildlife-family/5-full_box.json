@@ -1,0 +1,39 @@
+{
+  "case": "10-wildlife-family",
+  "tile": 5,
+  "mode": "full_box",
+  "caption": "The adult red fox, with a rust-colored face and black legs, is bent over, sniffing the first kit at center, while her white-tipped tail loops on the ground.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [333, 333, 667, 667] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Near-square vertical wildlife editorial photograph of a red fox and exactly two kits in an autumn clearing. The adult fox bends her head to sniff the first kit at center while the second kit curls near her hind paws on the right. Distinct rust faces and black legs, one adult white-tipped tail looping on the ground, fine natural fur lit by pale sidelight, softly out-of-focus bracken and dark firs, damp orange leaf litter. All three animals visible, close but clearly separate.",
+  "core": [
+    320,
+    362,
+    640,
+    726
+  ],
+  "padded": [
+    234,
+    277,
+    726,
+    811
+  ],
+  "box_in_view": [
+    320,
+    362,
+    640,
+    726
+  ],
+  "normalized": [
+    333,
+    333,
+    667,
+    667
+  ],
+  "view_size": [
+    960,
+    1088
+  ],
+  "view_rgb_sha256": "cb71494fbbd2644f7dcd9576fc4e2d6d5797a1ec459814686d0e30bc49bd17a7",
+  "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+  "gpu": "Tesla T4",
+  "seconds": 12.68
+}

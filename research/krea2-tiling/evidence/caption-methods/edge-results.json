@@ -1,0 +1,100 @@
+[
+  {
+    "case": "10-wildlife-family",
+    "tile": 5,
+    "raw": [
+      "EYE",
+      "NONE"
+    ],
+    "labels": [
+      "EYE",
+      "NONE"
+    ],
+    "verify": "",
+    "caption": ""
+  },
+  {
+    "case": "10-wildlife-family",
+    "tile": 7,
+    "raw": [
+      "NONE",
+      "NONE"
+    ],
+    "labels": [
+      "NONE",
+      "NONE"
+    ],
+    "verify": "",
+    "caption": ""
+  },
+  {
+    "case": "10-wildlife-family",
+    "tile": 8,
+    "raw": [
+      "EYE",
+      "EYE"
+    ],
+    "labels": [
+      "EYE",
+      "EYE"
+    ],
+    "verify": "ONE",
+    "caption": ""
+  },
+  {
+    "case": "05-pottery-class",
+    "tile": 3,
+    "raw": [
+      "NONE",
+      "NONE"
+    ],
+    "labels": [
+      "NONE",
+      "NONE"
+    ],
+    "verify": "",
+    "caption": ""
+  },
+  {
+    "case": "14-veterinary-exam",
+    "tile": 3,
+    "raw": [
+      "EYE",
+      "NONE"
+    ],
+    "labels": [
+      "EYE",
+      "NONE"
+    ],
+    "verify": "",
+    "caption": ""
+  },
+  {
+    "case": "01-florist-handoff",
+    "tile": 2,
+    "raw": [
+      "NONE",
+      "NONE"
+    ],
+    "labels": [
+      "NONE",
+      "NONE"
+    ],
+    "verify": "",
+    "caption": ""
+  },
+  {
+    "case": "06-restaurant-pass",
+    "tile": 1,
+    "raw": [
+      "NONE",
+      "EYE"
+    ],
+    "labels": [
+      "NONE",
+      "EYE"
+    ],
+    "verify": "",
+    "caption": ""
+  }
+]

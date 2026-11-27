@@ -1,0 +1,371 @@
+{
+  "scene": {
+    "id": "11-coffee-product",
+    "width": 1088,
+    "height": 960,
+    "focus": [
+      0.52,
+      0.46
+    ],
+    "review": "One moka pot, one continuous pouring stream, one handle on the cup, distinct ring and shadows.",
+    "prompt": "Premium coffee product campaign photograph, a tight tabletop scene on light veined stone. A hand enters from upper right holding one angular brushed-aluminum moka pot, pouring a single narrow stream of dark coffee into one ivory demitasse at the center. The cup has exactly one handle to the left and sits on a matching saucer. A companion hand with a small silver ring steadies the saucer from the lower right, never touching the cup. Hard morning sunshine, softly edged geometric shadows, fine ceramic, brushed metal and crema texture, blank warm wall."
+  },
+  "source_size": [
+    1088,
+    960
+  ],
+  "source_seed": 87925243,
+  "source_sampler": {
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1.0
+  },
+  "upscale_seed": 40311002,
+  "upscale_settings": {
+    "steps": 8,
+    "cfg": 1.0,
+    "denoise": 0.8,
+    "positions": "local",
+    "control": "Vision"
+  },
+  "runs": {
+    "euler-simple": {
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 331.24,
+      "sampling_seconds": 302.41,
+      "peak_torch_allocated_mib": 13886,
+      "peak_torch_reserved_mib": 16164,
+      "status": "ok",
+      "file": "euler-simple.png"
+    },
+    "euler-sgm_uniform": {
+      "sampler": "euler",
+      "scheduler": "sgm_uniform",
+      "sigmas": [
+        0.9266740679740906,
+        0.8805605173110962,
+        0.8257773518562317,
+        0.7596262693405151,
+        0.6781590580940247,
+        0.575360119342804,
+        0.441588819026947,
+        0.26036524772644043,
+        0.0
+      ],
+      "seconds": 330.49,
+      "sampling_seconds": 301.81,
+      "peak_torch_allocated_mib": 13886,
+      "peak_torch_reserved_mib": 16164,
+      "status": "ok",
+      "file": "euler-sgm_uniform.png"
+    },
+    "dpmpp_2m-simple": {
+      "sampler": "dpmpp_2m",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 330.33,
+      "sampling_seconds": 301.57,
+      "peak_torch_allocated_mib": 13886,
+      "peak_torch_reserved_mib": 16164,
+      "status": "ok",
+      "file": "dpmpp_2m-simple.png"
+    }
+  },
+  "node": "STKrea2TurboMatrixTest",
+  "colab_gpu": "NVIDIA L4",
+  "torch": "2.14.1+cu130",
+  "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+  "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+  "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+  "geometry": {
+    "final_size": [
+      3264,
+      2880
+    ],
+    "working_canvas": [
+      3264,
+      2880
+    ],
+    "tile_count": 9,
+    "padding": 256,
+    "tiles": [
+      {
+        "tile": 1,
+        "core_canvas_xyxy": [
+          0,
+          0,
+          1088,
+          960
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          0,
+          1344,
+          1216
+        ],
+        "core_source_xyxy": [
+          0,
+          0,
+          363,
+          320
+        ],
+        "padded_source_xyxy": [
+          0,
+          0,
+          448,
+          406
+        ],
+        "caption": "A smooth, warm-toned wall with soft, softly edged geometric shadows cast by the morning sun."
+      },
+      {
+        "tile": 2,
+        "core_canvas_xyxy": [
+          1088,
+          0,
+          2176,
+          960
+        ],
+        "padded_canvas_xyxy": [
+          832,
+          0,
+          2432,
+          1216
+        ],
+        "core_source_xyxy": [
+          362,
+          0,
+          726,
+          320
+        ],
+        "padded_source_xyxy": [
+          277,
+          0,
+          811,
+          406
+        ],
+        "caption": "A close-up of the angular, brushed-aluminum top of a moka pot, featuring a black knob and a silver lever, against a plain, warm-toned background."
+      },
+      {
+        "tile": 3,
+        "core_canvas_xyxy": [
+          2176,
+          0,
+          3264,
+          960
+        ],
+        "padded_canvas_xyxy": [
+          1920,
+          0,
+          3264,
+          1216
+        ],
+        "core_source_xyxy": [
+          725,
+          0,
+          1088,
+          320
+        ],
+        "padded_source_xyxy": [
+          640,
+          0,
+          1088,
+          406
+        ],
+        "caption": "A close-up of a hand gripping the black handle of a brushed-aluminum moka pot, with the textured, light-colored stone surface visible in the background."
+      },
+      {
+        "tile": 4,
+        "core_canvas_xyxy": [
+          0,
+          960,
+          1088,
+          1920
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          704,
+          1344,
+          2176
+        ],
+        "core_source_xyxy": [
+          0,
+          320,
+          363,
+          640
+        ],
+        "padded_source_xyxy": [
+          0,
+          234,
+          448,
+          726
+        ],
+        "caption": "A close-up of the light veined stone tabletop, showing its smooth, subtly textured surface with soft, geometric shadows cast by the morning sun."
+      },
+      {
+        "tile": 5,
+        "core_canvas_xyxy": [
+          1088,
+          960,
+          2176,
+          1920
+        ],
+        "padded_canvas_xyxy": [
+          832,
+          704,
+          2432,
+          2176
+        ],
+        "core_source_xyxy": [
+          362,
+          320,
+          726,
+          640
+        ],
+        "padded_source_xyxy": [
+          277,
+          234,
+          811,
+          726
+        ],
+        "caption": "A narrow, dark stream of coffee pours from a brushed-aluminum moka pot into an ivory demitasse cup, with the cup resting on a matching saucer, all set against a light veined stone tabletop."
+      },
+      {
+        "tile": 6,
+        "core_canvas_xyxy": [
+          2176,
+          960,
+          3264,
+          1920
+        ],
+        "padded_canvas_xyxy": [
+          1920,
+          704,
+          3264,
+          2176
+        ],
+        "core_source_xyxy": [
+          725,
+          320,
+          1088,
+          640
+        ],
+        "padded_source_xyxy": [
+          640,
+          234,
+          1088,
+          726
+        ],
+        "caption": "A close-up of the brushed-aluminum, geometrically faceted lower section of a moka pot, showing its metallic texture and a small brass valve, against a softly lit, plain warm wall."
+      },
+      {
+        "tile": 7,
+        "core_canvas_xyxy": [
+          0,
+          1920,
+          1088,
+          2880
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          1664,
+          1344,
+          2880
+        ],
+        "core_source_xyxy": [
+          0,
+          640,
+          363,
+          960
+        ],
+        "padded_source_xyxy": [
+          0,
+          554,
+          448,
+          960
+        ],
+        "caption": "A close-up of a light beige stone surface with delicate, golden-brown veining, illuminated by soft sunlight that casts a gentle shadow."
+      },
+      {
+        "tile": 8,
+        "core_canvas_xyxy": [
+          1088,
+          1920,
+          2176,
+          2880
+        ],
+        "padded_canvas_xyxy": [
+          832,
+          1664,
+          2432,
+          2880
+        ],
+        "core_source_xyxy": [
+          362,
+          640,
+          726,
+          960
+        ],
+        "padded_source_xyxy": [
+          277,
+          554,
+          811,
+          960
+        ],
+        "caption": "A close-up of a white ceramic saucer resting on a light veined stone surface, with a hand steadying it from the right."
+      },
+      {
+        "tile": 9,
+        "core_canvas_xyxy": [
+          2176,
+          1920,
+          3264,
+          2880
+        ],
+        "padded_canvas_xyxy": [
+          1920,
+          1664,
+          3264,
+          2880
+        ],
+        "core_source_xyxy": [
+          725,
+          640,
+          1088,
+          960
+        ],
+        "padded_source_xyxy": [
+          640,
+          554,
+          1088,
+          960
+        ],
+        "caption": "A close-up of a hand with a simple silver band on the ring finger, resting on a light veined stone surface, steadying a saucer beneath the pouring coffee."
+      }
+    ],
+    "caption_and_encode_seconds": 63.06
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "method": "context_check",
+  "case": "12-urban-basketball",
+  "tile": 9,
+  "core": [
+    469,
+    981,
+    704,
+    1472
+  ],
+  "padded": [
+    384,
+    896,
+    704,
+    1472
+  ],
+  "caption": "A player in athletic shorts and a sleeveless jersey stands on a basketball court, their arm raised near a chain-link fence, with a concrete apartment building visible beyond.",
+  "notes": [
+    "- basketball court surface\n- chain link fence\n- athletic shorts\n- sleeveless jersey\n- concrete apartment building\n- sunlit grass area"
+  ],
+  "seconds": 16.73,
+  "gpu": "Tesla T4",
+  "source_sha256": "d104336026e3fb5d2ce881bb380a8daf797c1da032f59f01d377bfd9f59e90a3",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

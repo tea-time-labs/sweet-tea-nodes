@@ -1,0 +1,130 @@
+[
+  {
+    "scene": "01-florist-handoff",
+    "dimensions": [
+      2160,
+      3840
+    ],
+    "original_png_sha256": "c80e7b3abc19552c16c43c3d3ff53ffd5ea9e9e74ce452d6a898a786cda6b2e0"
+  },
+  {
+    "scene": "02-jazz-trio",
+    "dimensions": [
+      3072,
+      3072
+    ],
+    "original_png_sha256": "8e6ce10d6ec700f8e5fafa0b941c3541b4deaf6da51ca7c28d032660924c2aee"
+  },
+  {
+    "scene": "03-library-architecture",
+    "dimensions": [
+      3648,
+      2496
+    ],
+    "original_png_sha256": "7cf2b9d26f049368ce83ef2af3460d69fa72c6937ac4902e04b2b559eb2eb991"
+  },
+  {
+    "scene": "04-kayak-rescue-practice",
+    "dimensions": [
+      3840,
+      2160
+    ],
+    "original_png_sha256": "578e3a1bd31cc902d6581c8f6c018e617094cbdbbc385db0131cf0d534796bfa"
+  },
+  {
+    "scene": "05-pottery-class",
+    "dimensions": [
+      2496,
+      3648
+    ],
+    "original_png_sha256": "f6edc1207ffdfff76ea06b6ddc8726b6a9ed24c6289ddf1937ed0f2864beb93f"
+  },
+  {
+    "scene": "06-restaurant-pass",
+    "dimensions": [
+      3456,
+      2688
+    ],
+    "original_png_sha256": "6669925e1b2c183838476dc6dd4a2cf49f84c3ba20c1dfe972a5217b4347b110"
+  },
+  {
+    "scene": "07-tango-poster",
+    "dimensions": [
+      2688,
+      3456
+    ],
+    "original_png_sha256": "33b7b23321617f77916ea3b25abf6d0cc0e6af34def7d603dfad8a08c2a858a8"
+  },
+  {
+    "scene": "08-night-market",
+    "dimensions": [
+      4032,
+      2304
+    ],
+    "original_png_sha256": "ec9e48320e6127c072d4eed0bd7c3cb5ec1ce7baf80979ce08768004d4704048"
+  },
+  {
+    "scene": "09-ballet-rehearsal",
+    "dimensions": [
+      2304,
+      4032
+    ],
+    "original_png_sha256": "c815be9646e9e08ebf0f18f4829d42f8e8a2b9007fa1da6e198291e7be4e419d"
+  },
+  {
+    "scene": "10-wildlife-family",
+    "dimensions": [
+      2880,
+      3264
+    ],
+    "original_png_sha256": "675c17a2366b513c4f2329c652c76b2a556bf80d7bf1e22fc4eadf70fe16025b"
+  },
+  {
+    "scene": "11-coffee-product",
+    "dimensions": [
+      3264,
+      2880
+    ],
+    "original_png_sha256": "c3ff4ef545c71c7d0b07052b4b4dac2c284110db1c793499c2c7ff053159d9e4"
+  },
+  {
+    "scene": "12-urban-basketball",
+    "dimensions": [
+      2112,
+      4416
+    ],
+    "original_png_sha256": "711945e734a54356e07f18395d8a204285b5978ad0a965d3d556bea14b8cc248"
+  },
+  {
+    "scene": "13-orchard-harvest",
+    "dimensions": [
+      4416,
+      2112
+    ],
+    "original_png_sha256": "027968912eb8c22fdbf931847b3ad60b6b11b984b593e032a85b0a24d91f9990"
+  },
+  {
+    "scene": "14-veterinary-exam",
+    "dimensions": [
+      3024,
+      3120
+    ],
+    "original_png_sha256": "d8c66e51d77c464e2f63f516e23eb759848766c1d5206155f0b7162ff93cf8e1"
+  },
+  {
+    "scene": "15-tailoring-studio",
+    "dimensions": [
+      3744,
+      2496
+    ],
+    "original_png_sha256": "d47164bc6e3f8d466392144cb2904d6f1d2881a6973db6f8e90e39473de1b1ba"
+  },
+  {
+    "scene": "16-museum-diorama",
+    "dimensions": [
+      2496,
+      3744
+    ],
+    "original_png_sha256": "5aaf99bdae5465ae4dc1c1573d4c6ab2cb872ba0d0be9744fbba3624ffb1b8bb"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "method": "original_t4",
+  "case": "04-kayak-rescue-practice",
+  "tile": 3,
+  "core": [
+    853,
+    0,
+    1280,
+    235
+  ],
+  "padded": [
+    768,
+    0,
+    1280,
+    320
+  ],
+  "caption": "Layered mountain ridges covered in dense evergreen forest recede into a hazy blue distance under a soft, overcast sky.",
+  "notes": [],
+  "seconds": 8.94,
+  "gpu": "Tesla T4",
+  "source_sha256": "64bb8df83e04f1364c31a6619068da322472041f87a8b18f1c06321c6a722bd4",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

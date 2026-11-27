@@ -1,0 +1,47 @@
+{
+  "sampler": "euler",
+  "scheduler": "simple",
+  "sigmas": [
+    0.9266473650932312,
+    0.880513072013855,
+    0.8257015943527222,
+    0.7595109343528748,
+    0.677986741065979,
+    0.5751029849052429,
+    0.44119977951049805,
+    0.2597584128379822,
+    0.0
+  ],
+  "seconds": 329.93,
+  "sampling_seconds": 301.17,
+  "peak_torch_allocated_mib": 13889,
+  "peak_torch_reserved_mib": 15922,
+  "guide_applications": 0,
+  "case": "10-wildlife-family",
+  "status": "ok",
+  "file": "edited-captions.png",
+  "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+  "seed": 40310871,
+  "output_size": [
+    2880,
+    3264
+  ],
+  "edited_tiles": [
+    {
+      "tile": 4,
+      "before": "The visible content in image 3 is the right ear and the side of the head of a red fox kit, with a softly blurred background of out-of-focus bracken and dark firs.",
+      "after": "Blurred bracken and dry amber foliage, with a sliver of a pointed rust-colored ear at the far right and a strip of brown fur at the bottom."
+    },
+    {
+      "tile": 7,
+      "before": "A young fox kit with a rust-colored face and black legs stands on damp, orange leaf litter, its head lowered as it sniffs the ground, with the blurred, out-of-focus bracken and dark firs in the background.",
+      "after": "A cropped rust-brown flank and black legs enter from the right edge above damp orange leaves and dry grass."
+    },
+    {
+      "tile": 8,
+      "before": "A red fox kit with a rust-colored face and black legs peers forward from beneath the adult fox's paws, surrounded by damp, orange leaf litter.",
+      "after": "A cropped rust-orange ear, eye and muzzle enter from the upper left. A separate partial ear and eye enter at the far right. Two dark adult forelegs stand between them above damp leaf litter."
+    }
+  ],
+  "colab_gpu": "NVIDIA L4"
+}

@@ -1,0 +1,27 @@
+{
+  "method": "guarded_edges",
+  "case": "10-wildlife-family",
+  "tile": 8,
+  "core": [
+    320,
+    725,
+    640,
+    1088
+  ],
+  "padded": [
+    234,
+    640,
+    726,
+    1088
+  ],
+  "caption": "An eye is visible at the left and an eye is visible at the right.",
+  "notes": [
+    "1. Fox’s muzzle and eye — clipped subject’s facial fragment  \n2. Fox’s paw and leg — clipped subject’s lower body fragment  \n3. Wet leaf litter — ground surface fragment",
+    "Blurred autumn leaves and green grass."
+  ],
+  "seconds": 21.8,
+  "gpu": "Tesla T4",
+  "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1",
+  "base_caption": "A fox’s muzzle and eye peek from the left, while its paw and leg extend from the center-right, both resting on wet, fallen leaves; blurred autumn foliage and green grass frame the foreground."
+}

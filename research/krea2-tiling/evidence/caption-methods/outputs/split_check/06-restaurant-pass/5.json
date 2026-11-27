@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "06-restaurant-pass",
+  "tile": 5,
+  "core": [
+    384,
+    298,
+    768,
+    598
+  ],
+  "padded": [
+    298,
+    213,
+    854,
+    683
+  ],
+  "caption": "A chef’s hands hold a steaming plate of seared scallops, with soft kitchen steam rising behind, while a blurred second plate rests to the right.",
+  "notes": [
+    "Hands holding plate with food, blurred background kitchen.",
+    "Steam rising from a plate; blurred hand; out-of-focus dish."
+  ],
+  "seconds": 15.06,
+  "gpu": "Tesla T4",
+  "source_sha256": "7205f082ed9f5ef2bec0aff78b04c5ac222939f27a0311c8fe615b06f1b0700f",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

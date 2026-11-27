@@ -1,0 +1,26 @@
+{
+  "method": "duel",
+  "case": "08-night-market",
+  "tile": 9,
+  "core": [
+    896,
+    512,
+    1344,
+    768
+  ],
+  "padded": [
+    810,
+    426,
+    1344,
+    768
+  ],
+  "caption": "A folded dark green umbrella with a curved wooden handle is held by a person in a cream coat, standing on a wet, magenta-reflective pavement, with a blurred leg and dark boot sole receding to the right.",
+  "notes": [
+    "A white coat sleeve holds a curved umbrella handle and folded canopy, standing beside a vibrant pink wet pavement, with a blurred leg and dark boot sole receding to the right.",
+    "A folded, dark green umbrella with a curved wooden handle is held by a person in a cream coat, standing on a wet, magenta-reflective pavement."
+  ],
+  "seconds": 11.68,
+  "gpu": "Tesla T4",
+  "source_sha256": "ed4c09abdbee5a1740202d6f2cd95f173fc3717c2ada117585297ed0ef5dfa42",
+  "method_sha256": "9762db3082b0d03b27fbf466ac92daf3f33b42f0babb66103bc3712d5bacc2e0"
+}

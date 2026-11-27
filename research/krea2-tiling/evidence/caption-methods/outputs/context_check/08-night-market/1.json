@@ -1,0 +1,25 @@
+{
+  "method": "context_check",
+  "case": "08-night-market",
+  "tile": 1,
+  "core": [
+    0,
+    0,
+    448,
+    256
+  ],
+  "padded": [
+    0,
+    0,
+    534,
+    342
+  ],
+  "caption": "Warm, glowing awning lights hang from a yellowed metal frame above blurred figures at a bustling market stall. The viewer sees the back of a person’s head and the tops of others’ heads, with light fixtures casting soft halos against a backdrop of wooden beams and overhead structure.",
+  "notes": [
+    "- kraft paper bag\n- raincoat\n- umbrella\n- awning light\n- paving\n- market stall"
+  ],
+  "seconds": 21.02,
+  "gpu": "Tesla T4",
+  "source_sha256": "ed4c09abdbee5a1740202d6f2cd95f173fc3717c2ada117585297ed0ef5dfa42",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

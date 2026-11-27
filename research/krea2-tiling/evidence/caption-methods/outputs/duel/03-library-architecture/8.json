@@ -1,0 +1,26 @@
+{
+  "method": "duel",
+  "case": "03-library-architecture",
+  "tile": 8,
+  "core": [
+    405,
+    554,
+    811,
+    832
+  ],
+  "padded": [
+    320,
+    469,
+    896,
+    832
+  ],
+  "caption": "A dark staircase rail diagonally crosses the left side of the frame, casting a shadow across a light wooden table surface. Above, a window sill and a white brick corner are visible, with the table’s edge partially obscured by the rail’s shadow.",
+  "notes": [
+    "A smooth, light-colored wooden table surface with a simple, unadorned edge, set against a plain, off-white wall under the shadow of a dark staircase.",
+    "A dark staircase rail diagonally cuts across the left, meeting a light wall and a wooden table top at the right, with a window sill and brick corner visible above. The table’s edge is cut by the rail’s shadow, and the sill rests just below the window’s top frame."
+  ],
+  "seconds": 12.61,
+  "gpu": "Tesla T4",
+  "source_sha256": "b4542744a3f528cb49b96d91f82428cc3e18121dc3dea84ec4b46a515632d345",
+  "method_sha256": "9762db3082b0d03b27fbf466ac92daf3f33b42f0babb66103bc3712d5bacc2e0"
+}

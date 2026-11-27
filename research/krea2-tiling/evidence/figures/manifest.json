@@ -1,0 +1,814 @@
+{
+  "water-src": {
+    "archive": "padding",
+    "source": "source.png",
+    "source_sha256": "58c872b11c5f020d44b672848854b8480b66988ab70f335cb158b60b9bb13e34",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "water-shared": {
+    "archive": "padding",
+    "source": "p256_shared_local.png",
+    "source_sha256": "a7ca8cd471ea373d07d04262dbb1b732bca26f0d71ad43f6cc7445899450da92",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "water-ground": {
+    "archive": "padding",
+    "source": "p256_grounded_local.png",
+    "source_sha256": "3c1a8916e19d68c64a574cb183ff742aceb76e2003c7824c6f5242194a0a3250",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "water-384": {
+    "archive": "padding",
+    "source": "p384_grounded_local.png",
+    "source_sha256": "8e67d98ebd3fb6c1e6acbdf75abde4c3e02324039a4cbb227a4f898831cbefdb",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "water-512": {
+    "archive": "padding",
+    "source": "p512_grounded_local.png",
+    "source_sha256": "86dfa07d58d294a112283b78f1f75581d521db40aff213bf3bd7adee39ee3f8d",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "water-seq": {
+    "archive": "padding",
+    "source": "p256_grounded_local_sequential.png",
+    "source_sha256": "71e18d16db3645d974f3e626bae854d9751fd66adc91997b3c58549ec881132f",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "eye-src": {
+    "archive": "padding",
+    "source": "prompts/portrait/source.png",
+    "source_sha256": "77eb4e7d798c693ec73860914750c2f28ca40f4020465d2cf2e70b4f851faf93",
+    "crop_in_file_pixels": [
+      22,
+      260,
+      246,
+      410
+    ],
+    "annotation": null
+  },
+  "eye-blend": {
+    "archive": "padding",
+    "source": "prompts/portrait/p256_grounded_local.png",
+    "source_sha256": "90e23c93a1a77ea9cdaa360857a6242e4faffd4e02b15716624c013d8b0b5754",
+    "crop_in_file_pixels": [
+      66,
+      780,
+      738,
+      1230
+    ],
+    "annotation": null
+  },
+  "eye-corecap": {
+    "archive": "padding",
+    "source": "prompts/portrait/p256_grounded_core_caption.png",
+    "source_sha256": "1dc1779917106b451afd72070b0f1faed030e8e804b1f172f500e05260af82b0",
+    "crop_in_file_pixels": [
+      66,
+      780,
+      738,
+      1230
+    ],
+    "annotation": null
+  },
+  "eye-canny": {
+    "archive": "padding",
+    "source": "prompts/portrait/p256_grounded_local_canny.png",
+    "source_sha256": "e732269b3473d8778a4bf336a66618c5630e97d72058ca0f9339a2c7f796a4a9",
+    "crop_in_file_pixels": [
+      66,
+      780,
+      738,
+      1230
+    ],
+    "annotation": null
+  },
+  "eye-depth": {
+    "archive": "padding",
+    "source": "prompts/portrait/p256_grounded_local_depth.png",
+    "source_sha256": "aa6eb6d37712b405b7c4c43ece1e7997bdcc22b2e6df6c43686d7b83c389c56c",
+    "crop_in_file_pixels": [
+      66,
+      780,
+      738,
+      1230
+    ],
+    "annotation": null
+  },
+  "eye-iso1": {
+    "archive": "padding",
+    "source": "prompts/portrait/isolated_tile_1.png",
+    "source_sha256": "09bcf40325f9b2e1e7787e4487cad0193a14e185bd336a78763c16e1325ec2f3",
+    "crop_in_file_pixels": [
+      66,
+      780,
+      738,
+      1230
+    ],
+    "annotation": null
+  },
+  "eye-iso4": {
+    "archive": "padding",
+    "source": "prompts/portrait/isolated_tile_4.png",
+    "source_sha256": "e375bdabba3db7d48046304887854f107629b022704db01ac5b79b0dff5ee882",
+    "crop_in_file_pixels": [
+      66,
+      12,
+      738,
+      462
+    ],
+    "annotation": null
+  },
+  "eye-early": {
+    "archive": "matrix",
+    "source": "portrait-coordination/owner_first_four.png",
+    "source_sha256": "dacdaa30711e8d8805a110a7451498c13d936b92b08224e310e26a77bd41d15e",
+    "crop_in_file_pixels": [
+      66,
+      780,
+      738,
+      1230
+    ],
+    "annotation": null
+  },
+  "eye-late": {
+    "archive": "matrix",
+    "source": "portrait-coordination/owner_last_four.png",
+    "source_sha256": "a030829e8832b4bb8897e0e8fd67ef4f67cef1b3c16762c8641eb43220d30a33",
+    "crop_in_file_pixels": [
+      66,
+      780,
+      738,
+      1230
+    ],
+    "annotation": null
+  },
+  "eye-manual": {
+    "archive": "padding",
+    "source": "prompts/portrait/p256_grounded_local_eye_owner.png",
+    "source_sha256": "53655c98d4720219dce871a13f835b5a9431224dfb8291dfba4808ac6b97c947",
+    "crop_in_file_pixels": [
+      66,
+      780,
+      738,
+      1230
+    ],
+    "annotation": null
+  },
+  "eye-corewrite": {
+    "archive": "matrix",
+    "source": "source-overlap/renders/portrait-core/output.png",
+    "source_sha256": "967d9d5cb60654e71d91a6b99579d9462259540fa99fba472f560d3641d79ce7",
+    "crop_in_file_pixels": [
+      66,
+      780,
+      738,
+      1230
+    ],
+    "annotation": null
+  },
+  "eye-auto": {
+    "archive": "matrix",
+    "source": "source-overlap/renders/portrait/output.png",
+    "source_sha256": "97a75331ee83d8d73bff418dd19ae2bf986e3a6576595d87666aa52d6e59563b",
+    "crop_in_file_pixels": [
+      66,
+      780,
+      738,
+      1230
+    ],
+    "annotation": null
+  },
+  "portrait-map": {
+    "archive": "padding",
+    "source": "prompts/portrait/source.png",
+    "source_sha256": "77eb4e7d798c693ec73860914750c2f28ca40f4020465d2cf2e70b4f851faf93",
+    "crop_in_file_pixels": null,
+    "annotation": [
+      [
+        0,
+        341,
+        1023,
+        341
+      ],
+      [
+        0,
+        683,
+        1023,
+        683
+      ],
+      [
+        341,
+        0,
+        341,
+        1023
+      ],
+      [
+        683,
+        0,
+        683,
+        1023
+      ]
+    ]
+  },
+  "pad-1": {
+    "archive": "padding",
+    "source": "prompts/portrait/source.png",
+    "source_sha256": "77eb4e7d798c693ec73860914750c2f28ca40f4020465d2cf2e70b4f851faf93",
+    "crop_in_file_pixels": [
+      0,
+      0,
+      427,
+      427
+    ],
+    "annotation": [
+      [
+        0,
+        341,
+        426,
+        341
+      ]
+    ]
+  },
+  "pad-4": {
+    "archive": "padding",
+    "source": "prompts/portrait/source.png",
+    "source_sha256": "77eb4e7d798c693ec73860914750c2f28ca40f4020465d2cf2e70b4f851faf93",
+    "crop_in_file_pixels": [
+      0,
+      256,
+      427,
+      768
+    ],
+    "annotation": [
+      [
+        0,
+        85,
+        426,
+        85
+      ]
+    ]
+  },
+  "step-early-1-1": {
+    "archive": "matrix",
+    "source": "portrait-coordination/owner_first_four/step-1-1.png",
+    "source_sha256": "9a2c80076d2dce0ef33069804a0f27237dbcec946982a62aa135dd5b436c5425",
+    "crop_in_file_pixels": [
+      66,
+      12,
+      738,
+      462
+    ],
+    "annotation": null
+  },
+  "step-early-1-4": {
+    "archive": "matrix",
+    "source": "portrait-coordination/owner_first_four/step-1-4.png",
+    "source_sha256": "d83bbf0d4764fc04277e4becb9014b7a234a949ccd997333d3171771a71c86e1",
+    "crop_in_file_pixels": [
+      66,
+      12,
+      738,
+      462
+    ],
+    "annotation": null
+  },
+  "step-early-1-merged": {
+    "archive": "matrix",
+    "source": "portrait-coordination/owner_first_four/step-1-merged.png",
+    "source_sha256": "a94a9072169505a80a217549b32f64f84d889b091ff66fd6be1b1b593b83db5e",
+    "crop_in_file_pixels": [
+      66,
+      12,
+      738,
+      462
+    ],
+    "annotation": null
+  },
+  "step-early-3-1": {
+    "archive": "matrix",
+    "source": "portrait-coordination/owner_first_four/step-3-1.png",
+    "source_sha256": "27297a6433f5cebe3f404a58e693bff4f01ade5c26ac809f38f8650ecf6f1280",
+    "crop_in_file_pixels": [
+      66,
+      12,
+      738,
+      462
+    ],
+    "annotation": null
+  },
+  "step-early-5-4": {
+    "archive": "matrix",
+    "source": "portrait-coordination/owner_first_four/step-5-4.png",
+    "source_sha256": "8ec4a70373e74d97d643e0431853aa43f663736ded10023e4574341cac5629a7",
+    "crop_in_file_pixels": [
+      66,
+      12,
+      738,
+      462
+    ],
+    "annotation": null
+  },
+  "step-late-1-1": {
+    "archive": "matrix",
+    "source": "portrait-coordination/owner_last_four/step-1-1.png",
+    "source_sha256": "9a2c80076d2dce0ef33069804a0f27237dbcec946982a62aa135dd5b436c5425",
+    "crop_in_file_pixels": [
+      66,
+      12,
+      738,
+      462
+    ],
+    "annotation": null
+  },
+  "step-late-1-4": {
+    "archive": "matrix",
+    "source": "portrait-coordination/owner_last_four/step-1-4.png",
+    "source_sha256": "d83bbf0d4764fc04277e4becb9014b7a234a949ccd997333d3171771a71c86e1",
+    "crop_in_file_pixels": [
+      66,
+      12,
+      738,
+      462
+    ],
+    "annotation": null
+  },
+  "step-late-1-merged": {
+    "archive": "matrix",
+    "source": "portrait-coordination/owner_last_four/step-1-merged.png",
+    "source_sha256": "053804747b2ad3e4502bf43db095a75ddb6ef3cf23ac7e84d1f4705b9414f47f",
+    "crop_in_file_pixels": [
+      66,
+      12,
+      738,
+      462
+    ],
+    "annotation": null
+  },
+  "step-late-3-1": {
+    "archive": "matrix",
+    "source": "portrait-coordination/owner_last_four/step-3-1.png",
+    "source_sha256": "6b8be20d12ae7ba33b928e9c310742851bbb8079cafbee9650f3e035dae123eb",
+    "crop_in_file_pixels": [
+      66,
+      12,
+      738,
+      462
+    ],
+    "annotation": null
+  },
+  "step-late-5-4": {
+    "archive": "matrix",
+    "source": "portrait-coordination/owner_last_four/step-5-4.png",
+    "source_sha256": "c867ce7b115531204f924e9c654a8deaaf26f09668ae7108f68c2bd0502a9ef9",
+    "crop_in_file_pixels": [
+      66,
+      12,
+      738,
+      462
+    ],
+    "annotation": null
+  },
+  "01-src": {
+    "archive": "matrix",
+    "source": "cases/01-florist-handoff/source.png",
+    "source_sha256": "dcd0243066be054b170f8edb3346de123a0bbd3f1472c5a0898e97cdc18c09be",
+    "crop_in_file_pixels": [
+      0,
+      938,
+      308,
+      1215
+    ],
+    "annotation": null
+  },
+  "01-orig": {
+    "archive": "matrix",
+    "source": "cases/01-florist-handoff/euler-simple.png",
+    "source_sha256": "c80e7b3abc19552c16c43c3d3ff53ffd5ea9e9e74ce452d6a898a786cda6b2e0",
+    "crop_in_file_pixels": [
+      0,
+      2814,
+      924,
+      3645
+    ],
+    "annotation": null
+  },
+  "01-fixed": {
+    "archive": "matrix",
+    "source": "caption-methods/renders/01-florist-handoff/split_check/output.png",
+    "source_sha256": "fbad3348d1d337340ceaf52dbd049e7b7ff52e8bdf5db92690164346ae2e68b1",
+    "crop_in_file_pixels": [
+      0,
+      2814,
+      924,
+      3645
+    ],
+    "annotation": null
+  },
+  "01-all": {
+    "archive": "matrix",
+    "source": "caption-methods/renders/01-florist-handoff/full_verified/output.png",
+    "source_sha256": "37975f703e78073552cee99ce913be7df9c4273d6c25cf2d5cb9f1072ad0c896",
+    "crop_in_file_pixels": [
+      0,
+      2814,
+      924,
+      3645
+    ],
+    "annotation": null
+  },
+  "10-src": {
+    "archive": "matrix",
+    "source": "cases/10-wildlife-family/source.png",
+    "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+    "crop_in_file_pixels": [
+      60,
+      618,
+      899,
+      966
+    ],
+    "annotation": null
+  },
+  "10-orig": {
+    "archive": "matrix",
+    "source": "cases/10-wildlife-family/euler-simple.png",
+    "source_sha256": "675c17a2366b513c4f2329c652c76b2a556bf80d7bf1e22fc4eadf70fe16025b",
+    "crop_in_file_pixels": [
+      180,
+      1854,
+      2697,
+      2898
+    ],
+    "annotation": null
+  },
+  "10-fixed": {
+    "archive": "matrix",
+    "source": "caption-methods/renders/10-wildlife-family/split_check/output.png",
+    "source_sha256": "607c46cb13f5b1fdc6add8a65877ef8f1a91fc82983ca1ad045c0d1885e19c3f",
+    "crop_in_file_pixels": [
+      180,
+      1854,
+      2697,
+      2898
+    ],
+    "annotation": null
+  },
+  "10-boot": {
+    "archive": "matrix",
+    "source": "caption-methods/renders/10-wildlife-family/edge_verified/output.png",
+    "source_sha256": "a5ed1c7e6c971895c1797b73efe839f5aa052f202d4b5e14bb95e47b78f7d8f1",
+    "crop_in_file_pixels": [
+      180,
+      1854,
+      2697,
+      2898
+    ],
+    "annotation": null
+  },
+  "10-guard": {
+    "archive": "matrix",
+    "source": "caption-methods/renders/10-wildlife-family/guarded_edges/output.png",
+    "source_sha256": "8efd29861aa5c08e49db1181854f9b7614cdd7e1675d2c8c55afaeaa58951f50",
+    "crop_in_file_pixels": [
+      180,
+      1854,
+      2697,
+      2898
+    ],
+    "annotation": null
+  },
+  "10-box2": {
+    "archive": "matrix",
+    "source": "boundary-study/renders/two_target_tiles/output.png",
+    "source_sha256": "c8d6af9fdd1cc3d5cfd00612d512348f30a9b8eab66831dfe517b50c8b0d96aa",
+    "crop_in_file_pixels": [
+      180,
+      1854,
+      2697,
+      2898
+    ],
+    "annotation": null
+  },
+  "10-box9": {
+    "archive": "matrix",
+    "source": "boundary-study/renders/all_nine/output.png",
+    "source_sha256": "0b10a335748fdfd5363ca9cccaa79679ba547d88c4dc4ecc194de932300f26a1",
+    "crop_in_file_pixels": [
+      180,
+      1854,
+      2697,
+      2898
+    ],
+    "annotation": null
+  },
+  "10-canny": {
+    "archive": "matrix",
+    "source": "guide-examples/10-wildlife-family/vision-canny.png",
+    "source_sha256": "aff878d999460a1b2d547cd2d1429e15128cc9b3531b5b5fca83dac509c7f5a9",
+    "crop_in_file_pixels": [
+      180,
+      1854,
+      2697,
+      2898
+    ],
+    "annotation": null
+  },
+  "10-depth": {
+    "archive": "matrix",
+    "source": "guide-examples/10-wildlife-family/vision-depth.png",
+    "source_sha256": "e2ee6a898ac888d604fe5a2fa1fbd53209c4a9e5c9b52324bad78b28713669e2",
+    "crop_in_file_pixels": [
+      180,
+      1854,
+      2697,
+      2898
+    ],
+    "annotation": null
+  },
+  "10-auto": {
+    "archive": "matrix",
+    "source": "source-overlap/renders/10-wildlife-family/output.png",
+    "source_sha256": "cc0752d6585e2cece8a5534065fd1dcb208190059b9ef02a7dcb663f7bb34bd4",
+    "crop_in_file_pixels": [
+      180,
+      1854,
+      2697,
+      2898
+    ],
+    "annotation": null
+  },
+  "03-src": {
+    "archive": "matrix",
+    "source": "cases/03-library-architecture/source.png",
+    "source_sha256": "b4542744a3f528cb49b96d91f82428cc3e18121dc3dea84ec4b46a515632d345",
+    "crop_in_file_pixels": [
+      315,
+      310,
+      940,
+      800
+    ],
+    "annotation": null
+  },
+  "03-orig": {
+    "archive": "matrix",
+    "source": "cases/03-library-architecture/euler-simple.png",
+    "source_sha256": "7cf2b9d26f049368ce83ef2af3460d69fa72c6937ac4902e04b2b559eb2eb991",
+    "crop_in_file_pixels": [
+      945,
+      930,
+      2820,
+      2400
+    ],
+    "annotation": null
+  },
+  "03-canny": {
+    "archive": "matrix",
+    "source": "guide-examples/03-library-architecture/vision-canny.png",
+    "source_sha256": "3de06fd0177b035801ede63330181558fb95ac397f9486b0b362fc1d69776fa8",
+    "crop_in_file_pixels": [
+      945,
+      930,
+      2820,
+      2400
+    ],
+    "annotation": null
+  },
+  "03-depth": {
+    "archive": "matrix",
+    "source": "guide-examples/03-library-architecture/vision-depth.png",
+    "source_sha256": "4c77cfcbd36fb83dc5186a2417d2488d27e2fbc1b938d204284505b887cc7f75",
+    "crop_in_file_pixels": [
+      945,
+      930,
+      2820,
+      2400
+    ],
+    "annotation": null
+  },
+  "05-src": {
+    "archive": "matrix",
+    "source": "cases/05-pottery-class/source.png",
+    "source_sha256": "c66ae108dee40b2cd35d72a0a052207635956b562c6a40edf9fe46f9fe660e09",
+    "crop_in_file_pixels": [
+      485,
+      70,
+      832,
+      490
+    ],
+    "annotation": null
+  },
+  "05-orig": {
+    "archive": "matrix",
+    "source": "cases/05-pottery-class/euler-simple.png",
+    "source_sha256": "f6edc1207ffdfff76ea06b6ddc8726b6a9ed24c6289ddf1937ed0f2864beb93f",
+    "crop_in_file_pixels": [
+      1455,
+      210,
+      2496,
+      1470
+    ],
+    "annotation": null
+  },
+  "05-fixed": {
+    "archive": "matrix",
+    "source": "caption-example/05-pottery-class/edited-captions.png",
+    "source_sha256": "b40e3ba3a00974ae90f25c6ae5beb3214fe7dcb6a56c700a11edadb756737d23",
+    "crop_in_file_pixels": [
+      1455,
+      210,
+      2496,
+      1470
+    ],
+    "annotation": null
+  },
+  "scene-08": {
+    "archive": "matrix",
+    "source": "cases/08-night-market/source.png",
+    "source_sha256": "ed4c09abdbee5a1740202d6f2cd95f173fc3717c2ada117585297ed0ef5dfa42",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "scene-01": {
+    "archive": "matrix",
+    "source": "cases/01-florist-handoff/source.png",
+    "source_sha256": "dcd0243066be054b170f8edb3346de123a0bbd3f1472c5a0898e97cdc18c09be",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "scene-09": {
+    "archive": "matrix",
+    "source": "cases/09-ballet-rehearsal/source.png",
+    "source_sha256": "a61f05a4399e0bbd82f7c16499e56edaef6c3c07b06ded575071b7307e00c655",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "scene-03": {
+    "archive": "matrix",
+    "source": "cases/03-library-architecture/source.png",
+    "source_sha256": "b4542744a3f528cb49b96d91f82428cc3e18121dc3dea84ec4b46a515632d345",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "scene-02": {
+    "archive": "matrix",
+    "source": "cases/02-jazz-trio/source.png",
+    "source_sha256": "059880461a04e6cf66b7ab64004416fa4452da270f33a0886d22dbba9410e2c0",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "scene-10": {
+    "archive": "matrix",
+    "source": "cases/10-wildlife-family/source.png",
+    "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "scene-13": {
+    "archive": "matrix",
+    "source": "cases/13-orchard-harvest/source.png",
+    "source_sha256": "5a160c57c1ccafa124f6387a610657bae09c4703e12770f182d23c2373bf7ff0",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "scene-07": {
+    "archive": "matrix",
+    "source": "cases/07-tango-poster/source.png",
+    "source_sha256": "d2cdae9a168836f63ef81ea8e004aeab0851528721d3e60c966f6782ce3bb656",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "scene-05": {
+    "archive": "matrix",
+    "source": "cases/05-pottery-class/source.png",
+    "source_sha256": "c66ae108dee40b2cd35d72a0a052207635956b562c6a40edf9fe46f9fe660e09",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "scene-06": {
+    "archive": "matrix",
+    "source": "cases/06-restaurant-pass/source.png",
+    "source_sha256": "7205f082ed9f5ef2bec0aff78b04c5ac222939f27a0311c8fe615b06f1b0700f",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "scene-11": {
+    "archive": "matrix",
+    "source": "cases/11-coffee-product/source.png",
+    "source_sha256": "bcc341e06021a23a790b6a7994c71e34fbca719be23e19568f2d6278f8cc66a1",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "scene-15": {
+    "archive": "matrix",
+    "source": "cases/15-tailoring-studio/source.png",
+    "source_sha256": "c7d8076c448fcc4c5e42777eb7f580513f62c6e02067d3b3680d36c429e1505a",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "scene-12": {
+    "archive": "matrix",
+    "source": "cases/12-urban-basketball/source.png",
+    "source_sha256": "d104336026e3fb5d2ce881bb380a8daf797c1da032f59f01d377bfd9f59e90a3",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "scene-14": {
+    "archive": "matrix",
+    "source": "cases/14-veterinary-exam/source.png",
+    "source_sha256": "4a4aa26e7b77790cbbb66d5a2c3eedba8339d52de539583ec5bdbfedacbfcaa2",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "scene-16": {
+    "archive": "matrix",
+    "source": "cases/16-museum-diorama/source.png",
+    "source_sha256": "75657255388feeb52a103bb6acc1d90c11a6c9d6e113d3dc5bc75c6209aba445",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "scene-04": {
+    "archive": "matrix",
+    "source": "cases/04-kayak-rescue-practice/source.png",
+    "source_sha256": "64bb8df83e04f1364c31a6619068da322472041f87a8b18f1c06321c6a722bd4",
+    "crop_in_file_pixels": null,
+    "annotation": null
+  },
+  "orchard-src": {
+    "archive": "matrix",
+    "source": "cases/13-orchard-harvest/source.png",
+    "source_sha256": "5a160c57c1ccafa124f6387a610657bae09c4703e12770f182d23c2373bf7ff0",
+    "crop_in_file_pixels": [
+      666,
+      327,
+      836,
+      447
+    ],
+    "annotation": null
+  },
+  "orchard-up": {
+    "archive": "matrix",
+    "source": "cases/13-orchard-harvest/euler-simple.png",
+    "source_sha256": "027968912eb8c22fdbf931847b3ad60b6b11b984b593e032a85b0a24d91f9990",
+    "crop_in_file_pixels": [
+      1998,
+      981,
+      2508,
+      1341
+    ],
+    "annotation": null
+  },
+  "jazz-core": {
+    "archive": "matrix",
+    "source": "cases/02-jazz-trio/source.png",
+    "source_sha256": "059880461a04e6cf66b7ab64004416fa4452da270f33a0886d22dbba9410e2c0",
+    "crop_in_file_pixels": [
+      341,
+      0,
+      683,
+      342
+    ],
+    "annotation": null
+  },
+  "cue-padded_box": {
+    "source": "inputs/matrix/10-wildlife-family/source.png",
+    "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+    "procedure": "experiments/boundary-study/boundary.py:cue",
+    "mode": "padded_box",
+    "input_record": "evidence/boundary-study/outputs/10-wildlife-family/8-padded_box.json",
+    "view_rgb_sha256": "52624f0c02ebfe1ab996a67fa2d4cc43c1e71197c9f20f8cf64334bce1d9f10c",
+    "tile": 8
+  },
+  "cue-full_box": {
+    "source": "inputs/matrix/10-wildlife-family/source.png",
+    "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+    "procedure": "experiments/boundary-study/boundary.py:cue",
+    "mode": "full_box",
+    "input_record": "evidence/boundary-study/outputs/10-wildlife-family/8-full_box.json",
+    "view_rgb_sha256": "5000325f6c5950b5c48c21298396062a11c9170cdb38302e36cb426f68518ca0",
+    "tile": 8
+  },
+  "cue-full_coords": {
+    "source": "inputs/matrix/10-wildlife-family/source.png",
+    "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+    "procedure": "experiments/boundary-study/boundary.py:cue",
+    "mode": "full_coords",
+    "input_record": "evidence/boundary-study/outputs/10-wildlife-family/8-full_coords.json",
+    "view_rgb_sha256": "411f1205b1307e46cbd7bc1ec4766035209f855a790466cb14da4ec6aa2d40ed",
+    "tile": 8
+  },
+  "cue-full_spotlight": {
+    "source": "inputs/matrix/10-wildlife-family/source.png",
+    "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+    "procedure": "experiments/boundary-study/boundary.py:cue",
+    "mode": "full_spotlight",
+    "input_record": "evidence/boundary-study/outputs/10-wildlife-family/8-full_spotlight.json",
+    "view_rgb_sha256": "5f4eeb25f6921fbec8d9784bc7558163041395234094552ca67150bf20bfb378",
+    "tile": 8
+  }
+}

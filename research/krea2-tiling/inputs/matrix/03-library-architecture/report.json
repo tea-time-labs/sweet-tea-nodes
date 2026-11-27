@@ -1,0 +1,371 @@
+{
+  "scene": {
+    "id": "03-library-architecture",
+    "width": 1216,
+    "height": 832,
+    "focus": [
+      0.54,
+      0.55
+    ],
+    "review": "One staircase and continuous balustrade, architectural perspective, two foreground readers with clear silhouettes.",
+    "prompt": "Landscape architecture feature photograph of a newly opened civic library, photographed from the corner of a double-height atrium. A single straight diagonal staircase crosses from the lower left toward the upper right, with a continuous black metal balustrade and repeating vertical posts. Under the stairs, two readers at a long oak table lean together to look at one open art book. Pale brick, tall mullioned windows, diffuse daylight, alternating rails and crisp shadows, measured architectural verticals, quiet public space."
+  },
+  "source_size": [
+    1216,
+    832
+  ],
+  "source_seed": 87923715,
+  "source_sampler": {
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1.0
+  },
+  "upscale_seed": 40309954,
+  "upscale_settings": {
+    "steps": 8,
+    "cfg": 1.0,
+    "denoise": 0.8,
+    "positions": "local",
+    "control": "Vision"
+  },
+  "runs": {
+    "euler-simple": {
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 324.96,
+      "sampling_seconds": 296.54,
+      "peak_torch_allocated_mib": 13859,
+      "peak_torch_reserved_mib": 16076,
+      "status": "ok",
+      "file": "euler-simple.png"
+    },
+    "euler-sgm_uniform": {
+      "sampler": "euler",
+      "scheduler": "sgm_uniform",
+      "sigmas": [
+        0.9266740679740906,
+        0.8805605173110962,
+        0.8257773518562317,
+        0.7596262693405151,
+        0.6781590580940247,
+        0.575360119342804,
+        0.441588819026947,
+        0.26036524772644043,
+        0.0
+      ],
+      "seconds": 323.96,
+      "sampling_seconds": 296.36,
+      "peak_torch_allocated_mib": 13859,
+      "peak_torch_reserved_mib": 16076,
+      "status": "ok",
+      "file": "euler-sgm_uniform.png"
+    },
+    "dpmpp_2m-simple": {
+      "sampler": "dpmpp_2m",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 324.91,
+      "sampling_seconds": 297.16,
+      "peak_torch_allocated_mib": 13859,
+      "peak_torch_reserved_mib": 16076,
+      "status": "ok",
+      "file": "dpmpp_2m-simple.png"
+    }
+  },
+  "node": "STKrea2TurboMatrixTest",
+  "colab_gpu": "NVIDIA L4",
+  "torch": "2.14.1+cu130",
+  "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+  "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+  "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+  "geometry": {
+    "final_size": [
+      3648,
+      2496
+    ],
+    "working_canvas": [
+      3648,
+      2496
+    ],
+    "tile_count": 9,
+    "padding": 256,
+    "tiles": [
+      {
+        "tile": 1,
+        "core_canvas_xyxy": [
+          0,
+          0,
+          1216,
+          832
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          0,
+          1472,
+          1088
+        ],
+        "core_source_xyxy": [
+          0,
+          0,
+          406,
+          278
+        ],
+        "padded_source_xyxy": [
+          0,
+          0,
+          491,
+          363
+        ],
+        "caption": "The interior of a tall, multi-paned mullioned window with white frames set into a pale brick wall, viewed from below."
+      },
+      {
+        "tile": 2,
+        "core_canvas_xyxy": [
+          1216,
+          0,
+          2432,
+          832
+        ],
+        "padded_canvas_xyxy": [
+          960,
+          0,
+          2688,
+          1088
+        ],
+        "core_source_xyxy": [
+          405,
+          0,
+          811,
+          278
+        ],
+        "padded_source_xyxy": [
+          320,
+          0,
+          896,
+          363
+        ],
+        "caption": "A tall, multi-paned mullioned window with white frames set into a pale brick wall, viewed from the corner of a double-height atrium."
+      },
+      {
+        "tile": 3,
+        "core_canvas_xyxy": [
+          2432,
+          0,
+          3648,
+          832
+        ],
+        "padded_canvas_xyxy": [
+          2176,
+          0,
+          3648,
+          1088
+        ],
+        "core_source_xyxy": [
+          810,
+          0,
+          1216,
+          278
+        ],
+        "padded_source_xyxy": [
+          725,
+          0,
+          1216,
+          363
+        ],
+        "caption": "The interior of the cyan-marked section shows a continuous black metal balustrade with repeating vertical posts, set against a backdrop of pale brick and tall, bright windows, casting crisp shadows."
+      },
+      {
+        "tile": 4,
+        "core_canvas_xyxy": [
+          0,
+          832,
+          1216,
+          1664
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          576,
+          1472,
+          1920
+        ],
+        "core_source_xyxy": [
+          0,
+          277,
+          406,
+          555
+        ],
+        "padded_source_xyxy": [
+          0,
+          192,
+          491,
+          640
+        ],
+        "caption": "A tall, multi-paned mullioned window with a pale brick frame, set against a white brick wall, with diffuse daylight illuminating the scene."
+      },
+      {
+        "tile": 5,
+        "core_canvas_xyxy": [
+          1216,
+          832,
+          2432,
+          1664
+        ],
+        "padded_canvas_xyxy": [
+          960,
+          576,
+          2688,
+          1920
+        ],
+        "core_source_xyxy": [
+          405,
+          277,
+          811,
+          555
+        ],
+        "padded_source_xyxy": [
+          320,
+          192,
+          896,
+          640
+        ],
+        "caption": "A close-up view of the black metal balustrade with repeating vertical posts, set against a backdrop of pale brick and tall, bright windows, under diffuse daylight."
+      },
+      {
+        "tile": 6,
+        "core_canvas_xyxy": [
+          2432,
+          832,
+          3648,
+          1664
+        ],
+        "padded_canvas_xyxy": [
+          2176,
+          576,
+          3648,
+          1920
+        ],
+        "core_source_xyxy": [
+          810,
+          277,
+          1216,
+          555
+        ],
+        "padded_source_xyxy": [
+          725,
+          192,
+          1216,
+          640
+        ],
+        "caption": "A tall, multi-paned mullioned window with pale brick walls in the background, framed by the diagonal shadow of the staircase's balustrade."
+      },
+      {
+        "tile": 7,
+        "core_canvas_xyxy": [
+          0,
+          1664,
+          1216,
+          2496
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          1408,
+          1472,
+          2496
+        ],
+        "core_source_xyxy": [
+          0,
+          554,
+          406,
+          832
+        ],
+        "padded_source_xyxy": [
+          0,
+          469,
+          491,
+          832
+        ],
+        "caption": "The interior of the staircase's black metal balustrade, featuring repeating vertical posts and a continuous handrail, is set against a backdrop of pale brick wall and tall, mullioned windows."
+      },
+      {
+        "tile": 8,
+        "core_canvas_xyxy": [
+          1216,
+          1664,
+          2432,
+          2496
+        ],
+        "padded_canvas_xyxy": [
+          960,
+          1408,
+          2688,
+          2496
+        ],
+        "core_source_xyxy": [
+          405,
+          554,
+          811,
+          832
+        ],
+        "padded_source_xyxy": [
+          320,
+          469,
+          896,
+          832
+        ],
+        "caption": "A smooth, light-colored wooden table surface with a simple, unadorned edge, set against a plain, off-white wall under the shadow of a dark staircase."
+      },
+      {
+        "tile": 9,
+        "core_canvas_xyxy": [
+          2432,
+          1664,
+          3648,
+          2496
+        ],
+        "padded_canvas_xyxy": [
+          2176,
+          1408,
+          3648,
+          2496
+        ],
+        "core_source_xyxy": [
+          810,
+          554,
+          1216,
+          832
+        ],
+        "padded_source_xyxy": [
+          725,
+          469,
+          1216,
+          832
+        ],
+        "caption": "Two individuals lean over a long oak table, intently studying an open art book, with pale brick walls and tall, mullioned windows forming the background."
+      }
+    ],
+    "caption_and_encode_seconds": 63.97
+  }
+}

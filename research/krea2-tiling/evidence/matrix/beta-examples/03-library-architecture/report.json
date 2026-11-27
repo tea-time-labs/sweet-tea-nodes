@@ -1,0 +1,37 @@
+{
+  "sampler": "euler",
+  "scheduler": "beta",
+  "sigmas": [
+    0.9575174450874329,
+    0.9118037223815918,
+    0.8473109602928162,
+    0.7595839500427246,
+    0.642623245716095,
+    0.49117511510849,
+    0.30697011947631836,
+    0.11548543721437454,
+    0.0
+  ],
+  "seconds": 323.75,
+  "sampling_seconds": 295.43,
+  "peak_torch_allocated_mib": 13860,
+  "peak_torch_reserved_mib": 16076,
+  "guide_applications": 0,
+  "status": "ok",
+  "file": "euler-beta.png",
+  "case": "03-library-architecture",
+  "source_sha256": "b4542744a3f528cb49b96d91f82428cc3e18121dc3dea84ec4b46a515632d345",
+  "source_size": [
+    1216,
+    832
+  ],
+  "output_size": [
+    3648,
+    2496
+  ],
+  "seed": 40309954,
+  "steps": 8,
+  "cfg": 1.0,
+  "denoise": 0.8,
+  "colab_gpu": "NVIDIA L4"
+}

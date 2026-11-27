@@ -1,0 +1,26 @@
+{
+  "method": "duel",
+  "case": "04-kayak-rescue-practice",
+  "tile": 7,
+  "core": [
+    0,
+    480,
+    427,
+    720
+  ],
+  "padded": [
+    0,
+    394,
+    512,
+    720
+  ],
+  "caption": "A mustard yellow kayak rests in shallow, rippling water near a pebbled shore, with its black circular hatch cover and a yellow paddle blade visible above the surface. The kayak’s front edge curves toward the viewer.",
+  "notes": [
+    "A yellow kayak hull rests at the water’s edge, its black handle and paddle blade visible above the surface, with pebbled shore in the foreground. The paddle’s blade overlaps the kayak’s top, while the hull’s front edge curves toward the viewer.",
+    "The interior of a mustard yellow kayak, showing its smooth, slightly curved hull and a black circular hatch cover, rests in shallow, rippling water with a pebbled shore in the foreground."
+  ],
+  "seconds": 11.25,
+  "gpu": "Tesla T4",
+  "source_sha256": "64bb8df83e04f1364c31a6619068da322472041f87a8b18f1c06321c6a722bd4",
+  "method_sha256": "9762db3082b0d03b27fbf466ac92daf3f33b42f0babb66103bc3712d5bacc2e0"
+}

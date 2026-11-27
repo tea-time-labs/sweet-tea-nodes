@@ -1,0 +1,25 @@
+{
+  "method": "context_check",
+  "case": "12-urban-basketball",
+  "tile": 2,
+  "core": [
+    234,
+    0,
+    470,
+    491
+  ],
+  "padded": [
+    149,
+    0,
+    555,
+    576
+  ],
+  "caption": "A weathered backboard with green metal framing supports a rusted hoop and net, viewed from below against a pale sky. The edge of the backboard cuts off the top of the image, revealing only the lower portion of the hoop and net.",
+  "notes": [
+    "Backboard, hoop, net, basketball, metal pole, paint streaks"
+  ],
+  "seconds": 17.48,
+  "gpu": "Tesla T4",
+  "source_sha256": "d104336026e3fb5d2ce881bb380a8daf797c1da032f59f01d377bfd9f59e90a3",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

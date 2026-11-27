@@ -1,0 +1,39 @@
+{
+  "case": "05-pottery-class",
+  "tile": 5,
+  "mode": "padded_box",
+  "caption": "The rectangle frames a woman’s torso and hands, showing a worn denim apron stained with clay and her hands covered in white clay slip as she shapes a bowl on the wheel.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [190, 148, 810, 852] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Vertical editorial photograph in a working ceramics studio. A seated woman in a chambray apron shapes one wet white bowl on a pottery wheel. A standing teacher on her left leans in and demonstrates with one hovering clay-smudged hand, without touching the student's hands. Intimate mid shot, circular bowl and wheel near center, warm side light, worn aprons, shelves of unfinished ceramics and a white wash bucket in the far background. Natural human expressions and clearly readable hand positions.",
+  "core": [
+    277,
+    405,
+    555,
+    811
+  ],
+  "padded": [
+    192,
+    320,
+    640,
+    896
+  ],
+  "box_in_view": [
+    85,
+    85,
+    363,
+    491
+  ],
+  "normalized": [
+    190,
+    148,
+    810,
+    852
+  ],
+  "view_size": [
+    448,
+    576
+  ],
+  "view_rgb_sha256": "4fb973947b1d8879e3a8d269ffb220b66af5f8a2ac062de87cdc19b9faf040bb",
+  "source_sha256": "c66ae108dee40b2cd35d72a0a052207635956b562c6a40edf9fe46f9fe660e09",
+  "gpu": "Tesla T4",
+  "seconds": 9.53
+}

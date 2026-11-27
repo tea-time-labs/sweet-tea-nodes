@@ -1,0 +1,371 @@
+{
+  "scene": {
+    "id": "13-orchard-harvest",
+    "width": 1472,
+    "height": 704,
+    "focus": [
+      0.52,
+      0.56
+    ],
+    "review": "Three workers, exactly one shared foreground crate, orderly orchard perspective and clear hand positions.",
+    "prompt": "Panoramic farm-to-table brand photograph in an apple orchard during late harvest. Three people work together across the frame. At center, two adults on opposite sides lift one wooden crate brimming with red apples. At left and a little farther back, a third adult reaches into a tree to pick an apple. Orchard rows converge toward a misty opening, grass and dappled shadows underfoot, late warm sunlight, hand and crate edge continuity, subtle knit and canvas textures. Observational photography, no copied or mirrored poses."
+  },
+  "source_size": [
+    1472,
+    704
+  ],
+  "source_seed": 87925625,
+  "source_sampler": {
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1.0
+  },
+  "upscale_seed": 40311264,
+  "upscale_settings": {
+    "steps": 8,
+    "cfg": 1.0,
+    "denoise": 0.8,
+    "positions": "local",
+    "control": "Vision"
+  },
+  "runs": {
+    "euler-simple": {
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 334.7,
+      "sampling_seconds": 306.2,
+      "peak_torch_allocated_mib": 13899,
+      "peak_torch_reserved_mib": 16156,
+      "status": "ok",
+      "file": "euler-simple.png"
+    },
+    "euler-sgm_uniform": {
+      "sampler": "euler",
+      "scheduler": "sgm_uniform",
+      "sigmas": [
+        0.9266740679740906,
+        0.8805605173110962,
+        0.8257773518562317,
+        0.7596262693405151,
+        0.6781590580940247,
+        0.575360119342804,
+        0.441588819026947,
+        0.26036524772644043,
+        0.0
+      ],
+      "seconds": 335.02,
+      "sampling_seconds": 306.49,
+      "peak_torch_allocated_mib": 13899,
+      "peak_torch_reserved_mib": 16156,
+      "status": "ok",
+      "file": "euler-sgm_uniform.png"
+    },
+    "dpmpp_2m-simple": {
+      "sampler": "dpmpp_2m",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 336.52,
+      "sampling_seconds": 308.13,
+      "peak_torch_allocated_mib": 13899,
+      "peak_torch_reserved_mib": 16156,
+      "status": "ok",
+      "file": "dpmpp_2m-simple.png"
+    }
+  },
+  "node": "STKrea2TurboMatrixTest",
+  "colab_gpu": "NVIDIA L4",
+  "torch": "2.14.1+cu130",
+  "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+  "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+  "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+  "geometry": {
+    "final_size": [
+      4416,
+      2112
+    ],
+    "working_canvas": [
+      4416,
+      2112
+    ],
+    "tile_count": 9,
+    "padding": 256,
+    "tiles": [
+      {
+        "tile": 1,
+        "core_canvas_xyxy": [
+          0,
+          0,
+          1472,
+          704
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          0,
+          1728,
+          960
+        ],
+        "core_source_xyxy": [
+          0,
+          0,
+          491,
+          235
+        ],
+        "padded_source_xyxy": [
+          0,
+          0,
+          576,
+          320
+        ],
+        "caption": "A woman in a grey sweater reaches up to pick a red apple from a tree, her hands and the fruit in focus against a backdrop of green leaves and other apples."
+      },
+      {
+        "tile": 2,
+        "core_canvas_xyxy": [
+          1472,
+          0,
+          2944,
+          704
+        ],
+        "padded_canvas_xyxy": [
+          1216,
+          0,
+          3200,
+          960
+        ],
+        "core_source_xyxy": [
+          490,
+          0,
+          982,
+          235
+        ],
+        "padded_source_xyxy": [
+          405,
+          0,
+          1067,
+          320
+        ],
+        "caption": "A man and a woman, both in profile, look down at a wooden crate filled with red apples they are jointly lifting, set against a backdrop of converging orchard rows fading into misty light."
+      },
+      {
+        "tile": 3,
+        "core_canvas_xyxy": [
+          2944,
+          0,
+          4416,
+          704
+        ],
+        "padded_canvas_xyxy": [
+          2688,
+          0,
+          4416,
+          960
+        ],
+        "core_source_xyxy": [
+          981,
+          0,
+          1472,
+          235
+        ],
+        "padded_source_xyxy": [
+          896,
+          0,
+          1472,
+          320
+        ],
+        "caption": "A close-up view of a dense apple tree with green leaves and red apples, set against a softly blurred background of more trees and warm, diffused light."
+      },
+      {
+        "tile": 4,
+        "core_canvas_xyxy": [
+          0,
+          704,
+          1472,
+          1408
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          448,
+          1728,
+          1664
+        ],
+        "core_source_xyxy": [
+          0,
+          234,
+          491,
+          470
+        ],
+        "padded_source_xyxy": [
+          0,
+          149,
+          576,
+          555
+        ],
+        "caption": "A close-up of a tree branch laden with red apples, its green leaves and textured bark visible, with a person's arm reaching to pick an apple."
+      },
+      {
+        "tile": 5,
+        "core_canvas_xyxy": [
+          1472,
+          704,
+          2944,
+          1408
+        ],
+        "padded_canvas_xyxy": [
+          1216,
+          448,
+          3200,
+          1664
+        ],
+        "core_source_xyxy": [
+          490,
+          234,
+          982,
+          470
+        ],
+        "padded_source_xyxy": [
+          405,
+          149,
+          1067,
+          555
+        ],
+        "caption": "Two adults lift a wooden crate filled with red apples, their hands gripping the sides, with a grassy orchard path and rows of trees receding into a misty light behind them."
+      },
+      {
+        "tile": 6,
+        "core_canvas_xyxy": [
+          2944,
+          704,
+          4416,
+          1408
+        ],
+        "padded_canvas_xyxy": [
+          2688,
+          448,
+          4416,
+          1664
+        ],
+        "core_source_xyxy": [
+          981,
+          234,
+          1472,
+          470
+        ],
+        "padded_source_xyxy": [
+          896,
+          149,
+          1472,
+          555
+        ],
+        "caption": "Rows of apple trees with dense green foliage and clusters of red apples, set against a softly blurred background of more trees and dappled sunlight on the grass."
+      },
+      {
+        "tile": 7,
+        "core_canvas_xyxy": [
+          0,
+          1408,
+          1472,
+          2112
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          1152,
+          1728,
+          2112
+        ],
+        "core_source_xyxy": [
+          0,
+          469,
+          491,
+          704
+        ],
+        "padded_source_xyxy": [
+          0,
+          384,
+          576,
+          704
+        ],
+        "caption": "A grassy orchard floor scattered with fallen red apples under late sun, with tree trunks and soil visible."
+      },
+      {
+        "tile": 8,
+        "core_canvas_xyxy": [
+          1472,
+          1408,
+          2944,
+          2112
+        ],
+        "padded_canvas_xyxy": [
+          1216,
+          1152,
+          3200,
+          2112
+        ],
+        "core_source_xyxy": [
+          490,
+          469,
+          982,
+          704
+        ],
+        "padded_source_xyxy": [
+          405,
+          384,
+          1067,
+          704
+        ],
+        "caption": "A person's lower legs in khaki trousers and brown boots stand on sun-dappled green grass, holding a wooden crate filled with red apples, with the grass texture and shadows visible beneath them."
+      },
+      {
+        "tile": 9,
+        "core_canvas_xyxy": [
+          2944,
+          1408,
+          4416,
+          2112
+        ],
+        "padded_canvas_xyxy": [
+          2688,
+          1152,
+          4416,
+          2112
+        ],
+        "core_source_xyxy": [
+          981,
+          469,
+          1472,
+          704
+        ],
+        "padded_source_xyxy": [
+          896,
+          384,
+          1472,
+          704
+        ],
+        "caption": "A grassy orchard floor scattered with fallen red apples under late sun, with tree trunks and dappled shadows in the background."
+      }
+    ],
+    "caption_and_encode_seconds": 62.11
+  }
+}

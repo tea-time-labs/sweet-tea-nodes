@@ -1,0 +1,371 @@
+{
+  "scene": {
+    "id": "04-kayak-rescue-practice",
+    "width": 1280,
+    "height": 720,
+    "focus": [
+      0.49,
+      0.58
+    ],
+    "review": "Two paddlers, two distinct kayaks, single helping grip, consistent open-water horizon.",
+    "prompt": "Wide 16:9 outdoor brand photograph at the edge of a calm glacial lake. Two adult kayakers wearing life jackets practice a partner rescue. One kneels in a mustard kayak at left, reaching across to a friend steadying a navy kayak at right. A single yellow-bladed paddle lies horizontally across the mustard deck. Both faces and the meeting hands are readable, boats are parallel but separate, distant firs and layered blue mountain ridges along a level horizon, glints and small ripples in the foreground, cool overcast light."
+  },
+  "source_size": [
+    1280,
+    720
+  ],
+  "source_seed": 87923906,
+  "source_sampler": {
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1.0
+  },
+  "upscale_seed": 40310085,
+  "upscale_settings": {
+    "steps": 8,
+    "cfg": 1.0,
+    "denoise": 0.8,
+    "positions": "local",
+    "control": "Vision"
+  },
+  "runs": {
+    "euler-simple": {
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 302.93,
+      "sampling_seconds": 277.69,
+      "peak_torch_allocated_mib": 13803,
+      "peak_torch_reserved_mib": 15998,
+      "status": "ok",
+      "file": "euler-simple.png"
+    },
+    "euler-sgm_uniform": {
+      "sampler": "euler",
+      "scheduler": "sgm_uniform",
+      "sigmas": [
+        0.9266740679740906,
+        0.8805605173110962,
+        0.8257773518562317,
+        0.7596262693405151,
+        0.6781590580940247,
+        0.575360119342804,
+        0.441588819026947,
+        0.26036524772644043,
+        0.0
+      ],
+      "seconds": 302.96,
+      "sampling_seconds": 277.81,
+      "peak_torch_allocated_mib": 13803,
+      "peak_torch_reserved_mib": 15998,
+      "status": "ok",
+      "file": "euler-sgm_uniform.png"
+    },
+    "dpmpp_2m-simple": {
+      "sampler": "dpmpp_2m",
+      "scheduler": "simple",
+      "sigmas": [
+        0.9266473650932312,
+        0.880513072013855,
+        0.8257015943527222,
+        0.7595109343528748,
+        0.677986741065979,
+        0.5751029849052429,
+        0.44119977951049805,
+        0.2597584128379822,
+        0.0
+      ],
+      "seconds": 303.5,
+      "sampling_seconds": 277.7,
+      "peak_torch_allocated_mib": 13803,
+      "peak_torch_reserved_mib": 15998,
+      "status": "ok",
+      "file": "dpmpp_2m-simple.png"
+    }
+  },
+  "node": "STKrea2TurboMatrixTest",
+  "colab_gpu": "NVIDIA L4",
+  "torch": "2.14.1+cu130",
+  "comfyui": "7c78b5641ab2d6cb7f7766a183a8a43a59de0a8b",
+  "st_nodes": "8c97fe110adb6e3a1c92976c2fd7f3d82c2e0935",
+  "weights": "Comfy-Org/Krea-2@588feaf955b08b9ac4723eeb751752ab045dba71",
+  "geometry": {
+    "final_size": [
+      3840,
+      2160
+    ],
+    "working_canvas": [
+      3840,
+      2176
+    ],
+    "tile_count": 9,
+    "padding": 256,
+    "tiles": [
+      {
+        "tile": 1,
+        "core_canvas_xyxy": [
+          0,
+          0,
+          1280,
+          704
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          0,
+          1536,
+          960
+        ],
+        "core_source_xyxy": [
+          0,
+          0,
+          427,
+          235
+        ],
+        "padded_source_xyxy": [
+          0,
+          0,
+          512,
+          320
+        ],
+        "caption": "A row of tall, slender evergreen trees stands along a shoreline, with softly blurred, layered mountain ridges receding into the distance under an overcast sky."
+      },
+      {
+        "tile": 2,
+        "core_canvas_xyxy": [
+          1280,
+          0,
+          2560,
+          704
+        ],
+        "padded_canvas_xyxy": [
+          1024,
+          0,
+          2816,
+          960
+        ],
+        "core_source_xyxy": [
+          426,
+          0,
+          854,
+          235
+        ],
+        "padded_source_xyxy": [
+          341,
+          0,
+          939,
+          320
+        ],
+        "caption": "Layered blue mountain ridges recede into a hazy distance under a soft, overcast sky."
+      },
+      {
+        "tile": 3,
+        "core_canvas_xyxy": [
+          2560,
+          0,
+          3840,
+          704
+        ],
+        "padded_canvas_xyxy": [
+          2304,
+          0,
+          3840,
+          960
+        ],
+        "core_source_xyxy": [
+          853,
+          0,
+          1280,
+          235
+        ],
+        "padded_source_xyxy": [
+          768,
+          0,
+          1280,
+          320
+        ],
+        "caption": "Layered blue mountain ridges with dense evergreen forests under a soft, overcast sky."
+      },
+      {
+        "tile": 4,
+        "core_canvas_xyxy": [
+          0,
+          704,
+          1280,
+          1440
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          448,
+          1536,
+          1696
+        ],
+        "core_source_xyxy": [
+          0,
+          234,
+          427,
+          480
+        ],
+        "padded_source_xyxy": [
+          0,
+          149,
+          512,
+          566
+        ],
+        "caption": "The cyan rectangle in Image 1, which is the inner tile, is a close-up of the calm, rippling lake surface with distant fir trees and layered blue mountains in the background."
+      },
+      {
+        "tile": 5,
+        "core_canvas_xyxy": [
+          1280,
+          704,
+          2560,
+          1440
+        ],
+        "padded_canvas_xyxy": [
+          1024,
+          448,
+          2816,
+          1696
+        ],
+        "core_source_xyxy": [
+          426,
+          234,
+          854,
+          480
+        ],
+        "padded_source_xyxy": [
+          341,
+          149,
+          939,
+          566
+        ],
+        "caption": "Two men in life jackets, one in a blue shirt and the other in a yellow shirt, are shaking hands across the water while kneeling in their kayaks, with the calm lake and distant mountains in the background."
+      },
+      {
+        "tile": 6,
+        "core_canvas_xyxy": [
+          2560,
+          704,
+          3840,
+          1440
+        ],
+        "padded_canvas_xyxy": [
+          2304,
+          448,
+          3840,
+          1696
+        ],
+        "core_source_xyxy": [
+          853,
+          234,
+          1280,
+          480
+        ],
+        "padded_source_xyxy": [
+          768,
+          149,
+          1280,
+          566
+        ],
+        "caption": "The calm, rippling surface of the glacial lake under cool overcast light, with distant forested mountains along the horizon."
+      },
+      {
+        "tile": 7,
+        "core_canvas_xyxy": [
+          0,
+          1440,
+          1280,
+          2176
+        ],
+        "padded_canvas_xyxy": [
+          0,
+          1184,
+          1536,
+          2176
+        ],
+        "core_source_xyxy": [
+          0,
+          480,
+          427,
+          720
+        ],
+        "padded_source_xyxy": [
+          0,
+          394,
+          512,
+          720
+        ],
+        "caption": "The interior of a mustard yellow kayak, showing its smooth, slightly curved hull, a black circular hatch cover, and a yellow paddle blade resting horizontally across the deck, with the water's surface and pebbled shore visible in the foreground."
+      },
+      {
+        "tile": 8,
+        "core_canvas_xyxy": [
+          1280,
+          1440,
+          2560,
+          2176
+        ],
+        "padded_canvas_xyxy": [
+          1024,
+          1184,
+          2816,
+          2176
+        ],
+        "core_source_xyxy": [
+          426,
+          480,
+          854,
+          720
+        ],
+        "padded_source_xyxy": [
+          341,
+          394,
+          939,
+          720
+        ],
+        "caption": "A yellow-bladed paddle rests horizontally across the deck of a mustard kayak, with the water's surface showing small ripples and glints in the foreground."
+      },
+      {
+        "tile": 9,
+        "core_canvas_xyxy": [
+          2560,
+          1440,
+          3840,
+          2176
+        ],
+        "padded_canvas_xyxy": [
+          2304,
+          1184,
+          3840,
+          2176
+        ],
+        "core_source_xyxy": [
+          853,
+          480,
+          1280,
+          720
+        ],
+        "padded_source_xyxy": [
+          768,
+          394,
+          1280,
+          720
+        ],
+        "caption": "The bow of a navy kayak floats on calm, rippling water, its dark hull and black bungee cords visible against the reflective surface."
+      }
+    ],
+    "caption_and_encode_seconds": 61.06
+  }
+}

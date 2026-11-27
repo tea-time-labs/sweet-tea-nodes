@@ -1,0 +1,38 @@
+[
+  {
+    "case": "05-pottery-class",
+    "tile": 6,
+    "wording": "original",
+    "caption": "A painter’s arm and shoulder rest near a white bucket with a blue label, partially visible in the foreground, while a shelf holds blurred containers behind."
+  },
+  {
+    "case": "05-pottery-class",
+    "tile": 6,
+    "wording": "removed",
+    "caption": "A person’s arm and shoulder rest near a white bucket with a blue label, both partially cut off by the frame’s edge, with the bucket positioned to the right and slightly behind the arm."
+  },
+  {
+    "case": "12-urban-basketball",
+    "tile": 6,
+    "wording": "original",
+    "caption": "A man’s head and raised hand are seen from below, his face tilted upward toward a pale sky, with a building’s corner visible in the lower right."
+  },
+  {
+    "case": "12-urban-basketball",
+    "tile": 6,
+    "wording": "removed",
+    "caption": "A man with short dark hair and a sleeveless top looks upward, his right hand raised toward the bright sky, with a building visible in the background."
+  },
+  {
+    "case": "14-veterinary-exam",
+    "tile": 4,
+    "wording": "original",
+    "caption": "A person in a cream sweater cradles a black-and-white dog, their hands gently resting on the animal’s back, with the dog’s fur partially cut off by the frame."
+  },
+  {
+    "case": "14-veterinary-exam",
+    "tile": 4,
+    "wording": "removed",
+    "caption": "A person in a beige sweater gently holds a black-and-white dog, with their hands resting on the dog’s back and side, near the neck area. The dog’s fur is thick and textured, with a white patch visible against the dark coat."
+  }
+]

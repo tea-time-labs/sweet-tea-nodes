@@ -1,0 +1,26 @@
+{
+  "method": "split_check",
+  "case": "07-tango-poster",
+  "tile": 6,
+  "core": [
+    597,
+    384,
+    896,
+    768
+  ],
+  "padded": [
+    512,
+    298,
+    896,
+    854
+  ],
+  "caption": "A dark blue horse silhouette stands left of center, its head and neck cut off by the edge, with a red-orange patch at the top left corner. Below, a red ground plane suggests a person’s shoulder and head, partially visible at the bottom right, overlapping the horse’s lower edge.",
+  "notes": [
+    "Dark blue silhouette of a horse’s head and neck, with a red-orange patch at the top left.",
+    "Silhouette of a person’s head and shoulder, abstract red ground plane."
+  ],
+  "seconds": 23.88,
+  "gpu": "Tesla T4",
+  "source_sha256": "d2cdae9a168836f63ef81ea8e004aeab0851528721d3e60c966f6782ce3bb656",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

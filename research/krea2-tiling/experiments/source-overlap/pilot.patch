@@ -1,0 +1,241 @@
+diff --git a/docs/krea2-upscale.md b/docs/krea2-upscale.md
+index ad6b652..d8036ae 100644
+--- a/docs/krea2-upscale.md
++++ b/docs/krea2-upscale.md
+@@ -17,6 +17,7 @@ context around each core, clipped to the canvas at the edges.
+ | Tile size | Maximum core size in pixels when Tile count is Auto. The output dimensions determine the row and column counts independently. |
+ | Upscale factor (`upscale_by`) | Output width and height relative to the input, rounded to the 32-pixel lattice. It is separate from the number of tiles. |
+ | Tile padding | Extra source context around each core, clipped at the canvas edges. It does not add cores to the grid. |
++| Vision overlap | Blend combines the padded predictions at every step. Match source gives the early writes in a shared area to the tile whose predicted layout more closely follows the source. The usual blend resumes halfway through sampling. |
+ | Denoise | Img2img denoising amount passed to the sampler, separate from control-model strength and output scale. |
+ | Control strength | Weight strength for Depth, Canny or Tile control. Zero bypasses those controls; this input does not adjust Vision mode. |
+ | Sampler and scheduler | Sampling algorithm and noise schedule. Choosing a tile count does not select either of them. |
+diff --git a/tests/test_krea2_upscale.py b/tests/test_krea2_upscale.py
+index d692f46..5c47f74 100644
+--- a/tests/test_krea2_upscale.py
++++ b/tests/test_krea2_upscale.py
+@@ -226,6 +226,61 @@ class UpscaleTests(unittest.TestCase):
+         self.assertGreater(clip.crops[0].mean(), clip.crops[4].mean())
+         self.assertTrue(all(krea2_vision.VISION_BLOCK in template for template in clip.templates))
+ 
++    def test_source_matched_overlap_uses_one_early_writer_and_releases_it(self):
++        from usdu_pose_tiled.krea2_overlap import SourceMatchedVision
++        from usdu_pose_tiled.krea2_vision import Tile
++
++        # The two windows straddle a source feature. The upper model wants to
++        # move it high, and the lower model predicts its original placement.
++        tiles = [Tile(0, 24, 0, 16, torch.ones(24, 16)),
++                 Tile(8, 32, 0, 16, torch.ones(24, 16))]
++        source = torch.zeros(1, 2, 1, 32, 16)
++        source[..., 18:20, 4:12] = 1
++        options = {"cond_or_uncond": [0], "sample_sigmas": torch.tensor([1., .5, 0.])}
++        wrapper = SourceMatchedVision(tiles, [torch.zeros(1, 1, 1), torch.ones(1, 1, 1)],
++                                      2, 32, 16, source)
++        x = torch.zeros_like(source)
++        calls = []
++        def predict(tile, sigma, cond, mask, refs, opts):
++            i = cond.item()
++            calls.append(i)
++            clean = source[tiles[i].region].clone()
++            if i == 0:
++                clean = clean.roll(-5, dims=-2)
++            return -clean / sigma
++
++        with patch.object(sys.modules["comfy.model_management"],
++                          "throw_exception_if_processing_interrupted", lambda: None, create=True):
++            early = wrapper(predict, x, torch.tensor([1.]), torch.tensor(0), transformer_options=options)
++            late = wrapper(predict, x, torch.tensor([.5]), torch.tensor(0), transformer_options=options)
++        self.assertEqual(calls, [0, 1, 0, 1])
++        self.assertEqual(wrapper.choices[0][2], 1)
++        self.assertTrue(torch.all(early[..., 13, 7] == 0))
++        self.assertTrue(torch.all(early[..., 18, 7] == -1))
++        self.assertTrue(torch.all(late[..., 13, 7] == -1))
++        self.assertTrue(torch.all(late[..., 18, 7] == -1))
++
++    def test_source_scores_preserve_the_blend_on_ties_and_normalize_four_way_junctions(self):
++        from usdu_pose_tiled.krea2_overlap import matched_tiles
++        from usdu_pose_tiled.krea2_vision import _tiles
++
++        tiles = _tiles(256, 256, 128, 128, 48, 2)
++        total = torch.zeros(32, 32)
++        for tile in tiles:
++            total[tile.region] += tile.weight
++        ties = [torch.ones_like(t.weight) for t in tiles]
++        same, choices = matched_tiles(tiles, total, ties)
++        self.assertTrue(all(owner is None for _, _, owner in choices))
++        self.assertTrue(all(torch.equal(t.weight, n.weight) for t, n in zip(tiles, same)))
++        scores = [v * (i+1) for i, v in enumerate(ties)]
++        selected, choices = matched_tiles(tiles, total, scores)
++        self.assertTrue(any(len(errors) == 4 and owner == 0 for _, errors, owner in choices))
++        check = torch.zeros_like(total)
++        for tile in selected:
++            check[tile.region] += tile.weight
++        self.assertTrue(torch.allclose(total, check, atol=1e-6))
++        self.assertEqual(float(selected[0].weight[16, 16]), float(total[16, 16]))
++
+     def test_vision_rejects_text_only_tokenizer_output(self):
+         from usdu_pose_tiled import krea2_vision
+ 
+diff --git a/usdu_pose_tiled/krea2_control.py b/usdu_pose_tiled/krea2_control.py
+index 4acbee6..718744e 100644
+--- a/usdu_pose_tiled/krea2_control.py
++++ b/usdu_pose_tiled/krea2_control.py
+@@ -98,6 +98,8 @@ class STKrea2UltimateUpscale:
+             "tile_count": (TILE_COUNTS, {"default": "Auto", "tooltip":
+                 "Choose the total number of tiles in a square grid. Auto uses Tile size. "
+                 "Fewer tiles on a large output use more GPU memory."}),
++            "vision_overlap": (["Blend", "Match source"], {"default": "Blend",
++                "tooltip": "In Match source, early overlapping Vision predictions compete on how closely they match the source layout."}),
+         }}
+ 
+     RETURN_TYPES = ("IMAGE",)
+@@ -113,7 +115,7 @@ class STKrea2UltimateUpscale:
+                 sampler_name, scheduler, denoise, tile_size, tile_padding, mask_blur,
+                 control_mode, control_strength, depth_lora, canny_lora, tile_lora,
+                 depth_resolution, canny_low, canny_high, upscale_model=None, clip=None,
+-                vision_prompt="", tile_count="Auto"):
++                vision_prompt="", tile_count="Auto", vision_overlap="Blend"):
+         w, h, tw, th = dimensions(image.shape[2], image.shape[1], upscale_by, tile_size)
+         tile_count = str(tile_count)
+         if tile_count not in TILE_COUNTS:
+@@ -166,7 +168,7 @@ class STKrea2UltimateUpscale:
+             from .krea2_vision import upscale_with_vision
+             return upscale_with_vision(source, image, model, clip, vision_prompt, negative, vae,
+                                        tw, th, tile_padding, seed, steps, cfg, sampler_name,
+-                                       scheduler, denoise, tile_grid=tile_grid)
++                                       scheduler, denoise, tile_grid=tile_grid, vision_overlap=vision_overlap)
+ 
+         return UltimateSDUpscalePoseTiled().upscale(
+             image=image, model=model, positive=positive, negative=negative, vae=vae,
+diff --git a/usdu_pose_tiled/krea2_vision.py b/usdu_pose_tiled/krea2_vision.py
+index e55bdff..8208d3d 100644
+--- a/usdu_pose_tiled/krea2_vision.py
++++ b/usdu_pose_tiled/krea2_vision.py
+@@ -144,7 +144,7 @@ class TiledVision:
+ @torch.inference_mode()
+ def upscale_with_vision(source, image, model, clip, prompt, negative, vae, core_width,
+                         core_height, padding, seed, steps, cfg, sampler_name, scheduler,
+-                        denoise, tile_grid=None):
++                        denoise, tile_grid=None, vision_overlap="Blend"):
+     from comfy.ldm.krea2.model import SingleStreamDiT
+     from comfy.model_management import throw_exception_if_processing_interrupted
+     from comfy.patcher_extension import WrappersMP
+@@ -185,7 +185,12 @@ def upscale_with_vision(source, image, model, clip, prompt, negative, vae, core_
+         frame_model = model
+         if tiled:
+             frame_model = model.clone()
+-            wrapper = TiledVision(tiles, contexts, patch, *latent.shape[-2:])
++            if vision_overlap == "Match source":
++                from .krea2_overlap import SourceMatchedVision
++                source_latent = frame_model.model.process_latent_in(latent)
++                wrapper = SourceMatchedVision(tiles, contexts, patch, *latent.shape[-2:], source_latent)
++            else:
++                wrapper = TiledVision(tiles, contexts, patch, *latent.shape[-2:])
+             frame_model.add_wrapper_with_key(WrappersMP.DIFFUSION_MODEL, CANVAS_ORIGIN, wrapper)
+             frame_model.set_model_patch(_position_on_canvas, "post_input")
+         # The first context gives Comfy the correct conditioning shape and is used
+diff --git a/usdu_pose_tiled/krea2_overlap.py b/usdu_pose_tiled/krea2_overlap.py
+new file mode 100644
+index 0000000..7d1f91b
+--- /dev/null
++++ b/usdu_pose_tiled/krea2_overlap.py
+@@ -0,0 +1,99 @@
++"""Choose one source-aligned prediction in each early Krea2 Vision overlap."""
++from dataclasses import replace
++
++import torch
++import torch.nn.functional as F
++
++from .krea2_vision import TiledVision
++
++
++def matched_tiles(tiles, total, errors):
++    """Keep an overlap together when comparing candidates against the source."""
++    height, width = total.shape
++    xs = sorted({v for tile in tiles for v in (tile.left, tile.right)})
++    ys = sorted({v for tile in tiles for v in (tile.top, tile.bottom)})
++    weights = [tile.weight.clone() for tile in tiles]
++    choices = []
++    for top, bottom in zip(ys, ys[1:]):
++        for left, right in zip(xs, xs[1:]):
++            covering = [i for i, tile in enumerate(tiles) if tile.top <= top < tile.bottom
++                        and tile.left <= left < tile.right]
++            if len(covering) < 2:
++                continue
++            rect = (top, bottom, left, right)
++            crops = {i: (slice(top-tiles[i].top, bottom-tiles[i].top),
++                         slice(left-tiles[i].left, right-tiles[i].left)) for i in covering}
++            scores = {i: float(errors[i][crops[i]].mean()) for i in covering}
++            first, second = sorted(scores, key=scores.get)[:2]
++            # Small score differences leave the existing blend alone.
++            owner = first if scores[first] < .9 * scores[second] else None
++            choices.append((rect, scores, owner))
++            if owner is None:
++                continue
++            yy = torch.arange(top, bottom, device=total.device) + .5
++            xx = torch.arange(left, right, device=total.device) + .5
++            v = torch.ones_like(yy)
++            h = torch.ones_like(xx)
++            if top:
++                v = v.minimum((yy-top)/4)
++            if bottom != height:
++                v = v.minimum((bottom-yy)/4)
++            if left:
++                h = h.minimum((xx-left)/4)
++            if right != width:
++                h = h.minimum((right-xx)/4)
++            alpha = torch.minimum(v[:, None], h[None, :])
++            for i in covering:
++                target = total[top:bottom, left:right] if i == owner else 0.
++                weights[i][crops[i]].lerp_(torch.as_tensor(target, dtype=weights[i].dtype,
++                                                          device=weights[i].device), alpha)
++    return [replace(tile, weight=w) for tile, w in zip(tiles, weights)], choices
++
++
++class SourceMatchedVision(TiledVision):
++    def __init__(self, tiles, contexts, patch, h, w, source):
++        super().__init__(tiles, contexts, patch, h, w)
++        self.source = source
++        self.early = None
++        self.choices = []
++
++    def __call__(self, executor, x, timesteps, context, attention_mask=None,
++                 ref_latents=None, transformer_options=None, **kwargs):
++        options = transformer_options or {}
++        args = (x, timesteps, context, attention_mask, ref_latents, options)
++        sigmas = options.get("sample_sigmas")
++        groups = options.get("cond_or_uncond") or [0]
++        if sigmas is None or timesteps[0] <= sigmas[len(sigmas) // 2]:
++            return super().__call__(executor, *args, **kwargs)
++        if self.early is not None:
++            return self.early(executor, *args, **kwargs)
++        if 0 not in groups:
++            return super().__call__(executor, *args, **kwargs)
++
++        # The normal wrapper handles context, positions, masks and CFG groups.
++        # Cache its first predictions to change the weights without another model pass.
++        predictions = []
++        def capture(*inputs, **opts):
++            pred = executor(*inputs, **opts)
++            predictions.append(pred)
++            return pred
++
++        super().__call__(capture, *args, **kwargs)
++        batch = x.shape[0] // len(groups)
++        cond = groups.index(0)
++        row = cond * batch
++        source = self.source.to(x.device, dtype=torch.float32)
++        errors = []
++        for i, tile in enumerate(self.tiles):
++            prediction = predictions[i*len(groups)+cond][:1].float()
++            # For Krea2 flow, the clean prediction is x - sigma * velocity.
++            clean = x[row:row+1][tile.region].float() - timesteps[row].float() * prediction
++            difference = clean - source[tile.region]
++            difference = difference.reshape(1, -1, *difference.shape[-2:])
++            coarse = F.avg_pool2d(difference, 7, stride=1, padding=3, count_include_pad=False)
++            errors.append(coarse.square().mean(dim=(0,1)).detach().cpu())
++        chosen, self.choices = matched_tiles(self.tiles, self.weights, errors)
++        self.early = TiledVision(chosen, self.contexts, self.patch, *self.weights.shape)
++        self.source = None
++        cached = iter(predictions)
++        return self.early(lambda *inputs, **opts: next(cached), *args, **kwargs)

@@ -1,0 +1,74 @@
+{
+  "01-florist-handoff": {
+    "focus": [0.49, 0.42],
+    "observation": "All three reverse the florist’s front sneaker. Its toe points right in the source and left in every upscale, twisting the foot backward relative to the pose. The rear sneaker is also redrawn with its heel facing the camera. The handoff survives, including the second bunch already visible in the source.",
+    "detail_file": "foot-comparison.png",
+    "detail_label": "Compare the florist’s feet"
+  },
+  "02-jazz-trio": {
+    "focus": [0.56, 0.57],
+    "observation": "All three retain the three musicians and their separate instruments. Brass patina, bass wear and drum hardware gain definition. The drummer looks toward the saxophonist in all three runs, while he looks down in the source."
+  },
+  "03-library-architecture": {
+    "focus": [0.55, 0.50],
+    "observation": "The main stair and two readers survive all three runs. Each adds ornamental collars to the balusters and much finer window grids. All three also draw an extra handrail at the lower landing.",
+    "guide_observation": "Depth and Canny both remove the invented diagonal rail at the lower landing. Canny follows the original baluster geometry more closely. Depth keeps the main structure while adding more window and exterior detail.",
+    "beta_observation": "Beta adds several crossing rails and steep rail branches along the stair. The source has a single continuous slope. The readers and window placement survive."
+  },
+  "04-kayak-rescue-practice": {
+    "focus": [0.50, 0.56],
+    "observation": "All three keep the shared grip, the two paddlers and the separate boats. They add plausible ripples, deck hardware, seams in the life jackets and detail to the distant treeline. The faces are redrawn."
+  },
+  "05-pottery-class": {
+    "focus": [0.83, 0.20],
+    "observation": "The two people, centered bowl and wheel stay in place. All three add two cyan outlines. The matching captions explicitly mention a cyan rectangle, even though the crops used for denoising contain no annotation.",
+    "caption_observation": "Removing “marked by the cyan rectangle” from two captions at the same seed removes both cyan outlines and the invented square object inside the upper outline."
+  },
+  "06-restaurant-pass": {
+    "focus": [0.48, 0.25],
+    "observation": "All three keep the three staff and the two plates visible in the source. Steam becomes prominent. Every run draws a cyan outline in the dark upper background, where the matching caption says the tile is marked by a cyan rectangle."
+  },
+  "07-tango-poster": {
+    "focus": [0.23, 0.43],
+    "observation": "The two silhouettes and joined hands are readable in all three. Each turns broad floor graphics into busy parquet and draws a cyan outline on the cream background. DPM++ 2M adds the heaviest ink flecks."
+  },
+  "08-night-market": {
+    "focus": [0.48, 0.48],
+    "observation": "All three preserve the central bag handoff and the two waiting customers. The wet paving, stall food, fabric and receding lights gain coherent detail. The foreground bystander and people deep in the lane are redrawn."
+  },
+  "09-ballet-rehearsal": {
+    "focus": [0.33, 0.52],
+    "observation": "Euler/simple and DPM++ 2M draw a stray pointe shoe behind the left dancer. SGM Uniform draws a stray bracket and diagonal line in that region. All three keep the two dancers and change the left dancer’s footing.",
+    "beta_observation": "Beta removes the stray shoe and changes the pose to a raised grip on an invented high barre. Its larger change to the noise schedule also redraws the dancers’ footing and arm positions."
+  },
+  "10-wildlife-family": {
+    "focus": [0.40, 0.70],
+    "observation": "The source has one adult and two kits. Every tested pair invents a third kit face. Euler/simple and DPM++ 2M partly hide it behind another kit. SGM Uniform also draws an isolated muzzle beside the adult’s front legs.",
+    "caption_observation": "The same-seed render with three manually corrected captions still duplicates kits. Four kit faces are visible, with the new faces more distinct on the left than in Euler/simple.",
+    "guide_observation": "Both guides restore the source count of one adult and two kits. Canny stays closer to the source’s curled right kit and silhouette. Depth keeps the count while adding more background depth and turning the right kit toward the camera."
+  },
+  "11-coffee-product": {
+    "focus": [0.48, 0.52],
+    "observation": "All three sharpen the continuous coffee stream and crema. All three also add crockery on the left, where the source is bare, and remodel the main cup handle and the moka pot lid."
+  },
+  "12-urban-basketball": {
+    "focus": [0.49, 0.43],
+    "observation": "SGM Uniform puts a second basketball between the shooter’s fingers and the original ball. Euler/simple and DPM++ 2M keep a single ball in the shot path. All three add texture to the net and repaint the fence."
+  },
+  "13-orchard-harvest": {
+    "focus": [0.51, 0.55],
+    "observation": "All three preserve the three people, the single shared crate, and the two-person lift. The trees gain much denser fruit and foliage without breaking the orchard rows. The wood slats and apples in the shared crate read clearly."
+  },
+  "14-veterinary-exam": {
+    "focus": [0.50, 0.52],
+    "observation": "All three keep one dog and two adults, with better-defined fur and separate paws. The stethoscope chestpiece at the dog’s chest stays readable. Each run also adds a second round, silver fitting on the veterinarian’s scrubs."
+  },
+  "15-tailoring-studio": {
+    "focus": [0.55, 0.46],
+    "observation": "All three keep the two people and one yellow tape held against the jacket. Weave, windowpane checks, striped shirting and the paper patterns gain definition. The tape shifts slightly left in the close-up."
+  },
+  "16-museum-diorama": {
+    "focus": [0.28, 0.73],
+    "observation": "The adult and pointing child remain, and each run adds a second foreground child on the left plus stronger figures and reflections behind the glass. Rover treads and antennas become clearer. The central glass corner stays continuous."
+  }
+}

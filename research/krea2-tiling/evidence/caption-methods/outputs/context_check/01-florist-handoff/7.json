@@ -1,0 +1,25 @@
+{
+  "method": "context_check",
+  "case": "01-florist-handoff",
+  "tile": 7,
+  "core": [
+    0,
+    853,
+    235,
+    1280
+  ],
+  "padded": [
+    0,
+    768,
+    320,
+    1280
+  ],
+  "caption": "A person stands on a concrete step, wearing denim jeans, white sneakers, and a dark green apron, with the lower edge of the apron visible above the knees. The wooden mullion is to the left, partially framing the scene.",
+  "notes": [
+    "- denim jeans\n- white sneakers\n- dark green apron\n- concrete step\n- wooden mullion\n- bicycle tire"
+  ],
+  "seconds": 19.95,
+  "gpu": "Tesla T4",
+  "source_sha256": "dcd0243066be054b170f8edb3346de123a0bbd3f1472c5a0898e97cdc18c09be",
+  "method_sha256": "bb0a502e82e12c64d3f2bfb601372b1bc1ee724a2f131ce6b22442a401f782b1"
+}

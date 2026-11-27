@@ -1,0 +1,39 @@
+{
+  "case": "11-coffee-product",
+  "tile": 3,
+  "mode": "padded_box",
+  "caption": "The pink rectangle frames a hand gripping the handle of a metallic moka pot, with the pot’s angular, brushed-aluminum body visible in the lower-left corner.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [190, 0, 1000, 788] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Premium coffee product campaign photograph, a tight tabletop scene on light veined stone. A hand enters from upper right holding one angular brushed-aluminum moka pot, pouring a single narrow stream of dark coffee into one ivory demitasse at the center. The cup has exactly one handle to the left and sits on a matching saucer. A companion hand with a small silver ring steadies the saucer from the lower right, never touching the cup. Hard morning sunshine, softly edged geometric shadows, fine ceramic, brushed metal and crema texture, blank warm wall.",
+  "core": [
+    725,
+    0,
+    1088,
+    320
+  ],
+  "padded": [
+    640,
+    0,
+    1088,
+    406
+  ],
+  "box_in_view": [
+    85,
+    0,
+    448,
+    320
+  ],
+  "normalized": [
+    190,
+    0,
+    1000,
+    788
+  ],
+  "view_size": [
+    448,
+    406
+  ],
+  "view_rgb_sha256": "14c620cfe53f5b64db9ed218992801d979ba303b1c93c775a756631b0abff30b",
+  "source_sha256": "bcc341e06021a23a790b6a7994c71e34fbca719be23e19568f2d6278f8cc66a1",
+  "gpu": "Tesla T4",
+  "seconds": 8.81
+}

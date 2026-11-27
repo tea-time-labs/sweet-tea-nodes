@@ -1,0 +1,39 @@
+{
+  "case": "10-wildlife-family",
+  "tile": 8,
+  "mode": "full_spotlight",
+  "caption": "The target rectangle shows a close-up of the adult fox’s head and the first kit, with the adult’s muzzle near the kit’s face, both looking downward toward the ground covered in orange leaves.",
+  "prompt": "Describe the visible contents inside the target rectangle in this image. Its [left, top, right, bottom] coordinates are [333, 666, 667, 1000] on a 0 to 1000 scale, with the origin at the upper left. The pixels around the target can help you recognize a fragment. Report only the portion actually inside: its main surfaces, any objects cut by the edges, and clear relative position, orientation or contact. Ignore any locator markings and lighting used to identify the rectangle. Use one or two short literal sentences. Scene brief for context only: Near-square vertical wildlife editorial photograph of a red fox and exactly two kits in an autumn clearing. The adult fox bends her head to sniff the first kit at center while the second kit curls near her hind paws on the right. Distinct rust faces and black legs, one adult white-tipped tail looping on the ground, fine natural fur lit by pale sidelight, softly out-of-focus bracken and dark firs, damp orange leaf litter. All three animals visible, close but clearly separate.",
+  "core": [
+    320,
+    725,
+    640,
+    1088
+  ],
+  "padded": [
+    234,
+    640,
+    726,
+    1088
+  ],
+  "box_in_view": [
+    320,
+    725,
+    640,
+    1088
+  ],
+  "normalized": [
+    333,
+    666,
+    667,
+    1000
+  ],
+  "view_size": [
+    960,
+    1088
+  ],
+  "view_rgb_sha256": "5f4eeb25f6921fbec8d9784bc7558163041395234094552ca67150bf20bfb378",
+  "source_sha256": "6a1312ec7bb0926b260ee23225a6b1c37236dccd40d629ddcac6dfca62755a58",
+  "gpu": "Tesla T4",
+  "seconds": 13.59
+}
