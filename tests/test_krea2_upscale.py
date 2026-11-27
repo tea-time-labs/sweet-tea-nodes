@@ -226,6 +226,42 @@ class UpscaleTests(unittest.TestCase):
         self.assertGreater(clip.crops[0].mean(), clip.crops[4].mean())
         self.assertTrue(all(krea2_vision.VISION_BLOCK in template for template in clip.templates))
 
+    def test_reference_strength_matches_query_scoped_attention_for_two_guides(self):
+        from usdu_pose_tiled.krea2_guides import reference_attention
+
+        generator = torch.Generator().manual_seed(48)
+        q, k, v = [torch.randn(2, 3, 14, 8, generator=generator) for _ in range(3)]
+        strengths = (.2, .6)
+        mask = torch.zeros(1, 1, 14, 14)
+        mask[..., :7, 7:11] = torch.tensor(strengths[0]).log()
+        mask[..., :7, 11:] = torch.tensor(strengths[1]).log()
+        opts = {"reference_image_num_tokens": [4, 3], "block_type": "single"}
+        result = reference_attention(strengths)(None, q, k, v, 3, transformer_options=opts)
+        expected = F.scaled_dot_product_attention(q, k, v, attn_mask=mask)
+        self.assertTrue(torch.allclose(result, expected.transpose(1, 2).flatten(2), atol=1e-6))
+
+    def test_padded_tiles_with_identical_origins_receive_distinct_aligned_guides(self):
+        from usdu_pose_tiled import krea2_vision as vision
+        from usdu_pose_tiled.krea2_guides import TileGuides
+
+        # At large padding two different cores can start at the same coordinate.
+        grid = self.mod.square_tile_grid(192, 192, "9")
+        tiles = vision._tiles(192, 192, 192, 192, 64, 2, grid)
+        self.assertEqual((tiles[0].top, tiles[0].left), (tiles[1].top, tiles[1].left))
+        self.assertNotEqual(tiles[0].right, tiles[1].right)
+        latent = torch.arange(24*24, dtype=torch.float32).reshape(1, 1, 24, 24)
+        guides = TileGuides([(latent, 1.)], latent, torch.ones(3, 4), .5, 2)
+        for tile in tiles:
+            crop = latent[tile.region]
+            refs, options = guides(tile, crop, {})
+            self.assertTrue(torch.equal(refs[0], crop))
+            depth = F.unfold(crop, 2, stride=2).sum(1).unsqueeze(-1)*.5
+            n = depth.shape[1]
+            img = torch.zeros(1, 2*n, 3)
+            actual = options["patches"]["post_input"][0]({"img": img})["img"]
+            self.assertTrue(torch.equal(actual[:, :n], depth.expand(-1, -1, 3)))
+            self.assertFalse(actual[:, n:].any())
+
     def test_vision_rejects_text_only_tokenizer_output(self):
         from usdu_pose_tiled import krea2_vision
 

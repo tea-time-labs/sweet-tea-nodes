@@ -4,6 +4,8 @@ ComfyUI node pack focused on high-control video generation and high-fidelity til
 
 ## Node Highlights
 
+- `Krea2 Guided Ultimate Upscale (Sweet Tea)` (`STKrea2GuidedUpscale`)
+  - Use Vision, Canny, Depth and a colour reference together on a shared canvas. Supports per-guide strengths, a custom upscaler, square tile grids and adjustable padding. See the [Krea 2 guide](docs/krea2-upscale.md).
 - `Krea2 Ultimate Upscale (Sweet Tea)` (`STKrea2UltimateUpscale`)
   - Tiled Krea2 refinement with selectable total tile counts, including 4, 9, 16 and 25, or automatic sizing. See [the Krea2 guide](docs/krea2-upscale.md) for grid selection, control modes and the separate scale and sampling controls.
 - `Ultimate SD Upscale (Pose Tiled ControlNet)` (`UltimateSDUpscalePoseTiled`)
