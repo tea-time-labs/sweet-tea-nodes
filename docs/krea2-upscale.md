@@ -23,6 +23,9 @@ at 0.7 while enabled. Their sliders scale the attention odds at every step. A va
 of 0.5 halves those odds within a layer. It does not specify a fraction of output pixels.
 Turning additional guides on adds computation within each tile prediction. The
 sampler combines overlapping predictions on the shared canvas at each step.
+The guided node uses tile-local positional coordinates for the target and aligned
+references. Canvas coordinates locate the source regions and their weights in the
+shared prediction. The original single-mode Vision path uses canvas-relative positions.
 
 The original `STKrea2UltimateUpscale` remains available for existing workflows.
 

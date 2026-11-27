@@ -247,6 +247,10 @@ class STKrea2GuidedUpscale:
             guide = (
                 TileGuides(refs, depth_latent, depth_weight, depth_strength, patch) if refs or depth else None
             )
+            # Krea sees each target and its aligned reference crops in one local
+            # coordinate system. Canvas offsets select source pixels and blend
+            # predictions; applying them to RoPE would also move the tile
+            # relative to its caption. Keep the setting used for the GPU comparisons.
             tiled = base.clone()
             wrapper = vision.TiledVision(tiles, contexts, patch, *latent.shape[-2:], guide=guide)
             tiled.add_wrapper_with_key(WrappersMP.DIFFUSION_MODEL, vision.CANVAS_ORIGIN, wrapper)
