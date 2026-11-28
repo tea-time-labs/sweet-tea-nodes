@@ -343,19 +343,28 @@ class UpscaleTests(unittest.TestCase):
                                                 [[4, 0], [4, 0]], [[4, 6], [4, 6]]])
 
 
-    def test_reference_strength_matches_query_scoped_attention_for_two_guides(self):
+    def test_reference_strength_scales_each_guides_attention_share(self):
         from usdu_pose_tiled.krea2_guides import reference_attention
 
         generator = torch.Generator().manual_seed(48)
         q, k, v = [torch.randn(2, 3, 14, 8, generator=generator) for _ in range(3)]
+        k[..., 7:, :] += q[..., :7, :].mean(-2, keepdim=True)  # references draw most attention
         strengths = (.2, .6)
-        mask = torch.zeros(1, 1, 14, 14)
-        mask[..., :7, 7:11] = torch.tensor(strengths[0]).log()
-        mask[..., :7, 11:] = torch.tensor(strengths[1]).log()
         opts = {"reference_image_num_tokens": [4, 3], "block_type": "single"}
         result = reference_attention(strengths)(None, q, k, v, 3, transformer_options=opts)
-        expected = F.scaled_dot_product_attention(q, k, v, attn_mask=mask)
-        self.assertTrue(torch.allclose(result, expected.transpose(1, 2).flatten(2), atol=1e-6))
+
+        # Text/target rows: each reference keeps strength x its share; other keys share the rest pro rata.
+        weights = torch.softmax(q @ k.transpose(-1, -2) / 8 ** .5, -1)
+        target = weights[..., :7, :].clone()
+        refs = [(slice(7, 11), strengths[0]), (slice(11, 14), strengths[1])]
+        shares = [target[..., cols].sum(-1, keepdim=True) for cols, _ in refs]
+        self.assertGreater(float(sum(shares).mean()), .5)
+        rest = 1 - sum(s * share for (_, s), share in zip(refs, shares))
+        target[..., :7] *= rest / (1 - sum(shares))
+        for cols, s in refs:
+            target[..., cols] *= s
+        expected = torch.cat((target @ v, weights[..., 7:, :] @ v), dim=2)
+        self.assertTrue(torch.allclose(result, expected.transpose(1, 2).flatten(2), atol=1e-5))
 
     def test_padded_tiles_with_identical_origins_receive_distinct_aligned_guides(self):
         from usdu_pose_tiled import krea2_vision as vision

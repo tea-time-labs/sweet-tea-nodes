@@ -20,8 +20,9 @@ dimensions after trimming working-canvas padding.
 
 Canny, Depth and Reference each have an enable switch. Setting a strength to zero
 bypasses that guide and its weights. RGB and Canny keep their respective edit adapters
-at 0.7 while enabled. Their sliders scale the attention odds at every step. A value
-of 0.5 halves those odds within a layer. It does not specify a fraction of output pixels.
+at 0.7 while enabled. Each slider scales that reference's share of attention in every
+layer and step: 0.5 gives it half the attention it receives at 1, and the remainder
+returns to the text and the tile in proportion. It does not specify a fraction of output pixels.
 Turning additional guides on adds computation within each tile prediction. The
 sampler combines overlapping predictions on the shared canvas at each step.
 Both position modes use the same source crops, captions and overlap weights. For the
