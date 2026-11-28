@@ -1,4 +1,4 @@
-# Sweet Tea Nodes
+# ST Nodes
 
 ComfyUI node pack focused on high-control video generation and high-fidelity tiled upscaling.
 
@@ -22,7 +22,7 @@ ComfyUI node pack focused on high-control video generation and high-fidelity til
   - Converts an `IMAGE` sequence to one temporary video with explicit frame rate, container, codec, quality, bit depth/color space, and optional audio, so Studio can persist the visible result without a duplicate Comfy output file.
 - `Sweet Tea Execution Receipt` (`SweetTeaExecutionReceipt`)
   - No-save metadata sink for allowlisted external API execution facts.
-  - Publishes the provider, request, endpoint, operation, and optional estimated cost for Sweet Tea Studio provenance without exposing API credentials.
+  - Publishes the provider, request, endpoint, operation, and optional estimated cost for ST Studio provenance without exposing API credentials.
 
 ## Source Provenance
 
@@ -35,7 +35,7 @@ This repository packages node code synced from the `sweettea` R2 bucket paths:
 ## Install (ComfyUI)
 
 1. Open ComfyUI Manager.
-2. Search for `Sweet Tea Nodes` in the registry (after publish), then install.
+2. Search for `Sweet Tea Nodes` (`sweet-tea-nodes`) in the registry, then install.
 3. Restart ComfyUI.
 
 Manual install from Git:
