@@ -7,7 +7,15 @@ import torch.nn.functional as F
 
 
 def reference_attention(strengths, previous=None):
-    """Bias text/target reads; reference queries retain their original softmax."""
+    """Scale each reference's share of text/target attention by its strength.
+
+    Reference queries keep their original softmax. For text and target queries, a
+    log(strength) logit bias scales each reference's odds; indicator columns report the
+    biased shares, and mixing with reference-free attention renormalizes so that each
+    share is exactly strength times its full-strength value. Other keys keep their
+    relative weights.
+    """
+    inverse = [1 / strength - 1 for strength in strengths]
 
     def attention(backend, q, k, v, heads, mask=None, **kwargs):
         options = kwargs["transformer_options"]
@@ -19,22 +27,35 @@ def reference_attention(strengths, previous=None):
         if len(lengths) != len(strengths):
             raise ValueError("The number of Krea 2 reference images changed during sampling.")
         # One broadcast row avoids allocating a square mask for a 9 MP upscale.
-        # Split query rows only. Both groups use every key/value in this layer.
         start = k.size(-2) - sum(lengths)
         bias = q.new_zeros((1, 1, 1, (k.size(-2) + 7) // 8 * 8))[..., : k.size(-2)]
+        width, extra = v.size(-1), -(-len(lengths) // 8) * 8
+        marks = v.new_zeros((*v.shape[:-1], extra))
         pos = start
-        for length, strength in zip(lengths, strengths):
+        for index, (length, strength) in enumerate(zip(lengths, strengths)):
             bias[..., pos : pos + length] = math.log(strength)
+            marks[..., pos : pos + length, index] = 1
             pos += length
-        target_mask = bias
-        ref_mask = mask
+        target_mask, plain_mask, ref_mask = bias, None, mask
         if mask is not None:
             if mask.dtype == torch.bool:
                 mask = torch.zeros_like(mask, dtype=q.dtype).masked_fill(~mask, -torch.inf)
-            uniform = mask.shape[-2] == 1
-            target_mask = (mask if uniform else mask[..., :start, :]) + bias
-            ref_mask = mask if uniform else mask[..., start:, :]
-        first = F.scaled_dot_product_attention(q[:, :, :start], k, v, attn_mask=target_mask)
+            rows = mask if mask.shape[-2] == 1 else mask[..., :start, :]
+            target_mask, plain_mask = rows + bias, rows[..., :start]
+            ref_mask = mask if mask.shape[-2] == 1 else mask[..., start:, :]
+        # Zero query/key columns keep q, k and v the same width for the fused kernels.
+        scale = q.size(-1) ** -0.5
+        target = q[:, :, :start]
+        biased = F.scaled_dot_product_attention(
+            F.pad(target, (0, extra)), F.pad(k, (0, extra)), torch.cat((v, marks), -1),
+            attn_mask=target_mask, scale=scale,
+        )
+        plain = F.scaled_dot_product_attention(
+            target, k[:, :, :start], v[:, :, :start], attn_mask=plain_mask, scale=scale
+        )
+        shares = biased[..., width : width + len(lengths)].float()
+        z = 1 / (1 + shares @ shares.new_tensor(inverse).unsqueeze(-1))
+        first = (z * biased[..., :width].float() + (1 - z) * plain.float()).to(q.dtype)
         last = F.scaled_dot_product_attention(q[:, :, start:], k, v, attn_mask=ref_mask)
         out = torch.cat((first, last), dim=2)
         return out.transpose(1, 2).flatten(2)
