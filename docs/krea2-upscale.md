@@ -1,4 +1,38 @@
-# Krea2 Ultimate Upscale
+# Krea 2 upscaling
+
+## Krea2 Guided Ultimate Upscale (Sweet Tea)
+
+Add `STKrea2GuidedUpscale` from **Sweet Tea → Krea2**. Connect the original image,
+native Krea 2 model, Qwen3-VL-4B CLIP loaded as `krea2`, and the Qwen Image VAE.
+Enter the original creative prompt. An optional `UPSCALE_MODEL` runs before diffusion.
+Without one the node enlarges the source with Lanczos. Both paths return the requested
+dimensions after trimming working-canvas padding.
+
+| Input | Effect |
+| --- | --- |
+| Vision | On by default. Qwen sees the prompt, a marked overview, the tile plus padding, and the core. It captions the core. Krea receives that caption and the matching padded source crop. With Vision off, all tiles receive the supplied text. |
+| Canny | Uses edges detected on the original frame. Its strength controls attention to the tile’s aligned edge reference. Install `NK2E-canny-v0.1.safetensors` in `models/loras`. |
+| Depth | Estimates one Depth Anything V2 Large map per frame. Strength scales the depth LoRA and the depth contribution to the target image tokens. Install the facok Krea 2 control node pack, comfyui_controlnet_aux and `depth-control-lora.safetensors`. |
+| Reference | Uses the original image as an aligned colour reference, including when using a neural upscaler. Install `NK2E-v0.3.safetensors` in `models/loras`. Strength controls how much attention can go to that reference. |
+| Denoise | Controls how far img2img resamples the initial upscale. Zero returns the resized image directly. |
+| Tile positions | Canvas is the default. It gives a patch its row and column on the full image. Tile-local starts at the corner of each padded tile. The target and its aligned references share the selected coordinates. |
+| Tile count and padding | The defaults are a 3× upscale, nine tiles, 256 px padding per edge and eight Euler/simple steps at denoise 0.8. Choose Auto or a square grid from 4 through 100 tiles. Padding ranges from 0 to 512 px. |
+
+Canny, Depth and Reference each have an enable switch. Setting a strength to zero
+bypasses that guide and its weights. RGB and Canny keep their respective edit adapters
+at 0.7 while enabled. Their sliders scale the attention odds at every step. A value
+of 0.5 halves those odds within a layer. It does not specify a fraction of output pixels.
+Turning additional guides on adds computation within each tile prediction. The
+sampler combines overlapping predictions on the shared canvas at each step.
+Both position modes use the same source crops, captions and overlap weights. For the
+combined canvas-position portrait, select Canvas, turn on Vision, Canny, Depth and
+Reference, and set all three strengths to 0.6. Use nine tiles, 256 px padding and
+denoise 0.8.
+
+The original `STKrea2UltimateUpscale` remains available for existing workflows.
+
+## Krea2 Ultimate Upscale (single-mode node)
+
 
 `STKrea2UltimateUpscale` uses the existing Sweet Tea Ultimate SD Upscale pipeline,
 including overlap locking and normalized blending. Output dimensions follow the

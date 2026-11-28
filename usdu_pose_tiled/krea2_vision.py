@@ -100,7 +100,8 @@ def _position_on_canvas(args):
 
 
 class TiledVision:
-    def __init__(self, tiles, contexts, patch, latent_height, latent_width):
+    def __init__(self, tiles, contexts, patch, latent_height, latent_width, guide=None):
+        self.guide = guide
         self.tiles = tiles
         self.contexts = contexts
         self.patch = patch
@@ -128,15 +129,21 @@ class TiledVision:
                 local_options = {**options, CANVAS_ORIGIN: offset, "cond_or_uncond": [group]}
                 if "uuids" in options:
                     local_options["uuids"] = options["uuids"][index:index + 1]
-                if group == 0:
+                if group == 0 and tile_context is not None:
                     cond = tile_context.to(device=context.device, dtype=context.dtype)
                     cond = cond.expand(group_size, -1, -1)
                     mask = None
                 else:
                     cond = context[rows]
                     mask = attention_mask[rows] if attention_mask is not None else None
-                result = executor(x[rows][region], timesteps[rows], cond, mask,
-                                  None, local_options, **kwargs)
+                tile_x = x[rows][region]
+                refs = None
+                inner = kwargs
+                if self.guide is not None:
+                    refs, local_options = self.guide(tile, tile_x, local_options)
+                    if refs:
+                        inner = {**kwargs, "ref_latents_method": "index"}
+                result = executor(tile_x, timesteps[rows], cond, mask, refs, local_options, **inner)
                 combined[rows][region] += result.float() * weight
         return combined / self.weights.to(x.device)
 

@@ -226,6 +226,159 @@ class UpscaleTests(unittest.TestCase):
         self.assertGreater(clip.crops[0].mean(), clip.crops[4].mean())
         self.assertTrue(all(krea2_vision.VISION_BLOCK in template for template in clip.templates))
 
+    def test_registered_guided_upscale_routes_guides_and_trims_output(self):
+        # Import the actual pack registration after installing the fake Comfy runtime.
+        del sys.modules["usdu_pose_tiled"]
+        pack = importlib.import_module("usdu_pose_tiled")
+        guided = importlib.import_module("usdu_pose_tiled.krea2_guided_upscale")
+        cls = pack.NODE_CLASS_MAPPINGS["STKrea2GuidedUpscale"]
+        positions = cls.INPUT_TYPES()["optional"]["tile_positions"]
+        self.assertEqual(positions[0], ["Canvas", "Tile-local"])
+        self.assertEqual(positions[1]["default"], "Canvas")
+        schema = cls.INPUT_TYPES()["required"]
+        self.assertTrue(schema["vision_enabled"][1]["default"])
+
+        class Tokenizer:
+            llama_template = "{}"
+
+        class Clip:
+            tokenizer = Tokenizer()
+            def tokenize(self, prompt, **kwargs):
+                images = kwargs.get("images", [])
+                return {"qwen3vl_4b": [[({"type": "image", "data": im}, 1.) for im in images]]}
+            def generate(self, tokens, **kwargs):
+                if len(tokens["qwen3vl_4b"][0]) != 3:
+                    raise AssertionError("Expected the overview, padded crop and core")
+                return "fabric"
+            def decode(self, tokens): return tokens
+            def encode_from_tokens(self, tokens): return torch.ones(1, 1, 1)
+            def encode_from_tokens_scheduled(self, tokens): return [[torch.zeros(1, 1, 1), {}]]
+
+        class Diffusion:
+            patch, txtlayers, txtdim = 2, 1, 1
+        class GuidedModel(Model):
+            position_patch = None
+            def set_model_patch(self, function, name):
+                self.position_patch = function
+            model = types.SimpleNamespace(process_latent_in=lambda value: value)
+            def get_model_object(self, key): return Diffusion()
+            def add_wrapper_with_key(self, kind, key, wrapper): self.wrapper = wrapper
+        class GuidedVAE(VAE):
+            def encode_tiled(self, image): return F.avg_pool2d(self.encode(image), 8).unsqueeze(2)
+            def decode_tiled(self, latent, overlap):
+                return self.decode(latent.squeeze(2).repeat_interleave(8, -2).repeat_interleave(8, -1))
+        class Canny:
+            def detect_edge(self, image, *args): return (image*0 + .2,)
+        class Depth:
+            def execute(self, image, **kwargs): return (image*0 + .4,)
+        loaded = []
+        class Loader:
+            def load_lora_model_only(self, model, filename, strength):
+                loaded.append(filename)
+                return (model.clone(),)
+
+        calls = []
+        position_offsets = []
+        def sample(model, seed, steps, cfg, sampler, scheduler, positive, negative, latent, denoise):
+            def predict(x, time, context, mask, refs, opts, **kwargs):
+                ids = torch.zeros(1, 2, 3)
+                if model.position_patch is not None:
+                    ids = model.position_patch({"img_ids": ids, "transformer_options": opts})["img_ids"]
+                position_offsets.append(ids[0, :, 1:].tolist())
+                calls.append((context.item(), len(refs or []), bool(opts.get("patches", {}).get("post_input")),
+                              kwargs.get("ref_latents_method")))
+                return x
+            canvas = model.wrapper(predict, latent["samples"], torch.zeros(1), positive[0][0])
+            return ({"samples": canvas},)
+        isolated = {
+            "comfy.ldm.krea2.model": types.SimpleNamespace(SingleStreamDiT=Diffusion),
+            "comfy.text_encoders.krea2": types.SimpleNamespace(Krea2Tokenizer=Tokenizer),
+            "comfy.patcher_extension": types.SimpleNamespace(WrappersMP=types.SimpleNamespace(DIFFUSION_MODEL="model")),
+            "comfy_extras.nodes_canny": types.SimpleNamespace(Canny=Canny),
+        }
+        self.nodes.LoraLoaderModelOnly = Loader
+        self.nodes.common_ksampler = sample
+        self.nodes.NODE_CLASS_MAPPINGS["DepthAnythingV2Preprocessor"] = Depth
+        mm = sys.modules["comfy.model_management"]
+        mm.throw_exception_if_processing_interrupted = mm.unload_all_models = lambda: None
+        args = dict(image=self.image[:, :91, :123], model=GuidedModel(), clip=Clip(), vae=GuidedVAE(),
+                    prompt="a red coat", upscale_by=1.5, tile_count="4", tile_size=128, tile_padding=64,
+                    tile_positions="Tile-local",
+                    seed=42, steps=1, cfg=1., sampler_name="euler", scheduler="simple", denoise=.8)
+        def depth_loader(model, filename, strength):
+            loaded.append(filename)
+            return model.clone(), torch.ones(1, 12)
+        with patch.dict(sys.modules, isolated), patch.object(guided, "load_depth", depth_loader):
+            for vision_on, edge, depth, rgb in [
+                (False, 0., 0., 0.), (True, .2, 0., 0.), (True, 0., .4, 0.),
+                (True, 0., 0., .6), (True, .2, .4, .6),
+            ]:
+                with self.subTest(vision=vision_on, edge=edge, depth=depth, rgb=rgb):
+                    loaded.clear()
+                    calls.clear()
+                    result, = cls().upscale(**args, vision_enabled=vision_on, canny_enabled=True,
+                        depth_enabled=True, reference_enabled=True, canny_strength=edge,
+                        depth_strength=depth, reference_strength=rgb)
+                    self.assertEqual(tuple(result.shape), (1, 136, 184, 3))
+                    count = int(bool(edge)) + int(bool(rgb))
+                    self.assertEqual(calls, [(float(vision_on), count, bool(depth),
+                                               "index" if count else None)]*4)
+                    self.assertEqual(len(loaded), sum(bool(s) for s in (edge, depth, rgb)))
+
+            loaded.clear()
+            calls.clear()
+            cls().upscale(**args, vision_enabled=False, canny_enabled=False, depth_enabled=False,
+                          reference_enabled=False, canny_strength=.8, depth_strength=.8, reference_strength=.8)
+            self.assertEqual(loaded, [])
+            self.assertEqual(calls, [(0., 0, False, None)]*4)
+
+            self.assertTrue(all(row == [[0, 0], [0, 0]] for row in position_offsets))
+            position_offsets.clear()
+            canvas_args = {**args, "tile_padding": 0}
+            del canvas_args["tile_positions"]
+            cls().upscale(**canvas_args, vision_enabled=False, canny_enabled=False,
+                          depth_enabled=False, reference_enabled=True, canny_strength=0, depth_strength=0,
+                          reference_strength=.6)
+            self.assertEqual(position_offsets, [[[0, 0], [0, 0]], [[0, 6], [0, 6]],
+                                                [[4, 0], [4, 0]], [[4, 6], [4, 6]]])
+
+
+    def test_reference_strength_matches_query_scoped_attention_for_two_guides(self):
+        from usdu_pose_tiled.krea2_guides import reference_attention
+
+        generator = torch.Generator().manual_seed(48)
+        q, k, v = [torch.randn(2, 3, 14, 8, generator=generator) for _ in range(3)]
+        strengths = (.2, .6)
+        mask = torch.zeros(1, 1, 14, 14)
+        mask[..., :7, 7:11] = torch.tensor(strengths[0]).log()
+        mask[..., :7, 11:] = torch.tensor(strengths[1]).log()
+        opts = {"reference_image_num_tokens": [4, 3], "block_type": "single"}
+        result = reference_attention(strengths)(None, q, k, v, 3, transformer_options=opts)
+        expected = F.scaled_dot_product_attention(q, k, v, attn_mask=mask)
+        self.assertTrue(torch.allclose(result, expected.transpose(1, 2).flatten(2), atol=1e-6))
+
+    def test_padded_tiles_with_identical_origins_receive_distinct_aligned_guides(self):
+        from usdu_pose_tiled import krea2_vision as vision
+        from usdu_pose_tiled.krea2_guides import TileGuides
+
+        # At large padding two different cores can start at the same coordinate.
+        grid = self.mod.square_tile_grid(192, 192, "9")
+        tiles = vision._tiles(192, 192, 192, 192, 64, 2, grid)
+        self.assertEqual((tiles[0].top, tiles[0].left), (tiles[1].top, tiles[1].left))
+        self.assertNotEqual(tiles[0].right, tiles[1].right)
+        latent = torch.arange(24*24, dtype=torch.float32).reshape(1, 1, 24, 24)
+        guides = TileGuides([(latent, 1.)], latent, torch.ones(3, 4), .5, 2)
+        for tile in tiles:
+            crop = latent[tile.region]
+            refs, options = guides(tile, crop, {})
+            self.assertTrue(torch.equal(refs[0], crop))
+            depth = F.unfold(crop, 2, stride=2).sum(1).unsqueeze(-1)*.5
+            n = depth.shape[1]
+            img = torch.zeros(1, 2*n, 3)
+            actual = options["patches"]["post_input"][0]({"img": img})["img"]
+            self.assertTrue(torch.equal(actual[:, :n], depth.expand(-1, -1, 3)))
+            self.assertFalse(actual[:, n:].any())
+
     def test_vision_rejects_text_only_tokenizer_output(self):
         from usdu_pose_tiled import krea2_vision
 
