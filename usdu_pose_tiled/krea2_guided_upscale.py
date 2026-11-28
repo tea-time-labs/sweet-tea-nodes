@@ -124,8 +124,11 @@ class STKrea2GuidedUpscale:
             "optional": {
                 "upscale_model": ("UPSCALE_MODEL",),
                 "tile_positions": (
-                    ("Tile-local", "Canvas"),
-                    {"default": "Tile-local", "tooltip": "Canvas gives each image patch its full-image position. Tile-local starts each padded tile at its own origin."},
+                    ["Tile-local", "Canvas"],
+                    {
+                        "default": "Tile-local",
+                        "tooltip": "Canvas gives each patch its full-image position. Tile-local starts each padded tile at its own origin.",
+                    },
                 ),
                 "negative": ("CONDITIONING",),
                 "canny_lora": ("STRING", {"default": "NK2E-canny-v0.1.safetensors"}),

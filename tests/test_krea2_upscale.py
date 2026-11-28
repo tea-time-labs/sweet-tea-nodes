@@ -232,6 +232,7 @@ class UpscaleTests(unittest.TestCase):
         pack = importlib.import_module("usdu_pose_tiled")
         guided = importlib.import_module("usdu_pose_tiled.krea2_guided_upscale")
         cls = pack.NODE_CLASS_MAPPINGS["STKrea2GuidedUpscale"]
+        self.assertEqual(cls.INPUT_TYPES()["optional"]["tile_positions"][0], ["Tile-local", "Canvas"])
         schema = cls.INPUT_TYPES()["required"]
         self.assertTrue(schema["vision_enabled"][1]["default"])
 
