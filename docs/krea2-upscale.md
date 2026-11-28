@@ -15,6 +15,7 @@ dimensions after trimming working-canvas padding.
 | Depth | Estimates one Depth Anything V2 Large map per frame. Strength scales the depth LoRA and the depth contribution to the target image tokens. Install the facok Krea 2 control node pack, comfyui_controlnet_aux and `depth-control-lora.safetensors`. |
 | Reference | Uses the original image as an aligned colour reference, including when using a neural upscaler. Install `NK2E-v0.3.safetensors` in `models/loras`. Strength controls how much attention can go to that reference. |
 | Denoise | Controls how far img2img resamples the initial upscale. Zero returns the resized image directly. |
+| Tile positions | Canvas gives a patch its row and column on the full image. Tile-local starts at the corner of each padded tile. The target and its aligned references share the selected coordinates. |
 | Tile count and padding | The defaults are a 3× upscale, nine tiles, 256 px padding per edge and eight Euler/simple steps at denoise 0.8. Choose Auto or a square grid from 4 through 100 tiles. Padding ranges from 0 to 512 px. |
 
 Canny, Depth and Reference each have an enable switch. Setting a strength to zero
@@ -23,9 +24,10 @@ at 0.7 while enabled. Their sliders scale the attention odds at every step. A va
 of 0.5 halves those odds within a layer. It does not specify a fraction of output pixels.
 Turning additional guides on adds computation within each tile prediction. The
 sampler combines overlapping predictions on the shared canvas at each step.
-The guided node uses tile-local positional coordinates for the target and aligned
-references. Canvas coordinates locate the source regions and their weights in the
-shared prediction. The original single-mode Vision path uses canvas-relative positions.
+Both position modes use the same source crops, captions and overlap weights. For the
+combined canvas-position portrait, select Canvas, turn on Vision, Canny, Depth and
+Reference, and set all three strengths to 0.6. Use nine tiles, 256 px padding and
+denoise 0.8.
 
 The original `STKrea2UltimateUpscale` remains available for existing workflows.
 

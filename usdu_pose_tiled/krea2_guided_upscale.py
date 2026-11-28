@@ -123,6 +123,10 @@ class STKrea2GuidedUpscale:
             },
             "optional": {
                 "upscale_model": ("UPSCALE_MODEL",),
+                "tile_positions": (
+                    ("Tile-local", "Canvas"),
+                    {"default": "Tile-local", "tooltip": "Canvas gives each image patch its full-image position. Tile-local starts each padded tile at its own origin."},
+                ),
                 "negative": ("CONDITIONING",),
                 "canny_lora": ("STRING", {"default": "NK2E-canny-v0.1.safetensors"}),
                 "depth_lora": ("STRING", {"default": "depth-control-lora.safetensors"}),
@@ -161,6 +165,7 @@ class STKrea2GuidedUpscale:
         canny_lora="NK2E-canny-v0.1.safetensors",
         depth_lora="depth-control-lora.safetensors",
         reference_lora="NK2E-v0.3.safetensors",
+        tile_positions="Tile-local",
     ):
         import comfy.model_management as mm
         import nodes
@@ -207,6 +212,10 @@ class STKrea2GuidedUpscale:
         for enabled, filename in ((canny, canny_lora), (reference, reference_lora)):
             if enabled:
                 (base,) = nodes.LoraLoaderModelOnly().load_lora_model_only(base, filename, 0.7)
+        if tile_positions == "Canvas":
+            base.set_model_patch(vision._position_on_canvas, "post_input")
+        elif tile_positions != "Tile-local":
+            raise ValueError(f"Unknown tile positions {tile_positions!r}.")
         text = None
         if not vision_enabled:
             text = clip.encode_from_tokens_scheduled(clip.tokenize(prompt))
@@ -247,10 +256,6 @@ class STKrea2GuidedUpscale:
             guide = (
                 TileGuides(refs, depth_latent, depth_weight, depth_strength, patch) if refs or depth else None
             )
-            # Krea sees each target and its aligned reference crops in one local
-            # coordinate system. Canvas offsets select source pixels and blend
-            # predictions; applying them to RoPE would also move the tile
-            # relative to its caption. Keep the setting used for the GPU comparisons.
             tiled = base.clone()
             wrapper = vision.TiledVision(tiles, contexts, patch, *latent.shape[-2:], guide=guide)
             tiled.add_wrapper_with_key(WrappersMP.DIFFUSION_MODEL, vision.CANVAS_ORIGIN, wrapper)

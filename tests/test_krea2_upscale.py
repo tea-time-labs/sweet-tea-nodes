@@ -254,6 +254,9 @@ class UpscaleTests(unittest.TestCase):
         class Diffusion:
             patch, txtlayers, txtdim = 2, 1, 1
         class GuidedModel(Model):
+            position_patch = None
+            def set_model_patch(self, function, name):
+                self.position_patch = function
             model = types.SimpleNamespace(process_latent_in=lambda value: value)
             def get_model_object(self, key): return Diffusion()
             def add_wrapper_with_key(self, kind, key, wrapper): self.wrapper = wrapper
@@ -272,8 +275,13 @@ class UpscaleTests(unittest.TestCase):
                 return (model.clone(),)
 
         calls = []
+        position_offsets = []
         def sample(model, seed, steps, cfg, sampler, scheduler, positive, negative, latent, denoise):
             def predict(x, time, context, mask, refs, opts, **kwargs):
+                ids = torch.zeros(1, 2, 3)
+                if model.position_patch is not None:
+                    ids = model.position_patch({"img_ids": ids, "transformer_options": opts})["img_ids"]
+                position_offsets.append(ids[0, :, 1:].tolist())
                 calls.append((context.item(), len(refs or []), bool(opts.get("patches", {}).get("post_input")),
                               kwargs.get("ref_latents_method")))
                 return x
@@ -319,6 +327,15 @@ class UpscaleTests(unittest.TestCase):
                           reference_enabled=False, canny_strength=.8, depth_strength=.8, reference_strength=.8)
             self.assertEqual(loaded, [])
             self.assertEqual(calls, [(0., 0, False, None)]*4)
+
+            self.assertTrue(all(row == [[0, 0], [0, 0]] for row in position_offsets))
+            position_offsets.clear()
+            cls().upscale(**{**args, "tile_padding": 0}, vision_enabled=False, canny_enabled=False,
+                          depth_enabled=False, reference_enabled=True, canny_strength=0, depth_strength=0,
+                          reference_strength=.6, tile_positions="Canvas")
+            self.assertEqual(position_offsets, [[[0, 0], [0, 0]], [[0, 6], [0, 6]],
+                                                [[4, 0], [4, 0]], [[4, 6], [4, 6]]])
+
 
     def test_reference_strength_matches_query_scoped_attention_for_two_guides(self):
         from usdu_pose_tiled.krea2_guides import reference_attention
