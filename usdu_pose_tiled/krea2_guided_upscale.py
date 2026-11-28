@@ -124,9 +124,9 @@ class STKrea2GuidedUpscale:
             "optional": {
                 "upscale_model": ("UPSCALE_MODEL",),
                 "tile_positions": (
-                    ["Tile-local", "Canvas"],
+                    ["Canvas", "Tile-local"],
                     {
-                        "default": "Tile-local",
+                        "default": "Canvas",
                         "tooltip": "Canvas gives each patch its full-image position. Tile-local starts each padded tile at its own origin.",
                     },
                 ),
@@ -168,7 +168,7 @@ class STKrea2GuidedUpscale:
         canny_lora="NK2E-canny-v0.1.safetensors",
         depth_lora="depth-control-lora.safetensors",
         reference_lora="NK2E-v0.3.safetensors",
-        tile_positions="Tile-local",
+        tile_positions="Canvas",
     ):
         import comfy.model_management as mm
         import nodes

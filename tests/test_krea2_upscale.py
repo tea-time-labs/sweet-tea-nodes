@@ -232,7 +232,9 @@ class UpscaleTests(unittest.TestCase):
         pack = importlib.import_module("usdu_pose_tiled")
         guided = importlib.import_module("usdu_pose_tiled.krea2_guided_upscale")
         cls = pack.NODE_CLASS_MAPPINGS["STKrea2GuidedUpscale"]
-        self.assertEqual(cls.INPUT_TYPES()["optional"]["tile_positions"][0], ["Tile-local", "Canvas"])
+        positions = cls.INPUT_TYPES()["optional"]["tile_positions"]
+        self.assertEqual(positions[0], ["Canvas", "Tile-local"])
+        self.assertEqual(positions[1]["default"], "Canvas")
         schema = cls.INPUT_TYPES()["required"]
         self.assertTrue(schema["vision_enabled"][1]["default"])
 
@@ -301,6 +303,7 @@ class UpscaleTests(unittest.TestCase):
         mm.throw_exception_if_processing_interrupted = mm.unload_all_models = lambda: None
         args = dict(image=self.image[:, :91, :123], model=GuidedModel(), clip=Clip(), vae=GuidedVAE(),
                     prompt="a red coat", upscale_by=1.5, tile_count="4", tile_size=128, tile_padding=64,
+                    tile_positions="Tile-local",
                     seed=42, steps=1, cfg=1., sampler_name="euler", scheduler="simple", denoise=.8)
         def depth_loader(model, filename, strength):
             loaded.append(filename)
@@ -331,9 +334,11 @@ class UpscaleTests(unittest.TestCase):
 
             self.assertTrue(all(row == [[0, 0], [0, 0]] for row in position_offsets))
             position_offsets.clear()
-            cls().upscale(**{**args, "tile_padding": 0}, vision_enabled=False, canny_enabled=False,
+            canvas_args = {**args, "tile_padding": 0}
+            del canvas_args["tile_positions"]
+            cls().upscale(**canvas_args, vision_enabled=False, canny_enabled=False,
                           depth_enabled=False, reference_enabled=True, canny_strength=0, depth_strength=0,
-                          reference_strength=.6, tile_positions="Canvas")
+                          reference_strength=.6)
             self.assertEqual(position_offsets, [[[0, 0], [0, 0]], [[0, 6], [0, 6]],
                                                 [[4, 0], [4, 0]], [[4, 6], [4, 6]]])
 
